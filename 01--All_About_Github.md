@@ -1,0 +1,3 @@
+The sample text:
+
+Lorem ipsum dolor sit amet...
