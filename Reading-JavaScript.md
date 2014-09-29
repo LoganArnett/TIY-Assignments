@@ -115,3 +115,21 @@ var isArray = Array.isArray || function (obj) {
 * Variable: `isArray`
 * Value: Array(Array.isArray) or Function(Object)
 
+```javascript
+var d3_nsPrefix = {
+  svg: "http://www.w3.org/2000/svg",
+  xhtml: "http://www.w3.org/1999/xhtml",
+  xlink: "http://www.w3.org/1999/xlink",
+  xml: "http://www.w3.org/XML/1998/namespace",
+  xmlns: "http://www.w3.org/2000/xmlns/"
+};
+```
+
+* Variable: `d3_nsPrefix`
+* Value:
+  * svg: String "http://www.w3.org/2000/svg"
+  * xhtml: String "http://www.w3.org/1999/xhtml"
+  * xlink: String "http://www.w3.org/1999/xlink"
+  * xml: String "http://www.w3.org/XML/1998/namespace"
+  * xmlns: String "http://www.w3.org/2000/xmlns/"
+
