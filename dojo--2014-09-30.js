@@ -99,26 +99,73 @@ test_add("three", "seven", 10);
 test_add("three", "eight", 11);
 test_add("three", "nine", 12);
 test_add("three", "ten", 13);
-
-
-
-console.log('it should add "one" and "one":',
-            add("one", "one") === 2);
-console.log('it should add "one" and "two" to equal 3:',
-            add("one", "two") === 3);
-console.log('it should add "one" and "three" to equal 4:',
-            add("one", "three") === 4);
-console.log('it should add "one" and "four" to equal 5:',
-            add("one", "four") === 5);
-console.log('it should add "two" and "one" to equal 3:',
-            add("two", "one") === 3);
-console.log('it should add "two" and "two" to equal 2:',
-            add("two", "two") === 4);
-console.log('it should add "three" and "two" to equal 5:',
-            add("three", "two") === 5);
-console.log('it should add "three" and "one" to equal 4:',
-            add("three", "one") === 4);
-console.log('it should add "four" and "two" to equal 6:',
-            add("four", "two") === 6);
-console.log('it should add "five" and "one" to equal 6:',
-            add("five", "one") === 6);
+test_add("four", "one", 5);
+test_add("four", "two", 6);
+test_add("four", "three", 7);
+test_add("four", "four", 8);
+test_add("four", "five", 9);
+test_add("four", "six", 10);
+test_add("four", "seven", 11);
+test_add("four", "eight", 12);
+test_add("four", "nine", 13);
+test_add("four", "ten", 14);
+test_add("five", "one", 6);
+test_add("five", "two", 7);
+test_add("five", "three", 8);
+test_add("five", "four", 9);
+test_add("five", "five", 10);
+test_add("five", "six", 11);
+test_add("five", "seven", 12);
+test_add("five", "eight", 13);
+test_add("five", "nine", 14);
+test_add("five", "ten", 15);
+test_add("six", "one", 7);
+test_add("six", "two", 8);
+test_add("six", "three", 9);
+test_add("six", "four", 10);
+test_add("six", "five", 11);
+test_add("six", "six", 12);
+test_add("six", "seven", 13);
+test_add("six", "eight", 14);
+test_add("six", "nine", 15);
+test_add("six", "ten", 16);
+test_add("seven", "one", 8);
+test_add("seven", "two", 9);
+test_add("seven", "three", 10);
+test_add("seven", "four", 11);
+test_add("seven", "five", 12);
+test_add("seven", "six", 13);
+test_add("seven", "seven", 14);
+test_add("seven", "eight", 15);
+test_add("seven", "nine", 16);
+test_add("seven", "ten", 17);
+test_add("eight", "one", 9);
+test_add("eight", "two", 10);
+test_add("eight", "three", 11);
+test_add("eight", "four", 12);
+test_add("eight", "five", 13);
+test_add("eight", "six", 14);
+test_add("eight", "seven", 15);
+test_add("eight", "eight", 16);
+test_add("eight", "nine", 17);
+test_add("eight", "ten", 18);
+test_add("nine", "one", 10);
+test_add("nine", "two", 11);
+test_add("nine", "three", 12);
+test_add("nine", "four", 13);
+test_add("nine", "five", 14);
+test_add("nine", "six", 15);
+test_add("nine", "seven", 16);
+test_add("nine", "eight", 17);
+test_add("nine", "nine", 18);
+test_add("nine", "ten", 19);
+test_add("ten", "one", 11);
+test_add("ten", "two", 12);
+test_add("ten", "three", 13);
+test_add("ten", "four", 14);
+test_add("ten", "five", 15);
+test_add("ten", "six", 16);
+test_add("ten", "seven", 17);
+test_add("ten", "eight", 18);
+test_add("ten", "nine", 19);
+test_add("ten", "ten", 20);
