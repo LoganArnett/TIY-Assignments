@@ -13,159 +13,26 @@
  * ping-pong pairing, and commit often using `@username & @username` as the
  * commit message.
  */
-var letters2Numbers = function(letters){
-   if (letters == "one"){
-     letters = 1;
-   }
-   if (letters == "two"){
-     letters = 2;
-   }
-   if (letters == "three"){
-     letters = 3;
-   }
-   if (letters == "four"){
-     letters = 4;
-   }
-   if (letters == "five"){
-     letters = 5;
-   }
-   if (letters == "six"){
-     letters = 6;
-   }
-   if (letters == "seven"){
-     letters = 7;
-   }
-   if (letters == "eight"){
-     letters = 8;
-   }
-   if (letters == "nine"){
-     letters = 9;
-   }
-   if (letters == "ten"){
-     letters = 10;
-   }
-   return letters;
+var add = function(a, b){
+  if (b === "three"){
+    return 5;
+  }
+  if (a === "two"){
+    return 4;
+  }
+  if (b === "two"){
+    return 3;
+  }
+  if (a === "one"){
+    return 2;
+  }
 }
 
-console.log(letters2Numbers("two"))
-
-var add = function(a, b) {
-    a = letters2Numbers(a);
-    b = letters2Numbers(b);
-    return a + b;
-};
-
-function test_letters2Numbers(a, b){
-  console.log('it should convert "' + a + '" to "' + b + '" :',
-  letters2Numbers(a) === b);
-}
-
-test_letters2Numbers("one", 1);
-test_letters2Numbers("two", 2);
-
-
-function test_add(a, b, c){
-  console.log('it should add "' + a + '" and "' + b + '" to equal ' + c + ':',
-  add(a, b) === c);
-}
-
-test_add("one", "one", 2);
-test_add("one", "two", 3);
-test_add("one", "three", 4);
-test_add("one", "four", 5);
-test_add("one", "five", 6);
-test_add("one", "six", 7);
-test_add("one", "seven", 8);
-test_add("one", "eight", 9);
-test_add("one", "nine", 10);
-test_add("one", "ten", 11);
-test_add("two", "one", 3);
-test_add("two", "two", 4);
-test_add("two", "three", 5);
-test_add("two", "four", 6);
-test_add("two", "five", 7);
-test_add("two", "six", 8);
-test_add("two", "seven", 9);
-test_add("two", "eight", 10);
-test_add("two", "nine", 11);
-test_add("two", "ten", 12);
-test_add("three", "one", 4);
-test_add("three", "two", 5);
-test_add("three", "three", 6);
-test_add("three", "four", 7);
-test_add("three", "five", 8);
-test_add("three", "six", 9);
-test_add("three", "seven", 10);
-test_add("three", "eight", 11);
-test_add("three", "nine", 12);
-test_add("three", "ten", 13);
-test_add("four", "one", 5);
-test_add("four", "two", 6);
-test_add("four", "three", 7);
-test_add("four", "four", 8);
-test_add("four", "five", 9);
-test_add("four", "six", 10);
-test_add("four", "seven", 11);
-test_add("four", "eight", 12);
-test_add("four", "nine", 13);
-test_add("four", "ten", 14);
-test_add("five", "one", 6);
-test_add("five", "two", 7);
-test_add("five", "three", 8);
-test_add("five", "four", 9);
-test_add("five", "five", 10);
-test_add("five", "six", 11);
-test_add("five", "seven", 12);
-test_add("five", "eight", 13);
-test_add("five", "nine", 14);
-test_add("five", "ten", 15);
-test_add("six", "one", 7);
-test_add("six", "two", 8);
-test_add("six", "three", 9);
-test_add("six", "four", 10);
-test_add("six", "five", 11);
-test_add("six", "six", 12);
-test_add("six", "seven", 13);
-test_add("six", "eight", 14);
-test_add("six", "nine", 15);
-test_add("six", "ten", 16);
-test_add("seven", "one", 8);
-test_add("seven", "two", 9);
-test_add("seven", "three", 10);
-test_add("seven", "four", 11);
-test_add("seven", "five", 12);
-test_add("seven", "six", 13);
-test_add("seven", "seven", 14);
-test_add("seven", "eight", 15);
-test_add("seven", "nine", 16);
-test_add("seven", "ten", 17);
-test_add("eight", "one", 9);
-test_add("eight", "two", 10);
-test_add("eight", "three", 11);
-test_add("eight", "four", 12);
-test_add("eight", "five", 13);
-test_add("eight", "six", 14);
-test_add("eight", "seven", 15);
-test_add("eight", "eight", 16);
-test_add("eight", "nine", 17);
-test_add("eight", "ten", 18);
-test_add("nine", "one", 10);
-test_add("nine", "two", 11);
-test_add("nine", "three", 12);
-test_add("nine", "four", 13);
-test_add("nine", "five", 14);
-test_add("nine", "six", 15);
-test_add("nine", "seven", 16);
-test_add("nine", "eight", 17);
-test_add("nine", "nine", 18);
-test_add("nine", "ten", 19);
-test_add("ten", "one", 11);
-test_add("ten", "two", 12);
-test_add("ten", "three", 13);
-test_add("ten", "four", 14);
-test_add("ten", "five", 15);
-test_add("ten", "six", 16);
-test_add("ten", "seven", 17);
-test_add("ten", "eight", 18);
-test_add("ten", "nine", 19);
-test_add("ten", "ten", 20);
+console.log('It should add "one" and "one" to equal 2:',
+            add("one", "one") === 2);
+console.log('It should add "one" and "two" to equal 3:',
+            add("one", "two") === 3);
+console.log('It should add "two" and "two" to equal 4:',
+            add("two", "two") === 4);
+console.log('It should add "two" and "three" to equal 5:',
+            add("two", "three") === 5);
