@@ -204,7 +204,7 @@ for ( key in this.layers ) {
 ```
 
 * Variable: `this.layers`
-* Value: Conditional `If this return this, else if, else if, else if, ...`
+* Value: For Loop `For this, If this return this, else if, else if, else if, ...`
 
 
 
