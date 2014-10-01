@@ -54,21 +54,10 @@ console.log(letters2Numbers("six"));
 
 
 var add = function(a, b){
-  if (b === "three"){
-    return 5;
-  }
-  if (a === "two"){
-    return 4;
-  }
-  if (b === "two"){
-    return 3;
-  }
-  if (a === "one"){
-    return 2;
-  }
-  if (a === "four"){
-    return 9;
-  }
+  a = letters2Numbers(a);
+  b = letters2Numbers(b);
+   return a + b;
+
 }
 
 console.log('It should add "one" and "one" to equal 2:',
