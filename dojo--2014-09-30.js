@@ -68,16 +68,20 @@ var add = function(a, b){
   a = letters2Numbers(a);
   b = letters2Numbers(b);
    return a + b;
-
 }
 
-console.log('It should add "one" and "one" to equal 2:',
-            add("one", "one") === 2);
-console.log('It should add "one" and "two" to equal 3:',
-            add("one", "two") === 3);
-console.log('It should add "two" and "two" to equal 4:',
-            add("two", "two") === 4);
-console.log('It should add "two" and "three" to equal 5:',
-            add("two", "three") === 5);
-console.log('It should add "four" and "five" to equal 9:',
-            add("four", "five") === 9);
+function test_add(a, b, c){
+  console.log('It should add "' + a + '" and "' + b + '" to equal ' + c + ':',
+          add(a, b) == c);
+}
+
+test_add("one", "one", 2);
+test_add("one", "two", 3);
+test_add("one", "three", 4);
+test_add("one", "four", 5);
+test_add("one", "five", 6);
+test_add("one", "six", 7);
+test_add("one", "seven", 8);
+test_add("one", "eight", 9);
+test_add("one", "nine", 10);
+test_add("one", "ten", 11);
