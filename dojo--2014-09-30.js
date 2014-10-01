@@ -47,10 +47,21 @@ var letters2Numbers = function(letters){
   return letters;
 }
 
-console.log(letters2Numbers("one"));
-console.log(letters2Numbers("three"));
-console.log(letters2Numbers("six"));
+function test_letters2Numbers(a, b){
+  console.log('It should convert "' + a + '" to "' + b + '":',
+        letters2Numbers(a) === b);
+}
 
+test_letters2Numbers("one", 1);
+test_letters2Numbers("two", 2);
+test_letters2Numbers("three", 3);
+test_letters2Numbers("four", 4);
+test_letters2Numbers("five", 5);
+test_letters2Numbers("six", 6);
+test_letters2Numbers("seven", 7);
+test_letters2Numbers("eight", 8);
+test_letters2Numbers("nine", 9);
+test_letters2Numbers("ten", 10);
 
 
 var add = function(a, b){
