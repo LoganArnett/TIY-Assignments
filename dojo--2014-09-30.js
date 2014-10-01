@@ -44,7 +44,12 @@ var letters2Numbers = function(letters){
   if (letters == "ten"){
     letters = 10;
   }
+  return letters;
 }
+
+console.log(letters2Numbers("one"));
+console.log(letters2Numbers("three"));
+console.log(letters2Numbers("six"));
 
 
 
