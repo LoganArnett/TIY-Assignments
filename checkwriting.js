@@ -27,16 +27,37 @@ function test(actual, expected, success){
  *
  * EXTRA Credit:
  * $12345678.90 => "twelve million, three hundred forty five thousand,
- six hundred seventy eight and 90/100s"
+ * six hundred seventy eight and 90/100s"
  *
  * Make up your own, too.
  */
+numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen","seventeen", "eighteen", "nineteen"]
+tens = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+hundreds = ["zero", "one hundred ", "two hundred ", "three hundred ", "four hundred ","five hundred ", "six hundred ", "seven hundred ", "eight hundred ","nine hundred "]
+var numerals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
- var num2Letters = function(number){
-   if (number == 1){
-     return "one";
-   }
- }
+function num2letter(num) {
+var cents = ((num - Math.floor(num))* 100).toFixed(0)
+num = Math.floor(num)
+var val = num.toString();
 
- console.log('it should convert 1 to "one"',
-        num2Letters(1) === "one");
+    if (num < 20){
+    return numbers[num] + " dollars and " + cents + "/100 cents";
+  }
+    if (num < 100) {
+      if (num % 10 === 0) {
+      return tens[val[0]] + " dollars and " + cents + "/100 cents";
+    } {
+      return tens[val[0]] + ones[val[1]] + " dollars and " + cents + "/100 cents";
+    }
+  }
+}
+
+console.log(num2letter(1.23))
+console.log(num2letter(9.50))
+console.log(num2letter(6.72))
+console.log(num2letter(20.20))
+console.log(num2letter(30.30))
+console.log(num2letter(40.40))
+console.log(num2letter(50.50))
