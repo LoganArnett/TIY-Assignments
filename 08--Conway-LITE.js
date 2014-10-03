@@ -126,9 +126,9 @@ function test(actual, expected, success){
  *
  * @return Array of Array of Boolean
  */
-function board(){
+function board(x, y){
     return [
-        [ false,
+        [ true,
           false,
           false],
                 [ false,
@@ -142,7 +142,11 @@ function board(){
 
 var coordBoard = board();
 
-console.log(coordBoard[1][1]);
+console.log(coordBoard[0][1]);
+
+//for (var i === 0, i < coordBoard.length){
+//  return true;
+//}
 
 function conway(cell, neighborsOf){
   var neighbors = 0;
@@ -153,15 +157,15 @@ function conway(cell, neighborsOf){
 function neighborsOf(x, y){
   var count = 0;
     if (x === 0 && y === 0){
-      neighbors = [0,1], [1,0], [1,1];
+      neighbors = [[0,1], [1,0], [1,1]];
       count++;
     }
     if (x === 1 && y === 0){
-      neighbors = [0,0], [0,1], [1,1], [2,0], [2,1];
+      neighbors = [[0,0], [0,1], [1,1], [2,0], [2,1]];
       count++;
     }
     if (x === 2 && y === 0){
-      neighbors = [1,1], [1,0], [2,1];
+      neighbors = [[1,1], [1,0], [2,1]];
       count++;
     }
     if (x === 0 && y === 1){
@@ -177,20 +181,22 @@ function neighborsOf(x, y){
       count++;
     }
     if (x === 0 && y === 2){
-      neighbors = [0,1], [1,1], [1,2];
+      neighbors = [[0,1], [1,1], [1,2]];
       count++;
     }
     if (x === 1 && y === 2){
-      neighbors = [0,1], [0,2], [1,1], [2,1], [2,2];
+      neighbors = [[0,1], [0,2], [1,1], [2,1], [2,2]];
       count++;
     }
     if (x === 2 && y === 2){
-      neighbors = [1,1], [1,2], [2,1];
+      neighbors = [[1,1], [1,2], [2,1]];
       count++;
     }
     return neighbors;
 
   }
+
+  console.log(neighborsOf(1,2));
 
   /*Rule #1
   if (neighbors < 2 && cell == true){
