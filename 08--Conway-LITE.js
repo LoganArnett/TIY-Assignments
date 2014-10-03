@@ -136,6 +136,8 @@ function board(){
 }
 
 function conway(cell, neighborsOf){
+  var neighbors = 0;
+
    return "State of cell based on neighbors and 4 rules"
  }
 
@@ -180,5 +182,26 @@ function neighborsOf(x, y){
     return neighbors;
 
   }
+
+  /*Rule #1
+  if (neighbors < 2 && cell == true){
+    return cell = false;
+  }
+
+  //Rule #2
+  if (neighbors == 2 || neighbors == 3 && cell = true){
+    return cell = true;
+  }
+
+  //Rule #3
+  if (neighbors > 3 && cell == true){
+    return cell = false;
+  }
+
+  //Rule #4
+  if (neighbors ===3 && cell == false){
+    return cell = true;
+  }
+*/
 
 console.log(neighborsOf(2,1));
