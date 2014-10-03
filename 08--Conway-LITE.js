@@ -33,7 +33,6 @@
  *
  * Write a function called `neighborsOf` that...
  *
-}
  * - GIVEN a `board` and `row` and `col` coordinates...
  * - THEN returns a list of the neighboring cells.
  *
@@ -129,11 +128,21 @@ function test(actual, expected, success){
  */
 function board(){
     return [
-        [ false, false, false ],
-        [ false, false, false ],
-        [ false, false, false ],
+        [ false,
+          false,
+          false],
+                [ false,
+                  true,
+                  false],
+                       [ false,
+                         false,
+                         false],
     ];
 }
+
+var coordBoard = board();
+
+console.log(coordBoard[1][1]);
 
 function conway(cell, neighborsOf){
   var neighbors = 0;
@@ -204,4 +213,4 @@ function neighborsOf(x, y){
   }
 */
 
-console.log(neighborsOf(2,1));
+//console.log(neighborsOf(2,1));
