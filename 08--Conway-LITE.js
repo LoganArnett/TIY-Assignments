@@ -32,8 +32,7 @@
  * - THEN returns the state of the `cell` with the rules applied.
  *
  * Write a function called `neighborsOf` that...
- *   function neighborsOf([board], (col, row){
-      return neighborsOf
+ *
 }
  * - GIVEN a `board` and `row` and `col` coordinates...
  * - THEN returns a list of the neighboring cells.
@@ -130,11 +129,56 @@ function test(actual, expected, success){
  */
 function board(){
     return [
-        [ (0,0), (0,1), (0,2) ],
-        [ (1,0), (1,1), (1,2) ],
-        [ (2,0), (2,1), (2,2) ],
+        [ false, false, false ],
+        [ false, false, false ],
+        [ false, false, false ],
     ];
 }
 
 function conway(cell, neighborsOf){
    return "State of cell based on neighbors and 4 rules"
+ }
+
+function neighborsOf(x, y){
+  var count = 0;
+    if (x === 0 && y === 0){
+      neighbors = [0,1], [1,0], [1,1];
+      count++;
+    }
+    if (x === 1 && y === 0){
+      neighbors = [0,0], [0,1], [1,1], [2,0], [2,1];
+      count++;
+    }
+    if (x === 2 && y === 0){
+      neighbors = [1,1], [1,0], [2,1];
+      count++;
+    }
+    if (x === 0 && y === 1){
+      neighbors = [(0,0), (1,0), (1,1), (1,2), (0,2)];
+      count++;
+    }
+    if (x === 1 && y === 1){
+      neighbors = [[0,0], [1,0], [2,0], [0,1], [2,1], [0,2], [1,2], [2,2]];
+      count++;
+    }
+    if (x === 2 && y === 1){
+      neighbors = [[2,0], [1,0], [1,1], [1,2], [2,2]];
+      count++;
+    }
+    if (x === 0 && y === 2){
+      neighbors = [0,1], [1,1], [1,2];
+      count++;
+    }
+    if (x === 1 && y === 2){
+      neighbors = [0,1], [0,2], [1,1], [2,1], [2,2];
+      count++;
+    }
+    if (x === 2 && y === 2){
+      neighbors = [1,1], [1,2], [2,1];
+      count++;
+    }
+    return neighbors;
+
+  }
+
+console.log(neighborsOf(2,1));
