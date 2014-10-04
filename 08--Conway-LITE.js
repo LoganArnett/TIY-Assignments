@@ -131,61 +131,48 @@ board = [
         [ false, true, false],
         [ false, false, false],
     ]
-
-function conway(cell, neighborsOf){
-  var cellIsAlive = 0;
+var cellsFate;
+function conway(cell, neighbors){
+  var neighAlive = 0;
   for (i = 0, i < neighbors.length, i++) {
+    if (neighbors[i] === true){
+      neighAlive++;
+    }
+
     /* Rule #1: Any live cell with fewer than two live
     * neighbours dies, as if caused by under-population.
     */
-    if (neighbors.length < 2 && cell == true){
-      return cell = false;
-      cellIsAlive--
+    if (cell === true && neighAlive < 2){
+        cellsFate = false;
     };
+
     /* Rule #2: Any live cell with two or three live
     * neighbours lives on to the next generation.
     */
-    if ((neighbors.length === 2 || neighbors.length === 3) && cell == true){
-      return cell = true;
-      cellIsAlive++
+
+    else if (cell === true && (neighAlive === 2 || neighAlive === 3)){
+        cellsFate = true;
     };
+
     /* Rule #3: Any live cell with more than three live
      * neighbours dies, as if by overcrowding.
      */
-    if ((neighbors.length > 3) && cell == true){
-      return cell = false;
-      cellIsAlive--
+    else if (cell === true && neighAlive > 3){
+        cellsFate = false;
     };
+
     /* Rule #4: Any dead cell with exactly three live
      * neighbours becomes a live cell, as if by reproduction.
      */
-    if ((neighbors.length === 3 && cell == false){
-      return cell = true;
-      cellIsAlive++
+    else if (cell === false && neighAlive === 3){
+        cellsFate = true;
     };
 
+    else {
+      cellsFate = false
+    };
+    return cellsFate;
   }
-/*Rule #1
-if (neighbors < 2 && cell == true){
-  return cell = false;
-}
-
-//Rule #2
-if (neighbors == 2 || neighbors == 3 && cell = true){
-  return cell = true;
-}
-
-//Rule #3
-if (neighbors > 3 && cell == true){
-  return cell = false;
-}
-
-//Rule #4
-if (neighbors ===3 && cell == false){
-  return cell = true;
-}
-*/
-   return "State of cell based on neighbors and 4 rules"
  }
 
 
