@@ -115,9 +115,7 @@ var assert = require('assert');
  */
 function test(actual, expected, success){
     if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
-
     assert.strictEqual(actual, expected);
-
     console.log(success);
 }
 
@@ -127,53 +125,62 @@ function test(actual, expected, success){
  * @return Array of Array of Boolean
  */
 board = [
-        [ true, false, false],
-        [ false, true, false],
-        [ false, false, false],
-    ]
+        [ false,
+          false,
+          false],
+                [ true,
+                  true,
+                  true],
+                       [ false,
+                         false,
+                         false]
+    ];
+
 var cellsFate;
-function conway(cell, neighbors){
+function conway(cell, neighbors) {
   var neighAlive = 0;
-  for (i = 0, i < neighbors.length, i++) {
-    if (neighbors[i] === true){
+  for (i = 0; i < neighbors.length; i++) {
+    if (neighbors[i] === true)
       neighAlive++;
     }
 
     /* Rule #1: Any live cell with fewer than two live
     * neighbours dies, as if caused by under-population.
     */
-    if (cell === true && neighAlive < 2){
+    if (cell === true) {
+      if (neighAlive < 2) {
         cellsFate = false;
-    };
+    }
 
     /* Rule #2: Any live cell with two or three live
     * neighbours lives on to the next generation.
     */
 
-    else if (cell === true && (neighAlive === 2 || neighAlive === 3)){
+      if (neighAlive === 2 || neighAlive === 3) {
         cellsFate = true;
-    };
+    }
 
     /* Rule #3: Any live cell with more than three live
      * neighbours dies, as if by overcrowding.
      */
-    else if (cell === true && neighAlive > 3){
+      if (neighAlive > 3) {
         cellsFate = false;
-    };
-
+    }
+  }
     /* Rule #4: Any dead cell with exactly three live
      * neighbours becomes a live cell, as if by reproduction.
      */
-    else if (cell === false && neighAlive === 3){
+    if (cell === false) {
+      if (neighAlive === 3) {
         cellsFate = true;
-    };
-
+    }
     else {
-      cellsFate = false
-    };
-    return cellsFate;
+      cellsFate = false;
+    }
   }
- }
+    return cellsFate
+  }
+
 
 
 /** neighborsOf Function:
@@ -184,7 +191,7 @@ function conway(cell, neighbors){
 var neighbors;
 function neighborsOf(board, x, y){
 
-    if (x === 0 && y === 0){
+    if (x === 0 && y === 0) {
       neighbors = [board[0][1], board[1][0], board[1][1]]
     };
     if (x === 1 && y === 0){
@@ -215,17 +222,41 @@ function neighborsOf(board, x, y){
     return neighbors;
   }
 
-/*Setting neighborsOf actual variables for testing
-  var actual  = neighborsOf(board, 0, 0);
-  var actual2 = neighborsOf(board, 1, 0);
-  var actual3 = neighborsOf(board, 2, 0);
-  var actual4 = neighborsOf(board, 0, 1);
-  var actual5 = neighborsOf(board, 1, 1);
-  var actual6 = neighborsOf(board, 2, 1);
-  var actual7 = neighborsOf(board, 0, 2);
-  var actual8 = neighborsOf(board, 1, 2);
-  var actual9 = neighborsOf(board, 2, 2);
-*/
+//Setting neighborsOf actual variables for testing
+  var actual  = neighborsOf(board, 0, 0)
+  var actual2 = neighborsOf(board, 1, 0)
+  var actual3 = neighborsOf(board, 2, 0)
+  var actual4 = neighborsOf(board, 0, 1)
+  var actual5 = neighborsOf(board, 1, 1)
+  var actual6 = neighborsOf(board, 2, 1)
+  var actual7 = neighborsOf(board, 0, 2)
+  var actual8 = neighborsOf(board, 1, 2)
+  var actual9 = neighborsOf(board, 2, 2)
+
+//Setting conway variables for testing, board represents
+// the (x, y coordinates) and actual pulls up the neighborsOf
+  var con1 = conway(board[0][0], actual)
+  var con2 = conway(board[1][0], actual2)
+  var con3 = conway(board[2][0], actual3)
+  var con4 = conway(board[0][1], actual4)
+  var con5 = conway(board[1][1], actual5)
+  var con6 = conway(board[2][1], actual6)
+  var con7 = conway(board[0][2], actual7)
+  var con8 = conway(board[1][2], actual8)
+  var con9 = conway(board[2][2], actual9)
+
+//Testing the conway function for accuracy
+test(con1, false, 'Testing x=0 and y=0 which should return a Dead cell of False')
+test(con2, false, 'Testing x=1 and y=0 which should return a Dead cell of False');
+test(con3, false, 'Testing x=2 and y=0 which should return a Dead cell of False');
+test(con4, true, 'Testing x=0 and y=1 which should return a Live cell of True');
+test(con5, true, 'Testing x=1 and y=1 which should return a Live cell of True');
+test(con6, true, 'Testing x=2 and y=1 which should return a Live cell of True');
+test(con7, false, 'Testing x=0 and y=2 which should return a Dead cell of False');
+test(con8, false, 'Testing x=1 and y=2 which should return a Dead cell of False');
+test(con9, false, 'Testing x=2 and y=2 which should return a Dead cell of False');
+
+
 
 /*Testing the neighborsOf function to ensure the neighbors are correct
 test(actual[0], board[0][1], 'Neighbor Test of (0,0)');
