@@ -114,7 +114,7 @@ var assert = require('assert');
  * @param String success
  */
 function test(actual, expected, success){
-    if (success === undefined) success = 'pass!';
+    if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
 
     assert.strictEqual(actual, expected);
 
@@ -137,54 +137,99 @@ function conway(cell, neighborsOf){
 
    return "State of cell based on neighbors and 4 rules"
  }
-
+/** neighborsOf Function:
+ * if given coordinates (x, y),
+ * find their neighbors on the board based on the
+ * value of x && y.
+ */
 var neighbors;
 function neighborsOf(board, x, y){
 
     if (x === 0 && y === 0){
       neighbors = [board[0][1], board[1][0], board[1][1]]
-
     };
     if (x === 1 && y === 0){
       neighbors = [board[0][0], board[0][1], board[1][1], board[2][0], board[2][1]]
-
     };
     if (x === 2 && y === 0){
       neighbors = [board[1][1], board[1][0], board[2][1]]
-
     };
     if (x === 0 && y === 1){
       neighbors = [board[0][0], board[1][0], board[1][1], board[1][2], board[0][2]]
-
     };
     if (x === 1 && y === 1){
       neighbors = [board[0][0], board[1][0], board[2][0], board[0][1], board[2][1],
       board[0][2], board[1][2], board[2][2]]
-
     };
     if (x === 2 && y === 1){
       neighbors = [board[2][0], board[1][0], board[1][1], board[1][2], board[2][2]]
-
     };
     if (x === 0 && y === 2){
       neighbors = [board[0][1], board[1][1], board[1][2]]
-
     };
      if (x === 1 && y === 2){
        neighbors = [board[0][1], board[0][2], board[1][1], board[2][1], board[2][2]]
-
      };
-
     if (x === 2 && y === 2){
       neighbors = [board[1][1], board[1][2], board[2][1]]
-
     };
     return neighbors;
 
   }
+//Setting neighborsOf actual variables for testing
+  var actual  = neighborsOf(board, 0, 0);
+  var actual2 = neighborsOf(board, 1, 0);
+  var actual3 = neighborsOf(board, 2, 0);
+  var actual4 = neighborsOf(board, 0, 1);
+  var actual5 = neighborsOf(board, 1, 1);
+  var actual6 = neighborsOf(board, 2, 1);
+  var actual7 = neighborsOf(board, 0, 2);
+  var actual8 = neighborsOf(board, 1, 2);
+  var actual9 = neighborsOf(board, 2, 2);
 
-  var actual = neighborsOf(board, 0, 0);
-test(actual[0], board[0][1]);
+//Testing the neighborsOf function to ensure the neighbors are correct
+test(actual[0], board[0][1], 'Neighbor Test of (0,0)');
+test(actual[1], board[1][0], 'Neighbor Test of (0,0)');
+test(actual[2], board[1][1], 'Neighbor Test of (0,0)');
+test(actual2[0], board[0][0], 'Neighbor Test of (1,0)');
+test(actual2[1], board[0][1], 'Neighbor Test of (1,0)');
+test(actual2[2], board[1][1], 'Neighbor Test of (1,0)');
+test(actual2[3], board[2][0], 'Neighbor Test of (1,0)');
+test(actual2[4], board[2][1], 'Neighbor Test of (1,0)');
+test(actual3[0], board[1][1], 'Neighbor Test of (2,0)');
+test(actual3[1], board[1][0], 'Neighbor Test of (2,0)');
+test(actual3[2], board[2][1], 'Neighbor Test of (2,0)');
+test(actual4[0], board[0][0], 'Neighbor Test of (0,1)');
+test(actual4[1], board[1][0], 'Neighbor Test of (0,1)');
+test(actual4[2], board[1][1], 'Neighbor Test of (0,1)');
+test(actual4[3], board[1][2], 'Neighbor Test of (0,1)');
+test(actual4[4], board[0][2], 'Neighbor Test of (0,1)');
+test(actual5[0], board[0][0], 'Neighbor Test of (1,1)');
+test(actual5[1], board[1][0], 'Neighbor Test of (1,1)');
+test(actual5[2], board[2][0], 'Neighbor Test of (1,1)');
+test(actual5[3], board[0][1], 'Neighbor Test of (1,1)');
+test(actual5[4], board[2][1], 'Neighbor Test of (1,1)');
+test(actual5[5], board[0][2], 'Neighbor Test of (1,1)');
+test(actual5[6], board[1][2], 'Neighbor Test of (1,1)');
+test(actual5[7], board[2][2], 'Neighbor Test of (1,1)');
+test(actual6[0], board[2][0], 'Neighbor Test of (2,1)');
+test(actual6[1], board[1][0], 'Neighbor Test of (2,1)');
+test(actual6[2], board[1][1], 'Neighbor Test of (2,1)');
+test(actual6[3], board[1][2], 'Neighbor Test of (2,1)');
+test(actual6[4], board[2][2], 'Neighbor Test of (2,1)');
+test(actual7[0], board[0][1], 'Neighbor Test of (0,2)');
+test(actual7[1], board[1][1], 'Neighbor Test of (0,2)');
+test(actual7[2], board[1][2], 'Neighbor Test of (0,2)');
+test(actual8[0], board[0][1], 'Neighbor Test of (1,2)');
+test(actual8[1], board[0][2], 'Neighbor Test of (1,2)');
+test(actual8[2], board[1][1], 'Neighbor Test of (1,2)');
+test(actual8[3], board[2][1], 'Neighbor Test of (1,2)');
+test(actual8[4], board[2][2], 'Neighbor Test of (1,2)');
+test(actual9[0], board[1][1], 'Neighbor Test of (2,2)');
+test(actual9[1], board[1][2], 'Neighbor Test of (2,2)');
+test(actual9[2], board[2][1], 'Neighbor Test of (2,2)');
+
+
 
   /*Rule #1
   if (neighbors < 2 && cell == true){
