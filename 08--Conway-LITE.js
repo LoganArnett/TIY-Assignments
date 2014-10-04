@@ -133,10 +133,62 @@ board = [
     ]
 
 function conway(cell, neighborsOf){
+  var cellIsAlive = 0;
+  for (i = 0, i < neighbors.length, i++) {
+    /* Rule #1: Any live cell with fewer than two live
+    * neighbours dies, as if caused by under-population.
+    */
+    if (neighbors.length < 2 && cell == true){
+      return cell = false;
+      cellIsAlive--
+    };
+    /* Rule #2: Any live cell with two or three live
+    * neighbours lives on to the next generation.
+    */
+    if ((neighbors.length === 2 || neighbors.length === 3) && cell == true){
+      return cell = true;
+      cellIsAlive++
+    };
+    /* Rule #3: Any live cell with more than three live
+     * neighbours dies, as if by overcrowding.
+     */
+    if ((neighbors.length > 3) && cell == true){
+      return cell = false;
+      cellIsAlive--
+    };
+    /* Rule #4: Any dead cell with exactly three live
+     * neighbours becomes a live cell, as if by reproduction.
+     */
+    if ((neighbors.length === 3 && cell == false){
+      return cell = true;
+      cellIsAlive++
+    };
 
+  }
+/*Rule #1
+if (neighbors < 2 && cell == true){
+  return cell = false;
+}
 
+//Rule #2
+if (neighbors == 2 || neighbors == 3 && cell = true){
+  return cell = true;
+}
+
+//Rule #3
+if (neighbors > 3 && cell == true){
+  return cell = false;
+}
+
+//Rule #4
+if (neighbors ===3 && cell == false){
+  return cell = true;
+}
+*/
    return "State of cell based on neighbors and 4 rules"
  }
+
+
 /** neighborsOf Function:
  * if given coordinates (x, y),
  * find their neighbors on the board based on the
@@ -174,9 +226,9 @@ function neighborsOf(board, x, y){
       neighbors = [board[1][1], board[1][2], board[2][1]]
     };
     return neighbors;
-
   }
-//Setting neighborsOf actual variables for testing
+
+/*Setting neighborsOf actual variables for testing
   var actual  = neighborsOf(board, 0, 0);
   var actual2 = neighborsOf(board, 1, 0);
   var actual3 = neighborsOf(board, 2, 0);
@@ -186,8 +238,9 @@ function neighborsOf(board, x, y){
   var actual7 = neighborsOf(board, 0, 2);
   var actual8 = neighborsOf(board, 1, 2);
   var actual9 = neighborsOf(board, 2, 2);
+*/
 
-//Testing the neighborsOf function to ensure the neighbors are correct
+/*Testing the neighborsOf function to ensure the neighbors are correct
 test(actual[0], board[0][1], 'Neighbor Test of (0,0)');
 test(actual[1], board[1][0], 'Neighbor Test of (0,0)');
 test(actual[2], board[1][1], 'Neighbor Test of (0,0)');
@@ -228,28 +281,4 @@ test(actual8[4], board[2][2], 'Neighbor Test of (1,2)');
 test(actual9[0], board[1][1], 'Neighbor Test of (2,2)');
 test(actual9[1], board[1][2], 'Neighbor Test of (2,2)');
 test(actual9[2], board[2][1], 'Neighbor Test of (2,2)');
-
-
-
-  /*Rule #1
-  if (neighbors < 2 && cell == true){
-    return cell = false;
-  }
-
-  //Rule #2
-  if (neighbors == 2 || neighbors == 3 && cell = true){
-    return cell = true;
-  }
-
-  //Rule #3
-  if (neighbors > 3 && cell == true){
-    return cell = false;
-  }
-
-  //Rule #4
-  if (neighbors ===3 && cell == false){
-    return cell = true;
-  }
 */
-
-//console.log(neighborsOf(2,1));
