@@ -126,77 +126,65 @@ function test(actual, expected, success){
  *
  * @return Array of Array of Boolean
  */
-function board(x, y){
-    return [
-        [ true,
-          false,
-          false],
-                [ false,
-                  true,
-                  false],
-                       [ false,
-                         false,
-                         false],
-    ];
-}
-
-var coordBoard = board();
-
-console.log(coordBoard[0][1]);
-
-//for (var i === 0, i < coordBoard.length){
-//  return true;
-//}
+board = [
+        [ true, false, false],
+        [ false, true, false],
+        [ false, false, false],
+    ]
 
 function conway(cell, neighborsOf){
-  var neighbors = 0;
+
 
    return "State of cell based on neighbors and 4 rules"
  }
 
-function neighborsOf(x, y){
-  var count = 0;
+var neighbors;
+function neighborsOf(board, x, y){
+
     if (x === 0 && y === 0){
-      neighbors = [[0,1], [1,0], [1,1]];
-      count++;
-    }
+      neighbors = [board[0][1], board[1][0], board[1][1]]
+
+    };
     if (x === 1 && y === 0){
-      neighbors = [[0,0], [0,1], [1,1], [2,0], [2,1]];
-      count++;
-    }
+      neighbors = [board[0][0], board[0][1], board[1][1], board[2][0], board[2][1]]
+
+    };
     if (x === 2 && y === 0){
-      neighbors = [[1,1], [1,0], [2,1]];
-      count++;
-    }
+      neighbors = [board[1][1], board[1][0], board[2][1]]
+
+    };
     if (x === 0 && y === 1){
-      neighbors = [(0,0), (1,0), (1,1), (1,2), (0,2)];
-      count++;
-    }
+      neighbors = [board[0][0], board[1][0], board[1][1], board[1][2], board[0][2]]
+
+    };
     if (x === 1 && y === 1){
-      neighbors = [[0,0], [1,0], [2,0], [0,1], [2,1], [0,2], [1,2], [2,2]];
-      count++;
-    }
+      neighbors = [board[0][0], board[1][0], board[2][0], board[0][1], board[2][1],
+      board[0][2], board[1][2], board[2][2]]
+
+    };
     if (x === 2 && y === 1){
-      neighbors = [[2,0], [1,0], [1,1], [1,2], [2,2]];
-      count++;
-    }
+      neighbors = [board[2][0], board[1][0], board[1][1], board[1][2], board[2][2]]
+
+    };
     if (x === 0 && y === 2){
-      neighbors = [[0,1], [1,1], [1,2]];
-      count++;
-    }
-    if (x === 1 && y === 2){
-      neighbors = [[0,1], [0,2], [1,1], [2,1], [2,2]];
-      count++;
-    }
+      neighbors = [board[0][1], board[1][1], board[1][2]]
+
+    };
+     if (x === 1 && y === 2){
+       neighbors = [board[0][1], board[0][2], board[1][1], board[2][1], board[2][2]]
+
+     };
+
     if (x === 2 && y === 2){
-      neighbors = [[1,1], [1,2], [2,1]];
-      count++;
-    }
+      neighbors = [board[1][1], board[1][2], board[2][1]]
+
+    };
     return neighbors;
 
   }
 
-  console.log(neighborsOf(1,2));
+  var actual = neighborsOf(board, 0, 0);
+test(actual[0], board[0][1]);
 
   /*Rule #1
   if (neighbors < 2 && cell == true){
