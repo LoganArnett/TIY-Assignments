@@ -126,13 +126,13 @@ function test(actual, expected, success){
  */
 board = [
         [ false,
-          false,
+          true,
           false],
-                [ true,
+                [ false,
                   true,
-                  true],
+                  false],
                        [ false,
-                         false,
+                         true,
                          false]
     ];
 
@@ -222,6 +222,11 @@ function neighborsOf(board, x, y){
     return neighbors;
   }
 
+function tick (board) {
+  var newBoard = board
+  if (cellsFate[j] === )
+}
+
 //Setting neighborsOf actual variables for testing
   var actual  = neighborsOf(board, 0, 0)
   var actual2 = neighborsOf(board, 1, 0)
@@ -245,7 +250,20 @@ function neighborsOf(board, x, y){
   var con8 = conway(board[1][2], actual8)
   var con9 = conway(board[2][2], actual9)
 
-//Testing the conway function for accuracy
+/*Testing the conway function for accuracy
+  Conway Test Round 2: Completed Successful rotation
+test(con1, false, 'Testing x=0 and y=0 which should return a Dead cell of False')
+test(con2, true, 'Testing x=1 and y=0 which should return a Live cell of True');
+test(con3, false, 'Testing x=2 and y=0 which should return a Dead cell of False');
+test(con4, false, 'Testing x=0 and y=1 which should return a Live cell of True');
+test(con5, true, 'Testing x=1 and y=1 which should return a Live cell of True');
+test(con6, false, 'Testing x=2 and y=1 which should return a Live cell of True');
+test(con7, false, 'Testing x=0 and y=2 which should return a Dead cell of False');
+test(con8, true, 'Testing x=1 and y=2 which should return a Live cell of True');
+test(con9, false, 'Testing x=2 and y=2 which should return a Dead cell of False');
+
+
+  Conway Test Round 1
 test(con1, false, 'Testing x=0 and y=0 which should return a Dead cell of False')
 test(con2, false, 'Testing x=1 and y=0 which should return a Dead cell of False');
 test(con3, false, 'Testing x=2 and y=0 which should return a Dead cell of False');
@@ -255,6 +273,7 @@ test(con6, true, 'Testing x=2 and y=1 which should return a Live cell of True');
 test(con7, false, 'Testing x=0 and y=2 which should return a Dead cell of False');
 test(con8, false, 'Testing x=1 and y=2 which should return a Dead cell of False');
 test(con9, false, 'Testing x=2 and y=2 which should return a Dead cell of False');
+*/
 
 
 
