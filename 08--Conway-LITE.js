@@ -222,9 +222,15 @@ function neighborsOf(board, x, y){
     return neighbors;
   }
 
+//tick Function for newBoards to be produced
 function tick (board) {
-  var newBoard = board
-  if (cellsFate[j] === )
+  var newBoard = []
+
+  for (var j = 0; j < board.length; j++) {
+     for (var k = 0; k < board[j].length; k++) {
+      newBoard.push(conway(board[j][k], neighborsOf(board, j, k)));
+    }
+  }
 }
 
 //Setting neighborsOf actual variables for testing
@@ -250,6 +256,7 @@ function tick (board) {
   var con8 = conway(board[1][2], actual8)
   var con9 = conway(board[2][2], actual9)
 
+test(tick(board));
 /*Testing the conway function for accuracy
   Conway Test Round 2: Completed Successful rotation
 test(con1, false, 'Testing x=0 and y=0 which should return a Dead cell of False')
