@@ -17,6 +17,54 @@ function test(actual, expected, success){
  * practice here, but backwards. Hooray!
  */
 
+ function toEnglish(value){
+   if (value === 5){
+     return "five";
+   }
+   if (value === 4){
+     return "four";
+   }
+   if (value === 3){
+     return "three";
+   }
+   if (value === 2){
+     return "two";
+   }
+   return "one"
+ }
+test(true, true, 'true is true');
+
+var testCases = [
+[0, 'zero'],
+[ 1, 'one'],
+[ 2, 'two'],
+[ 3, 'three'],
+[ 4, 'four'],
+[ 5, 'five']
+];
+
+var index = 0, testCase;
+while(index < testCases.length){
+  testCase = testCases[index];
+  actual = toEnglish(testCase[0]);
+  expected = testCase[1];
+  test(actual, expected,
+  testCase[0] + ' >> ' + testCase[1]
+);
+index++;
+}
+
+[ 1, 'one']
+[ 2, 'two']
+[ 3, 'three']
+[ 4, 'four']
+[ 5, 'five']
+test(toEnglish(2), "two", 'two >> 2');
+test(toEnglish(1), "one", 'one >> 1');
+test(toEnglish(3), "three", 'three >> 3');
+test(toEnglish(4), "four", 'four >> 4');
+test(toEnglish(5), "five", 'five >> 5');
+
  /**
  * Sample Data
  *
@@ -31,7 +79,7 @@ function test(actual, expected, success){
  *
  * Make up your own, too.
  */
-numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+/**numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen","seventeen", "eighteen", "nineteen"]
 tens = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
 hundreds = ["zero", "one hundred ", "two hundred ", "three hundred ", "four hundred ","five hundred ", "six hundred ", "seven hundred ", "eight hundred ","nine hundred "]
@@ -60,4 +108,4 @@ console.log(num2letter(6.72))
 console.log(num2letter(20.20))
 console.log(num2letter(30.30))
 console.log(num2letter(40.40))
-console.log(num2letter(50.50))
+console.log(num2letter(50.50))*/
