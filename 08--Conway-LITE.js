@@ -228,9 +228,10 @@ function tick (board) {
 
   for (var j = 0; j < board.length; j++) {
      for (var k = 0; k < board[j].length; k++) {
-      newBoard.push(conway(board[j][k], neighborsOf(board, j, k)));
+      newBoard.push(conway(board[j][k], neighborsOf(board, j, k)));//replace original board values with a new board of pushed values
     }
   }
+  return newBoard;
 }
 
 //Setting neighborsOf actual variables for testing
