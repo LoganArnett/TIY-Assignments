@@ -126,13 +126,13 @@ function test(actual, expected, success){
  */
 board = [
         [ false,
-          true,
+          false,
           false],
                 [ false,
-                  true,
+                  false,
                   false],
                        [ false,
-                         true,
+                         false,
                          false]
     ];
 
@@ -224,14 +224,21 @@ function neighborsOf(board, x, y){
 
 //tick Function for newBoards to be produced
 function tick (board) {
-  var newBoard = []
+  var newBoard = []//A new empty array
 
   for (var j = 0; j < board.length; j++) {
      for (var k = 0; k < board[j].length; k++) {
       newBoard.push(conway(board[j][k], neighborsOf(board, j, k)));//replace original board values with a new board of pushed values
     }
   }
-  return newBoard;
+  /*.splice takes the newBoard and splices into new pieces
+  that will return as 3 seperate Arrays to recreate the
+  next board in the sequence
+  */
+  var new1 = newBoard.splice(0,3);//first array
+  var new2 = newBoard.splice(0,3);//second array
+  board = [new1, new2, newBoard];//The new board is stored back in the original board variable
+  return board;
 }
 
 //Setting neighborsOf actual variables for testing
@@ -257,7 +264,77 @@ function tick (board) {
   var con8 = conway(board[1][2], actual8)
   var con9 = conway(board[2][2], actual9)
 
-test(tick(board));
+//Creating alternate boards for tick testing
+  var board2 = [[false,
+                 false,
+                 true],
+                     [false,
+                      false,
+                      false],
+                            [false,
+                             false,
+                             false]
+              ]
+  var board3 = [[false,
+                 false,
+                 true],
+                     [false,
+                      true,
+                      false],
+                            [false,
+                             false,
+                             false]
+              ]
+  var board4 = [[true,
+                 false,
+                 false],
+                     [true,
+                      false,
+                      false],
+                            [false,
+                             false,
+                             false]
+              ]
+  var board5 = [[false,
+                 true,
+                 false],
+                     [false,
+                      true,
+                      false],
+                            [false,
+                             true,
+                             false]
+              ]
+  var board6 = [[false,
+                 false,
+                 false],
+                     [false,
+                      false,
+                      false],
+                            [false,
+                             false,
+                             false]
+              ]
+
+/*Sweet test from Ari with printout of the rotations
+function tick_test(board) {
+  var after = tick(board)
+  console.log("-----------------------");
+  console.log(board);
+  console.log("-----------------------");
+  console.log(after);
+  console.log("-----------------------");
+}
+*/
+
+//test(tick(board), console.log(tick(board)));
+//test(tick(board2), console.log(tick(board2)));
+//test(tick(board3), console.log(tick(board3)));
+//test(tick(board4), console.log(tick(board4)));
+//test(tick(board5), console.log(tick(board5)));
+//tick_test(board5);
+
+
 /*Testing the conway function for accuracy
   Conway Test Round 2: Completed Successful rotation
 test(con1, false, 'Testing x=0 and y=0 which should return a Dead cell of False')
