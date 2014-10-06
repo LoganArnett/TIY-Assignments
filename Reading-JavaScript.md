@@ -132,4 +132,79 @@ var d3_nsPrefix = {
   * xlink: String "http://www.w3.org/1999/xlink"
   * xml: String "http://www.w3.org/XML/1998/namespace"
   * xmlns: String "http://www.w3.org/2000/xmlns/"
+  
+```javascript
+this.zoomable = opts.zoomable || false;
+```
+
+* Variable: `this.zoomable`
+* Value: Conditional opts.zoomable ||(or) false
+
+```javascript
+HGraph.prototype.calculateScoreFromValue = function (features, myValue){
+	var maxHealthyValue = features.healthyrange[1];
+	var minHealthyValue = features.healthyrange[0];
+	var maxAcceptableValue = features.totalrange[1];
+	var minAcceptableValue = features.totalrange[0];
+```
+
+* Variable: `HGraph.prototype.calculateScoreFromValue`
+* Value: Array
+  *  var maxHealthyValue = features.healthyrange[1];
+  *  var minHealthyValue = features.healthyrange[0];
+  *  var maxAcceptableValue = features.totalrange[1];
+  *  var minAcceptableValue = features.totalrange[0];
+ 
+```javascript
+for ( key in this.layers ) {
+		if (this.layers.hasOwnProperty(key)) {
+			layer = this.layers[key];
+
+			// Zoom the ring in.
+			if ( key === 'ring' ) {
+				layer.select('path')
+					.transition().ease('elastic')
+						.duration(this.zoomTime)
+						.attr('d', getZoomedRingPath());
+			// Do the datapoints
+			} else if ( key === 'datapoints') {
+				layer.selectAll('circle')
+					.transition().ease('elastic')
+						.duration(this.zoomTime)
+						.attr('cx', getZoomedX)
+						.attr('cy', getZoomedY);
+
+				// And the labels
+				if (this.showLabels) {
+					labels = layer.selectAll('text');
+					labels
+						.transition().ease('elastic')
+							.duration(this.zoomTime)
+							.attr('x', getZoomedX)
+							.attr('y', getZoomedY);
+
+
+					window.setTimeout(function(){
+						labels.text(setDetailText);
+					}, this.zoomTime);
+				}
+			} else if ( key === 'web') {
+				this.updateWeb(true, true);
+			}
+
+			// Move it to the new origin point.
+			layer
+				.transition().ease('quad-out')
+				.duration(this.zoomTime * 0.8)
+				.each("end", function() { that.transitioning = false})
+				.attr('transform', translateToPoint(this.halfWidth - (this.x*zoomFactor), this.halfHeight - (this.y*zoomFactor)));
+
+		}
+	}
+```
+
+* Variable: `this.layers`
+* Value: For Loop `For this, If this return this, else if, else if, else if, ...`
+
+
 
