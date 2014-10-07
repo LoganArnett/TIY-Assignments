@@ -32,7 +32,8 @@ function test(actual, expected, success){
    }
    return "one"
  }
-test(true, true, 'true is true');
+//test(true, true, 'true is true');
+
 
 var testCases = [
 [0, 'zero'],
@@ -44,26 +45,30 @@ var testCases = [
 ];
 
 var index = 0, testCase;
-while(index < testCases.length){
+
+testCases.forEach(function(testCase, index, TestCases){
+//while(index < testCases.length){
   testCase = testCases[index];
   actual = toEnglish(testCase[0]);
   expected = testCase[1];
-  test(actual, expected,
-  testCase[0] + ' >> ' + testCase[1]
+  test(actual, expected, testCase[0] + ' >> ' + testCase[1]
 );
 index++;
-}
+});
 
 [ 1, 'one']
 [ 2, 'two']
 [ 3, 'three']
 [ 4, 'four']
 [ 5, 'five']
-test(toEnglish(2), "two", 'two >> 2');
-test(toEnglish(1), "one", 'one >> 1');
-test(toEnglish(3), "three", 'three >> 3');
-test(toEnglish(4), "four", 'four >> 4');
-test(toEnglish(5), "five", 'five >> 5');
+
+
+
+test(toEnglish(1));
+test(toEnglish(2));
+test(toEnglish(3));
+test(toEnglish(4));
+test(toEnglish(5));
 
  /**
  * Sample Data
