@@ -1,8 +1,4 @@
-var assert = require('assert');
 
-function test(actual, expected, success){
-    assert(actual === expected) || console.log(success);
-}
 
 /**
  * Check Writing
@@ -25,33 +21,73 @@ function test(actual, expected, success){
 
    var tens = [ 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy',
                 'eighty', 'ninety'];
-   if (value <= 19){
-     return ones;
-   }
+
    if (value > 19 ){
-     return tens;
-   }
-   if (value === 3){
-     return "three";
-   }
-   if (value === 2){
-     return "two";
-   }
-   return "one"
- }
+     value_ones = value - 20
+
+     value_tens = value/10;
+
+  if (value > 0){
+          return tens[value_tens - 1] + ' ' + ones[value_ones];
+        }
+
+        return tens[value_tens - 1];
+    }
+
+    return ones[value];
+  }
+
+  var assert = require('assert');
+
+  function test(actual, expected, success){
+      assert(actual === expected) || console.log(success);
+  }
+
+
 //test(true, true, 'true is true');
 
 
 var testCases = [
-[0, 'zero'],
-[ 1, 'one'],
-[ 2, 'two'],
-[ 3, 'three'],
-[ 4, 'four'],
-[ 5, 'five']
-];
 
-var index = 0, testCase;
+        [0, 'zero']
+/*        [1, 'one'],
+        [2, 'two'],
+        [3, 'three'],
+        [4, 'four'],
+        [5, 'five'],
+        [6, 'six'],
+        [7, 'seven'],
+        [8, 'eight'],
+        [9, 'nine'],
+        [10, 'ten'],
+        [11, 'eleven'],
+        [12, 'twelve'],
+        [13, 'thirteen'],
+        [14, 'fourteen'],
+        [15, 'fifteen'],
+        [16, 'sixteen'],
+        [17, 'seventeen'],
+        [18, 'eighteen'],
+        [19, 'nineteen'],
+        [20, 'twenty'],
+        [21, 'twenty one'],*/];
+
+
+ //for ( var index = 0; index < testCases.length; index++ ){
+    testCases.forEach(forEachTestCase);
+
+    function forEachTestCase (testCase, index, testCases){
+        //console.log('inside forEach: ', testCase, index);
+        message = 'should convert ' +
+            testCases[index][0] + ' to ' + testCases[index][1];
+
+        it(message, function(){
+            //console.log('inside of it(): ', index, testCases[index]);
+            test(testCases[index][0], testCases[index][1]);
+        });
+    };
+
+/*var index = 0, testCase;
 
 testCases.forEach(function(testCase, index, TestCases){
 //while(index < testCases.length){
@@ -75,7 +111,7 @@ test(toEnglish(1));
 test(toEnglish(2));
 test(toEnglish(3));
 test(toEnglish(4));
-test(toEnglish(5));
+test(toEnglish(5));*/
 
  /**
  * Sample Data
