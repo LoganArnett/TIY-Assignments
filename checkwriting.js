@@ -18,11 +18,18 @@ function test(actual, expected, success){
  */
 
  function toEnglish(value){
-   if (value === 5){
-     return "five";
+   var ones = [ "zero", 'one', 'two', 'three', 'four', 'five', 'six',
+                'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
+                'thirteen', 'fourteen', 'fifteen','sixteen', 'seventeen',
+                'eighteen', 'nineteen'];
+
+   var tens = [ 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy',
+                'eighty', 'ninety'];
+   if (value <= 19){
+     return ones;
    }
-   if (value === 4){
-     return "four";
+   if (value > 19 ){
+     return tens;
    }
    if (value === 3){
      return "three";
@@ -48,7 +55,7 @@ var index = 0, testCase;
 
 testCases.forEach(function(testCase, index, TestCases){
 //while(index < testCases.length){
-  testCase = testCases[index];
+  var testCase = testCases[index];
   actual = toEnglish(testCase[0]);
   expected = testCase[1];
   test(actual, expected, testCase[0] + ' >> ' + testCase[1]
