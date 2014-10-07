@@ -206,5 +206,19 @@ for ( key in this.layers ) {
 * Variable: `this.layers`
 * Value: For Loop `For this, If this return this, else if, else if, else if, ...`
 
+```javascript
+HGraph.prototype.zeroGraph = function() {
+
+	for(key in this.userdata.factors){
+		this.userdata.factors[key].score = 0;
+		this.userdata.factors[key].weight = 1;
+	}
+	this.redraw();
+}
+```
+
+* Variable: `HGraph.prototype.zeroGraph`
+* Value: `for` loop with function - key in this.userdata.factors
+
 
 
