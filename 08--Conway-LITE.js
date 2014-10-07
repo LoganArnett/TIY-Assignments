@@ -184,11 +184,14 @@ function neighborsOf(board, x, y){
 function conway(cell, neighbors) {
   var cellsFate;
   var neighAlive = 0;
-  neighbors.forEach(function(value, index) { //Replaced for Loops
+  neighbors.forEach(function(neighbor){ //Replaced for Loops
   //for (i = 0; i < neighbors.length; i++) {
-    if (value === true){
+    if (neighbor){
         neighAlive++;
     }
+/*    alive = neighbors.filter(function(neighbor){
+      return neighbor;
+    });*/
 
     /* Rule #1: Any live cell with fewer than two live
     * neighbours dies, as if caused by under-population.
@@ -232,9 +235,9 @@ function conway(cell, neighbors) {
 //neighbors.forEach(conway);
 
 //tick Function for newBoards to be produced
-function tick (board) {
-  var newBoard = []//A new empty array
-  board.forEach(function(value, index) {//Replaced both for Loops
+function tick(board){
+  var newBoard = [ ];//A new empty array
+  board.forEach(function(value, index){//Replaced both for Loops
     value.forEach(function(x, y){       //
   //for (var j = 0; j < board.length; j++) {
      //for (var k = 0; k < board[j].length; k++) {
