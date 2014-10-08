@@ -178,6 +178,12 @@ function neighborsOf(board, x, y){
     return neighbors;
   }
 
+  describe("neighborsOf(), which assigns the neighbors of a cell given a board and a cells specific coordinates", function(){
+    it ('should return 3 neighbors', function(){
+      assert(neighborsOf(board, 0, 0), [false,false,false]);
+    })
+  })
+
 
 
    //var cellsFate(global scope)
@@ -377,7 +383,7 @@ test(con9, false, 'Testing x=2 and y=2 which should return a Dead cell of False'
 
 
 /*Testing the neighborsOf function to ensure the neighbors are correct
-test(actual[0], board[0][1], 'Neighbor Test of (0,0)');
+test(actual[0], board[0][1] );
 test(actual[1], board[1][0], 'Neighbor Test of (0,0)');
 test(actual[2], board[1][1], 'Neighbor Test of (0,0)');
 test(actual2[0], board[0][0], 'Neighbor Test of (1,0)');
