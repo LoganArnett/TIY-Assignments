@@ -34,7 +34,7 @@
   * @param ANY expected
   * @param String success
   */
- function test(actual, expected, success){
+ function test1(actual, expected, success){
    success = success || 'YOU DID IT';
 
    assert(actual === expected) || console.log(success);
@@ -78,14 +78,14 @@ var letters2Numbers = function(letters){
   return letters;
 }
 
-describe("letters2Numbers(), which converst English 'Strings' to Numbers", function(){
-  it('should convert string one to # 1', function(){
-    assert.equal(letters2Numbers("one"), 1);
+suite("letters2Numbers(), which converst English 'Strings' to Numbers", function(){
+  test('should convert string one to # 1', function(){
+    assert(letters2Numbers);
   })
-  it('should convert string two to # 2', function(){
+  test('should convert string two to # 2', function(){
     assert.equal(letters2Numbers("two"), 2);
   })
-  it('should convert string three to # 3', function(){
+  test('should convert string three to # 3', function(){
     assert.equal(letters2Numbers("three"), 3);
   })
 })
@@ -119,26 +119,26 @@ function test_add(a, b, c){
           return add(a, b) == c;
 }
 
-describe("test_add(), it should add two Number inputs and produce a sum", function(){
-  it('should add one and one', function(){
+suite("test_add(), it should add two Number inputs and produce a sum", function(){
+  test('should add one and one', function(){
     assert.equal(test_add("one", "one", 2), true);
   })
-  it('should add one and two', function(){
+  test('should add one and two', function(){
     assert.equal(test_add("one", "two", 3), true);
   })
-  it('should add one and three', function(){
+  test('should add one and three', function(){
     assert.equal(test_add("one", "three", 4), true);
   })
-  it('should add one and four', function(){
+  test('should add one and four', function(){
     assert.equal(test_add("one", "four", 5), true);
   })
-  it('should add one and five', function(){
+  test('should add one and five', function(){
     assert.equal(test_add("one", "five", 6), true);
   })
-  it('should add one and six', function(){
+  test('should add one and six', function(){
     assert.equal(test_add("one", "six", 7), true);
   })
-  })
+})
 
 
 /*test_add("one", "one", 2);
