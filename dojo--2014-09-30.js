@@ -12,7 +12,35 @@
  * to enforce _practice_ not _completeness_. Follow "red-green-refactor", use
  * ping-pong pairing, and commit often using `@username & @username` as the
  * commit message.
+ describe('Array', function(){
+  before(function(){
+    // ...
+  });
+
+  describe('#indexOf()', function(){
+    it('should return -1 when not present', function(){
+      [1,2,3].indexOf(4).should.equal(-1);
+    });
+  });
+});
  */
+
+ var assert = require('assert');
+
+ /**
+  * Log `success` if `actual` is STRICTLY equal to `expected`
+  *
+  * @param ANY actual
+  * @param ANY expected
+  * @param String success
+  */
+ function test(actual, expected, success){
+     if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
+     assert.strictEqual(actual, expected);
+     console.log(success);
+ }
+
+
 var letters2Numbers = function(letters){
   if (letters == "one"){
     letters = 1;
@@ -46,6 +74,12 @@ var letters2Numbers = function(letters){
   }
   return letters;
 }
+
+describe("letters2Numbers(), which converst English 'Strings' to Numbers", function(){
+  it('should have a function named letters2Numbers()', function(){
+    assert(letters2Numbers);
+  })
+});
 
 function test_letters2Numbers(a, b){
   console.log('It should convert "' + a + '" to "' + b + '":',
