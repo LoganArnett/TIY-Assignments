@@ -35,14 +35,17 @@
   * @param String success
   */
  function test(actual, expected, success){
-     if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
+   success = success || 'YOU DID IT';
+
+   assert(actual === expected) || console.log(success);
+     /*if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
      assert.strictEqual(actual, expected);
-     console.log(success);
+     console.log(success);*/
  }
 
 
 var letters2Numbers = function(letters){
-  if (letters == "one"){
+  if (letters === "one"){
     letters = 1;
   }
   if (letters == "two"){
@@ -76,16 +79,22 @@ var letters2Numbers = function(letters){
 }
 
 describe("letters2Numbers(), which converst English 'Strings' to Numbers", function(){
-  it('should have a function named letters2Numbers()', function(){
-    assert(letters2Numbers);
+  it('should convert string one to # 1', function(){
+    assert.equal(letters2Numbers("one"), 1);
   })
-});
+  it('should convert string two to # 2', function(){
+    assert.equal(letters2Numbers("two"), 2);
+  })
+  it('should convert string three to # 3', function(){
+    assert.equal(letters2Numbers("three"), 3);
+  })
+})
 
 function test_letters2Numbers(a, b){
   console.log('It should convert "' + a + '" to "' + b + '":',
         letters2Numbers(a) === b);
 }
-
+/*
 test_letters2Numbers("one", 1);
 test_letters2Numbers("two", 2);
 test_letters2Numbers("three", 3);
@@ -96,6 +105,7 @@ test_letters2Numbers("seven", 7);
 test_letters2Numbers("eight", 8);
 test_letters2Numbers("nine", 9);
 test_letters2Numbers("ten", 10);
+*/
 
 
 var add = function(a, b){
@@ -105,11 +115,33 @@ var add = function(a, b){
 }
 
 function test_add(a, b, c){
-  console.log('It should add "' + a + '" and "' + b + '" to equal ' + c + ':',
-          add(a, b) == c);
+  //console.log('It should add "' + a + '" and "' + b + '" to equal ' + c + ':',
+          return add(a, b) == c;
 }
 
-test_add("one", "one", 2);
+describe("test_add(), it should add two Number inputs and produce a sum", function(){
+  it('should add one and one', function(){
+    assert.equal(test_add("one", "one", 2), true);
+  })
+  it('should add one and two', function(){
+    assert.equal(test_add("one", "two", 3), true);
+  })
+  it('should add one and three', function(){
+    assert.equal(test_add("one", "three", 4), true);
+  })
+  it('should add one and four', function(){
+    assert.equal(test_add("one", "four", 5), true);
+  })
+  it('should add one and five', function(){
+    assert.equal(test_add("one", "five", 6), true);
+  })
+  it('should add one and six', function(){
+    assert.equal(test_add("one", "six", 7), true);
+  })
+  })
+
+
+/*test_add("one", "one", 2);
 test_add("one", "two", 3);
 test_add("one", "three", 4);
 test_add("one", "four", 5);
@@ -209,3 +241,4 @@ test_add("ten", "seven", 17);
 test_add("ten", "eight", 18);
 test_add("ten", "nine", 19);
 test_add("ten", "ten", 20);
+*/
