@@ -178,6 +178,12 @@ function neighborsOf(board, x, y){
     return neighbors;
   }
 
+  describe("neighborsOf(), which assigns the neighbors of a cell given a board and a cells specific coordinates", function(){
+    it ('should return 3 neighbors', function(){
+      assert(neighborsOf(board, 0, 0), [false,false,false]);
+    })
+  })
+
 
 
    //var cellsFate(global scope)
@@ -230,7 +236,23 @@ function conway(cell, neighbors) {
 });
     return cellsFate;
   }
-
+describe("conway(), which takes a cell and its neighbors as inputs and returns a boolean", function(){
+    it ("should return a boolean based on the 4 rules for 0,0", function(){
+      assert.strictEqual(conway(board[0][0], actual), false);
+    })
+    it ("should return a boolean based on the 4 rules for 0,1", function(){
+      assert.strictEqual(conway(board[0][1], actual), false);
+    })
+    it ("should return a boolean based on the 4 rules for 0,2", function(){
+      assert.strictEqual(conway(board[0][2], actual), false);
+    })
+    it ("should return a boolean based on the 4 rules for 1,0", function(){
+      assert.strictEqual(conway(board[1][0], actual), false);
+    })
+    it ("should return a boolean based on the 4 rules for 1,1", function(){
+      assert.strictEqual(conway(board[1][1], actual), false);
+    })
+})
 
 //neighbors.forEach(conway);
 
@@ -254,6 +276,20 @@ function tick(board){
   return board;
 }
 
+describe("tick(), which takes a board of boolean values and returns a new board of boolean values", function(){
+  it ("should return a new board for the null case", function(){
+    assert(tick(board), [[false,false,false],[false,false,false],[false,false,false]]);
+  })
+  it ("should return a new board for starting board with 1 live cell", function(){
+    assert(tick(board2), [[false,false,false],[false,false,false],[false,false,false]]);
+  })
+  it ("should return a new board for starting board with 2 live cells", function(){
+    assert(tick(board3), [[false,false,false],[false,false,false],[false,false,false]]);
+  })
+  it ("should return a new board for starting board with 3 live cells", function(){
+    assert(tick(board5), [[false,false,false],[true,true,true],[false,false,false]]);
+  })
+})
 
 //Setting neighborsOf actual variables for testing
   var actual  = neighborsOf(board, 0, 0)
@@ -377,7 +413,7 @@ test(con9, false, 'Testing x=2 and y=2 which should return a Dead cell of False'
 
 
 /*Testing the neighborsOf function to ensure the neighbors are correct
-test(actual[0], board[0][1], 'Neighbor Test of (0,0)');
+test(actual[0], board[0][1] );
 test(actual[1], board[1][0], 'Neighbor Test of (0,0)');
 test(actual[2], board[1][1], 'Neighbor Test of (0,0)');
 test(actual2[0], board[0][0], 'Neighbor Test of (1,0)');
