@@ -136,60 +136,16 @@ board = [
                          false]
     ];
 
-var cellsFate;
-function conway(cell, neighbors) {
-  var neighAlive = 0;
-  for (i = 0; i < neighbors.length; i++) {
-    if (neighbors[i] === true)
-      neighAlive++;
-    }
-
-    /* Rule #1: Any live cell with fewer than two live
-    * neighbours dies, as if caused by under-population.
-    */
-    if (cell === true) {
-      if (neighAlive < 2) {
-        cellsFate = false;
-    }
-
-    /* Rule #2: Any live cell with two or three live
-    * neighbours lives on to the next generation.
-    */
-
-      if (neighAlive === 2 || neighAlive === 3) {
-        cellsFate = true;
-    }
-
-    /* Rule #3: Any live cell with more than three live
-     * neighbours dies, as if by overcrowding.
-     */
-      if (neighAlive > 3) {
-        cellsFate = false;
-    }
-  }
-    /* Rule #4: Any dead cell with exactly three live
-     * neighbours becomes a live cell, as if by reproduction.
-     */
-    if (cell === false) {
-      if (neighAlive === 3) {
-        cellsFate = true;
-    }
-    else {
-      cellsFate = false;
-    }
-  }
-    return cellsFate
-  }
-
-
-
 /** neighborsOf Function:
  * if given coordinates (x, y),
  * find their neighbors on the board based on the
  * value of x && y.
  */
-var neighbors;
+ //allows variable neighbors to be in the global scope, possible errors with this version
+//var neighbors;
+
 function neighborsOf(board, x, y){
+    var neighbors;
 
     if (x === 0 && y === 0) {
       neighbors = [board[0][1], board[1][0], board[1][1]]
@@ -222,15 +178,72 @@ function neighborsOf(board, x, y){
     return neighbors;
   }
 
-//tick Function for newBoards to be produced
-function tick (board) {
-  var newBoard = []//A new empty array
 
-  for (var j = 0; j < board.length; j++) {
-     for (var k = 0; k < board[j].length; k++) {
-      newBoard.push(conway(board[j][k], neighborsOf(board, j, k)));//replace original board values with a new board of pushed values
+
+   //var cellsFate(global scope)
+function conway(cell, neighbors) {
+  var cellsFate;
+  var neighAlive = 0;
+  neighbors.forEach(function(neighbor){ //Replaced for Loops
+  //for (i = 0; i < neighbors.length; i++) {
+    if (neighbor){
+        neighAlive++;
+    }
+/*    alive = neighbors.filter(function(neighbor){
+      return neighbor;
+    });*/
+
+    /* Rule #1: Any live cell with fewer than two live
+    * neighbours dies, as if caused by under-population.
+    */
+    if (cell === true) {
+      if (neighAlive < 2) {
+        cellsFate = false;
+    }
+
+    /* Rule #2: Any live cell with two or three live
+    * neighbours lives on to the next generation.
+    */
+
+      else if (neighAlive === 2 || neighAlive === 3) {
+        cellsFate = true;
+    }
+
+    /* Rule #3: Any live cell with more than three live
+     * neighbours dies, as if by overcrowding.
+     */
+       else if (neighAlive > 3) {
+        cellsFate = false;
     }
   }
+    /* Rule #4: Any dead cell with exactly three live
+     * neighbours becomes a live cell, as if by reproduction.
+     */
+    if (cell === false) {
+      if (neighAlive === 3) {
+        cellsFate = true;
+    }
+    else {
+      cellsFate = false;
+    }
+  }
+});
+    return cellsFate;
+  }
+
+
+//neighbors.forEach(conway);
+
+//tick Function for newBoards to be produced
+function tick(board){
+  var newBoard = [ ];//A new empty array
+  board.forEach(function(value, index){//Replaced both for Loops
+    value.forEach(function(x, y){       //
+  //for (var j = 0; j < board.length; j++) {
+     //for (var k = 0; k < board[j].length; k++) {
+      newBoard.push(conway(board[index][y], neighborsOf(board, index, y)));//replace original board values with a new board of pushed values
+    });
+  });
   /*.splice takes the newBoard and splices into new pieces
   that will return as 3 seperate Arrays to recreate the
   next board in the sequence
@@ -240,6 +253,7 @@ function tick (board) {
   board = [new1, new2, newBoard];//The new board is stored back in the original board variable
   return board;
 }
+
 
 //Setting neighborsOf actual variables for testing
   var actual  = neighborsOf(board, 0, 0)

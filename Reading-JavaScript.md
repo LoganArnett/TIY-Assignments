@@ -206,5 +206,75 @@ for ( key in this.layers ) {
 * Variable: `this.layers`
 * Value: For Loop `For this, If this return this, else if, else if, else if, ...`
 
+```javascript
+HGraph.prototype.zeroGraph = function() {
+
+	for(key in this.userdata.factors){
+		this.userdata.factors[key].score = 0;
+		this.userdata.factors[key].weight = 1;
+	}
+	this.redraw();
+}
+```
+
+* Variable: `HGraph.prototype.zeroGraph`
+* Value: `for` loop with function - key in this.userdata.factors
+
+```javascript
+missingDeps.forEach(function (key) {
+        document.write("<li>" + key + "</li>");
+    });
+```
+
+ * Variable: `missingDeps`
+ * Value: .forEach with an anonymous `function` that contains the parameter `key`
+
+```javascript
+  // Insert application strings
+_.forEach(strings, function (value, key) {
+        _.forEach(additionalGlobals, function (item, name) {
+            strings[key] = strings[key].replace(new RegExp("{" + name + "}", "g"), additionalGlobals[name]);
+        });
+    });
+```
+
+ * Variable: `_`
+ * Value: `.forEach` for inserting 'Strings' and the anonymous `function` with parameters `value` and `key`
+
+```javascript
+// loop through items
+		var iCount = 0;
+//		$.each(anObject, function(sKey, vValue) {
+		MochiKit.Iter.forEach(MochiKit.Base.keys(anObject), function(sKey) {
+```
+
+ * Variable: `MochiKit`
+ * Value `.forEach` with an anonymous function with parameter `sKey`
+
+```javascript
+pb.Board.prototype.doShadows = function() {
+    this.getPedals().forEach(function(pedal) {
+        pb.shadowMaker(pedal.getElement(), 40, 0.5, 0.7);
+        pedal.pots.forEach(function(pot) {
+            pb.shadowMaker(pot.$(pot.mappings.KNOB_HOLDER)[0], 10, 0.5, 4);
+        });
+    });
+};
+```
+
+ * Varibale: `pedal.pots`
+ * Value: `.forEach` with an anonymous `function` with parameter `pot`
+
+```javascript
+ fx.forEach(function(pedal, i) {
+            pedal.disconnect();
+            fx[i + 1] && pedal.connect(fx[i + 1]);
+        });
+```
+
+ * Variable: `fx`
+ * Value: `.forEach` with an anonymous `function` with parameters `pedal` and `i`
+
+
 
 
