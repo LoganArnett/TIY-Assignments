@@ -104,6 +104,7 @@
  * You may test more starting position, if you like, of course.
  */
 var expect = require('chai').expect;
+var should = require('chai').should();
 var assert = require('chai').assert;
 
 /**
@@ -182,11 +183,20 @@ function neighborsOf(board, x, y){
     it ('should return 3 neighbors for 0,0', function(){
       assert.deepEqual(neighborsOf(board, 0, 0), [false,false,false]);
     })
+    it ('"EXPECT" to be an Array for 0,0', function(){
+      expect(neighborsOf(board,0,0)).to.be.an('Array');
+    })
     it ('should return 5 neighbors for 0,1', function(){
       assert.deepEqual(neighborsOf(board, 0, 1), [false,false,false,false,false]);
     })
+    it ('"EXPECT" to be an Array for 0,1', function(){
+      expect(neighborsOf(board,0,1)).to.be.an('Array');
+    })
     it ('should return 8 neighbors for 1,1', function(){
       assert.deepEqual(neighborsOf(board, 1, 1), [false,false,false,false,false,false,false,false]);
+    })
+    it ('"SHOULD" be an Array for 1,1', function(){
+      neighborsOf(board,1,1).should.be.an('Array');
     })
     it ('should return that neighborsOf is a Function', function(){
       assert.isFunction(neighborsOf);//chai testing
@@ -252,6 +262,9 @@ function conway(cell, neighbors) {
 describe("conway(), which takes a cell and its neighbors as inputs and returns a boolean", function(){
     it ("should return a boolean based on the 4 rules for 0,0", function(){
       assert.strictEqual(conway(board[0][0], actual), false);
+    })
+    it ("'SHOULD' include a boolean based on the 4 rules for 0,0", function(){
+      conway(board[0][0], actual).should.be.a('boolean');
     })
     it ("should return that it .isBoolean for 0,0", function(){
       assert.isBoolean(conway(board[0][0], actual), false);//chai testing

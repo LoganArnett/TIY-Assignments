@@ -24,7 +24,8 @@
   });
 });
  */
-
+ var expect = require('chai').expect;
+var should = require('chai').should();
  var assert = require('chai').assert
 
  /**
@@ -86,6 +87,9 @@ describe("letters2Numbers(), which converst English 'Strings' to Numbers", funct
     assert.typeOf(letters2Numbers("one"), 'Number');//chai testing
     assert.isNumber(letters2Numbers("one"), 1);//chai testing
   })
+  it('should EXPECT output to be a "Number"', function(){
+    expect(letters2Numbers("two")).to.be.a('number');
+  })
   it('should display the lengthOf of "one" as a "string"', function(){
     assert.lengthOf(("one"), 3);//chai testing
   })
@@ -95,6 +99,9 @@ describe("letters2Numbers(), which converst English 'Strings' to Numbers", funct
   it('should display typeOf output "Number" for 2', function(){
     assert.typeOf(letters2Numbers("two"), 'Number');//chai testing
     assert.isNumber(letters2Numbers("two"), 2);//chai testing
+  })
+  it('SHOULD be a "Number"', function(){
+    letters2Numbers("two").should.be.a('number');
   })
   it('should display the lengthOf of "two" as a "string"', function(){
     assert.lengthOf(("two"), 3);//chai testing

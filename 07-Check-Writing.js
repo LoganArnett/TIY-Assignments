@@ -128,7 +128,7 @@ test(toEnglish(5));*/
  * Make up your own, too.
  */
  var expect = require('chai').expect;
- var should = require('chai').should;
+ var should = require('chai').should();
  var assert = require('chai').assert;
 
  /**
@@ -171,23 +171,38 @@ describe("num2Letter(), takes a Number with two decimal places as an input and r
   it ("should return $1.23 as if on a check", function(){
     assert.equal(num2Letter(1.23), 'one and 23/100 dollars');
   })
-  it ("should return $1.23 as if on a check", function(){
-    should(num2Letter(1.23).be.a.('string'));
+  it ("should 'EXPECT' $1.23 to be a string", function(){
+    expect(num2Letter(1.23)).to.be.a('string');
   })
   it ("should return $9.50 as if on a check", function(){
     assert.equal(num2Letter(9.50), 'nine and 50/100 dollars');
   })
+  it ("should 'EXPECT' $9.50 to be a string", function(){
+    expect(num2Letter(9.50)).to.be.a('string');
+  })
   it ("should return $6.72 as if on a check", function(){
     assert.equal(num2Letter(6.72), 'six and 72/100 dollars');
+  })
+  it ("should show say the $6.72 'SHOULD' be a string", function(){
+    (num2Letter(6.72)).should.be.a('string');
   })
   it ("should return $20.20 as if on a check", function(){
     assert.equal(num2Letter(20.20), 'twenty and 20/100 dollars');
   })
+  it ("should show say the $20.20 'SHOULD' be a string", function(){
+    (num2Letter(20.20)).should.be.a('string');
+  })
   it ("should return $30.30 as if on a check", function(){
     assert.equal(num2Letter(30.30), 'thirty and 30/100 dollars');
   })
+  it ("should show say the $30.30 'SHOULD.include' 'thirty'", function(){
+    (num2Letter(30.30)).should.include('thirty');
+  })
   it ("should return $40.40 as if on a check", function(){
     assert.equal(num2Letter(40.40), 'forty and 40/100 dollars');
+  })
+  it ("should show say the $40.40 'SHOULD.exist'", function(){
+    (num2Letter(40.40)).should.exist;
   })
 })
 
