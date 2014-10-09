@@ -103,7 +103,7 @@
  *
  * You may test more starting position, if you like, of course.
  */
-var expect = require('chai').expect
+var expect = require('chai').expect;
 var assert = require('chai').assert;
 
 /**

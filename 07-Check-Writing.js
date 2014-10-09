@@ -127,8 +127,9 @@ test(toEnglish(5));*/
  *
  * Make up your own, too.
  */
-
- var assert = require('assert');
+ var expect = require('chai').expect;
+ var should = require('chai').should;
+ var assert = require('chai').assert;
 
  /**
   * Log `success` if `actual` is STRICTLY equal to `expected`
@@ -169,6 +170,9 @@ var val = num.toString();
 describe("num2Letter(), takes a Number with two decimal places as an input and returns it in check form", function(){
   it ("should return $1.23 as if on a check", function(){
     assert.equal(num2Letter(1.23), 'one and 23/100 dollars');
+  })
+  it ("should return $1.23 as if on a check", function(){
+    should(num2Letter(1.23).be.a.('string'));
   })
   it ("should return $9.50 as if on a check", function(){
     assert.equal(num2Letter(9.50), 'nine and 50/100 dollars');
