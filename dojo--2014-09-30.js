@@ -43,7 +43,7 @@
      console.log(success);*/
  }
 
-
+//converts 'Strings' to Numbers
 var letters2Numbers = function(letters){
   if (letters === "one"){
     letters = 1;
@@ -107,7 +107,7 @@ test_letters2Numbers("nine", 9);
 test_letters2Numbers("ten", 10);
 */
 
-
+// adds our a and b inputs 
 var add = function(a, b){
   a = letters2Numbers(a);
   b = letters2Numbers(b);
