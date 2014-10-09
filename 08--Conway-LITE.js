@@ -180,7 +180,7 @@ function neighborsOf(board, x, y){
 
   describe("neighborsOf(), which assigns the neighbors of a cell given a board and a cells specific coordinates", function(){
     it ('should return 3 neighbors', function(){
-      assert(neighborsOf(board, 0, 0), [false,false,false]);
+      assert.deepEqual(neighborsOf(board, 0, 0), [false,false,false]);
     })
   })
 
@@ -278,16 +278,16 @@ function tick(board){
 
 describe("tick(), which takes a board of boolean values and returns a new board of boolean values", function(){
   it ("should return a new board for the null case", function(){
-    assert(tick(board), [[false,false,false],[false,false,false],[false,false,false]]);
+    assert.deepEqual(tick(board), [[false,false,false],[false,false,false],[false,false,false]]);
   })
   it ("should return a new board for starting board with 1 live cell", function(){
-    assert(tick(board2), [[false,false,false],[false,false,false],[false,false,false]]);
+    assert.deepEqual(tick(board2), [[false,false,false],[false,false,false],[false,false,false]]);
   })
   it ("should return a new board for starting board with 2 live cells", function(){
-    assert(tick(board3), [[false,false,false],[false,false,false],[false,false,false]]);
+    assert.deepEqual(tick(board3), [[false,false,false],[false,false,false],[false,false,false]]);
   })
   it ("should return a new board for starting board with 3 live cells", function(){
-    assert(tick(board5), [[false,false,false],[true,true,true],[false,false,false]]);
+    assert.deepEqual(tick(board5), [[false,false,false],[true,true,true],[false,false,false]]);
   })
 })
 

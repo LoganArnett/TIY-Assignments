@@ -25,7 +25,7 @@
 });
  */
 
- var assert = require('assert');
+ var assert = require('chai').assert
 
  /**
   * Log `success` if `actual` is STRICTLY equal to `expected`
@@ -78,15 +78,36 @@ var letters2Numbers = function(letters){
   return letters;
 }
 
-suite("letters2Numbers(), which converst English 'Strings' to Numbers", function(){
-  test('should convert string one to # 1', function(){
-    assert(letters2Numbers);
+describe("letters2Numbers(), which converst English 'Strings' to Numbers", function(){
+  it('should convert string one to # 1', function(){
+    assert.equal(letters2Numbers("one"), 1);
   })
-  test('should convert string two to # 2', function(){
+  it('should display typeOf output "Number" for 1', function(){
+    assert.typeOf(letters2Numbers("one"), 'Number');
+    assert.isNumber(letters2Numbers("one"), 1);
+  })
+  it('should display the lengthOf of "one" as a "string"', function(){
+    assert.lengthOf(("one"), 3);
+  })
+  it('should convert string two to # 2', function(){
     assert.equal(letters2Numbers("two"), 2);
   })
-  test('should convert string three to # 3', function(){
+  it('should display typeOf output "Number" for 2', function(){
+    assert.typeOf(letters2Numbers("two"), 'Number');
+    assert.isNumber(letters2Numbers("two"), 2);
+  })
+  it('should display the lengthOf of "two" as a "string"', function(){
+    assert.lengthOf(("two"), 3);
+  })
+  it('should convert string three to # 3', function(){
     assert.equal(letters2Numbers("three"), 3);
+  })
+  it('should display typeOf output "Number" for 3', function(){
+    assert.typeOf(letters2Numbers("three"), 'Number');
+    assert.isNumber(letters2Numbers("three"), 3);
+  })
+  it('should display the lengthOf of "three" as a "string"', function(){
+    assert.lengthOf(("three"), 5);
   })
 })
 
@@ -107,7 +128,7 @@ test_letters2Numbers("nine", 9);
 test_letters2Numbers("ten", 10);
 */
 
-// adds our a and b inputs 
+// adds our a and b inputs
 var add = function(a, b){
   a = letters2Numbers(a);
   b = letters2Numbers(b);
@@ -119,24 +140,42 @@ function test_add(a, b, c){
           return add(a, b) == c;
 }
 
-suite("test_add(), it should add two Number inputs and produce a sum", function(){
-  test('should add one and one', function(){
+describe("test_add(), it should add two Number inputs and produce a sum", function(){
+  it('should add one and one', function(){
     assert.equal(test_add("one", "one", 2), true);
   })
-  test('should add one and two', function(){
+  it('should prove the sum returns as a Boolean', function(){
+    assert.isBoolean(test_add("one", "one", 2));
+  })
+  it('should add one and two', function(){
     assert.equal(test_add("one", "two", 3), true);
   })
-  test('should add one and three', function(){
+  it('should prove the sum returns as a Boolean', function(){
+    assert.isBoolean(test_add("one", "two", 3));
+  })
+  it('should add one and three', function(){
     assert.equal(test_add("one", "three", 4), true);
   })
-  test('should add one and four', function(){
+  it('should prove the sum returns as a Boolean', function(){
+    assert.isBoolean(test_add("one", "three", 4));
+  })
+  it('should add one and four', function(){
     assert.equal(test_add("one", "four", 5), true);
   })
-  test('should add one and five', function(){
+  it('should prove the sum returns as a Boolean', function(){
+    assert.isBoolean(test_add("one", "four", 5));
+  })
+  it('should add one and five', function(){
     assert.equal(test_add("one", "five", 6), true);
   })
-  test('should add one and six', function(){
+  it('should prove the sum returns as a Boolean', function(){
+    assert.isBoolean(test_add("one", "five", 6));
+  })
+  it('should add one and six', function(){
     assert.equal(test_add("one", "six", 7), true);
+  })
+  it('should prove the sum returns as a Boolean', function(){
+    assert.isBoolean(test_add("one", "six", 7));
   })
 })
 
