@@ -83,31 +83,31 @@ describe("letters2Numbers(), which converst English 'Strings' to Numbers", funct
     assert.equal(letters2Numbers("one"), 1);
   })
   it('should display typeOf output "Number" for 1', function(){
-    assert.typeOf(letters2Numbers("one"), 'Number');
-    assert.isNumber(letters2Numbers("one"), 1);
+    assert.typeOf(letters2Numbers("one"), 'Number');//chai testing
+    assert.isNumber(letters2Numbers("one"), 1);//chai testing
   })
   it('should display the lengthOf of "one" as a "string"', function(){
-    assert.lengthOf(("one"), 3);
+    assert.lengthOf(("one"), 3);//chai testing
   })
   it('should convert string two to # 2', function(){
     assert.equal(letters2Numbers("two"), 2);
   })
   it('should display typeOf output "Number" for 2', function(){
-    assert.typeOf(letters2Numbers("two"), 'Number');
-    assert.isNumber(letters2Numbers("two"), 2);
+    assert.typeOf(letters2Numbers("two"), 'Number');//chai testing
+    assert.isNumber(letters2Numbers("two"), 2);//chai testing
   })
   it('should display the lengthOf of "two" as a "string"', function(){
-    assert.lengthOf(("two"), 3);
+    assert.lengthOf(("two"), 3);//chai testing
   })
   it('should convert string three to # 3', function(){
     assert.equal(letters2Numbers("three"), 3);
   })
   it('should display typeOf output "Number" for 3', function(){
-    assert.typeOf(letters2Numbers("three"), 'Number');
-    assert.isNumber(letters2Numbers("three"), 3);
+    assert.typeOf(letters2Numbers("three"), 'Number');//chai testing
+    assert.isNumber(letters2Numbers("three"), 3);//chai testing
   })
   it('should display the lengthOf of "three" as a "string"', function(){
-    assert.lengthOf(("three"), 5);
+    assert.lengthOf(("three"), 5);//chai testing
   })
 })
 
@@ -145,37 +145,37 @@ describe("test_add(), it should add two Number inputs and produce a sum", functi
     assert.equal(test_add("one", "one", 2), true);
   })
   it('should prove the sum returns as a Boolean', function(){
-    assert.isBoolean(test_add("one", "one", 2));
+    assert.isBoolean(test_add("one", "one", 2));//chai testing
   })
   it('should add one and two', function(){
     assert.equal(test_add("one", "two", 3), true);
   })
   it('should prove the sum returns as a Boolean', function(){
-    assert.isBoolean(test_add("one", "two", 3));
+    assert.isBoolean(test_add("one", "two", 3));//chai testing
   })
   it('should add one and three', function(){
     assert.equal(test_add("one", "three", 4), true);
   })
   it('should prove the sum returns as a Boolean', function(){
-    assert.isBoolean(test_add("one", "three", 4));
+    assert.isBoolean(test_add("one", "three", 4));//chai testing
   })
   it('should add one and four', function(){
     assert.equal(test_add("one", "four", 5), true);
   })
   it('should prove the sum returns as a Boolean', function(){
-    assert.isBoolean(test_add("one", "four", 5));
+    assert.isBoolean(test_add("one", "four", 5));//chai testing
   })
   it('should add one and five', function(){
     assert.equal(test_add("one", "five", 6), true);
   })
   it('should prove the sum returns as a Boolean', function(){
-    assert.isBoolean(test_add("one", "five", 6));
+    assert.isBoolean(test_add("one", "five", 6));//chai testing
   })
   it('should add one and six', function(){
     assert.equal(test_add("one", "six", 7), true);
   })
   it('should prove the sum returns as a Boolean', function(){
-    assert.isBoolean(test_add("one", "six", 7));
+    assert.isBoolean(test_add("one", "six", 7));//chai testing
   })
 })
 

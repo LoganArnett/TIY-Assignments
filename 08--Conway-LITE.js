@@ -103,8 +103,8 @@
  *
  * You may test more starting position, if you like, of course.
  */
-
-var assert = require('assert');
+var expect = require('chai').expect
+var assert = require('chai').assert;
 
 /**
  * Log `success` if `actual` is STRICTLY equal to `expected`
@@ -179,9 +179,22 @@ function neighborsOf(board, x, y){
   }
 
   describe("neighborsOf(), which assigns the neighbors of a cell given a board and a cells specific coordinates", function(){
-    it ('should return 3 neighbors', function(){
+    it ('should return 3 neighbors for 0,0', function(){
       assert.deepEqual(neighborsOf(board, 0, 0), [false,false,false]);
     })
+    it ('should return 5 neighbors for 0,1', function(){
+      assert.deepEqual(neighborsOf(board, 0, 1), [false,false,false,false,false]);
+    })
+    it ('should return 8 neighbors for 1,1', function(){
+      assert.deepEqual(neighborsOf(board, 1, 1), [false,false,false,false,false,false,false,false]);
+    })
+    it ('should return that neighborsOf is a Function', function(){
+      assert.isFunction(neighborsOf);//chai testing
+    })
+    it ('should "expect" neighbors to not equal true', function(){
+      expect(neighborsOf).to.not.equal(true);
+    })
+
   })
 
 
@@ -240,17 +253,32 @@ describe("conway(), which takes a cell and its neighbors as inputs and returns a
     it ("should return a boolean based on the 4 rules for 0,0", function(){
       assert.strictEqual(conway(board[0][0], actual), false);
     })
+    it ("should return that it .isBoolean for 0,0", function(){
+      assert.isBoolean(conway(board[0][0], actual), false);//chai testing
+    })
     it ("should return a boolean based on the 4 rules for 0,1", function(){
       assert.strictEqual(conway(board[0][1], actual), false);
+    })
+    it ("should return that it .isBoolean for 0,1", function(){
+      assert.isBoolean(conway(board[0][1], actual), false);//chai testing
     })
     it ("should return a boolean based on the 4 rules for 0,2", function(){
       assert.strictEqual(conway(board[0][2], actual), false);
     })
+    it ("should return that it .isBoolean for 0,2", function(){
+      assert.isBoolean(conway(board[0][2], actual), false);//chai testing
+    })
     it ("should return a boolean based on the 4 rules for 1,0", function(){
       assert.strictEqual(conway(board[1][0], actual), false);
     })
+    it ("should return that it .isBoolean for 1,0", function(){
+      assert.isBoolean(conway(board[1][0], actual), false);//chai testing
+    })
     it ("should return a boolean based on the 4 rules for 1,1", function(){
       assert.strictEqual(conway(board[1][1], actual), false);
+    })
+    it ("should return that it .isBoolean for 1,1", function(){
+      assert.isBoolean(conway(board[1][1], actual), false);//chai testing
     })
 })
 
@@ -280,14 +308,38 @@ describe("tick(), which takes a board of boolean values and returns a new board 
   it ("should return a new board for the null case", function(){
     assert.deepEqual(tick(board), [[false,false,false],[false,false,false],[false,false,false]]);
   })
+  it ("should return that the new board is an Array of Arrays", function(){
+    assert.isArray(tick(board));//chai testing
+  })
+  it ('should "expect" tick to be an Array for board', function(){
+    expect(tick(board)).to.be.an('Array');
+  })
   it ("should return a new board for starting board with 1 live cell", function(){
     assert.deepEqual(tick(board2), [[false,false,false],[false,false,false],[false,false,false]]);
+  })
+  it ("should return that the new board is an Array of Arrays", function(){
+    assert.isArray(tick(board2));//chai testing
+  })
+  it ('should "expect" tick to be an Array for board2', function(){
+    expect(tick(board2)).to.be.an('Array');
   })
   it ("should return a new board for starting board with 2 live cells", function(){
     assert.deepEqual(tick(board3), [[false,false,false],[false,false,false],[false,false,false]]);
   })
+  it ("should return that the new board is an Array of Arrays", function(){
+    assert.isArray(tick(board3));//chai testing
+  })
+  it ('should "expect" tick to be an Array for board3', function(){
+    expect(tick(board3)).to.be.an('Array');
+  })
   it ("should return a new board for starting board with 3 live cells", function(){
     assert.deepEqual(tick(board5), [[false,false,false],[true,true,true],[false,false,false]]);
+  })
+  it ("should return that the new board is an Array of Arrays", function(){
+    assert.isArray(tick(board5));//chai testing
+  })
+  it ('should "expect" tick to be an Array for board5', function(){
+    expect(tick(board5)).to.be.an('Array');
   })
 })
 
