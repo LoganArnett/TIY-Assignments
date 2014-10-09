@@ -88,7 +88,7 @@ describe("letters2Numbers(), which converst English 'Strings' to Numbers", funct
     assert.isNumber(letters2Numbers("one"), 1);//chai testing
   })
   it('should EXPECT output to be a "Number"', function(){
-    expect(letters2Numbers("two")).to.be.a('number');
+    expect(letters2Numbers("two")).to.be.a('number');//chai testing
   })
   it('should display the lengthOf of "one" as a "string"', function(){
     assert.lengthOf(("one"), 3);//chai testing
@@ -101,7 +101,7 @@ describe("letters2Numbers(), which converst English 'Strings' to Numbers", funct
     assert.isNumber(letters2Numbers("two"), 2);//chai testing
   })
   it('SHOULD be a "Number"', function(){
-    letters2Numbers("two").should.be.a('number');
+    letters2Numbers("two").should.be.a('number');//chai testing
   })
   it('should display the lengthOf of "two" as a "string"', function(){
     assert.lengthOf(("two"), 3);//chai testing
