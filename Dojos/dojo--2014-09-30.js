@@ -43,10 +43,14 @@
      assert.strictEqual(actual, expected);
      console.log(success);*/
  }
-
+var words = {zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6,
+            seven: 7, eight: 8, nine: 9, ten: 10
+          };
 //converts 'Strings' to Numbers
-var letters2Numbers = function(letters){
-  if (letters === "one"){
+function fromEnglish(word){
+  return words[word]
+}
+/*  if (letters === "one"){
     letters = 1;
   }
   if (letters == "two"){
@@ -77,68 +81,68 @@ var letters2Numbers = function(letters){
     letters = 10;
   }
   return letters;
-}
+}*/
 
-describe("letters2Numbers(), which converst English 'Strings' to Numbers", function(){
+describe("fromEnglish(), which converst English 'Strings' to Numbers", function(){
   it('should convert string one to # 1', function(){
-    assert.equal(letters2Numbers("one"), 1);
+    assert.equal(fromEnglish("one"), 1);
   })
   it('should display typeOf output "Number" for 1', function(){
-    assert.typeOf(letters2Numbers("one"), 'Number');//chai testing
-    assert.isNumber(letters2Numbers("one"), 1);//chai testing
+    assert.typeOf(fromEnglish("one"), 'Number');//chai testing
+    assert.isNumber(fromEnglish("one"), 1);//chai testing
   })
   it('should EXPECT output to be a "Number"', function(){
-    expect(letters2Numbers("two")).to.be.a('number');//chai testing
+    expect(fromEnglish("two")).to.be.a('number');//chai testing
   })
   it('should display the lengthOf of "one" as a "string"', function(){
     assert.lengthOf(("one"), 3);//chai testing
   })
   it('should convert string two to # 2', function(){
-    assert.equal(letters2Numbers("two"), 2);
+    assert.equal(fromEnglish("two"), 2);
   })
   it('should display typeOf output "Number" for 2', function(){
-    assert.typeOf(letters2Numbers("two"), 'Number');//chai testing
-    assert.isNumber(letters2Numbers("two"), 2);//chai testing
+    assert.typeOf(fromEnglish("two"), 'Number');//chai testing
+    assert.isNumber(fromEnglish("two"), 2);//chai testing
   })
   it('SHOULD be a "Number"', function(){
-    letters2Numbers("two").should.be.a('number');//chai testing
+    fromEnglish("two").should.be.a('number');//chai testing
   })
   it('should display the lengthOf of "two" as a "string"', function(){
     assert.lengthOf(("two"), 3);//chai testing
   })
   it('should convert string three to # 3', function(){
-    assert.equal(letters2Numbers("three"), 3);
+    assert.equal(fromEnglish("three"), 3);
   })
   it('should display typeOf output "Number" for 3', function(){
-    assert.typeOf(letters2Numbers("three"), 'Number');//chai testing
-    assert.isNumber(letters2Numbers("three"), 3);//chai testing
+    assert.typeOf(fromEnglish("three"), 'Number');//chai testing
+    assert.isNumber(fromEnglish("three"), 3);//chai testing
   })
   it('should display the lengthOf of "three" as a "string"', function(){
     assert.lengthOf(("three"), 5);//chai testing
   })
 })
 
-function test_letters2Numbers(a, b){
+function test_fromEnglish(a, b){
   console.log('It should convert "' + a + '" to "' + b + '":',
-        letters2Numbers(a) === b);
+        fromEnglish(a) === b);
 }
 /*
-test_letters2Numbers("one", 1);
-test_letters2Numbers("two", 2);
-test_letters2Numbers("three", 3);
-test_letters2Numbers("four", 4);
-test_letters2Numbers("five", 5);
-test_letters2Numbers("six", 6);
-test_letters2Numbers("seven", 7);
-test_letters2Numbers("eight", 8);
-test_letters2Numbers("nine", 9);
-test_letters2Numbers("ten", 10);
+test_fromEnglish("one", 1);
+test_fromEnglish("two", 2);
+test_fromEnglish("three", 3);
+test_fromEnglish("four", 4);
+test_fromEnglish("five", 5);
+test_fromEnglish("six", 6);
+test_fromEnglish("seven", 7);
+test_fromEnglish("eight", 8);
+test_fromEnglish("nine", 9);
+test_fromEnglish("ten", 10);
 */
 
 // adds our a and b inputs
 var add = function(a, b){
-  a = letters2Numbers(a);
-  b = letters2Numbers(b);
+  a = fromEnglish(a);
+  b = fromEnglish(b);
    return a + b;
 }
 
