@@ -27,6 +27,76 @@
 
  * Make up your own, too.
  */
+ function toEnglish(value){
+   var ones = ["", "One", "Two", "Three", "Four", "Five", "Six",
+               "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
+               "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
+               "Eighteen", "Nineteen"];
+
+   var tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty",
+               "Sixty", "Seventy", "Eighty", "Ninety"];
+
+   value = Number(value).toFixed(2);
+   var checkEnd = value.slice(-2) + '/100 dollars';
+   var cash = value.slice(0,-3);
+   var hundo = ' Hundred ';
+   var thous = ' Thousand ';
+   var tenK = value.slice(0, -6);
+   var twentyKPlus = value.slice(0, -6);
+
+
+   if(value < 20){
+     return ones[cash] + ' ' + checkEnd;
+   }
+   else if(value < 100){
+     if(value % 10 == 0){
+       return tens[cash[0]] + ' ' + checkEnd;
+     }
+     else {
+       return tens[cash[0]] + ' ' + ones[cash[1]] + ' ' + checkEnd;
+     }
+   }
+   else if(value < 1000){
+      if(value % 100 == 0){
+       return ones[cash[0]] + hundo + checkEnd;
+     }
+     else {
+     return ones[cash[0]] + hundo + 'and ' + tens[cash[1]] + ' ' + ones[cash[2]] + ' ' + checkEnd;
+   }
+ }
+   else if(value < 10000){
+     if(value % 1000 == 0){
+       return ones[cash[0]] + thous + checkEnd;
+     }
+     else {
+       return ones[cash[0]] + thous + ones[cash[1]] + hundo + 'and ' + tens[cash[2]] + ' ' + ones[cash[3]] + ' ' + checkEnd;
+     }
+ }
+
+}
+ console.log(toEnglish(9999));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
 //toEnglish function takes in a parameter 'value' which is a number and converts it
 //into a "string" of that number written out
 var ones = {0: "", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six",
@@ -46,7 +116,7 @@ function toEnglish(value){
   var thous = ' Thousand ';
   var tenK = value.slice(0, -6);
   var twentyKPlus = value.slice(0, -6);
-  return 
+  return
 /*
   if(value < 20){
     return ones[cash] + ' ' + checkEnd;
@@ -85,6 +155,7 @@ function toEnglish(value){
   }
 }
 */
+/*
 var expect = require('chai').expect;
 var should = require('chai').should();
 var assert = require('chai').assert;

@@ -27,7 +27,7 @@
  *
  * Make up your own, too.
  */
-
+/*
  var expect = require('chai').expect;
  var should = require('chai').should();
  var assert = require('chai').assert;
@@ -36,6 +36,9 @@
               7: "Seven", 8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve",
               13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen",
               18: "Eighteen", 19: "Nineteen"};
+
+  var tens = {0: "", 1: "Ten", 2: "Twenty", 3: "Thirty", 4: "Forty", 5: "Fifty", 6: "Sixty",
+              7: "Seventy", 8: "Eighty", 9: "Ninety"}
   function toEnglish(value){
      value = Number(value).toFixed(2);
      var checkEnd = value.slice(-2) + '/100 dollars';
@@ -51,9 +54,9 @@
    it('Should give 19.67 as if it was written on a check', function(){
      assert.equal(toEnglish(19.67), 'Nineteen 67/100 dollars');
    })
- })
+ })*/
  //ROUND 2-5 with refactoring and using mocha and chai
- /*function toEnglish(value){
+ function toEnglish(value){
    var ones = ["", "One", "Two", "Three", "Four", "Five", "Six",
                "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
                "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
@@ -76,10 +79,10 @@
    }
    else if(value < 100){
      if(value % 10 == 0){
-       return tens[cash[0]] + checkEnd;
+       return tens[cash[0]] + ' ' + checkEnd;
      }
      else {
-       return tens[cash[0]] + ones[cash[1]] + checkEnd;
+       return tens[cash[0]] + ' ' + ones[cash[1]] + ' ' + checkEnd;
      }
    }
    else if(value < 1000){
@@ -97,16 +100,10 @@
      else {
        return ones[cash[0]] + thous + ones[cash[1]] + hundo + 'and ' + tens[cash[2]] + ' ' + ones[cash[3]] + ' ' + checkEnd;
      }
-   }
-   else if(value < 20000){
-     if(value % 1000 == 0){
-       return ones[tenK] + thous + checkEnd;
-     }
-     else {
-       return ones[tenK] + thous + ones[cash[2]] + hundo + 'and ' + tens[cash[3]] + ' ' + ones[cash[4]] + ' ' + checkEnd;
-     }
-   }
- }*/
+ }
+
+}
+ console.log(toEnglish(9999));
 /*
  var expect = require('chai').expect;
  var should = require('chai').should();
