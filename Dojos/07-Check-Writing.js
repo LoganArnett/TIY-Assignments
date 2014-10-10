@@ -27,31 +27,32 @@
  *
  * Make up your own, too.
  */
- //ROUND 2-5 with refactoring and using mocha and chai
+
  var expect = require('chai').expect;
  var should = require('chai').should();
  var assert = require('chai').assert;
 
- var writeMeACheck = {
-   toEnglish: function(value){
-     var ones = ["", "One", "Two", "Three", "Four", "Five", "Six",
-                 "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
-                 "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
-                 "Eighteen", "Nineteen"];
-
-     var tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty",
-                 "Sixty", "Seventy", "Eighty", "Ninety"];
-
+  var ones = {0: "", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six",
+              7: "Seven", 8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve",
+              13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen",
+              18: "Eighteen", 19: "Nineteen"};
+  function toEnglish(value){
      value = Number(value).toFixed(2);
      var checkEnd = value.slice(-2) + '/100 dollars';
      var cash = value.slice(0,-3);
-     var hundo = ' Hundred ';
-     var thous = ' Thousand ';
-     var tenK = value.slice(0, -6);
-     var twentyKPlus = value.slice(0, -6);
+     return ones[cash] + ' ' + checkEnd;
 
    }
- }
+
+ describe('toEnglish() should convert # to String', function(){
+   it('Should give 14.55 as if it was written on a check', function(){
+     assert.equal(toEnglish(14.55), 'Fourteen 55/100 dollars');
+   })
+   it('Should give 19.67 as if it was written on a check', function(){
+     assert.equal(toEnglish(19.67), 'Nineteen 67/100 dollars');
+   })
+ })
+ //ROUND 2-5 with refactoring and using mocha and chai
  /*function toEnglish(value){
    var ones = ["", "One", "Two", "Three", "Four", "Five", "Six",
                "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
@@ -106,7 +107,7 @@
      }
    }
  }*/
-
+/*
  var expect = require('chai').expect;
  var should = require('chai').should();
  var assert = require('chai').assert;
