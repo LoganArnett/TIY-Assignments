@@ -27,9 +27,121 @@
  *
  * Make up your own, too.
  */
+ //ROUND 2-5 with refactoring and using mocha and chai
  var expect = require('chai').expect;
  var should = require('chai').should();
  var assert = require('chai').assert;
+
+ var writeMeACheck = {
+   toEnglish: function(value){
+     var ones = ["", "One", "Two", "Three", "Four", "Five", "Six",
+                 "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
+                 "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
+                 "Eighteen", "Nineteen"];
+
+     var tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty",
+                 "Sixty", "Seventy", "Eighty", "Ninety"];
+
+     value = Number(value).toFixed(2);
+     var checkEnd = value.slice(-2) + '/100 dollars';
+     var cash = value.slice(0,-3);
+     var hundo = ' Hundred ';
+     var thous = ' Thousand ';
+     var tenK = value.slice(0, -6);
+     var twentyKPlus = value.slice(0, -6);
+
+   }
+ }
+ /*function toEnglish(value){
+   var ones = ["", "One", "Two", "Three", "Four", "Five", "Six",
+               "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
+               "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
+               "Eighteen", "Nineteen"];
+
+   var tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty",
+               "Sixty", "Seventy", "Eighty", "Ninety"];
+
+   value = Number(value).toFixed(2);
+   var checkEnd = value.slice(-2) + '/100 dollars';
+   var cash = value.slice(0,-3);
+   var hundo = ' Hundred ';
+   var thous = ' Thousand ';
+   var tenK = value.slice(0, -6);
+   var twentyKPlus = value.slice(0, -6);
+
+
+   if(value < 20){
+     return ones[cash] + ' ' + checkEnd;
+   }
+   else if(value < 100){
+     if(value % 10 == 0){
+       return tens[cash[0]] + checkEnd;
+     }
+     else {
+       return tens[cash[0]] + ones[cash[1]] + checkEnd;
+     }
+   }
+   else if(value < 1000){
+      if(value % 100 == 0){
+       return ones[cash[0]] + hundo + checkEnd;
+     }
+     else {
+     return ones[cash[0]] + hundo + 'and ' + tens[cash[1]] + ' ' + ones[cash[2]] + ' ' + checkEnd;
+   }
+ }
+   else if(value < 10000){
+     if(value % 1000 == 0){
+       return ones[cash[0]] + thous + checkEnd;
+     }
+     else {
+       return ones[cash[0]] + thous + ones[cash[1]] + hundo + 'and ' + tens[cash[2]] + ' ' + ones[cash[3]] + ' ' + checkEnd;
+     }
+   }
+   else if(value < 20000){
+     if(value % 1000 == 0){
+       return ones[tenK] + thous + checkEnd;
+     }
+     else {
+       return ones[tenK] + thous + ones[cash[2]] + hundo + 'and ' + tens[cash[3]] + ' ' + ones[cash[4]] + ' ' + checkEnd;
+     }
+   }
+ }*/
+
+ var expect = require('chai').expect;
+ var should = require('chai').should();
+ var assert = require('chai').assert;
+
+ describe('toEnglish(), takes in a numerical value anf returns a string', function(){
+       it('should convert 1.23 to the amount on a check in a string', function(){
+         assert.equal(toEnglish(1.23), 'One 23/100 dollars');
+       })
+       it('should convert 12.34 to the amount on a check in a string', function(){
+         assert.equal(toEnglish(12.34), 'Twelve 34/100 dollars');
+       })
+       it('should convert 123.45 to the amount on a check in a string', function(){
+         assert.equal(toEnglish(123.45), 'One Hundred and Twenty Three 45/100 dollars');
+       })
+       it('should convert 1234.56 to the amount on a check in a string', function(){
+         assert.equal(toEnglish(1234.56), 'One Thousand Two Hundred and Thirty Four 56/100 dollars');
+       })
+       it('should convert 1000 to the amount on a check in a string', function(){
+         assert.equal(toEnglish(1000), 'One Thousand 00/100 dollars');
+       })
+       it('should convert 12345.67 to the amount on a check in a string', function(){
+         assert.equal(toEnglish(12345.67), 'Twelve Thousand Three Hundred and Forty Five 67/100 dollars');
+       })
+       it('should convert 315.75 to the amount on a check in a string', function(){
+         assert.equal(toEnglish(310), 'Three Hundred and Ten  00/100 dollars');
+       })
+           })
+ /*console.log(toEnglish(1.23))
+ console.log(toEnglish(12.34))
+ console.log(toEnglish(123.45))
+ console.log(toEnglish(1234.56))
+ console.log(toEnglish(1000))
+ console.log(toEnglish(10500))
+ console.log(toEnglish(12345.67))
+ */
 
  /**
   * Log `success` if `actual` is STRICTLY equal to `expected`
@@ -38,6 +150,7 @@
   * @param ANY expected
   * @param String success
   */
+  /** ROUND 1
  function test(actual, expected, success){
      if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
      assert.strictEqual(actual, expected);
@@ -105,7 +218,7 @@ describe("num2Letter(), takes a Number with two decimal places as an input and r
     (num2Letter(40.40)).should.exist;
   })
 })
-
+*/
 /*console.log(num2letter(1.23))
 console.log(num2letter(9.50))
 console.log(num2letter(6.72))

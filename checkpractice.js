@@ -35,7 +35,7 @@ function toEnglish(value){
               "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
               "Eighteen", "Nineteen"];
 
-  var tens = ["", "ten", "Twenty", "Thirty", "Forty", "Fifty",
+  var tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty",
               "Sixty", "Seventy", "Eighty", "Ninety"];
 
   value = Number(value).toFixed(2);
@@ -43,7 +43,8 @@ function toEnglish(value){
   var cash = value.slice(0,-3);
   var hundo = ' Hundred ';
   var thous = ' Thousand ';
-  var tenK = value.slice(0,2);
+  var tenK = value.slice(0, -6);
+  var twentyKPlus = value.slice(0, -6);
 
 
   if(value < 20){
@@ -73,13 +74,54 @@ function toEnglish(value){
       return ones[cash[0]] + thous + ones[cash[1]] + hundo + 'and ' + tens[cash[2]] + ' ' + ones[cash[3]] + ' ' + checkEnd;
     }
   }
+  else if(value < 20000){
+    if(value % 1000 == 0){
+      return ones[tenK] + thous + checkEnd;
+    }
+    else {
+      return ones[tenK] + thous + ones[cash[2]] + hundo + 'and ' + tens[cash[3]] + ' ' + ones[cash[4]] + ' ' + checkEnd;
+    }
+  }
 }
 
-console.log(toEnglish(1.23))
+var expect = require('chai').expect;
+var should = require('chai').should();
+var assert = require('chai').assert;
+
+describe('toEnglish(), takes in a numerical value anf returns a string', function(){
+      it('should convert 1.23 to the amount on a check in a string', function(){
+        assert.equal(toEnglish(1.23), 'One 23/100 dollars');
+      })
+      it('should convert 12.34 to the amount on a check in a string', function(){
+        assert.equal(toEnglish(12.34), 'Twelve 34/100 dollars');
+      })
+      it('should convert 123.45 to the amount on a check in a string', function(){
+        assert.equal(toEnglish(123.45), 'One Hundred and Twenty Three 45/100 dollars');
+      })
+      it('should convert 1234.56 to the amount on a check in a string', function(){
+        assert.equal(toEnglish(1234.56), 'One Thousand Two Hundred and Thirty Four 56/100 dollars');
+      })
+      it('should convert 1000 to the amount on a check in a string', function(){
+        assert.equal(toEnglish(1000), 'One Thousand 00/100 dollars');
+      })
+      it('should convert 12345.67 to the amount on a check in a string', function(){
+        assert.equal(toEnglish(12345.67), 'Twelve Thousand Three Hundred and Forty Five 67/100 dollars');
+      })
+      it('should convert 315.75 to the amount on a check in a string', function(){
+        assert.equal(toEnglish(310), 'Three Hundred and Ten  00/100 dollars');
+      })
+          })
+/*console.log(toEnglish(1.23))
 console.log(toEnglish(12.34))
 console.log(toEnglish(123.45))
 console.log(toEnglish(1234.56))
 console.log(toEnglish(1000))
+console.log(toEnglish(10500))
+console.log(toEnglish(12345.67))
+*/
+
+
+
 
 
 
