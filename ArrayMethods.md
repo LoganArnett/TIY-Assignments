@@ -129,7 +129,7 @@ numbers.slice(0,-3)//This will act just like before only from right to left inst
 numbers = [1, 2, 3, 4, 5];// numbers remains unaltered through all slices
 ```
 #### Array.prototype.toString()
-  * Converts an array and its elements to a string(Returns a string representing the array and its elements.) Overrides theObject.prototype.toString() method.
+  * Converts an array and its elements to a string(Returns a string representing the array and its elements.) Overrides the `Object.prototype.toString()` method.
 
 Example:
 ```javascript
@@ -140,45 +140,152 @@ var stringNumbers = numbers.toString();//will convert all of the elements in the
 stringNumbers = "1,2,3,4,5"//now has a value that reflects all of the elements in the numbers array as a single string
 ```
 #### Array.prototype.toLocaleString()
-  * Returns a localized string representing the array and its elements. Overrides theObject.prototype.toLocaleString() method. (strings are separated by a Locale specific String like commas)
+  * Returns a localized string representing the array and its elements. Overrides the `Object.prototype.toLocaleString()` method. (strings are separated by a Locale specific String like commas)
 
 Example:
 ```javascript
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.toLocaleString();//takes the elements of the numbers array and returns a localized string
+"1,2,3,4,5"
+
+numbers = [1, 2, 3, 4, 5];//original array is unaltered
 ```
 #### Array.prototype.indexOf()
-  * Returns the first (lowest) index of an element within the designated array equal to the specified value, or -1 if none is found.
+  * indexOf returns the first index that the given element can be found in the array, or -1 if it is not present.
 
+Example:
+```javascript
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.indexOf(3);//This will look through the array for the element 3. If found it will return any and indexes where it can be found
+2
+
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.indexOf();//if no element is given indexOf will return -1
+-1
+```
 #### Array.prototype.lastIndexOf()
-  * Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.
+  * Will return the last index at which a given element can be found in the array, or -1 if it is not present. 
 
+Example:
+```javascript
+var numbers = [1, 2, 3, 4, 5, 3];
+
+numbers.lastIndexOf(3);//will search through the array for the highest index that a given element can be found. 3 is located in the 2nd and 5th index and 5 > 2 so 5 is returned.
+5
+```
 #### Array.prototype.forEach()
   * Calls a function for each element in the array. Acts similar to a loop.
 
+Example:
+```javascript
+var numbers = [1, 2, 3, 4, 5];
+
+function printOut(value, index, array){//function will printout a statement using the 3 parameters listed
+   console.log('checkout the number ' + value + ' at index ' + index + ' in the ' + array + ' array!');
+}
+
+numbers.forEach(printOut);//will go through each element in the array and print out a statement illustrating their location within the array
+checkout the number 1 at index 0 in the 1,2,3,4,5 array! 
+checkout the number 2 at index 1 in the 1,2,3,4,5 array! 
+checkout the number 3 at index 2 in the 1,2,3,4,5 array! 
+checkout the number 4 at index 3 in the 1,2,3,4,5 array! 
+checkout the number 5 at index 4 in the 1,2,3,4,5 array! 
+```
 #### Array.prototype.every()
   * Returns true if every element in this array satisfies the provided testing function or false if there are problematic elements. (Similar to &&).
 
+Example:
+```javascript
+var numbers = [1, 2, 3, 4, 5];
+
+function isPositive(value, index, array){//isPositive function tests whether or not all of the values in the array are positive numbers or are greater than 0
+   if(value > 0){
+     return true;
+   }
+     return false;
+}
+
+numbers.every(isPositive)//all of the numbers satisfy this test so it results in a true
+true
+
+var numbers = [1, 2, 3, 4, 5, -6];
+
+numbers.every(isPositive)//now the array contains a negative number so our test returns a value of false because in order to be true every single value must be greater than 0.
+false
+```
 #### Array.prototype.some()
   * Returns true if at least one element in this array satisfies the provided testing function.(Similar to ||(or))
 
+Example:
+```javascript
+var numbers = [1, 2, 3, 4, 5, -6];
+
+function isPositive(value, index, array){//isPositive function tests whether or not all of the values in the array are positive numbers or are greater than 0
+   if(value > 0){
+     return true;
+   }
+     return false;
+}
+
+numbers.some(isPositive);//this now results in a true because the some method only requires for one value to be true in order to return a true for the entire array.
+true
+```
 #### Array.prototype.filter()
   * Creates a new array with all of the elements of this array for which the provided filtering function returns true.                              
 Example:                                           
 ```javascript                                                 
-var numbers = [1, 2, 3, 4, 5]                                            
-function even(value){
-  if(value % 2 === 0){
-      return value;
-    }
-  }
-numbers.filter(even)
-[2, 4]
-```
+var numbers = [1, 2, 3, 4, 5];
 
+even
+function even(value){ //the even function looks through the array for all numbers that are even divisible by 2 and returns those values.
+   if(value % 2 === 0){
+   return value;
+  }
+   else {
+    return;
+  }
+}
+numbers.filter(even)//this return does not alter the original array in any way
+[2, 4];
+```
 #### Array.prototype.map()
   * Creates a new array with the results of calling a provided function on every element in this array.
 
+Example:
+```javascript
+var numbers = [1, 2, 3, 4, 5];
+
+function squareIt(value){//squareIt function will square the value given as a parameter
+  return value*value;
+}
+numbers.map(squareIt);//map method allows us to call the squareIt function on each and every element within the array and return that value while leaving the original array unaltered.
+[1, 4, 9, 16, 25]
+```
 #### Array.prototype.reduce()
   * Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.
 
+Example:
+```javascript
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.reduce(function(a,b){//function will add the previous value and current value together on each step through the array
+return a+b;
+})
+
+15//and return the overall result
+```
 #### Array.prototype.reduceRight()
   * Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.
+
+Example:
+```javascript
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.reduceRight(function(previousValue, currentValue, index, array) {//returns similar to reduce but it actually begins its function from right to left instead of left to right
+  return previousValue + currentValue;
+});
+
+15//returns the total value which in addition will remain unchanged
