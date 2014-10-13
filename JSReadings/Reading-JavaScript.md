@@ -452,3 +452,66 @@ for( var i = 0; i < 200; i++ ) {
 
 #### 27
 ```javascript
+ Gordon.Stream = function(data){
+        var buff = [],
+            t = this,
+            i = t.length = data.length;
+}
+```
+
+ * Function: `Gordon` that takes a parameter of 'data'
+ * Variable 1: `buff` has an empty array assigned to it
+ * Variable 2: `t` has the value 'this' assigned to it to replace having to type 'this.' before every function/variable you call
+ * Variable 3: 'i' has the .length method called on the variable 't' assigned to it and that has the .length method called on the 'data' variable assigned to it
+
+#### 28
+```javascript
+var win = window,
+    doc = win.document,
+    fromCharCode = String.fromCharCode,
+    push = Array.prototype.push,
+    min = Math.min,
+    max = Math.max;
+```
+
+ * Assigning multiple variables using `var` and commas
+ * Variable 1: `win` is assigned the value of window
+ * Variable 2: `doc` is assigned the value of win.document
+ * Variable 3: `fromCharCode` is assigned the fromCharCode object found within the object `String`
+ * Variable 4: `push` is assigned the value of an array calling the .push array method
+ * Variable 5: `min` is assigned the value of Math.min
+ * Variable 6: `max` is assigned the value of Math.max
+
+#### 29
+```javascript
+var chessBoard = [
+['R','N','B','Q','K','B','N','R'],
+['P','P','P','P','P','P','P','P'],
+[' ',' ',' ',' ',' ',' ',' ',' '],
+[' ',' ',' ',' ',' ',' ',' ',' '],
+[' ',' ',' ',' ',' ',' ',' ',' '],
+[' ',' ',' ',' ',' ',' ',' ',' '],
+['p','p','p','p','p','p','p','p'],
+['r','n','b','q','k','b','n','r']
+];
+```
+
+ * Variable: `chessBoard` is an Array of Arrays
+ * Value: has multiple arrays that are comprised of strings to illustrate a chessboard
+
+#### 30
+```javascript
+var checkWrite = {
+	toEnglish: function(value){
+
+	value = Number(value).toFixed(2);
+	var checkEnd = value.slice(-2) + '/100 dollars';
+	var cash = value.slice(0,-3);
+	var hundo = ' Hundred ';
+	var thous = ' Thousand ';
+```
+
+ * Variable: `checkWrite` is an object that acts as a container
+ * Function: `toEnglish` will take an input(value) which is a Number and return it as a string that would appear on a check
+ * Method: `.toFixed` allows us to guarantee that the numbers will have 2 decimal places regardless of the number provided
+ * Method: `.slice` allows us to cut up our input to manipulate the input to give us the change to put over 100 as well as to cut off the last 3 indexes from any number which will always be the decimal and the 2 decimal places
