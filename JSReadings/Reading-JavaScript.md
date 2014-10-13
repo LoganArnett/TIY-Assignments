@@ -29,7 +29,7 @@ var HGraph = function(opts) {
 ```
 
 * Variable: HGraph
-* Value: 
+* Value:
   * this.container: opts.container(user input[string]) or null
   * this.context: null;
   * this.width: opts.width(user input[Number]) or Number 0
@@ -37,7 +37,7 @@ var HGraph = function(opts) {
   * this.rotation: opts.rotation(user input[Number]) or Number 0
   * this.zoomTime: opts.zoomTime(user input[Number]) or Number 500
   * this.healthrange: lower Number -30 to upper Number 30
-  
+
 ```javascript
  var enable_detect = false;
 ```
@@ -84,7 +84,7 @@ var cholesterol = {
 ```
 
 * Variable: `cholesterol`
-* Value: 
+* Value:
   * label: String 'Total Cholesterol'
   * score: Number 0
   * value: Number 0
@@ -132,7 +132,7 @@ var d3_nsPrefix = {
   * xlink: String "http://www.w3.org/1999/xlink"
   * xml: String "http://www.w3.org/XML/1998/namespace"
   * xmlns: String "http://www.w3.org/2000/xmlns/"
-  
+
 ```javascript
 this.zoomable = opts.zoomable || false;
 ```
@@ -154,7 +154,7 @@ HGraph.prototype.calculateScoreFromValue = function (features, myValue){
   *  var minHealthyValue = features.healthyrange[0];
   *  var maxAcceptableValue = features.totalrange[1];
   *  var minAcceptableValue = features.totalrange[0];
- 
+
 ```javascript
 for ( key in this.layers ) {
 		if (this.layers.hasOwnProperty(key)) {
@@ -275,6 +275,155 @@ pb.Board.prototype.doShadows = function() {
  * Variable: `fx`
  * Value: `.forEach` with an anonymous `function` with parameters `pedal` and `i`
 
+```javascript
+ var fullScreenApi = {
+        supportsFullScreen: false,
+        isFullScreen: function() { return false; },
+        getFullScreenElement: function() { return null; },
+        requestFullScreen: function() {},
+        exitFullScreen: function() {},
+        cancelFullScreen: function() {},
+        fullScreenEventName: '',
+        fullScreenErrorEventName: ''
+    };
+```
 
+ * Variable: `fullScreenApi` which is a global object
+ * Value: Is a `container` that holds multiple functions and methods
 
+```javascript
+ImageJob.prototype = {
 
+    /**
+     * Initiates downloading of associated image.
+     * @method
+     */
+    start: function(){
+        var _this = this;
+
+        this.image = new Image();
+
+        if ( this.crossOriginPolicy !== false ) {
+            this.image.crossOrigin = this.crossOriginPolicy;
+        }
+
+        this.image.onload = function(){
+            _this.finish( true );
+        };
+        this.image.onabort = this.image.onerror = function(){
+            _this.finish( false );
+        };
+
+        this.jobId = window.setTimeout( function(){
+            _this.finish( false );
+        }, this.timeout);
+
+        this.image.src = this.src;
+    },
+
+    finish: function( successful ) {
+        this.image.onload = this.image.onerror = this.image.onabort = null;
+        if (!successful) {
+            this.image = null;
+        }
+
+        if ( this.jobId ) {
+            window.clearTimeout( this.jobId );
+        }
+
+        this.callback( this );
+    }
+
+};
+```
+
+ * Variable: `ImageJob` which is a container
+ * Value: contains the `start` and `finish` functions for downloading images on a page
+
+```javascript
+window.OpenSeadragon = window.OpenSeadragon || function( options ){
+
+    return new OpenSeadragon.Viewer( options );
+
+};
+```
+ * Variable: `window`
+ * Value: `window.OpenSeadragon || function(options)` is a conditional assigned to window which returns a new viewing window
+
+```javascript
+   /**
+     * Controller
+     */
+    API = {
+        /**
+         * Methods for notebooks
+         */
+        // Shows list of notebooks and tags
+        listNotebooks: function (profile) {
+            require(['apps/notebooks/list/controller'], function (List) {
+                executeAction(new List().list, {profile: profile});
+            });
+            App.content.reset();
+        },
+
+        // Create notebook
+        addNotebook: function (profile, redirect) {
+            require(['apps/notebooks/notebooksForm/controller'], function (Form) {
+                executeAction(new Form().addForm, {profile: profile, redirect: redirect});
+            });
+        },
+
+        // Edit notebook
+        editNotebook: function (profile, id, redirect) {
+            require(['apps/notebooks/notebooksForm/controller'], function (Form) {
+                executeAction(new Form().editForm, {id: id, profile: profile, redirect: redirect});
+            });
+        },
+
+        // Delete notebook
+        removeNotebook: function (profile, id) {
+            require(['apps/notebooks/remove/notebook'], function (Controller) {
+                executeAction(new Controller().start, {id: id, profile: profile});
+            });
+        },
+
+        /**
+         * Methods for tags
+         */
+        addTag: function (profile) {
+            require(['apps/notebooks/tagsForm/controller'], function (Form) {
+                executeAction(new Form().addForm, {profile: profile});
+            });
+        },
+
+        editTag: function (profile, id) {
+            require(['apps/notebooks/tagsForm/controller'], function (Form) {
+                executeAction(new Form().editForm, {id: id, profile: profile});
+            });
+        },
+
+        removeTag: function (profile, id) {
+            require(['apps/notebooks/remove/tag'], function (Controller) {
+                executeAction(new Controller().start, {id: id, profile: profile});
+            });
+        }
+    };
+```
+
+  * Controller: `API`
+	* Value: contains multiple methods with functions for adding, editing, removing notebooks and tags
+
+```javascript
+var curves = [];
+for( var i = 0; i < 200; i++ ) {
+	curves.push({
+	});
+}
+```
+
+ * Variable: `curves` has an empty array assigned to it
+ * Value: Array, a new empty array
+ * Loop: a for loop with a variable i
+ * Method: .push is an array method called to push things into the empty blank curves array
+
+```javascript
