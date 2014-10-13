@@ -2,59 +2,77 @@
 
 /**
  * Check Writing
- *
- * Given an integer representing money -- $1234.56 -- convert
- * that into it;s string representation in English words. For
- * example, 1234.56 is "one thousand, two hundred thirty four
- * and 56/100s", just like you would see on a check.
- *
- * In a lot of ways this is the inverse of the "String Calculator"
- * problem, so a lot of what you've learned there will be put into
- * practice here, but backwards. Hooray!
  */
-/*
- /**
- * Sample Data
- *
- * $1234.56 => "one thousand, two hundred thirty four and 56/100s"
- * $123.45 => "one hundred twenty three and 45/100s"
- * $12.34 => "twelve and 34/100s"
- * $1.23 => "one and 23/100s"
- *
- * EXTRA Credit:
- * $12345678.90 => "twelve million, three hundred forty five thousand,
- * six hundred seventy eight and 90/100s"
- *
- * Make up your own, too.
- */
-/*
  var expect = require('chai').expect;
  var should = require('chai').should();
  var assert = require('chai').assert;
 
-  var ones = {0: "", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six",
-              7: "Seven", 8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve",
-              13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen",
-              18: "Eighteen", 19: "Nineteen"};
+var ones = [" ", "One", "Two", "Three", "Four", "Five", "Six",
+            "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
+            "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
+            "Eighteen", "Nineteen"];
 
-  var tens = {0: "", 1: "Ten", 2: "Twenty", 3: "Thirty", 4: "Forty", 5: "Fifty", 6: "Sixty",
-              7: "Seventy", 8: "Eighty", 9: "Ninety"}
-  function toEnglish(value){
-     value = Number(value).toFixed(2);
-     var checkEnd = value.slice(-2) + '/100 dollars';
-     var cash = value.slice(0,-3);
-     return ones[cash] + ' ' + checkEnd;
+var tens = [" ", "Ten", "Twenty", "Thirty", "Forty", "Fifty",
+            "Sixty", "Seventy", "Eighty", "Ninety"];
 
-   }
+var checkWrite = {
+   toEnglish: function(value){
 
- describe('toEnglish() should convert # to String', function(){
+  value = Number(value).toFixed(2);
+  var checkEnd = value.slice(-2) + '/100 dollars';
+  var cash = value.slice(0,-3);
+  var hundo = ' Hundred ';
+  var thous = ' Thousand ';
+
+  if(value < 20){
+    return ones[cash] + ' ' + checkEnd;
+  }
+  else if(value < 100){
+    if(value % 10 == 0){
+      return tens[cash[0]] + ' ' + checkEnd;
+    }
+    else {
+      return tens[cash[0]] + ' ' + ones[cash[1]] + ' ' + checkEnd;
+    }
+  }
+  else if(value < 1000){
+     if(value % 100 == 0){
+      return ones[cash[0]] + hundo + checkEnd;
+    }
+    else {
+    return ones[cash[0]] + hundo + 'and ' + tens[cash[1]] + ' ' + ones[cash[2]] + ' ' + checkEnd;
+  }
+}
+  else if(value < 10000){
+    if(value % 1000 == 0){
+      return ones[cash[0]] + thous + checkEnd;
+    }
+    else {
+      return ones[cash[0]] + thous + ones[cash[1]] + hundo + 'and ' + tens[cash[2]] + ' ' + ones[cash[3]] + ' ' + checkEnd;
+    }
+}
+
+}
+}
+
+ describe('checkWrite.toEnglish() should convert # to String', function(){
    it('Should give 14.55 as if it was written on a check', function(){
-     assert.equal(toEnglish(14.55), 'Fourteen 55/100 dollars');
+     assert.equal(checkWrite.toEnglish(14.55), 'Fourteen 55/100 dollars');
    })
    it('Should give 19.67 as if it was written on a check', function(){
-     assert.equal(toEnglish(19.67), 'Nineteen 67/100 dollars');
+     assert.equal(checkWrite.toEnglish(19.67), 'Nineteen 67/100 dollars');
    })
- })*/
+   it('Should give 195.67 as if it was written on a check', function(){
+     assert.equal(checkWrite.toEnglish(195.67), 'One Hundred and Ninety Five 67/100 dollars');
+   })
+   it('Should give 1954.67 as if it was written on a check', function(){
+     assert.equal(checkWrite.toEnglish(1954.67), 'One Thousand Nine Hundred and Fifty Four 67/100 dollars');
+   })
+   it('Should give 1954.67 as if it was written on a check', function(){
+     assert.equal(checkWrite.toEnglish(9954.67), 'Nine Thousand Nine Hundred and Fifty Four 67/100 dollars');
+   })
+ })
+ /*
  //ROUND 2-5 with refactoring and using mocha and chai
  function toEnglish(value){
    var ones = ["", "One", "Two", "Three", "Four", "Five", "Six",
@@ -71,7 +89,6 @@
    var hundo = ' Hundred ';
    var thous = ' Thousand ';
    var tenK = value.slice(0, -6);
-   var twentyKPlus = value.slice(0, -6);
 
 
    if(value < 20){
