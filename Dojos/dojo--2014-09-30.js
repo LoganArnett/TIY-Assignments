@@ -47,9 +47,26 @@ var words = {zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6,
             seven: 7, eight: 8, nine: 9, ten: 10
           };
 //converts 'Strings' to Numbers
-function fromEnglish(word){
-  return words[word]
+var stringCalc = {
+  fromEnglish: function(word1, word2){
+  return words[word1] + words[word2];
+  }
 }
+
+describe('stringCalc.fromEnglish(), should return the sum of 2 word inputs converted to numbers', function(){
+  it('should return 0 for zero and zero', function(){
+    assert.equal(stringCalc.fromEnglish('zero', 'zero'), 0);
+  })
+  it('should return 1 for one and one', function(){
+    assert.equal(stringCalc.fromEnglish('one', 'one'), 2);
+  })
+  it('should return 3 for one and two', function(){
+    assert.equal(stringCalc.fromEnglish('one', 'two'), 3);
+  })
+  it('should return 19 for ten and nine', function(){
+    assert.equal(stringCalc.fromEnglish('ten', 'nine'), 19);
+  })
+})
 /*  if (letters === "one"){
     letters = 1;
   }
@@ -82,7 +99,7 @@ function fromEnglish(word){
   }
   return letters;
 }*/
-
+/*
 describe("fromEnglish(), which converst English 'Strings' to Numbers", function(){
   it('should convert string one to # 1', function(){
     assert.equal(fromEnglish("one"), 1);
@@ -138,7 +155,7 @@ test_fromEnglish("eight", 8);
 test_fromEnglish("nine", 9);
 test_fromEnglish("ten", 10);
 */
-
+/*
 // adds our a and b inputs
 var add = function(a, b){
   a = fromEnglish(a);

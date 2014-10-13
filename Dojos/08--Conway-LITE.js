@@ -9,10 +9,112 @@ var assert = require('chai').assert;
 var game = {
     board: undefined,
     newBoard: function(){
-          return },
-    rules: function(cell, neighbors){ /* i.e. conway(cell, neighbors) */ },
-    neighborsOf: function(x,y){ /* . . . */ },
-    tick: function(){ /* accepts nothing, alters `game.board` */ },
+          board = [];
+          newBoard.push(conway(board[index][y], neighborsOf(board, index, y)));
+          },
+    rules: function(cell, neighbors){
+      var cellsFate;
+      var neighAlive = 0;
+      neighbors.forEach(function(neighbor){ //Replaced for Loops
+      //for (i = 0; i < neighbors.length; i++) {
+        if (neighbor){
+            neighAlive++;
+        }
+    /*    alive = neighbors.filter(function(neighbor){
+          return neighbor;
+        });*/
+
+        /* Rule #1: Any live cell with fewer than two live
+        * neighbours dies, as if caused by under-population.
+        */
+        if (cell === true) {
+          if (neighAlive < 2) {
+            cellsFate = false;
+        }
+
+        /* Rule #2: Any live cell with two or three live
+        * neighbours lives on to the next generation.
+        */
+
+          else if (neighAlive === 2 || neighAlive === 3) {
+            cellsFate = true;
+        }
+
+        /* Rule #3: Any live cell with more than three live
+         * neighbours dies, as if by overcrowding.
+         */
+           else if (neighAlive > 3) {
+            cellsFate = false;
+        }
+      }
+        /* Rule #4: Any dead cell with exactly three live
+         * neighbours becomes a live cell, as if by reproduction.
+         */
+        if (cell === false) {
+          if (neighAlive === 3) {
+            cellsFate = true;
+        }
+        else {
+          cellsFate = false;
+        }
+      }
+    });
+        return cellsFate;
+      }
+    },
+    neighborsOf: function(x,y){
+      var neighbors;
+
+      if (x === 0 && y === 0) {
+        neighbors = [board[0][1], board[1][0], board[1][1]]
+      };
+      if (x === 1 && y === 0){
+        neighbors = [board[0][0], board[0][1], board[1][1], board[2][0], board[2][1]]
+      };
+      if (x === 2 && y === 0){
+        neighbors = [board[1][1], board[1][0], board[2][1]]
+      };
+      if (x === 0 && y === 1){
+        neighbors = [board[0][0], board[1][0], board[1][1], board[1][2], board[0][2]]
+      };
+      if (x === 1 && y === 1){
+        neighbors = [board[0][0], board[1][0], board[2][0], board[0][1], board[2][1],
+        board[0][2], board[1][2], board[2][2]]
+      };
+      if (x === 2 && y === 1){
+        neighbors = [board[2][0], board[1][0], board[1][1], board[1][2], board[2][2]]
+      };
+      if (x === 0 && y === 2){
+        neighbors = [board[0][1], board[1][1], board[1][2]]
+      };
+       if (x === 1 && y === 2){
+         neighbors = [board[0][1], board[0][2], board[1][1], board[2][1], board[2][2]]
+       };
+      if (x === 2 && y === 2){
+        neighbors = [board[1][1], board[1][2], board[2][1]]
+      };
+      return neighbors;
+    }
+    },
+    tick: function(){ /* accepts nothing, alters `game.board` */
+       var newBoard = [ ];//A new empty array
+       board.forEach(function(value, index){//Replaced both for Loops
+         value.forEach(function(x, y){       //
+       //for (var j = 0; j < board.length; j++) {
+          //for (var k = 0; k < board[j].length; k++) {
+           newBoard.push(conway(board[index][y], neighborsOf(board, index, y)));//replace original board values with a new board of pushed values
+         });
+       });
+       /*.splice takes the newBoard and splices into new pieces
+       that will return as 3 seperate Arrays to recreate the
+       next board in the sequence
+       */
+       var new1 = newBoard.splice(0,3);//first array
+       var new2 = newBoard.splice(0,3);//second array
+       board = [new1, new2, newBoard];//The new board is stored back in the original board variable
+       return board;
+     }
+    },
 
     /**
      * WARNING: This is VOODOO MAGIC...
@@ -50,18 +152,19 @@ var game = {
         + spacer;
     } // END display
 } // END game
-
+/*
 function test(actual, expected, success){
     if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
     assert.strictEqual(actual, expected);
     console.log(success);
 }
-
+/*
 /**
  * Return a nested array representing an initially empty 3x3 board.
  *
  * @return Array of Array of Boolean
  */
+/*
 board = [
         [ false,
           false,
@@ -81,7 +184,7 @@ board = [
  */
  //allows variable neighbors to be in the global scope, possible errors with this version
 //var neighbors;
-
+/*
 function neighborsOf(board, x, y){
     var neighbors;
 
@@ -161,7 +264,7 @@ function conway(cell, neighbors) {
 
     /* Rule #1: Any live cell with fewer than two live
     * neighbours dies, as if caused by under-population.
-    */
+
     if (cell === true) {
       if (neighAlive < 2) {
         cellsFate = false;
@@ -169,7 +272,7 @@ function conway(cell, neighbors) {
 
     /* Rule #2: Any live cell with two or three live
     * neighbours lives on to the next generation.
-    */
+
 
       else if (neighAlive === 2 || neighAlive === 3) {
         cellsFate = true;
@@ -177,14 +280,14 @@ function conway(cell, neighbors) {
 
     /* Rule #3: Any live cell with more than three live
      * neighbours dies, as if by overcrowding.
-     */
+
        else if (neighAlive > 3) {
         cellsFate = false;
     }
   }
     /* Rule #4: Any dead cell with exactly three live
      * neighbours becomes a live cell, as if by reproduction.
-     */
+
     if (cell === false) {
       if (neighAlive === 3) {
         cellsFate = true;
@@ -247,7 +350,7 @@ function tick(board){
   /*.splice takes the newBoard and splices into new pieces
   that will return as 3 seperate Arrays to recreate the
   next board in the sequence
-  */
+
   var new1 = newBoard.splice(0,3);//first array
   var new2 = newBoard.splice(0,3);//second array
   board = [new1, new2, newBoard];//The new board is stored back in the original board variable
@@ -368,7 +471,7 @@ describe("tick(), which takes a board of boolean values and returns a new board 
                              false]
               ]
 
-/*Sweet test from Ari with printout of the rotations
+Sweet test from Ari with printout of the rotations
 function tick_test(board) {
   var after = tick(board)
   console.log("-----------------------");
@@ -377,7 +480,7 @@ function tick_test(board) {
   console.log(after);
   console.log("-----------------------");
 }
-*/
+
 
 //test(tick(board), console.log(tick(board)));
 //test(tick(board2), console.log(tick(board2)));
@@ -387,7 +490,7 @@ function tick_test(board) {
 //tick_test(board5);
 
 
-/*Testing the conway function for accuracy
+Testing the conway function for accuracy
   Conway Test Round 2: Completed Successful rotation
 test(con1, false, 'Testing x=0 and y=0 which should return a Dead cell of False')
 test(con2, true, 'Testing x=1 and y=0 which should return a Live cell of True');
@@ -410,7 +513,7 @@ test(con6, true, 'Testing x=2 and y=1 which should return a Live cell of True');
 test(con7, false, 'Testing x=0 and y=2 which should return a Dead cell of False');
 test(con8, false, 'Testing x=1 and y=2 which should return a Dead cell of False');
 test(con9, false, 'Testing x=2 and y=2 which should return a Dead cell of False');
-*/
+
 
 
 
