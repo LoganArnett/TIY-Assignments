@@ -8,7 +8,8 @@ var assert = require('chai').assert;
 
 var game = {
     board: undefined,
-    newBoard: function(){ /* i.e. board() */ },
+    newBoard: function(){
+          return },
     rules: function(cell, neighbors){ /* i.e. conway(cell, neighbors) */ },
     neighborsOf: function(x,y){ /* . . . */ },
     tick: function(){ /* accepts nothing, alters `game.board` */ },
