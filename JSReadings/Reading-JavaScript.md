@@ -1,5 +1,6 @@
 ## Reading Javascript Assignment
 
+#### 1
 ```javascript
 var values = ['profile', 'filter', 'query', 'page', 'id'],
 ```
@@ -7,6 +8,7 @@ var values = ['profile', 'filter', 'query', 'page', 'id'],
 * Variable: `values`
 * Value: Strings 'profile', 'filter', 'query', 'page', 'id'
 
+#### 2
 ```javascript
 var score = 0;
 ```
@@ -14,6 +16,7 @@ var score = 0;
 * Variable: `score`
 * Value: Number 0
 
+#### 3
 ```javascript
 var HGraph = function(opts) {
 	this.container        = opts.container || null;
@@ -38,6 +41,7 @@ var HGraph = function(opts) {
   * this.zoomTime: opts.zoomTime(user input[Number]) or Number 500
   * this.healthrange: lower Number -30 to upper Number 30
 
+#### 4
 ```javascript
  var enable_detect = false;
 ```
@@ -45,6 +49,7 @@ var HGraph = function(opts) {
 * Variable: `enable_detect`
 * Value: Boolean false
 
+#### 5
 ```javascript
 detect: function detect(eventData) {
         if(!this.current || this.stopped) {
@@ -55,6 +60,7 @@ detect: function detect(eventData) {
 * Function: `detect`
 * Value: Function detect(eventData)
 
+#### 6
 ```javascript
 createdDate: function() {
                     return new Date(this.created).toLocaleDateString();
@@ -63,7 +69,7 @@ createdDate: function() {
 * Function: `createdDate`
 * Value: Date this.created
 
-
+#### 7
 ```javascript
 var factors_array = [];
 ```
@@ -71,7 +77,7 @@ var factors_array = [];
 * Variable: `factors_array`
 * Value: Array [];
 
-
+#### 8
 ```javascript
 var cholesterol = {
 						label   : 'Total Cholesterol',
@@ -92,6 +98,7 @@ var cholesterol = {
   * weight: Number 0
   * details: Array []
 
+#### 9
 ```javascript
 $("#zoom_btn").click(function()
 ```
@@ -99,6 +106,7 @@ $("#zoom_btn").click(function()
 * Function: `#zoom_btn`
 * Value: Function initiated by a click
 
+#### 10
 ```javascript
 var gender = 'male'
 ```
@@ -106,6 +114,7 @@ var gender = 'male'
 * Variable: `gender`
 * Value: String 'male'
 
+#### 11
 ```javascript
 var isArray = Array.isArray || function (obj) {
     return _toString.call(obj) === '[object Array]';
@@ -115,6 +124,7 @@ var isArray = Array.isArray || function (obj) {
 * Variable: `isArray`
 * Value: Array(Array.isArray) or Function(Object)
 
+#### 12
 ```javascript
 var d3_nsPrefix = {
   svg: "http://www.w3.org/2000/svg",
@@ -133,6 +143,7 @@ var d3_nsPrefix = {
   * xml: String "http://www.w3.org/XML/1998/namespace"
   * xmlns: String "http://www.w3.org/2000/xmlns/"
 
+#### 13
 ```javascript
 this.zoomable = opts.zoomable || false;
 ```
@@ -140,6 +151,7 @@ this.zoomable = opts.zoomable || false;
 * Variable: `this.zoomable`
 * Value: Conditional opts.zoomable ||(or) false
 
+#### 14
 ```javascript
 HGraph.prototype.calculateScoreFromValue = function (features, myValue){
 	var maxHealthyValue = features.healthyrange[1];
@@ -155,6 +167,7 @@ HGraph.prototype.calculateScoreFromValue = function (features, myValue){
   *  var maxAcceptableValue = features.totalrange[1];
   *  var minAcceptableValue = features.totalrange[0];
 
+#### 15
 ```javascript
 for ( key in this.layers ) {
 		if (this.layers.hasOwnProperty(key)) {
@@ -206,6 +219,7 @@ for ( key in this.layers ) {
 * Variable: `this.layers`
 * Value: For Loop `For this, If this return this, else if, else if, else if, ...`
 
+#### 16
 ```javascript
 HGraph.prototype.zeroGraph = function() {
 
@@ -220,6 +234,7 @@ HGraph.prototype.zeroGraph = function() {
 * Variable: `HGraph.prototype.zeroGraph`
 * Value: `for` loop with function - key in this.userdata.factors
 
+#### 17
 ```javascript
 missingDeps.forEach(function (key) {
         document.write("<li>" + key + "</li>");
@@ -229,6 +244,7 @@ missingDeps.forEach(function (key) {
  * Variable: `missingDeps`
  * Value: .forEach with an anonymous `function` that contains the parameter `key`
 
+#### 18
 ```javascript
   // Insert application strings
 _.forEach(strings, function (value, key) {
@@ -241,6 +257,7 @@ _.forEach(strings, function (value, key) {
  * Variable: `_`
  * Value: `.forEach` for inserting 'Strings' and the anonymous `function` with parameters `value` and `key`
 
+#### 19
 ```javascript
 // loop through items
 		var iCount = 0;
@@ -251,6 +268,7 @@ _.forEach(strings, function (value, key) {
  * Variable: `MochiKit`
  * Value `.forEach` with an anonymous function with parameter `sKey`
 
+#### 20
 ```javascript
 pb.Board.prototype.doShadows = function() {
     this.getPedals().forEach(function(pedal) {
@@ -265,6 +283,7 @@ pb.Board.prototype.doShadows = function() {
  * Varibale: `pedal.pots`
  * Value: `.forEach` with an anonymous `function` with parameter `pot`
 
+#### 21
 ```javascript
  fx.forEach(function(pedal, i) {
             pedal.disconnect();
@@ -275,6 +294,7 @@ pb.Board.prototype.doShadows = function() {
  * Variable: `fx`
  * Value: `.forEach` with an anonymous `function` with parameters `pedal` and `i`
 
+#### 22
 ```javascript
  var fullScreenApi = {
         supportsFullScreen: false,
@@ -291,6 +311,7 @@ pb.Board.prototype.doShadows = function() {
  * Variable: `fullScreenApi` which is a global object
  * Value: Is a `container` that holds multiple functions and methods
 
+#### 23
 ```javascript
 ImageJob.prototype = {
 
@@ -340,6 +361,7 @@ ImageJob.prototype = {
  * Variable: `ImageJob` which is a container
  * Value: contains the `start` and `finish` functions for downloading images on a page
 
+#### 24
 ```javascript
 window.OpenSeadragon = window.OpenSeadragon || function( options ){
 
@@ -350,6 +372,7 @@ window.OpenSeadragon = window.OpenSeadragon || function( options ){
  * Variable: `window`
  * Value: `window.OpenSeadragon || function(options)` is a conditional assigned to window which returns a new viewing window
 
+#### 25
 ```javascript
    /**
      * Controller
@@ -413,6 +436,7 @@ window.OpenSeadragon = window.OpenSeadragon || function( options ){
   * Controller: `API`
 	* Value: contains multiple methods with functions for adding, editing, removing notebooks and tags
 
+#### 26
 ```javascript
 var curves = [];
 for( var i = 0; i < 200; i++ ) {
@@ -426,4 +450,5 @@ for( var i = 0; i < 200; i++ ) {
  * Loop: a for loop with a variable i
  * Method: .push is an array method called to push things into the empty blank curves array
 
+#### 27
 ```javascript
