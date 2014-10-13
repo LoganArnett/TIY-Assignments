@@ -47,6 +47,12 @@ var checkWrite = {
     if(value % 1000 == 0){
       return ones[cash[0]] + thous + checkEnd;
     }
+    else if(value[1] === '0' && value[2] === '0' && value[3] === '0'){
+      return ones[cash[0]] + thous + checkEnd;
+    }
+    else if(value[1] === '0' && value[2] > '0' && value[3] === '0'){
+      return ones[cash[0]] + thous + 'and ' + tens[cash[2]] + ' ' + checkEnd;
+    }
     else {
       return ones[cash[0]] + thous + ones[cash[1]] + hundo + 'and ' + tens[cash[2]] + ' ' + ones[cash[3]] + ' ' + checkEnd;
     }
@@ -54,6 +60,7 @@ var checkWrite = {
 
 }
 }
+console.log(checkWrite.toEnglish(1010));
 
  describe('checkWrite.toEnglish() should convert # to String', function(){
    it('Should give 14.55 as if it was written on a check', function(){
@@ -72,6 +79,8 @@ var checkWrite = {
      assert.equal(checkWrite.toEnglish(9954.67), 'Nine Thousand Nine Hundred and Fifty Four 67/100 dollars');
    })
  })
+
+
  /*
  //ROUND 2-5 with refactoring and using mocha and chai
  function toEnglish(value){

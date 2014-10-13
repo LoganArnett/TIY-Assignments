@@ -10,7 +10,7 @@ var game = {
     board: undefined,
     newBoard: function(){
           board = [];
-          newBoard.push(conway(board[index][y], neighborsOf(board, index, y)));
+          board.push(conway(board[index][y], neighborsOf(board, index, y)));
           },
     rules: function(cell, neighbors){
       var cellsFate;
