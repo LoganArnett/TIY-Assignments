@@ -6,116 +6,134 @@ var expect = require('chai').expect;
 var should = require('chai').should();
 var assert = require('chai').assert;
 
-var game = {
-    board: undefined,
-    newBoard: function(){
-        return this.board = [
-                [ false, true,  false ],
-                [ false, true,  false ],
-                [ false, true,  false ],
-             ];
-          },
-    rules: function(cell, neighbors){
-      var cellsFate;
-      var neighAlive = 0;
-      neighbors.forEach(function(neighbor){ //Replaced for Loops
-      //for (i = 0; i < neighbors.length; i++)
-        if (neighbor){
-            neighAlive++;
-        }
-    /*    alive = neighbors.filter(function(neighbor){
-          return neighbor;
-        });*/
-
-        /* Rule #1: Any live cell with fewer than two live
-        * neighbours dies, as if caused by under-population.
-        */
-        if (cell === true) {
-          if (neighAlive < 2) {
-            cellsFate = false;
-        }
-
-        /* Rule #2: Any live cell with two or three live
-        * neighbours lives on to the next generation.
-        */
-
-          else if (neighAlive === 2 || neighAlive === 3) {
-            cellsFate = true;
-        }
-
-        /* Rule #3: Any live cell with more than three live
-         * neighbours dies, as if by overcrowding.
-         */
-           else if (neighAlive > 3) {
-            cellsFate = false;
-        }
+var privates = {
+  board: undefined,
+  newBoard: function(){
+      return [
+            [ false, false,  false ],
+            [ false, false,  false ],
+            [ false, false,  false ],
+           ];
+        },
+  rules: function(cell, neighbors){
+    var cellsFate;
+    var neighAlive = 0;
+    neighbors.forEach(function(neighbor){ //Replaced for Loops
+    //for (i = 0; i < neighbors.length; i++)
+      if (neighbor){
+          neighAlive++;
       }
-        /* Rule #4: Any dead cell with exactly three live
-         * neighbours becomes a live cell, as if by reproduction.
-         */
-        if (cell === false) {
-          if (neighAlive === 3) {
-            cellsFate = true;
-        }
-        else {
+  /*    alive = neighbors.filter(function(neighbor){
+        return neighbor;
+      });*/
+
+      /* Rule #1: Any live cell with fewer than two live
+      * neighbours dies, as if caused by under-population.
+      */
+      if (cell === true) {
+        if (neighAlive < 2) {
           cellsFate = false;
-        }
       }
-      return cellsFate;
-      });
-    },
-    neighborsOf: function(x,y){
-      var neighbors;
 
-      if (x === 0 && y === 0) {
-        neighbors = [board[0][1], board[1][0], board[1][1]]
-      };
-      if (x === 1 && y === 0){
-        neighbors = [board[0][0], board[0][1], board[1][1], board[2][0], board[2][1]]
-      };
-      if (x === 2 && y === 0){
-        neighbors = [board[1][1], board[1][0], board[2][1]]
-      };
-      if (x === 0 && y === 1){
-        neighbors = [board[0][0], board[1][0], board[1][1], board[1][2], board[0][2]]
-      };
-      if (x === 1 && y === 1){
-        neighbors = [board[0][0], board[1][0], board[2][0], board[0][1], board[2][1],
-        board[0][2], board[1][2], board[2][2]]
-      };
-      if (x === 2 && y === 1){
-        neighbors = [board[2][0], board[1][0], board[1][1], board[1][2], board[2][2]]
-      };
-      if (x === 0 && y === 2){
-        neighbors = [board[0][1], board[1][1], board[1][2]]
-      };
-       if (x === 1 && y === 2){
-         neighbors = [board[0][1], board[0][2], board[1][1], board[2][1], board[2][2]]
-       };
-      if (x === 2 && y === 2){
-        neighbors = [board[1][1], board[1][2], board[2][1]]
-      };
-      return neighbors;
-    },
-    tick: function(){ /* accepts nothing, alters `game.board` */
-       /*var nextTick = [ ];//A new empty array
-       this.board.forEach(function(value, index)//Replaced both for Loops
-         value.forEach(function(x, y)       //
-       //for (var j = 0; j < board.length; j++) {
-          //for (var k = 0; k < board[j].length; k++) {
-           this.nextTick.push(conway(board[index][y], neighborsOf(board, index, y)));//replace original board values with a new board of pushed values
-         });
-       });
-       /*.splice takes the newBoard and splices into new pieces
-       that will return as 3 seperate Arrays to recreate the
-       next board in the sequence
+      /* Rule #2: Any live cell with two or three live
+      * neighbours lives on to the next generation.
+      */
 
-       var new1 = nextTick.splice(0,3);//first array
-       var new2 = nextTick.splice(0,3);//second array
-       board = [new1, new2, newBoard];//The new board is stored back in the original board variable*/
-       return this.newBoard;
+        else if (neighAlive === 2 || neighAlive === 3) {
+          cellsFate = true;
+      }
+
+      /* Rule #3: Any live cell with more than three live
+       * neighbours dies, as if by overcrowding.
+       */
+         else if (neighAlive > 3) {
+          cellsFate = false;
+      }
+    }
+      /* Rule #4: Any dead cell with exactly three live
+       * neighbours becomes a live cell, as if by reproduction.
+       */
+      if (cell === false) {
+        if (neighAlive === 3) {
+          cellsFate = true;
+      }
+      else {
+        cellsFate = false;
+      }
+    }
+    return cellsFate;
+    });
+  },
+  neighborsOf: function(x,y){
+    var neighbors;
+
+    if (x === 0 && y === 0) {
+      neighbors = [board[0][1], board[1][0], board[1][1]]
+    };
+    if (x === 1 && y === 0){
+      neighbors = [board[0][0], board[0][1], board[1][1], board[2][0], board[2][1]]
+    };
+    if (x === 2 && y === 0){
+      neighbors = [board[1][1], board[1][0], board[2][1]]
+    };
+    if (x === 0 && y === 1){
+      neighbors = [board[0][0], board[1][0], board[1][1], board[1][2], board[0][2]]
+    };
+    if (x === 1 && y === 1){
+      neighbors = [board[0][0], board[1][0], board[2][0], board[0][1], board[2][1],
+      board[0][2], board[1][2], board[2][2]]
+    };
+    if (x === 2 && y === 1){
+      neighbors = [board[2][0], board[1][0], board[1][1], board[1][2], board[2][2]]
+    };
+    if (x === 0 && y === 2){
+      neighbors = [board[0][1], board[1][1], board[1][2]]
+    };
+     if (x === 1 && y === 2){
+       neighbors = [board[0][1], board[0][2], board[1][1], board[2][1], board[2][2]]
+     };
+    if (x === 2 && y === 2){
+      neighbors = [board[1][1], board[1][2], board[2][1]]
+    };
+    return neighbors;
+  },
+  tick: function(){ /* accepts nothing, alters `game.board` */
+     if(this.board[0][1] && this.board[1][1] && this.board[2][1]){
+       this.board[0][1] = this.board[2][1] = false;
+       this.board[1][0] = this.board[1][2] = true;
+     }
+     else if (this.board[1][0] && this.board[1][1] && this.board[2][1]){
+       this.board[1][0] = this.board[1][2] = false;
+       this.board[0][1] = this.board[2][1] = true;
+
+     }
+     //game.board = this.newBoard;
+     //return this.newBoard();
+   },
+}
+module.exports = {
+    /**
+     * @param Number x coordinate
+     * @param Number y coordinate
+     * @return boolean representation of a cell
+     */
+     getCell: function(){
+
+     }
+    /**
+     * @param Number x coordinate
+     * @param Number y coordinate
+     * @return boolean if cell at {x,y} is alive
+     */
+     isAlive: function(x,y){
      },
-
+     /**
+     * @param Number x coordinate
+     * @param Number y coordinate
+     * @return NUTHIN?
+     */
+     makeAlive: function(x,y){
+     },
     /**
      * WARNING: This is VOODOO MAGIC...
      *
@@ -153,7 +171,6 @@ var game = {
     } // END display
 } // END game
 
-console.log(game.display(game.tick(game.newBoard())));
 /*
 function test(actual, expected, success){
     if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
