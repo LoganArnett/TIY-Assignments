@@ -9,17 +9,17 @@ var assert = require('chai').assert;
 var game = {
     board: undefined,
     newBoard: function(){
-        return  board = [
-                [ false, false,  false ],
-                [ false, false,  false ],
-                [ false, false,  false ],
+        return this.board = [
+                [ false, true,  false ],
+                [ false, true,  false ],
+                [ false, true,  false ],
              ];
           },
     rules: function(cell, neighbors){
       var cellsFate;
       var neighAlive = 0;
       neighbors.forEach(function(neighbor){ //Replaced for Loops
-      //for (i = 0; i < neighbors.length; i++) {
+      //for (i = 0; i < neighbors.length; i++)
         if (neighbor){
             neighAlive++;
         }
@@ -61,9 +61,8 @@ var game = {
           cellsFate = false;
         }
       }
-    });
-        return cellsFate;
-      }
+      return cellsFate;
+      });
     },
     neighborsOf: function(x,y){
       var neighbors;
@@ -97,12 +96,11 @@ var game = {
         neighbors = [board[1][1], board[1][2], board[2][1]]
       };
       return neighbors;
-    }
     },
     tick: function(){ /* accepts nothing, alters `game.board` */
-       var nextTick = [ ];//A new empty array
-       this.board.forEach(function(value, index){//Replaced both for Loops
-         value.forEach(function(x, y){       //
+       /*var nextTick = [ ];//A new empty array
+       this.board.forEach(function(value, index)//Replaced both for Loops
+         value.forEach(function(x, y)       //
        //for (var j = 0; j < board.length; j++) {
           //for (var k = 0; k < board[j].length; k++) {
            this.nextTick.push(conway(board[index][y], neighborsOf(board, index, y)));//replace original board values with a new board of pushed values
@@ -111,13 +109,12 @@ var game = {
        /*.splice takes the newBoard and splices into new pieces
        that will return as 3 seperate Arrays to recreate the
        next board in the sequence
-       */
+
        var new1 = nextTick.splice(0,3);//first array
        var new2 = nextTick.splice(0,3);//second array
-       board = [new1, new2, newBoard];//The new board is stored back in the original board variable
-       return board;
-     }
-    },
+       board = [new1, new2, newBoard];//The new board is stored back in the original board variable*/
+       return this.newBoard;
+     },
 
     /**
      * WARNING: This is VOODOO MAGIC...
@@ -155,6 +152,8 @@ var game = {
         + spacer;
     } // END display
 } // END game
+
+console.log(game.display(game.tick(game.newBoard())));
 /*
 function test(actual, expected, success){
     if (success === undefined) success = 'Wait Really? It worked? Holy Shit it WORKED!!!';
