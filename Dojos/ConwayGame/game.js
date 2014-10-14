@@ -162,7 +162,7 @@ Game.prototype.tick = function(){
 }
 
 Game.prototype.neighborsOf = function(){
-  
+
 }
 Game.prototype.rules = function(){
 
@@ -211,7 +211,7 @@ Game.prototype.rules = function(){
             }).join(spacer) // Place `spacer` between each `row`...
         + spacer;
     } // END display
- // END game
+ }// END game
 
 /*
 function test(actual, expected, success){
