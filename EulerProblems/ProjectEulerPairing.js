@@ -60,8 +60,6 @@ function solution(){
     }
 } // END solution
 
-//Test ALL THE SOLUTIONS!!!
-var assert = require('chai').assert
 
 describe('solution().fibonacci', function(){
   it('should return the values in the fibonacci sequence up until the limit given and return a list', function(){

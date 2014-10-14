@@ -5,7 +5,7 @@
 var expect = require('chai').expect;
 var should = require('chai').should();
 var assert = require('chai').assert;
-
+/*
 var privates = {
   board: undefined,
   newBoard: function(){
@@ -25,11 +25,11 @@ var privates = {
       }
   /*    alive = neighbors.filter(function(neighbor){
         return neighbor;
-      });*/
+      });
 
       /* Rule #1: Any live cell with fewer than two live
       * neighbours dies, as if caused by under-population.
-      */
+
       if (cell === true) {
         if (neighAlive < 2) {
           cellsFate = false;
@@ -37,7 +37,7 @@ var privates = {
 
       /* Rule #2: Any live cell with two or three live
       * neighbours lives on to the next generation.
-      */
+
 
         else if (neighAlive === 2 || neighAlive === 3) {
           cellsFate = true;
@@ -45,14 +45,14 @@ var privates = {
 
       /* Rule #3: Any live cell with more than three live
        * neighbours dies, as if by overcrowding.
-       */
+
          else if (neighAlive > 3) {
           cellsFate = false;
       }
     }
       /* Rule #4: Any dead cell with exactly three live
        * neighbours becomes a live cell, as if by reproduction.
-       */
+
       if (cell === false) {
         if (neighAlive === 3) {
           cellsFate = true;
@@ -97,7 +97,7 @@ var privates = {
     };
     return neighbors;
   },
-  tick: function(){ /* accepts nothing, alters `game.board` */
+  tick: function(){ /* accepts nothing, alters `game.board`
      if(this.board[0][1] && this.board[1][1] && this.board[2][1]){
        this.board[0][1] = this.board[2][1] = false;
        this.board[1][0] = this.board[1][2] = true;
@@ -110,30 +110,72 @@ var privates = {
      //game.board = this.newBoard;
      //return this.newBoard();
    },
+}*/
+module.exports = Game;
+
+  function Game(){
+    this.board = board();
+  }
+
+  function board(){
+      return  [ [ false, false,  false ],
+                [ false, false,  false ],
+                [ false, false,  false ],
+  ];
 }
-module.exports = {
+/**
+* @param Number x coordinate
+* @param Number y coordinate
+* @return boolean if cell at {x,y} is alive
+*/
+Game.prototype.isAlive = function(x,y){
+
+},
+/**
+* turns cell at {x,y} on to a living cell
+* @param Number x coordinate
+* @param Number y coordinate
+* @return undefined
+*/
+Game.prototype.giveLife = function(x,y){
+
+}
+/**
+* turns cell at {x,y} off to a dead cell
+* @param Number x coordinate
+* @param Number y coordinate
+* @return undefined
+*/
+Game.prototype.takeLife = function(x,y){
+
+}
+
+/**
+ * update the board by applying the rules to each cell
+ */
+Game.prototype.tick = function(){
+  //Start with a fresh board
+  //Apply rules to each cell in that board
+  //Record result in the new board
+  //Update the current board to match the new board
+
+}
+
+Game.prototype.neighborsOf = function(){
+  
+}
+Game.prototype.rules = function(){
+
+}
     /**
      * @param Number x coordinate
      * @param Number y coordinate
      * @return boolean representation of a cell
-     */
+
      getCell: function(){
 
      }
-    /**
-     * @param Number x coordinate
-     * @param Number y coordinate
-     * @return boolean if cell at {x,y} is alive
-     */
-     isAlive: function(x,y){
-     },
-     /**
-     * @param Number x coordinate
-     * @param Number y coordinate
-     * @return NUTHIN?
-     */
-     makeAlive: function(x,y){
-     },
+
     /**
      * WARNING: This is VOODOO MAGIC...
      *
@@ -153,7 +195,7 @@ module.exports = {
      *   |   | X |   |
      *   +---+---+---+
      */
-    display: function(){
+    Game.prototype.display = function(){
         var spacer = '+---+---+---+\n';
 
         return spacer +
@@ -169,7 +211,7 @@ module.exports = {
             }).join(spacer) // Place `spacer` between each `row`...
         + spacer;
     } // END display
-} // END game
+ // END game
 
 /*
 function test(actual, expected, success){
