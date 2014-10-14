@@ -9,8 +9,11 @@ var assert = require('chai').assert;
 var game = {
     board: undefined,
     newBoard: function(){
-          board = [];
-          board.push(conway(board[index][y], neighborsOf(board, index, y)));
+        return  board = [
+                [ false, false,  false ],
+                [ false, false,  false ],
+                [ false, false,  false ],
+             ];
           },
     rules: function(cell, neighbors){
       var cellsFate;
@@ -97,20 +100,20 @@ var game = {
     }
     },
     tick: function(){ /* accepts nothing, alters `game.board` */
-       var newBoard = [ ];//A new empty array
-       board.forEach(function(value, index){//Replaced both for Loops
+       var nextTick = [ ];//A new empty array
+       this.board.forEach(function(value, index){//Replaced both for Loops
          value.forEach(function(x, y){       //
        //for (var j = 0; j < board.length; j++) {
           //for (var k = 0; k < board[j].length; k++) {
-           newBoard.push(conway(board[index][y], neighborsOf(board, index, y)));//replace original board values with a new board of pushed values
+           this.nextTick.push(conway(board[index][y], neighborsOf(board, index, y)));//replace original board values with a new board of pushed values
          });
        });
        /*.splice takes the newBoard and splices into new pieces
        that will return as 3 seperate Arrays to recreate the
        next board in the sequence
        */
-       var new1 = newBoard.splice(0,3);//first array
-       var new2 = newBoard.splice(0,3);//second array
+       var new1 = nextTick.splice(0,3);//first array
+       var new2 = nextTick.splice(0,3);//second array
        board = [new1, new2, newBoard];//The new board is stored back in the original board variable
        return board;
      }
