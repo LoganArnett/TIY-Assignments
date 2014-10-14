@@ -7,9 +7,15 @@ it('should play the game', function(){
 
   assert.deepEqual(game.board, [
             [ false, false,  false ],
-            [ false, false,  false ],
+            [ false, true,  false ],
             [ false, false,  false ],
 ]);
+});
+it('should check if Alive', function(){
+  var game = new Game();
+  assert.isTrue(game.isAlive(1,1));
+  assert.isFalse(game.isAlive(0,1));
+  assert.isFalse(game.isAlive(1,2));
 });
 
 

@@ -1,3 +1,4 @@
+/*
 var privates = {
   board: undefined,
   newBoard: function(){
@@ -105,12 +106,12 @@ var privates = {
 module.exports = Game;
 
   function Game(){
-    this.board = new Board();
+    this.board = newBoard();
   }
 
-  function Board(){
+  function newBoard(){
       return  [ [ false, false,  false ],
-                [ false, false,  false ],
+                [ false, true,  false ],
                 [ false, false,  false ],
   ];
 }
@@ -120,7 +121,12 @@ module.exports = Game;
 * @return boolean if cell at {x,y} is alive
 */
 Game.prototype.isAlive = function(x,y){
-
+  if(this.board[x][y]){
+    return true;
+  }
+  else{
+    return false;
+  }
 },
 /**
 * turns cell at {x,y} on to a living cell
@@ -202,5 +208,5 @@ Game.prototype.rules = function(){
                 + ' |\n';
             }).join(spacer) // Place `spacer` between each `row`...
         + spacer;
-    } // END display
-}// END game
+    }; // END display
+// END game
