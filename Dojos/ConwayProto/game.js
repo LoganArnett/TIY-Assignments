@@ -163,54 +163,57 @@ Game.prototype.tick = function(){
   //Apply rules to each cell in that board
   //Record result in the new board
   //Update the current board to match the new board
-  var Board = newBoard();//A new empty array
-  Board.forEach(function(value, index){//Replaced both for Loops
-    value.forEach(function(x, y){       //
-  //for (var j = 0; j < board.length; j++) {
-     //for (var k = 0; k < board[j].length; k++) {
-      Board.push(this.rules(x, y, this.board));//replace original board values with a new board of pushed values
-    });
-  });
+
+  //Board.forEach(function(value, index){
+    //value.forEach(function(x, y){
+var Board = newBoard();
+  for (var j = 0; j < Board.length; j++) {
+     for (var k = 0; k < Board[j].length; k++) {
+       console.log(Board);
+      Board.push(this.rules(j, k, Board))//replace original board values with a new board of pushed values
+    };
+  };
   /*.splice takes the newBoard and splices into new pieces
   that will return as 3 seperate Arrays to recreate the
   next board in the sequence*/
-
+  console.log(Board);
   var new1 = Board.splice(0,3);//first array
   var new2 = Board.splice(0,3);//second array
-  board = [new1, new2, Board];//The new board is stored back in the original board variable
+  board = [new1, new2, Board];//The new board is stored back in the original board variable*/
+  this.board = Board;
   return this.board;
 },
 
-Game.prototype.neighborsOf = function(){
+Game.prototype.neighborsOf = function(x, y){
   var neighbors;
 
   if (x === 0 && y === 0) {
-    neighbors = [board[0][1], board[1][0], board[1][1]]
+    neighbors = [this.board[0][1], this.board[1][0], this.board[1][1]]
   };
   if (x === 1 && y === 0){
-    neighbors = [board[0][0], board[0][1], board[1][1], board[2][0], board[2][1]]
+    neighbors = [this.board[0][0], this.board[0][1], this.board[1][1], this.board[2][0], this.board[2][1]]
   };
   if (x === 2 && y === 0){
-    neighbors = [board[1][1], board[1][0], board[2][1]]
+    neighbors = [this.board[1][1], this.board[1][0], this.board[2][1]]
   };
   if (x === 0 && y === 1){
-    neighbors = [board[0][0], board[1][0], board[1][1], board[1][2], board[0][2]]
+    neighbors = [this.board[0][0], this.board[1][0], this.board[1][1], this.board[1][2], this.board[0][2]]
   };
   if (x === 1 && y === 1){
-    neighbors = [board[0][0], board[1][0], board[2][0], board[0][1], board[2][1],
-    board[0][2], board[1][2], board[2][2]]
+    neighbors = [this.board[0][0], this.board[1][0], this.board[2][0], this.board[0][1], this.board[2][1],
+    this.board[0][2], this.board[1][2], this.board[2][2]]
   };
   if (x === 2 && y === 1){
-    neighbors = [board[2][0], board[1][0], board[1][1], board[1][2], board[2][2]]
+    neighbors = [this.board[2][0], this.board[1][0], this.board[1][1], this.board[1][2], this.board[2][2]]
   };
   if (x === 0 && y === 2){
-    neighbors = [board[0][1], board[1][1], board[1][2]]
+    neighbors = [this.board[0][1], this.board[1][1], this.board[1][2]]
   };
    if (x === 1 && y === 2){
-     neighbors = [board[0][1], board[0][2], board[1][1], board[2][1], board[2][2]]
+     neighbors = [this.board[0][1], this.board[0][2], this.board[1][1], this.board[2][1], this.board[2][2]]
    };
   if (x === 2 && y === 2){
-    neighbors = [board[1][1], board[1][2], board[2][1]]
+    neighbors = [this.board[1][1], this.board[1][2], this.board[2][1]]
   };
   return neighbors;
 },
@@ -218,7 +221,7 @@ Game.prototype.neighborsOf = function(){
 Game.prototype.rules = function(){
   var cellsFate;
   var neighAlive = 0;
-  neighbors.forEach(function(neighbor){
+  this.neighborsOf.neighbors.forEach(function(neighbor){
     if (neighbor){
         neighAlive++;
     }
@@ -249,7 +252,7 @@ Game.prototype.rules = function(){
     /* Rule #4: Any dead cell with exactly three live
      * neighbours becomes a live cell, as if by reproduction.
      */
-    if (cell === false) {
+      if (cell === false) {
       if (neighAlive === 3) {
         cellsFate = true;
     }

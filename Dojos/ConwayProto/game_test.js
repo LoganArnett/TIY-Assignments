@@ -75,6 +75,13 @@ it('should tick the board to multiple moves', function(){
 });
 
 
+/*it('should check the neighbors of the cell', function(){
+  var game = new Game();
+
+ assert.isBoolean(game.neighborsOf.neighbors);
+
+});
+
 
 /*Last Tests === SUCCESS
 it('should play the game', function(){
