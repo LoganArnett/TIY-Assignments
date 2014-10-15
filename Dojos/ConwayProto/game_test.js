@@ -6,9 +6,9 @@ it('should play the game', function(){
   var game = new Game();
 
   assert.deepEqual(game.board, [
-            [ false, true, false ],
-            [ false, true, false ],
-            [ false, true, false ],
+            [ false, false, false ],
+            [ false, false, false ],
+            [ false, false, false ],
 ]);
 
     /*All true board
@@ -22,7 +22,7 @@ it('should play the game', function(){
 it('should check if Alive', function(){
   var game = new Game();
   assert.isBoolean(game.isAlive(0,0));
-  /*false tests
+  //false tests
   assert.isFalse(game.isAlive(0,0));
   assert.isFalse(game.isAlive(0,1));
   assert.isFalse(game.isAlive(0,2));
@@ -32,7 +32,7 @@ it('should check if Alive', function(){
   assert.isFalse(game.isAlive(2,0));
   assert.isFalse(game.isAlive(2,1));
   assert.isFalse(game.isAlive(2,2));
-  */
+
   /*true tests
   assert.isTrue(game.isAlive(0,0));
   assert.isTrue(game.isAlive(0,1));
@@ -45,6 +45,23 @@ it('should check if Alive', function(){
   assert.isTrue(game.isAlive(2,2));
   */
 });
+it('should display a board', function(){
+var game = new Game();
+
+assert.equal(game.display(this.board),
+
+"+---+---+---+\n" +
+"|   |   |   |\n" +
+"+---+---+---+\n" +
+"|   |   |   |\n" +
+"+---+---+---+\n" +
+"|   |   |   |\n" +
+"+---+---+---+\n");
+
+console.log(game.display(this.board));
+});
+
+
 /*
 it('should give dead cells life', function(){
   var game = new Game();
@@ -55,7 +72,7 @@ it('should give dead cells life', function(){
   assert.equal(game.giveLife(2,2), true);
 
 });
-
+/*
 it('should take life from living cells', function(){
   var game = new Game();
 
@@ -67,10 +84,10 @@ it('should take life from living cells', function(){
 });
 */
 
-it('should tick the board to multiple moves', function(){
+/*it('should tick the board to multiple moves', function(){
   var game = new Game();
 
- assert.equal(game.tick())
+ assert.equal(game.tick(this.board))
 
 });
 
@@ -81,10 +98,11 @@ it('should tick the board to multiple moves', function(){
  assert.isBoolean(game.neighborsOf.neighbors);
 
 });
-
-
-/*Last Tests === SUCCESS
+*/
+/*
+//Last Tests === SUCCESS
 it('should play the game', function(){
+  var game = new Game();
 game.giveLife(0,1);
 game.giveLife(1,1);
 game.giveLife(2,1);
@@ -102,8 +120,8 @@ assert.isTrue(game.isAlive(2,1));
        "+---+---+---+\n" +
        "|   | X |   |\n" +
        "+---+---+---+\n"
-);
-
+});
+/*
   game.tick();
 
 assert.isTrue(game.isAlive(1,0));
