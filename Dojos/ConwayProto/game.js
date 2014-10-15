@@ -89,6 +89,7 @@ var privates = {
     };
     return neighbors;
   },
+
   tick: function(){ /* accepts nothing, alters `game.board`
      if(this.board[0][1] && this.board[1][1] && this.board[2][1]){
        this.board[0][1] = this.board[2][1] = false;
@@ -110,9 +111,9 @@ module.exports = Game;
   }
 
   function newBoard(){
-      return  [ [ false, false,  false ],
-                [ false, true,  false ],
-                [ false, false,  false ],
+      return  [ [ false, false, false ],
+                [ false, false, false ],
+                [ false, false, false ],
   ];
 }
 /**
@@ -135,7 +136,9 @@ Game.prototype.isAlive = function(x,y){
 * @return undefined
 */
 Game.prototype.giveLife = function(x,y){
-
+   if(this.board[x][y] === false){
+     return true;
+   }
 },
 /**
 * turns cell at {x,y} off to a dead cell
@@ -144,7 +147,12 @@ Game.prototype.giveLife = function(x,y){
 * @return undefined
 */
 Game.prototype.takeLife = function(x,y){
-
+   if(this.board[x][y] === true){
+     return false;
+   }
+   else {
+     return false;
+   }
 },
 
 /**

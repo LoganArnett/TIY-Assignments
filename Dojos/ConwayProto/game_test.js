@@ -6,16 +6,64 @@ it('should play the game', function(){
   var game = new Game();
 
   assert.deepEqual(game.board, [
-            [ false, false,  false ],
-            [ false, true,  false ],
-            [ false, false,  false ],
+            [ false, false, false ],
+            [ false, false, false ],
+            [ false, false, false ],
 ]);
+
+    /*All true board
+            [ true, true,  true ],
+            [ true, true,  true ],
+            [ true, true,  true ],
+    */
+
 });
+
 it('should check if Alive', function(){
   var game = new Game();
-  assert.isTrue(game.isAlive(1,1));
+  assert.isBoolean(game.isAlive(0,0));
+  /*false tests
+  assert.isFalse(game.isAlive(0,0));
   assert.isFalse(game.isAlive(0,1));
+  assert.isFalse(game.isAlive(0,2));
+  assert.isFalse(game.isAlive(1,0));
+  assert.isFalse(game.isAlive(1,1));
   assert.isFalse(game.isAlive(1,2));
+  assert.isFalse(game.isAlive(2,0));
+  assert.isFalse(game.isAlive(2,1));
+  assert.isFalse(game.isAlive(2,2));
+  */
+  /*true tests
+  assert.isTrue(game.isAlive(0,0));
+  assert.isTrue(game.isAlive(0,1));
+  assert.isTrue(game.isAlive(0,2));
+  assert.isTrue(game.isAlive(1,0));
+  assert.isTrue(game.isAlive(1,1));
+  assert.isTrue(game.isAlive(1,2));
+  assert.isTrue(game.isAlive(2,0));
+  assert.isTrue(game.isAlive(2,1));
+  assert.isTrue(game.isAlive(2,2));
+  */
+});
+
+it('should give dead cells life', function(){
+  var game = new Game();
+
+  assert.equal(game.giveLife(0,0), true);
+  assert.equal(game.giveLife(0,1), true);
+  assert.equal(game.giveLife(1,0), true);
+  assert.equal(game.giveLife(2,2), true);
+
+});
+
+it('should take life from living cells', function(){
+  var game = new Game();
+
+  assert.equal(game.takeLife(0,0), false);
+  assert.equal(game.takeLife(0,1), false);
+  assert.equal(game.takeLife(1,0), false);
+  assert.equal(game.takeLife(2,2), false);
+
 });
 
 
