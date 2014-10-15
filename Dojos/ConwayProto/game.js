@@ -111,9 +111,9 @@ module.exports = Game;
   }
 
   function newBoard(){
-      return  [ [ false, false, false ],
-                [ false, false, false ],
-                [ false, false, false ],
+      return  [ [ false, true, false ],
+                [ false, true, false ],
+                [ false, true, false ],
   ];
 }
 /**
@@ -163,15 +163,102 @@ Game.prototype.tick = function(){
   //Apply rules to each cell in that board
   //Record result in the new board
   //Update the current board to match the new board
+  var Board = newBoard();//A new empty array
+  Board.forEach(function(value, index){//Replaced both for Loops
+    value.forEach(function(x, y){       //
+  //for (var j = 0; j < board.length; j++) {
+     //for (var k = 0; k < board[j].length; k++) {
+      Board.push(this.rules(x, y, this.board));//replace original board values with a new board of pushed values
+    });
+  });
+  /*.splice takes the newBoard and splices into new pieces
+  that will return as 3 seperate Arrays to recreate the
+  next board in the sequence*/
 
+  var new1 = Board.splice(0,3);//first array
+  var new2 = Board.splice(0,3);//second array
+  board = [new1, new2, Board];//The new board is stored back in the original board variable
+  return this.board;
 },
 
 Game.prototype.neighborsOf = function(){
+  var neighbors;
 
+  if (x === 0 && y === 0) {
+    neighbors = [board[0][1], board[1][0], board[1][1]]
+  };
+  if (x === 1 && y === 0){
+    neighbors = [board[0][0], board[0][1], board[1][1], board[2][0], board[2][1]]
+  };
+  if (x === 2 && y === 0){
+    neighbors = [board[1][1], board[1][0], board[2][1]]
+  };
+  if (x === 0 && y === 1){
+    neighbors = [board[0][0], board[1][0], board[1][1], board[1][2], board[0][2]]
+  };
+  if (x === 1 && y === 1){
+    neighbors = [board[0][0], board[1][0], board[2][0], board[0][1], board[2][1],
+    board[0][2], board[1][2], board[2][2]]
+  };
+  if (x === 2 && y === 1){
+    neighbors = [board[2][0], board[1][0], board[1][1], board[1][2], board[2][2]]
+  };
+  if (x === 0 && y === 2){
+    neighbors = [board[0][1], board[1][1], board[1][2]]
+  };
+   if (x === 1 && y === 2){
+     neighbors = [board[0][1], board[0][2], board[1][1], board[2][1], board[2][2]]
+   };
+  if (x === 2 && y === 2){
+    neighbors = [board[1][1], board[1][2], board[2][1]]
+  };
+  return neighbors;
 },
 
 Game.prototype.rules = function(){
+  var cellsFate;
+  var neighAlive = 0;
+  neighbors.forEach(function(neighbor){
+    if (neighbor){
+        neighAlive++;
+    }
 
+    /*Rule #1: Any live cell with fewer than two live
+    * neighbours dies, as if caused by under-population.
+    */
+    if (cell === true) {
+      if (neighAlive < 2) {
+        cellsFate = false;
+    }
+
+    /* Rule #2: Any live cell with two or three live
+    * neighbours lives on to the next generation.
+    */
+
+      else if (neighAlive === 2 || neighAlive === 3) {
+        cellsFate = true;
+    }
+
+    /* Rule #3: Any live cell with more than three live
+     * neighbours dies, as if by overcrowding.
+    */
+       else if (neighAlive > 3) {
+        cellsFate = false;
+    }
+  }
+    /* Rule #4: Any dead cell with exactly three live
+     * neighbours becomes a live cell, as if by reproduction.
+     */
+    if (cell === false) {
+      if (neighAlive === 3) {
+        cellsFate = true;
+    }
+    else {
+      cellsFate = false;
+    }
+  }
+  return cellsFate;
+  });
 },
     /**
      * @param Number x coordinate

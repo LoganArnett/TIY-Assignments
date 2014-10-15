@@ -6,9 +6,9 @@ it('should play the game', function(){
   var game = new Game();
 
   assert.deepEqual(game.board, [
-            [ false, false, false ],
-            [ false, false, false ],
-            [ false, false, false ],
+            [ false, true, false ],
+            [ false, true, false ],
+            [ false, true, false ],
 ]);
 
     /*All true board
@@ -45,7 +45,7 @@ it('should check if Alive', function(){
   assert.isTrue(game.isAlive(2,2));
   */
 });
-
+/*
 it('should give dead cells life', function(){
   var game = new Game();
 
@@ -65,6 +65,15 @@ it('should take life from living cells', function(){
   assert.equal(game.takeLife(2,2), false);
 
 });
+*/
+
+it('should tick the board to multiple moves', function(){
+  var game = new Game();
+
+ assert.equal(game.tick())
+
+});
+
 
 
 /*Last Tests === SUCCESS
