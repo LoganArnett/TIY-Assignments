@@ -34,7 +34,7 @@ it('should check the color of a Piece based on the case of the letter', function
 it('should move a piece to a new destination', function(){
   var chess = new Chess();
 
-/*
+
   assert.deepEqual(chess.move(1,0,3,0),
   [
    ['R','N','B','Q','K','B','N','R'],
@@ -47,12 +47,12 @@ it('should move a piece to a new destination', function(){
    ['r','n','b','q','k','b','n','r']
 ]);
 
-
+/*
   assert.deepEqual(chess.move(6,0,4,0), [
    ['R','N','B','Q','K','B','N','R'],
-   ['P','P','P','P','P','P','P','P'],
+   [' ','P','P','P','P','P','P','P'],
    [' ',' ',' ',' ',' ',' ',' ',' '],
-   [' ',' ',' ',' ',' ',' ',' ',' '],
+   ['P',' ',' ',' ',' ',' ',' ',' '],
    ['p',' ',' ',' ',' ',' ',' ',' '],
    [' ',' ',' ',' ',' ',' ',' ',' '],
    [' ','p','p','p','p','p','p','p'],
@@ -61,12 +61,17 @@ it('should move a piece to a new destination', function(){
 
   assert.deepEqual(chess.move(0,1,2,2), [
    ['R',' ','B','Q','K','B','N','R'],
-   ['P','P','P','P','P','P','P','P'],
+   [' ','P','P','P','P','P','P','P'],
    [' ',' ','N',' ',' ',' ',' ',' '],
+   ['P',' ',' ',' ',' ',' ',' ',' '],
+   ['p',' ',' ',' ',' ',' ',' ',' '],
    [' ',' ',' ',' ',' ',' ',' ',' '],
-   [' ',' ',' ',' ',' ',' ',' ',' '],
-   [' ',' ',' ',' ',' ',' ',' ',' '],
-   ['p','p','p','p','p','p','p','p'],
+   [' ','p','p','p','p','p','p','p'],
    ['r','n','b','q','k','b','n','r']
 ]);*/
+});
+
+it('should display the board', function(){
+  var chess = new Chess();
+  console.log(chess.display(this.board));
 });

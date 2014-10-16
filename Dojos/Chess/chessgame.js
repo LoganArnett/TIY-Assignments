@@ -26,6 +26,8 @@ Chess.prototype.getPlayer = function(piece){
 }
 
 Chess.prototype.move = function(a,b,c,d){
+  //{a,b} represent the coordinates for the piece called,
+  //{c,d} represent the space where that piece is moving to
   this.board[c][d] = this.board[a][b];
   this.board[a][b] = ' ';
   return this.board;
@@ -33,4 +35,8 @@ Chess.prototype.move = function(a,b,c,d){
 
 function Chess(){
   this.board = board();
+}
+
+Chess.prototype.display = function(){
+  return (this.board.join('\n') + '\n\n');
 }
