@@ -41,7 +41,7 @@ Chess.prototype.opening = function(){
 
     var moves = {
     move1Lower: function(){
-      this.move(6,3,4,3);
+      Chess.move(6,3,4,3);
    },
     move1Upper: function(){
       this.move(0,6,2,5);

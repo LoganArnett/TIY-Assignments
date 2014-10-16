@@ -90,7 +90,7 @@ describe('should test the Catalan Opening moves', function(){
     var chess = new Chess();
     //opening.moves.move1Lower();
 
-    assert.deepEqual(this.move1Lower, [
+    assert.equal(chess.opening.moves.move1Lower, [
      ['R','N','B','Q','K','B','N','R'],
      ['P','P','P','P','P','P','P','P'],
      [' ',' ',' ',' ',' ',' ',' ',' '],

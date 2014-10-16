@@ -515,3 +515,41 @@ var checkWrite = {
  * Function: `toEnglish` will take an input(value) which is a Number and return it as a string that would appear on a check
  * Method: `.toFixed` allows us to guarantee that the numbers will have 2 decimal places regardless of the number provided
  * Method: `.slice` allows us to cut up our input to manipulate the input to give us the change to put over 100 as well as to cut off the last 3 indexes from any number which will always be the decimal and the 2 decimal places
+
+#### 31
+```javascript
+var drink = ImDriving ? 'coconut water': 'jåger bombs';
+```
+
+ * Translation: variable drink is assigned the value of the object ImDriving
+ * which will return `'coconut water'` if its return is true, otherwise it will
+ * return `'jåger bombs'`.
+ *
+ * Symbol: `drink`;
+ * Type: variable;
+ * Name: `drink`
+ *
+ * Symbol: `=`;
+ * Type: Operator;
+ * Name: Assignment;
+ *
+ * Symbol: `ImDriving`;
+ * Type: Object;
+ * Name: `ImDriving`;
+ *
+ * Symbol: `?`;
+ * Type: Operator;
+ * Name: Ternary Operator;
+ *
+ * Symbol: `'coconut water'`
+ * Type: String;
+ * Name: 'coconut water'
+ *
+ * Symbol: `'jåger bombs'`
+ * Type: String;
+ * Name: 'jåger bombs'
+
+#### 32
+```javascript
+ 
+```
