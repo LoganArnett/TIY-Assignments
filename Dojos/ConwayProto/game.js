@@ -10,7 +10,7 @@ module.exports = Game; {
 * @return Boolean if cell at {x,y} is alive
 */
 newBoard.prototype.isAlive = function(x, y){
-  //return true of this.board[x][y] is "alive"
+  //return true if this.board[x][y] is "alive"
    return Boolean(this[x + ',' + y]);
 };
 
