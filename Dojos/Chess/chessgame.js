@@ -1,5 +1,8 @@
 module.exports = Chess;
 
+function Chess(){
+  this.board = board();
+}
 
 function board(x, y){
   return [
@@ -33,41 +36,41 @@ Chess.prototype.move = function(a,b,c,d){
   return this.board;
 }
 
-function Chess(){
-  this.board = board();
-}
 
 Chess.prototype.opening = function(){
-
-    var moves = {
-    move1Lower: function(){
-      Chess.move(6,3,4,3);
-   },
-    move1Upper: function(){
+     //console.log(this.move(6,3,4,3));
+    //return {
+    //var moves = {
+    //move1Lower: function(){
+      this.move(6,3,4,3);
+   //},
+    //move1Upper: function(){
       this.move(0,6,2,5);
-   },
-    move2Lower: function(){
+   //},
+    //move2Lower: function(){
       this.move(6,2,4,2);
-  },
-    move2Upper: function(){
+  //},
+    //move2Upper: function(){
       this.move(1,4,2,4);
-  },
-    move3Lower: function(){
+  //},
+    //move3Lower: function(){
       this.move(6,6,5,6);
-  },
-    move3Upper: function(){
+  //},
+    //move3Upper: function(){
       this.move(1,3,3,3);
-  },
-    move4Lower: function(){
+  //},
+    //move4Lower: function(){
       this.move(7,5,6,6);
-  },
-    move4Upper: function(){
+  //},
+    //move4Upper: function(){
       this.move(0,5,1,4);
-  },
-    move5Lower: function(){
+  //},
+    //move5Lower: function(){
       this.move(7,6,5,5);
-  }
- }
+  //}
+        //}
+ //}
+ console.log(this.board);
 }
 
 Chess.prototype.display = function(){
