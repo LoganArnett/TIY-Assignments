@@ -71,6 +71,166 @@ it('should move a piece to a new destination', function(){
 ]);*/
 });
 
+describe('should test the Catalan Opening moves', function(){
+  it('should return the intial starting chess board', function(){
+    var chess = new Chess();
+    assert.deepEqual(chess.board, [
+     ['R','N','B','Q','K','B','N','R'],
+     ['P','P','P','P','P','P','P','P'],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     ['p','p','p','p','p','p','p','p'],
+     ['r','n','b','q','k','b','n','r']
+  ]);
+  });
+
+  it('should move the lower queens pawn up 2 spaces', function(){
+    var chess = new Chess();
+    //opening.moves.move1Lower();
+
+    assert.deepEqual(this.move1Lower, [
+     ['R','N','B','Q','K','B','N','R'],
+     ['P','P','P','P','P','P','P','P'],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ',' ','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     ['p','p','p',' ','p','p','p','p'],
+     ['r','n','b','q','k','b','n','r']
+  ]);
+  });
+
+/*  it('should move the Upper Kings Knight up 2 spaces and over 1', function(){
+       var chess = new Chess();
+    moves.move1Upper();
+
+    assert.deepEqual(chessBoard, [
+     ['R','N','B','Q','K','B',' ','R'],
+     ['P','P','P','P','P','P','P','P'],
+     [' ',' ',' ',' ',' ','N',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ',' ','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     ['p','p','p',' ','p','p','p','p'],
+     ['r','n','b','q','k','b','n','r']
+  ]);
+  });
+
+  it('should move the lower bishops pawn up 2 spaces', function(){
+     var chess = new Chess();
+    moves.move2Lower();
+
+    assert.deepEqual(chessBoard, [
+     ['R','N','B','Q','K','B',' ','R'],
+     ['P','P','P','P','P','P','P','P'],
+     [' ',' ',' ',' ',' ','N',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ','p','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     ['p','p',' ',' ','p','p','p','p'],
+     ['r','n','b','q','k','b','n','r']
+  ]);
+  });
+
+  it('should move the Upper Kings Pawn up 1 space', function(){
+     var chess = new Chess();
+    moves.move2Upper();
+
+    assert.deepEqual(chessBoard, [
+     ['R','N','B','Q','K','B',' ','R'],
+     ['P','P','P','P',' ','P','P','P'],
+     [' ',' ',' ',' ','P','N',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ','p','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     ['p','p',' ',' ','p','p','p','p'],
+     ['r','n','b','q','k','b','n','r']
+  ]);
+  });
+
+  it('should move the lower knights pawn up 1 space', function(){
+     var chess = new Chess();
+    moves.move3Lower();
+
+    assert.deepEqual(chessBoard, [
+     ['R','N','B','Q','K','B',' ','R'],
+     ['P','P','P','P',' ','P','P','P'],
+     [' ',' ',' ',' ','P','N',' ',' '],
+     [' ',' ',' ',' ',' ',' ',' ',' '],
+     [' ',' ','p','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ','p',' '],
+     ['p','p',' ',' ','p','p',' ','p'],
+     ['r','n','b','q','k','b','n','r']
+  ]);
+  });
+
+  it('should move the Upper Queens pawn up 2 spaces', function(){
+      var chess = new Chess();
+    moves.move3Upper();
+
+    assert.deepEqual(chessBoard, [
+     ['R','N','B','Q','K','B',' ','R'],
+     ['P','P','P',' ',' ','P','P','P'],
+     [' ',' ',' ',' ','P','N',' ',' '],
+     [' ',' ',' ','P',' ',' ',' ',' '],
+     [' ',' ','p','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ','p',' '],
+     ['p','p',' ',' ','p','p',' ','p'],
+     ['r','n','b','q','k','b','n','r']
+  ]);
+  });
+
+  it('should move the lower kings bishop over 1 space', function(){
+      var chess = new Chess();
+    moves.move4Lower();
+
+    assert.deepEqual(chessBoard, [
+     ['R','N','B','Q','K','B',' ','R'],
+     ['P','P','P',' ',' ','P','P','P'],
+     [' ',' ',' ',' ','P','N',' ',' '],
+     [' ',' ',' ','P',' ',' ',' ',' '],
+     [' ',' ','p','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ','p',' '],
+     ['p','p',' ',' ','p','p','b','p'],
+     ['r','n','b','q','k',' ','n','r']
+  ]);
+  });
+
+  it('should move the Upper Kings Bishop over 1 space', function(){
+      var chess = new Chess();
+    moves.move4Upper();
+
+    assert.deepEqual(chessBoard, [
+     ['R','N','B','Q','K',' ',' ','R'],
+     ['P','P','P',' ','B','P','P','P'],
+     [' ',' ',' ',' ','P','N',' ',' '],
+     [' ',' ',' ','P',' ',' ',' ',' '],
+     [' ',' ','p','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ',' ','p',' '],
+     ['p','p',' ',' ','p','p','b','p'],
+     ['r','n','b','q','k',' ','n','r']
+  ]);
+  });
+
+  it('should move the lower kings knight up 2 spaces and over 1 space', function(){
+      var chess = new Chess();
+    moves.move5Lower();
+
+    assert.deepEqual(chessBoard, [
+     ['R','N','B','Q','K',' ',' ','R'],
+     ['P','P','P',' ','B','P','P','P'],
+     [' ',' ',' ',' ','P','N',' ',' '],
+     [' ',' ',' ','P',' ',' ',' ',' '],
+     [' ',' ','p','p',' ',' ',' ',' '],
+     [' ',' ',' ',' ',' ','n','p',' '],
+     ['p','p',' ',' ','p','p','b','p'],
+     ['r','n','b','q','k',' ',' ','r']
+  ]);
+});*/
+});
+
 it('should display the board', function(){
   var chess = new Chess();
   console.log(chess.display(this.board));

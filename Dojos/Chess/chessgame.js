@@ -37,6 +37,39 @@ function Chess(){
   this.board = board();
 }
 
+Chess.prototype.opening = function(){
+
+    var moves = {
+    move1Lower: function(){
+      this.move(6,3,4,3);
+   },
+    move1Upper: function(){
+      this.move(0,6,2,5);
+   },
+    move2Lower: function(){
+      this.move(6,2,4,2);
+  },
+    move2Upper: function(){
+      this.move(1,4,2,4);
+  },
+    move3Lower: function(){
+      this.move(6,6,5,6);
+  },
+    move3Upper: function(){
+      this.move(1,3,3,3);
+  },
+    move4Lower: function(){
+      this.move(7,5,6,6);
+  },
+    move4Upper: function(){
+      this.move(0,5,1,4);
+  },
+    move5Lower: function(){
+      this.move(7,6,5,5);
+  }
+ }
+}
+
 Chess.prototype.display = function(){
   return (this.board.join('\n') + '\n\n');
 }
