@@ -17,12 +17,31 @@ function board(x, y){
 ];
 }
 
-board.prototype.Pieces = function(x, y){
+ function Piece(name, color){
+   this.name = name;
+   this.color = color;
+ }
 
+var Q = new Piece('Queen', 'Black');
+var q = new Piece('queen', 'white');
+
+Piece.prototype.getName = function(){
+  return this.name;
 }
 
-Chess.prototype.getPlayer = function(piece){
-  if(piece === piece.toLowerCase()){
+Piece.prototype.getColor = function(){
+  return this.color;
+}
+
+console.log(Q);
+console.log(Q.getName());
+console.log(Q.getColor());
+console.log(q);
+console.log(q.getName());
+console.log(q.getColor());
+
+Chess.prototype.getPlayer = function(pieces){
+  if(pieces === pieces.toLowerCase()){
      return 'white';
   }
      return 'black';
@@ -70,7 +89,6 @@ Chess.prototype.opening = function(){
   //}
         //}
  //}
- console.log(this.board);
 }
 
 Chess.prototype.display = function(){
