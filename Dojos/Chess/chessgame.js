@@ -1,3 +1,40 @@
+// `@constructor Chess`: Setup a `board` with `Pieces` representing an initial chessboard.
+//    `@method getPlayer()`
+//       `@return String either "white" or "black" representing current player`
+//    `@method move(piece, destination)`: Move `piece` to `destination` and replace the space where the `piece` started with an empty space '  '.
+//       `@param Piece piece to move`
+//       `@param Position destination to move piece to`
+//         replace the original space with an empty space
+//    `@method opening()`: Advance the `board` to [Catalan Opening, Closed Variation](http://j.mp/1BSJj9W)
+//    `@method display()`
+//       `@return String representation of board`
+// ```javascript
+// R,N,B,Q,K,B,N,R
+// P,P,P,P,P,P,P,P
+//  , , , , , , ,
+//  , , , , , , ,
+//  , , , , , , ,
+//  , , , , , , ,
+// p,p,p,p,p,p,p,p
+// r,n,b,q,k,b,n,r
+// ```
+// `@constructor Position(x,y)`: Represent a position on a chessboard with coordinates
+//    usage: `new Position(1,1)`
+//    `@property Number x coordinate`
+//    `@property Number y coordinate`
+// `@constructor Piece(name, color)`: Represent a chesspiece on the `board` with `name` and `color` and appropriate starting position
+//    usage: `new Piece('Queen', 'black')`
+//    `@method getName()`
+//       `@return String name of Piece, e.g. 'Queen', 'Pawn'`
+//    `@method getColor()`:
+//       `@return String player 'black' or 'white'`
+//    `@method setPosition(position)`: Set `Piece` to `position` on board
+//       `@param Position position`
+//    `@method toString()`
+//       `@return String representation of Piece`
+//       example: `"Q" === String(new Piece("Queen", "white"))`
+//       example: `"r" === String(new Piece("Rook", "black"))`
+
 module.exports = Chess;
 
 function Chess(){
@@ -23,7 +60,10 @@ function board(x, y){
  }
 
 var Q = new Piece('Queen', 'Black');
+var QB = new Position(0,3);
 var q = new Piece('queen', 'white');
+var K = new Position(0,4);
+// var Q = new Position(0,3);
 
 Piece.prototype.getName = function(){
   return this.name;
@@ -33,12 +73,23 @@ Piece.prototype.getColor = function(){
   return this.color;
 }
 
+function Position(x,y){
+  this.x = x;
+  this.y = y;
+}
+
 console.log(Q);
+console.log(QB);
 console.log(Q.getName());
 console.log(Q.getColor());
-console.log(q);
-console.log(q.getName());
-console.log(q.getColor());
+// console.log(q);
+// console.log(q.getName());
+// console.log(q.getColor());
+// console.log(K);
+
+
+
+
 
 Chess.prototype.getPlayer = function(pieces){
   if(pieces === pieces.toLowerCase()){
