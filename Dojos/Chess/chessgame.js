@@ -32,6 +32,7 @@ module.exports = Chess;
 
 function Chess(){
   this.board = board();
+  this.Piece = Piece();
   this.Q = new Piece('queen', 'black');
   this.Q.setPosition = (0,3);
   this.K = new Piece('king', 'black');
@@ -62,6 +63,8 @@ function Chess(){
   this.p = new Piece('pawn', 'white');
   console.log(this.B.toString());
   console.log(this.B.setPosition);
+  console.log(this.B.getName());
+  console.log(this.B.getColor());
   console.log(this.B);
 }
 
@@ -124,7 +127,8 @@ function board(){
  function Position(x,y){
    this.x = x;
    this.y = y;
-   
+   return this.board[x][y];
+
  }
 
  function Piece(name, color){
@@ -133,20 +137,6 @@ function board(){
    this.setPosition;
    this.toString;
  }
-
-// var Q = new Piece('Queen', 'Black');
-// var K = new Piece('King', 'Black');
-// var R = new Piece('Rook', 'Black');
-// var N = new Piece('Knight', 'Black');
-// var B = new Piece('Bihsop', 'Black');
-// var P = new Piece('Pawn', 'Black');
-// var q = new Piece('queen', 'white');
-// var k = new Piece('king', 'white');
-// var r = new Piece('rook', 'white');
-// var n = new Piece('knight', 'white');
-// var b = new Piece('bishop', 'white');
-// var p = new Piece('pawn', 'white');
-
 
 Piece.prototype.getName = function(){
   return this.name;
@@ -158,7 +148,7 @@ Piece.prototype.getColor = function(){
 
 Piece.prototype.setPosition = function(position){
   //places `piece` in a position on board
-  this.board[x][y] = position
+
 }
 
 Piece.prototype.toString = function(){
@@ -199,7 +189,7 @@ Piece.prototype.toString = function(){
     return 'p';
   }
 
-}
+};
 
 
 
