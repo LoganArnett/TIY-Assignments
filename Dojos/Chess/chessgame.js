@@ -34,38 +34,87 @@ function Chess(){
   this.board = board();
   this.Piece = Piece();
   this.Q = new Piece('queen', 'black');
-  this.Q.setPosition = (0,3);
   this.K = new Piece('king', 'black');
-  this.K.setPosition = (0,4);
   this.R = new Piece('rook', 'black');
-  this.R.setPosition = (0,0);
-  this.R.setPosition = (0,7);
   this.N = new Piece('knight', 'black');
-  this.N.setPosition = (0,1);
-  this.N.setPosition = (0,6);
   this.B = new Piece('bishop', 'black');
-  this.B.setPosition = [[0,2], [0,5]];
-  // this.B.setPosition = [0,5];
+  // this.B.setPosition = [[0,2], [0,5]];
   this.P = new Piece('pawn', 'black');
-  this.P.setPosition = (1,0);
-  this.P.setPosition = (1,1);
-  this.P.setPosition = (1,2);
-  this.P.setPosition = (1,3);
-  this.P.setPosition = (1,4);
-  this.P.setPosition = (1,5);
-  this.P.setPosition = (1,6);
-  this.P.setPosition = (1,7);
   this.q = new Piece('queen', 'white');
   this.k = new Piece('king', 'white');
   this.r = new Piece('rook', 'white');
   this.n = new Piece('knight', 'white');
   this.b = new Piece('bishop', 'white');
   this.p = new Piece('pawn', 'white');
-  console.log(this.B.toString());
-  console.log(this.B.setPosition);
-  console.log(this.B.getName());
-  console.log(this.B.getColor());
-  console.log(this.B);
+  var a8 = new Position(0,0);
+  var b8 = new Position(0,1);
+  var c8 = new Position(0,2);
+  var d8 = new Position(0,3);
+  var e8 = new Position(0,4);
+  var f8 = new Position(0,5);
+  var g8 = new Position(0,6);
+  var h8 = new Position(0,7);
+  var a7 = new Position(1,0);
+  var b7 = new Position(1,1);
+  var c7 = new Position(1,2);
+  var d7 = new Position(1,3);
+  var e7 = new Position(1,4);
+  var f7 = new Position(1,5);
+  var g7 = new Position(1,6);
+  var h7 = new Position(1,7);
+  var a6 = new Position(2,0);
+  var b6 = new Position(2,1);
+  var c6 = new Position(2,2);
+  var d6 = new Position(2,3);
+  var e6 = new Position(2,4);
+  var f6 = new Position(2,5);
+  var g6 = new Position(2,6);
+  var h6 = new Position(2,7);
+  var a5 = new Position(3,0);
+  var b5 = new Position(3,1);
+  var c5 = new Position(3,2);
+  var d5 = new Position(3,3);
+  var e5 = new Position(3,4);
+  var f5 = new Position(3,5);
+  var g5 = new Position(3,6);
+  var h5 = new Position(3,7);
+  var a4 = new Position(4,0);
+  var b4 = new Position(4,1);
+  var c4 = new Position(4,2);
+  var d4 = new Position(4,3);
+  var e4 = new Position(4,4);
+  var f4 = new Position(4,5);
+  var g4 = new Position(4,6);
+  var h4 = new Position(4,7);
+  var a3 = new Position(5,0);
+  var b3 = new Position(5,1);
+  var c3 = new Position(5,2);
+  var d3 = new Position(5,3);
+  var e3 = new Position(5,4);
+  var f3 = new Position(5,5);
+  var g3 = new Position(5,6);
+  var h3 = new Position(5,7);
+  var a2 = new Position(6,0);
+  var b2 = new Position(6,1);
+  var c2 = new Position(6,2);
+  var d2 = new Position(6,3);
+  var e2 = new Position(6,4);
+  var f2 = new Position(6,5);
+  var g2 = new Position(6,6);
+  var h2 = new Position(6,7);
+  var a1 = new Position(7,0);
+  var b1 = new Position(7,1);
+  var c1 = new Position(7,2);
+  var d1 = new Position(7,3);
+  var e1 = new Position(7,4);
+  var f1 = new Position(7,5);
+  var g1 = new Position(7,6);
+  var h1 = new Position(7,7);
+  // console.log(this.B.toString());
+  // console.log(this.B.setPosition);
+  // console.log(this.B.getName());
+  // console.log(this.B.getColor());
+  // console.log(this.B);
 }
 
 // Chess.prototype.getPlayer = function(pieces){
@@ -75,15 +124,13 @@ function Chess(){
 //       return 'black';
 // }
 
-Chess.prototype.move = function(piece, destination){
-//   //piece represents the coordinates for the piece called,
-//   //destination represents the space where that piece is moving to
-  destination = piece.setPosition;
-  piece.setPosition = ' ';
-  // this.board[c][d] = this.board[a][b];
-  // this.board[a][b] = ' ';
-  // return this.board;
- }
+// Chess.prototype.move = function(piece, destination){
+// //   //piece represents the coordinates for the piece called,
+// //   //destination represents the space where that piece is moving to
+//   destination = piece position value;
+//   orig piece position value = ' ';
+//
+//  }
 
 
 // Chess.prototype.opening = function(){
@@ -107,9 +154,7 @@ Chess.prototype.move = function(piece, destination){
 //       this.move(7,6,5,5);
 // }
 
-Chess.prototype.display = function(){
-  return (this.board.join('\n') + '\n\n');
-}
+
 
 function board(){
 //   return [
@@ -127,9 +172,11 @@ function board(){
  function Position(x,y){
    this.x = x;
    this.y = y;
-   return this.board[x][y];
+}
 
- }
+
+
+
 
  function Piece(name, color){
    this.name = name;
@@ -149,7 +196,8 @@ Piece.prototype.getColor = function(){
 Piece.prototype.setPosition = function(position){
   //places `piece` in a position on board
 
-}
+};
+
 
 Piece.prototype.toString = function(){
   if(this.name === 'queen'){
@@ -191,7 +239,9 @@ Piece.prototype.toString = function(){
 
 };
 
-
+Chess.prototype.display = function(){
+  return (this.board.join('\n') + '\n\n');
+}
 
 //initial coordinates
  // boardBegin = {
