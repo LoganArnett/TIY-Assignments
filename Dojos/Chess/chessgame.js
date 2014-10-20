@@ -35,9 +35,9 @@ function Chess(){
   var gamePieces = [];
 
   gamePieces.push(this.Q = new Piece('Queen', 'black'));
-  this.Q.position = new Position(0,4);
+  this.Q.position = new Position(0,3);
   gamePieces.push(this.K = new Piece('King', 'black'));
-  this.K.position = new Position(0,3);
+  this.K.position = new Position(0,4);
   gamePieces.push(this.B1 = new Piece('Bishop', 'black'));
   this.B1.position = new Position(0,2);
   gamePieces.push(this.B2 = new Piece('Bishop', 'black'));
@@ -67,9 +67,9 @@ function Chess(){
   gamePieces.push(this.P8 = new Piece('Pawn', 'black'));
   this.P8.position = new Position(1,7);
   gamePieces.push(this.q = new Piece('Queen', 'white'));
-  this.q.position = new Position(7,4);
+  this.q.position = new Position(7,3);
   gamePieces.push(this.k = new Piece('King', 'white'));
-  this.k.position = new Position(7,3);
+  this.k.position = new Position(7,4);
   gamePieces.push(this.b1 = new Piece('Bishop', 'white'));
   this.b1.position = new Position(7,2);
   gamePieces.push(this.b2 = new Piece('Bishop', 'white'));
@@ -151,23 +151,6 @@ Chess.prototype.getPlayer = function(pieces){
 //
 //       this.move(7,6,5,5);
 // }
-
-
-
-// function board(){
-//    this.board = {};
-// //   return [
-// //    ['R','N','B','Q','K','B','N','R'],
-// //    ['P','P','P','P','P','P','P','P'],
-// //    [' ',' ',' ',' ',' ',' ',' ',' '],
-// //    [' ',' ',' ',' ',' ',' ',' ',' '],
-// //    [' ',' ',' ',' ',' ',' ',' ',' '],
-// //    [' ',' ',' ',' ',' ',' ',' ',' '],
-// //    ['p','p','p','p','p','p','p','p'],
-// //    ['r','n','b','q','k','b','n','r']
-// // ];
-// }
-
 
  function Position(x,y){
    this.x = x;
