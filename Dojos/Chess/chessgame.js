@@ -30,6 +30,10 @@
 
 module.exports = Chess, Position, Piece;
 
+var points = {
+  queen: 9, rook: 5, bishop: 3, knight: 3, pawn: 1
+}
+
 function Chess(){
 
   var gamePieces = [];
@@ -101,7 +105,7 @@ function Chess(){
 
   this.board = [];
   for (var i = 0; i < 8; i++){
-    this.board.push(new Array(8));
+    this.board.push(new Array(8)); //creates the initial 8x8 chess board and pushes pieces into their positions
   }
 
   self = this;

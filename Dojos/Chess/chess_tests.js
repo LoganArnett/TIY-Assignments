@@ -105,7 +105,20 @@ it('should check the color of a Piece', function(){
      assert.deepEqual(chess.p5.position, [ 6, 4 ])
      console.log(chess.p5.position)
 
+   })
 
+   it('should check who the current player is based off of the piece', function(){
+     var chess = new Chess();
+
+     assert.equal(chess.getPlayer('p'), 'white')
+     console.log(chess.getPlayer('p'))
+     assert.equal(chess.getPlayer('K'), 'black')
+     console.log(chess.getPlayer('K'))
+     assert.equal(chess.getPlayer('n'), 'white')
+     console.log(chess.getPlayer('n'))
+     assert.equal(chess.getPlayer('B'), 'black')
+     console.log(chess.getPlayer('B'))
+     
    })
 // it('should move a piece to a new destination', function(){
 //   var chess = new Chess();
