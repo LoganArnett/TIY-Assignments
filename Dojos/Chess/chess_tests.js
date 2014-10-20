@@ -1,9 +1,20 @@
-var Chess = require('./chessgame.js');
-var Position = require('./chessgame.js');
-var Piece = require('./chessgame.js');
+var Chess = require('./chessgame.js').Chess;
+var Position = require('./chessgame.js').Position;
+var Piece = require('./chessgame.js').Piece;
 
 var assert = require('chai').assert;
 
+// describe('Position', function(){
+//
+// });
+//
+// describe('Piece', function(){
+//
+// });
+//
+// describe('Chess', function(){
+//
+// });
 
 it('should check the starting Board', function(){
   var chess = new Chess();

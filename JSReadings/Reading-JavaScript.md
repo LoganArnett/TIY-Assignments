@@ -521,7 +521,7 @@ var checkWrite = {
 var drink = ImDriving ? 'coconut water': 'jåger bombs';
 ```
 
- * Translation: variable drink is assigned the value of the object ImDriving
+ * Translation: a variable is declared with the identifier `drink` and is assigned the value of the object ImDriving
  * which will return `'coconut water'` if its return is true, otherwise it will
  * return `'jåger bombs'`.
  *
@@ -551,5 +551,130 @@ var drink = ImDriving ? 'coconut water': 'jåger bombs';
 
 #### 32
 ```javascript
- 
+ gamePieces.push(this.Q = new Piece('Queen', 'Black'));
+```
+
+ * Translation: gamePieces references an Array and we are using the `.push`
+ * method which will add items to the end of whatever is currently occupying
+ * the array. This method is invoked and contains the keyword `this` and an
+ * Object with the identifier Q which is then assigned the value of a new `Piece`
+ * which is a constructor that takes in the parameters of a name and color as strings.
+ *
+ * Symbol: `gamePieces`
+ * Type: Array
+ * Name: gamePieces
+ *
+ * Symbol: `.push`
+ * Type: Array Method
+ * Name: .push method, pushes its parameters on to the end of an array
+ *
+ * Symbol: ()
+ * Type: Operator
+ * Name: Parentheses
+ * Usage: Used to invoke the method or function and to contain the parameters
+ *
+ * Symbol: `this`
+ * Type: keyword
+ * Name: this
+ *
+ * Symbol: .
+ * Type: Operator
+ * Name: Period Operator
+ * Usage: compares items on either side of it, in this case hints that a
+ * dictionary is present and evaluates with `Q` is the beginning of a dictionary.
+ *
+ * Symbol: `Q`
+ * Type: Object Literal
+ * Name: Object with identifier Q
+ * Usage: acts a dictionary that holds the keys of name and color created within the new Piece.
+ *
+ * Symbol: `=`
+ * Type: Operator
+ * Name: Assignment
+ *
+ * Symbol: `new`
+ * Type: Operator
+ * Name: `new` operator
+ * Usage: allows us to create the new object types based on the constructor function
+ *
+ * Symbol: `Piece`
+ * Type: Constructor
+ * Name: Piece(name, color)
+ * Usage: Allows us to create pieces with assigned values for name and color
+ *
+ * Symbol: ()
+ *
+ * Symbol: 'Queen'
+ * Type: String
+ * Name: String Queen
+ * Usage: The string value Queen is the input for the name parameter
+ *
+ * Symbol: 'Black'
+ * Type: String
+ * Name: String Black
+ * Usage: The string value Black is the input for the name parameter
+
+#### 33
+```javascript
+  if(item === item.toLowerCase())
+```
+ * Translation: This is an `if` statement that evaluates the original string
+ * value of item against the value that would be the output of calling it
+ * toLowerCase. If these are strictly equal, then you can assume the original
+ * item by itself is a lowercase letter. If it returns false, then the original
+ * item must be a capitalized letter
+ *
+ * Symbol: `if`
+ * Type: Conditional
+ * Name: if statement
+ * Usage: `if` the statement with the () is true, return something
+ *
+ * Symbol: ()
+ * Type: Operator
+ *
+ * Symbol: `item`
+ * Type: an Object which is passed as an argument or parameter of a function
+ *
+ * Symbol: `===`
+ * Type: Comparison Operator
+ * Name: Strict Equal
+ *
+ * Symbol: `item.toLowerCase()`
+ * Type: Object method
+ * Name toLowerCase
+ * Usage: allows you to convert string values from uppercase to lowercase letters
+
+#### 34
+```javascript
+
+```
+
+#### 35
+```javascript
+
+```
+
+#### 36
+```javascript
+
+```
+
+#### 37
+```javascript
+
+```
+
+#### 38
+```javascript
+
+```
+
+#### 39
+```javascript
+
+```
+
+#### 40
+```javascript
+
 ```

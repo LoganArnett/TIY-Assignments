@@ -11,10 +11,12 @@
 //    `@method opening()`: Advance the `board` to [Catalan Opening, Closed Variation](http://j.mp/1BSJj9W)
 //    `@method display()`
 //       `@return String representation of board`
+
 // `@constructor Position(x,y)`: Represent a position on a chessboard with coordinates
 //    usage: `new Position(1,1)`
 //    `@property Number x coordinate`
 //    `@property Number y coordinate`
+
 // `@constructor Piece(name, color)`: Represent a chesspiece on the `board` with `name` and `color` and appropriate starting position
 //    usage: `new Piece('Queen', 'black')`
 //    `@method getName()`
@@ -141,23 +143,23 @@ Chess.prototype.getPlayer = function(pieces){
 
 // Chess.prototype.opening = function(){
 //
-//       this.move(6,3,4,3);
+//       this.move([6,3],[4,3]);
 //
-//       this.move(0,6,2,5);
+//       this.move([0,6],[2,5]);
 //
-//       this.move(6,2,4,2);
+//       this.move([6,2],[4,2]);
 //
-//       this.move(1,4,2,4);
+//       this.move([1,4],[2,4]);
 //
-//       this.move(6,6,5,6);
+//       this.move([6,6],[5,6]);
 //
-//       this.move(1,3,3,3);
+//       this.move([1,3],[3,3]);
 //
-//       this.move(7,5,6,6);
+//       this.move([7,5],[6,6]);
 //
-//       this.move(0,5,1,4);
+//       this.move([0,5],[1,4]);
 //
-//       this.move(7,6,5,5);
+//       this.move([7,6],[5,5]);
 // }
 
  function Position(x,y){
