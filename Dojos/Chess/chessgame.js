@@ -38,69 +38,69 @@ function Chess(){
 
   var gamePieces = [];
 
-  gamePieces.push(this.Q = new Piece('Queen', 'black'));
+  gamePieces.push(this.Q = new Piece('Queen', 'Black'));
   this.Q.position = new Position(0,3);
-  gamePieces.push(this.K = new Piece('King', 'black'));
+  gamePieces.push(this.K = new Piece('King', 'Black'));
   this.K.position = new Position(0,4);
-  gamePieces.push(this.B1 = new Piece('Bishop', 'black'));
+  gamePieces.push(this.B1 = new Piece('Bishop', 'Black'));
   this.B1.position = new Position(0,2);
-  gamePieces.push(this.B2 = new Piece('Bishop', 'black'));
+  gamePieces.push(this.B2 = new Piece('Bishop', 'Black'));
   this.B2.position = new Position(0,5);
-  gamePieces.push(this.N1 = new Piece('Knight', 'black'));
+  gamePieces.push(this.N1 = new Piece('Knight', 'Black'));
   this.N1.position = new Position(0,1);
-  gamePieces.push(this.N2 = new Piece('Knight', 'black'));
+  gamePieces.push(this.N2 = new Piece('Knight', 'Black'));
   this.N2.position = new Position(0,6);
-  gamePieces.push(this.R1 = new Piece('Rook', 'black'));
+  gamePieces.push(this.R1 = new Piece('Rook', 'Black'));
   this.R1.position = new Position(0,0);
-  gamePieces.push(this.R2 = new Piece('Rook', 'black'));
+  gamePieces.push(this.R2 = new Piece('Rook', 'Black'));
   this.R2.position = new Position(0,7);
-  gamePieces.push(this.P1 = new Piece('Pawn', 'black'));
+  gamePieces.push(this.P1 = new Piece('Pawn', 'Black'));
   this.P1.position = new Position(1,0);
-  gamePieces.push(this.P2 = new Piece('Pawn', 'black'));
+  gamePieces.push(this.P2 = new Piece('Pawn', 'Black'));
   this.P2.position = new Position(1,1)
-  gamePieces.push(this.P3 = new Piece('Pawn', 'black'));
+  gamePieces.push(this.P3 = new Piece('Pawn', 'Black'));
   this.P3.position = new Position(1,2)
-  gamePieces.push(this.P4 = new Piece('Pawn', 'black'));
+  gamePieces.push(this.P4 = new Piece('Pawn', 'Black'));
   this.P4.position = new Position(1,3);
-  gamePieces.push(this.P5 = new Piece('Pawn', 'black'));
+  gamePieces.push(this.P5 = new Piece('Pawn', 'Black'));
   this.P5.position = new Position(1,4);
-  gamePieces.push(this.P6 = new Piece('Pawn', 'black'));
+  gamePieces.push(this.P6 = new Piece('Pawn', 'Black'));
   this.P6.position = new Position(1,5);
-  gamePieces.push(this.P7 = new Piece('Pawn', 'black'));
+  gamePieces.push(this.P7 = new Piece('Pawn', 'Black'));
   this.P7.position = new Position(1,6);
-  gamePieces.push(this.P8 = new Piece('Pawn', 'black'));
+  gamePieces.push(this.P8 = new Piece('Pawn', 'Black'));
   this.P8.position = new Position(1,7);
-  gamePieces.push(this.q = new Piece('Queen', 'white'));
+  gamePieces.push(this.q = new Piece('Queen', 'White'));
   this.q.position = new Position(7,3);
-  gamePieces.push(this.k = new Piece('King', 'white'));
+  gamePieces.push(this.k = new Piece('King', 'White'));
   this.k.position = new Position(7,4);
-  gamePieces.push(this.b1 = new Piece('Bishop', 'white'));
+  gamePieces.push(this.b1 = new Piece('Bishop', 'White'));
   this.b1.position = new Position(7,2);
-  gamePieces.push(this.b2 = new Piece('Bishop', 'white'));
+  gamePieces.push(this.b2 = new Piece('Bishop', 'White'));
   this.b2.position = new Position(7,5);
-  gamePieces.push(this.n1 = new Piece('Knight', 'white'));
+  gamePieces.push(this.n1 = new Piece('Knight', 'White'));
   this.n1.position = new Position(7,1);
-  gamePieces.push(this.n2 = new Piece('Knight', 'white'));
+  gamePieces.push(this.n2 = new Piece('Knight', 'White'));
   this.n2.position = new Position(7,6);
-  gamePieces.push(this.r1 = new Piece('Rook', 'white'));
+  gamePieces.push(this.r1 = new Piece('Rook', 'White'));
   this.r1.position = new Position(7,0);
-  gamePieces.push(this.r2 = new Piece('Rook', 'white'));
+  gamePieces.push(this.r2 = new Piece('Rook', 'White'));
   this.r2.position = new Position(7,7);
-  gamePieces.push(this.p1 = new Piece('Pawn', 'white'));
+  gamePieces.push(this.p1 = new Piece('Pawn', 'White'));
   this.p1.position = new Position(6,0);
-  gamePieces.push(this.p2 = new Piece('Pawn', 'white'));
+  gamePieces.push(this.p2 = new Piece('Pawn', 'White'));
   this.p2.position = new Position(6,1);
-  gamePieces.push(this.p3 = new Piece('Pawn', 'white'));
+  gamePieces.push(this.p3 = new Piece('Pawn', 'White'));
   this.p3.position = new Position(6,2);
-  gamePieces.push(this.p4 = new Piece('Pawn', 'white'));
+  gamePieces.push(this.p4 = new Piece('Pawn', 'White'));
   this.p4.position = new Position(6,3);
-  gamePieces.push(this.p5 = new Piece('Pawn', 'white'));
+  gamePieces.push(this.p5 = new Piece('Pawn', 'White'));
   this.p5.position = new Position(6,4);
-  gamePieces.push(this.p6 = new Piece('Pawn', 'white'));
+  gamePieces.push(this.p6 = new Piece('Pawn', 'White'));
   this.p6.position = new Position(6,5);
-  gamePieces.push(this.p7 = new Piece('Pawn', 'white'));
+  gamePieces.push(this.p7 = new Piece('Pawn', 'White'));
   this.p7.position = new Position(6,6);
-  gamePieces.push(this.p8 = new Piece('Pawn', 'white'));
+  gamePieces.push(this.p8 = new Piece('Pawn', 'White'));
   this.p8.position = new Position(6,7);
 
   this.board = [];
@@ -121,17 +121,21 @@ function Chess(){
 
 Chess.prototype.getPlayer = function(pieces){
    if(pieces === pieces.toLowerCase()){
-      return 'white';
+      return 'White';
    }
-      return 'black';
+      return 'Black';
 }
 
 // Chess.prototype.move = function(piece, destination){
-// //   //piece represents the coordinates for the piece called,
-// //   //destination represents the space where that piece is moving to
-//   destination = piece position value;
-//   orig piece position value = ' ';
+//   //piece represents the coordinates for the piece called,
+//   //destination represents the space where that piece is moving to
+//   self.gamePieces.forEach(function(item, index){
+//     if (self.gamePieces[index].position[0] === piece[0] && self.gamePieces[index].position[1] === piece[1]){
 //
+//       self.gamePieces[index].position = destination;
+//
+//     }
+//   });
 //  }
 
 
@@ -186,37 +190,37 @@ Piece.prototype.setPosition = function(position){
 
 Piece.prototype.toString = function(){
   if(this.name === 'Queen'){
-    if(this.color === 'black'){
+    if(this.color === 'Black'){
       return 'Q';
     }
       return 'q';
   }
   if(this.name === 'King'){
-    if(this.color === 'black'){
+    if(this.color === 'Black'){
       return 'K';
     }
       return 'k';
   }
   if(this.name === 'Rook'){
-    if(this.color === 'black'){
+    if(this.color === 'Black'){
       return 'R';
     }
       return 'r';
   }
   if(this.name === 'Bishop'){
-    if(this.color === 'black'){
+    if(this.color === 'Black'){
       return 'B';
     }
       return 'b';
   }
   if(this.name === 'Knight'){
-    if(this.color === 'black'){
+    if(this.color === 'Black'){
       return 'N';
     }
       return 'n';
   }
   if(this.name === 'Pawn'){
-  if(this.color === 'black'){
+  if(this.color === 'Black'){
     return 'P';
   }
     return 'p';

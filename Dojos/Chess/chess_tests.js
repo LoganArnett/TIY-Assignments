@@ -63,25 +63,25 @@ it('should check the starting Board', function(){
 it('should check the color of a Piece', function(){
   var chess = new Chess();
 
-  assert.equal(chess.Q.getColor(), 'black')
+  assert.equal(chess.Q.getColor(), 'Black')
   console.log(chess.Q.getColor())
-  assert.equal(chess.K.getColor(), 'black')
+  assert.equal(chess.K.getColor(), 'Black')
   console.log(chess.K.getColor())
-  assert.equal(chess.N1.getColor(), 'black')
+  assert.equal(chess.N1.getColor(), 'Black')
   console.log(chess.N1.getColor())
-  assert.equal(chess.P3.getColor(), 'black')
+  assert.equal(chess.P3.getColor(), 'Black')
   console.log(chess.P3.getColor())
-  assert.equal(chess.P7.getColor(), 'black')
+  assert.equal(chess.P7.getColor(), 'Black')
   console.log(chess.P7.getColor())
-  assert.equal(chess.q.getColor(), 'white')
+  assert.equal(chess.q.getColor(), 'White')
   console.log(chess.q.getColor())
-  assert.equal(chess.k.getColor(), 'white')
+  assert.equal(chess.k.getColor(), 'White')
   console.log(chess.k.getColor())
-  assert.equal(chess.b1.getColor(), 'white')
+  assert.equal(chess.b1.getColor(), 'White')
   console.log(chess.b1.getColor())
-  assert.equal(chess.p2.getColor(), 'white')
+  assert.equal(chess.p2.getColor(), 'White')
   console.log(chess.p2.getColor())
-  assert.equal(chess.p4.getColor(), 'white')
+  assert.equal(chess.p4.getColor(), 'White')
   console.log(chess.p4.getColor())
 });
 
@@ -110,32 +110,30 @@ it('should check the color of a Piece', function(){
    it('should check who the current player is based off of the piece', function(){
      var chess = new Chess();
 
-     assert.equal(chess.getPlayer('p'), 'white')
+     assert.equal(chess.getPlayer('p'), 'White')
      console.log(chess.getPlayer('p'))
-     assert.equal(chess.getPlayer('K'), 'black')
+     assert.equal(chess.getPlayer('K'), 'Black')
      console.log(chess.getPlayer('K'))
-     assert.equal(chess.getPlayer('n'), 'white')
+     assert.equal(chess.getPlayer('n'), 'White')
      console.log(chess.getPlayer('n'))
-     assert.equal(chess.getPlayer('B'), 'black')
+     assert.equal(chess.getPlayer('B'), 'Black')
      console.log(chess.getPlayer('B'))
-     
+
    })
+
 // it('should move a piece to a new destination', function(){
 //   var chess = new Chess();
-//
-//
-//   assert.deepEqual(chess.move(1,0,3,0),
 //   [
 //    ['R','N','B','Q','K','B','N','R'],
-//    [' ','P','P','P','P','P','P','P'],
+//    ['P','P','P','P','P','P','P','P'],
 //    [' ',' ',' ',' ',' ',' ',' ',' '],
-//    ['P',' ',' ',' ',' ',' ',' ',' '],
+//    [' ',' ',' ',' ',' ',' ',' ',' '],
 //    [' ',' ',' ',' ',' ',' ',' ',' '],
 //    [' ',' ',' ',' ',' ',' ',' ',' '],
 //    ['p','p','p','p','p','p','p','p'],
 //    ['r','n','b','q','k','b','n','r']
-// ]);
-
+//
+// });
 /*
   assert.deepEqual(chess.move(6,0,4,0), [
    ['R','N','B','Q','K','B','N','R'],
