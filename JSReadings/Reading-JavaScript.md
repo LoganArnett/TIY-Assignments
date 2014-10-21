@@ -646,35 +646,152 @@ var drink = ImDriving ? 'coconut water': 'jåger bombs';
 
 #### 34
 ```javascript
-
+ var points = { queen: 9, rook: 5, bishop: 3, knight: 3, pawn: 1}
 ```
+
+ * Translation: this is the creation of a dictionary within the object/variable
+ * with the identifier `points` and its contents of keys and values.
+ *
+ * Symbol: `var`
+ * Type: Keyword
+ * Name: var
+ *
+ * Symbol: `Points`
+ * Type: Variable/Identifier/Dictionary
+ * Name: Points
+ *
+ * Symbol: `=`
+ * Type: Comparison Operator
+ * Name: Assignment
+ *
+ * Symbol: `{}`
+ * Type: Literal Notation
+ * Name: Literal Notation/ Initialization Notation
+ *
+ * Symbol: `queen`, `rook`, `bishop`, `knight`, `pawn`
+ * Type: Keys in the dictionary `points`
+ *
+ * Symbol: `:`
+ * Type: Operator
+ * Name: Colon Operator
+ *
+ * Symbol: `9`, `5`, `3`, `3`, `1`
+ * Type: Number/Value
+ * Name: Value of their respective key
 
 #### 35
 ```javascript
-
+ numbers.pop();
 ```
+
+ * Translation: This will take the numbers Array and remove the
+ * last value in the array and return it
+ *
+ * Symbol: `numbers`
+ * Type: Array
+ * Name: numbers, refers to an Array of Numbers
+ *
+ * Symbol: `.pop`
+ * Type: Array Method
+ * Name: .pop method
+ *
+ * Symbol: ()
+ * Type: Operator
+ * Name: Parentheses, Invokes a function/method
 
 #### 36
 ```javascript
-
+ numbers.splice(5, 0, 6);
 ```
+
+ * Translation: This says that we are invoking the splice array method
+ * on the array numbers. We will be looking at the 5th Index, we will
+ * remove 0 items, and add the Number 6 to that index
+ *
+ * Symbol: `numbers`
+ * Type: Array
+ * Name: numbers, refers to an Array of Numbers
+ *
+ * Symbol: `.splice`
+ * Type: Array Method
+ * Name: .splice method
+ *
+ * Symbol: ()
+ * Type: Operator
+ * Name: Parentheses, Invokes a function/method
+ *
+ * Symbol: `5, 0, 6`
+ * Type: Number/Parameters
+ * Name: Numbers/Parameters
 
 #### 37
 ```javascript
-
+  gear.shift();
 ```
+
+ * Translation: This will call the .shift method on the `gear` array
+ * which will remove the value at the first index of the array and return it
+ *
+ * Symbol: `gear`
+ * Type: Array
+ * Name: gear
+ *
+ * Symbol: `.shift()`
+ * Type: Array Method
+ * Name: .shift method
+
 
 #### 38
 ```javascript
-
+ presidents.reverse();
 ```
+
+ * Translation: This will take the presidents array from Washington to
+ * Obama and reverse the order completely and return it and alters the
+ * actual array.
+ *
+ * Symbol: `presidents`
+ * Type: Array
+ * Name: presidents
+ *
+ * Symbol: `.reverse()`
+ * Type: Array Methods
+ * Name: .reverse method
+
 
 #### 39
 ```javascript
-
+  newMembers.join();
 ```
+
+ * Translation: This will take the `newMembers` array and "join" the items
+ * together into a single string and return it but does not alter the original array
+ *
+ * Symbol: `newMembers`
+ * Type: Array
+ * Name: newMembers
+ *
+ * Symbol: `.join()`
+ * Type: Array Method
+ * Name: .join method
+
 
 #### 40
 ```javascript
-
+ self.moveTotal++
 ```
+
+ * Translation: this will take the property moveTotal of the constructor it
+ * belongs to and increase it by 1 each time the function it is tied to returns true
+ *
+ * Symbol: `self`
+ * Type: Keyword
+ * Name: self
+ *
+ * Symbol: `moveTotal`
+ * Type: Property
+ * Name: moveTotal
+ *
+ * Symbol: `++`
+ * Type: Arithmetic Operator
+ * Name: Increment operator

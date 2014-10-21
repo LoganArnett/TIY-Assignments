@@ -30,7 +30,9 @@
 //       example: `"Q" === String(new Piece("Queen", "white"))`
 //       example: `"r" === String(new Piece("Rook", "black"))`
 
-module.exports = Chess, Position, Piece;
+module.exports = Chess;
+module.exports.Position = Position;
+module.exports.Piece = Piece;
 
 var points = {
   queen: 9, rook: 5, bishop: 3, knight: 3, pawn: 1
