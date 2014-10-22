@@ -1,7 +1,7 @@
-/** HTML Block Level Elements
- */
+# HTML Block Level Elements
 
-### < header >
+
+### `<header>`
    Allows us to create a header on our page which will typically be used for
     a company logo or some information that you want people to see immediately
 
@@ -27,7 +27,7 @@
  <a href="view-source:http://www.amazon.com/"></a>
 ```
 
-### < footer >
+### `<footer>`
    Allows us to have a footer for any parent element that allows "Flow Content."
     Typically used for contact info, addresses, copyright, etc.
 
@@ -68,7 +68,7 @@
 
 ```
 
-### < ul >
+### `<ul>`
    This tag allows us to create an unordered list usually with bulleted items.
 
 ```html
@@ -99,7 +99,7 @@
  <!-- Creates an unordered list with the various list items. Each item is also a link to another page within the site. The <br> tag also helps to create a vertical list with line breaks -->
 ```
 
-### < ol >
+### `<ol>`
    This tage allows us to create an ordered list where the order of items matters
     and is usually numbered.
 
@@ -137,7 +137,7 @@ specific order -->
 ```
 
 
-### < form >
+### `<form>`
    This tag allows us to create an input form for a user to interact with and
     send information back to a server.
 
@@ -168,7 +168,7 @@ specific order -->
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"></a>
 ```
 
-### < div >
+### `<div>`
    This tag allows us to create new smaller containers within the master
     container of the page. We can then group elements within these tags and
     style them all together and move them around within the div container.
@@ -195,7 +195,7 @@ specific order -->
 
 ```
 
-### < address >
+### `<address>`
    This tag is typically used to provide contact information for the company,
     author, or person of interest within a page or article to the end user.
 
@@ -229,7 +229,7 @@ specific order -->
 
 ```
 
-### < table >
+### `<table>`
    This tag allows to create a table of information and can take in other tags
     to add more columns and rows
 
@@ -279,7 +279,7 @@ specific order -->
 <a href="http://www.w3schools.com/html/html_tables.asp"></a>
 ```
 
-### < section >
+### `<section>`
    This is a generic section of a document in relation to the overall layout of
     the page. It should not be used like a div especially if you are just
     creating a section for styling. The sections should relate to the outline of your page.
@@ -313,7 +313,7 @@ specific order -->
 
 ```
 
-### < figure >
+### `<figure>`
    This tag allows us to create some sort of content that is self contained
     from the main flow of the page. Usually an image. This tag also takes the
     figcaption tag to provide a caption to the content within figure.
