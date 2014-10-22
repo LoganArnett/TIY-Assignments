@@ -100,3 +100,90 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
  ```
  [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
+### 11. Text-decoration
+ * This allows you to add an underline, overline, line-through, blink, or none.
+
+```css
+a:hover,a:focus{<!-- This allows us to add a text-decoration of underline to any <a> link while the mouse is "hovering" or "focusing" -->
+  text-decoration:underline;
+  }
+
+a {<!-- This tells the original links to not inherit the underline decoration from the hover/focus link properties -->
+  text-decoration:none;
+  }
+
+h3 {<!-- This allows us to add an overline to any h3 tag -->
+  text-decoration: overline;
+}
+```
+[Best Buy](http://www.bestbuy.com/)
+### 12. Text-align
+ * Allows us to align inline content not the actual block element
+
+```css
+.badge {<!-- This allows us to align all text to the center within the class of badge -->
+  text-align:center;
+}
+
+.modal-footer {<!-- This allows us to align all text to the right within the .modal-footer class -->
+  text-align:right;
+}
+
+.popover {<!-- This allows us to align all text to the left within the .popover class -->
+  text-align:left;
+}
+```
+[Best Buy](http://www.bestbuy.com/)
+### 13. Font-size
+ * This allows us to control the size of the font in different areas of the document
+
+```css
+.popover-title{<!-- This allows us to define the font size for content with the class popover title to 13 pixels -->
+  font-size:13px;
+}
+
+.close {<!-- This allows us to define the font size for content with the class close to 19.5 pixels -->
+  font-size:19.5px;
+}
+
+h2,.h2{<!-- This allows us to redefine the font size for the h2 tags and anything with the class h2 -->
+  font-size:26px
+  }
+```
+[Best Buy](http://www.bestbuy.com/)
+
+### 14. Font-weight
+ * This specifies the weight or boldness of the text
+
+```css
+.popover-title{<!-- This allows us to ensure that the font weight remains unchanged for anything in the class popover title -->
+  font-weight:normal;
+}
+
+.lead {<!-- This allows us to ensure that the font weight is increased to 200 for anything in the class lead -->
+  font-weight:200;
+}
+
+dt {<!-- This allows us to ensure that the font weight to be BOLD for anything in a <dt> tag -->
+  font-weight:bold;
+  }
+```
+[Best Buy](http://www.bestbuy.com/)
+### 15. Font-family
+ *
+
+```css
+ body{<!-- This allows us to set the font-family within a target area -->
+   font-family:Arial,Helvetica,"Nimbus Sans L","Liberation Sans",FreeSans,sans-serif;
+ }
+
+ textarea {<!-- This allows us to "inherit" the font-family within a target area from the closest font family -->
+   font-family:inherit;
+ }
+
+ .next {<!-- This allows us to set the font-family within a target area -->
+   font-family:serif;
+   }
+ }
+```
+[Best Buy](http://www.bestbuy.com/)
