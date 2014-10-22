@@ -187,3 +187,30 @@ dt {<!-- This allows us to ensure that the font weight to be BOLD for anything i
  }
 ```
 [Best Buy](http://www.bestbuy.com/)
+
+### 16. Font-style
+ * This allows us to add italic or oblique styling to the textual content in the target area. It also allows us to give it a normal value to ensure the text is not inheriting another style from somewhere else.
+
+```css
+ .check {<!-- This allows us to set the font-style to italic within a target area for items in the class check -->
+  font-style:italic
+  }
+
+  cite{<!-- This allows us to set the font-style to normal within a the cite tag -->
+    font-style:normal
+    }
+
+  address{<!-- This allows us to set the font-style to oblique within any address tag -->
+    font-style:oblique;
+  }
+```
+[Best Buy](http://www.bestbuy.com/)
+
+### 17. Text-shadow
+ * This allows us to add a shadow around text and can be maniupulated vertically, horizontally, to add a blur, and color.
+
+```css
+.close:hover{<!-- This allows us to set a White text-shadow to our content that will drop from the text vertically with 1 pixel of seperation  -->
+  text-shadow:0 1px 0 #fff;
+}
+```
