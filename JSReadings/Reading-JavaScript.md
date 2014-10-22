@@ -515,3 +515,283 @@ var checkWrite = {
  * Function: `toEnglish` will take an input(value) which is a Number and return it as a string that would appear on a check
  * Method: `.toFixed` allows us to guarantee that the numbers will have 2 decimal places regardless of the number provided
  * Method: `.slice` allows us to cut up our input to manipulate the input to give us the change to put over 100 as well as to cut off the last 3 indexes from any number which will always be the decimal and the 2 decimal places
+
+#### 31
+```javascript
+var drink = ImDriving ? 'coconut water': 'jåger bombs';
+```
+
+ * Translation: a variable is declared with the identifier `drink` and is assigned the value of the object ImDriving
+ * which will return `'coconut water'` if its return is true, otherwise it will
+ * return `'jåger bombs'`.
+ *
+ * Symbol: `drink`;
+ * Type: variable;
+ * Name: `drink`
+ *
+ * Symbol: `=`;
+ * Type: Operator;
+ * Name: Assignment;
+ *
+ * Symbol: `ImDriving`;
+ * Type: Object;
+ * Name: `ImDriving`;
+ *
+ * Symbol: `?`;
+ * Type: Operator;
+ * Name: Ternary Operator;
+ *
+ * Symbol: `'coconut water'`
+ * Type: String;
+ * Name: 'coconut water'
+ *
+ * Symbol: `'jåger bombs'`
+ * Type: String;
+ * Name: 'jåger bombs'
+
+#### 32
+```javascript
+ gamePieces.push(this.Q = new Piece('Queen', 'Black'));
+```
+
+ * Translation: gamePieces references an Array and we are using the `.push`
+ * method which will add items to the end of whatever is currently occupying
+ * the array. This method is invoked and contains the keyword `this` and an
+ * Object with the identifier Q which is then assigned the value of a new `Piece`
+ * which is a constructor that takes in the parameters of a name and color as strings.
+ *
+ * Symbol: `gamePieces`
+ * Type: Array
+ * Name: gamePieces
+ *
+ * Symbol: `.push`
+ * Type: Array Method
+ * Name: .push method, pushes its parameters on to the end of an array
+ *
+ * Symbol: ()
+ * Type: Operator
+ * Name: Parentheses
+ * Usage: Used to invoke the method or function and to contain the parameters
+ *
+ * Symbol: `this`
+ * Type: keyword
+ * Name: this
+ *
+ * Symbol: .
+ * Type: Operator
+ * Name: Period Operator
+ * Usage: compares items on either side of it, in this case hints that a
+ * dictionary is present and evaluates with `Q` is the beginning of a dictionary.
+ *
+ * Symbol: `Q`
+ * Type: Object Literal
+ * Name: Object with identifier Q
+ * Usage: acts a dictionary that holds the keys of name and color created within the new Piece.
+ *
+ * Symbol: `=`
+ * Type: Operator
+ * Name: Assignment
+ *
+ * Symbol: `new`
+ * Type: Operator
+ * Name: `new` operator
+ * Usage: allows us to create the new object types based on the constructor function
+ *
+ * Symbol: `Piece`
+ * Type: Constructor
+ * Name: Piece(name, color)
+ * Usage: Allows us to create pieces with assigned values for name and color
+ *
+ * Symbol: ()
+ *
+ * Symbol: 'Queen'
+ * Type: String
+ * Name: String Queen
+ * Usage: The string value Queen is the input for the name parameter
+ *
+ * Symbol: 'Black'
+ * Type: String
+ * Name: String Black
+ * Usage: The string value Black is the input for the name parameter
+
+#### 33
+```javascript
+  if(item === item.toLowerCase())
+```
+ * Translation: This is an `if` statement that evaluates the original string
+ * value of item against the value that would be the output of calling it
+ * toLowerCase. If these are strictly equal, then you can assume the original
+ * item by itself is a lowercase letter. If it returns false, then the original
+ * item must be a capitalized letter
+ *
+ * Symbol: `if`
+ * Type: Conditional
+ * Name: if statement
+ * Usage: `if` the statement with the () is true, return something
+ *
+ * Symbol: ()
+ * Type: Operator
+ *
+ * Symbol: `item`
+ * Type: an Object which is passed as an argument or parameter of a function
+ *
+ * Symbol: `===`
+ * Type: Comparison Operator
+ * Name: Strict Equal
+ *
+ * Symbol: `item.toLowerCase()`
+ * Type: Object method
+ * Name toLowerCase
+ * Usage: allows you to convert string values from uppercase to lowercase letters
+
+#### 34
+```javascript
+ var points = { queen: 9, rook: 5, bishop: 3, knight: 3, pawn: 1}
+```
+
+ * Translation: this is the creation of a dictionary within the object/variable
+ * with the identifier `points` and its contents of keys and values.
+ *
+ * Symbol: `var`
+ * Type: Keyword
+ * Name: var
+ *
+ * Symbol: `Points`
+ * Type: Variable/Identifier/Dictionary
+ * Name: Points
+ *
+ * Symbol: `=`
+ * Type: Comparison Operator
+ * Name: Assignment
+ *
+ * Symbol: `{}`
+ * Type: Literal Notation
+ * Name: Literal Notation/ Initialization Notation
+ *
+ * Symbol: `queen`, `rook`, `bishop`, `knight`, `pawn`
+ * Type: Keys in the dictionary `points`
+ *
+ * Symbol: `:`
+ * Type: Operator
+ * Name: Colon Operator
+ *
+ * Symbol: `9`, `5`, `3`, `3`, `1`
+ * Type: Number/Value
+ * Name: Value of their respective key
+
+#### 35
+```javascript
+ numbers.pop();
+```
+
+ * Translation: This will take the numbers Array and remove the
+ * last value in the array and return it
+ *
+ * Symbol: `numbers`
+ * Type: Array
+ * Name: numbers, refers to an Array of Numbers
+ *
+ * Symbol: `.pop`
+ * Type: Array Method
+ * Name: .pop method
+ *
+ * Symbol: ()
+ * Type: Operator
+ * Name: Parentheses, Invokes a function/method
+
+#### 36
+```javascript
+ numbers.splice(5, 0, 6);
+```
+
+ * Translation: This says that we are invoking the splice array method
+ * on the array numbers. We will be looking at the 5th Index, we will
+ * remove 0 items, and add the Number 6 to that index
+ *
+ * Symbol: `numbers`
+ * Type: Array
+ * Name: numbers, refers to an Array of Numbers
+ *
+ * Symbol: `.splice`
+ * Type: Array Method
+ * Name: .splice method
+ *
+ * Symbol: ()
+ * Type: Operator
+ * Name: Parentheses, Invokes a function/method
+ *
+ * Symbol: `5, 0, 6`
+ * Type: Number/Parameters
+ * Name: Numbers/Parameters
+
+#### 37
+```javascript
+  gear.shift();
+```
+
+ * Translation: This will call the .shift method on the `gear` array
+ * which will remove the value at the first index of the array and return it
+ *
+ * Symbol: `gear`
+ * Type: Array
+ * Name: gear
+ *
+ * Symbol: `.shift()`
+ * Type: Array Method
+ * Name: .shift method
+
+
+#### 38
+```javascript
+ presidents.reverse();
+```
+
+ * Translation: This will take the presidents array from Washington to
+ * Obama and reverse the order completely and return it and alters the
+ * actual array.
+ *
+ * Symbol: `presidents`
+ * Type: Array
+ * Name: presidents
+ *
+ * Symbol: `.reverse()`
+ * Type: Array Methods
+ * Name: .reverse method
+
+
+#### 39
+```javascript
+  newMembers.join();
+```
+
+ * Translation: This will take the `newMembers` array and "join" the items
+ * together into a single string and return it but does not alter the original array
+ *
+ * Symbol: `newMembers`
+ * Type: Array
+ * Name: newMembers
+ *
+ * Symbol: `.join()`
+ * Type: Array Method
+ * Name: .join method
+
+
+#### 40
+```javascript
+ self.moveTotal++
+```
+
+ * Translation: this will take the property moveTotal of the constructor it
+ * belongs to and increase it by 1 each time the function it is tied to returns true
+ *
+ * Symbol: `self`
+ * Type: Keyword
+ * Name: self
+ *
+ * Symbol: `moveTotal`
+ * Type: Property
+ * Name: moveTotal
+ *
+ * Symbol: `++`
+ * Type: Arithmetic Operator
+ * Name: Increment operator

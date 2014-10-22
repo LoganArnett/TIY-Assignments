@@ -1,7 +1,7 @@
-
 module.exports = Game; {
 
-   function newBoard(){
+   function Board(){
+     this.board = { };
 }
 
 /**
@@ -9,8 +9,8 @@ module.exports = Game; {
 * @param Number y coordinate
 * @return Boolean if cell at {x,y} is alive
 */
-newBoard.prototype.isAlive = function(x, y){
-  //return true of this.board[x][y] is "alive"
+Board.prototype.isAlive = function(x, y){
+  //return true if this.board[x][y] is "alive"
    return Boolean(this[x + ',' + y]);
 };
 
@@ -19,19 +19,19 @@ newBoard.prototype.isAlive = function(x, y){
 * @param Number y coordinate
 * @return undefined
 */
-newBoard.prototype.giveLife = function(x, y){
+Board.prototype.giveLife = function(x, y){
   //make the cell at {x,y} "alive"
     this[x + ',' + y] = true;
 };
 
-newBoard.prototype.takeLife = function(x, y){
+Board.prototype.takeLife = function(x, y){
   //make the cell at {x,y} "dead"
   delete this[x + ',' + y];
 };
-   function Game(){
-    this.board = newBoard();
-  }
 
+   function Game(){
+    this.board = new Board();
+  }
 
 /**
 * @param Number x coordinate
@@ -71,18 +71,18 @@ Game.prototype.tick = function(){
 });
 */
 //Start with a fresh board
-var Board = new Board();
-var self = this;
-  //Apply rules to each cell in that board
- Board.forEach(function(row, x){
-   Board.forEach(function(cell, y){
-     //Record result in the NEW board. . .
-     Board[x][y] = self.rules(self.board[x][y], self.neighborsOf(x,y));
-      });
-    });
-    //Update the current board to match the new board
-    this.board = Board;
-  },
+// var Board = new Board();
+// var self = this;
+//   //Apply rules to each cell in that board
+//  Board.forEach(function(row, x){
+//    Board.forEach(function(cell, y){
+//      //Record result in the NEW board. . .
+//      Board[x][y] = self.rules(self.board[x][y], self.neighborsOf(x,y));
+//       });
+//     });
+//     //Update the current board to match the new board
+//     this.board = Board;
+   },
 
 /**
  * @param Boolean cell
@@ -169,4 +169,4 @@ Game.prototype.neighborsOf = function(x, y){
             }).join(spacer) // Place `spacer` between each `row`...
         + spacer;
     }; // END display
-}// END game
+ }// END game
