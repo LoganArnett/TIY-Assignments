@@ -213,4 +213,69 @@ dt {<!-- This allows us to ensure that the font weight to be BOLD for anything i
 .close:hover{<!-- This allows us to set a White text-shadow to our content that will drop from the text vertically with 1 pixel of seperation  -->
   text-shadow:0 1px 0 #fff;
 }
+
+.carousel-control{<!-- This allows us to set a text-shadow to our content that will move drop from the text horizontally by 1 pixel and drop vertically by 2 pixel of seperation  -->
+  text-shadow:0 1px 2px rgba(0,0,0,0.6);
+}
+
+.carousel-caption .btn{<!-- This allows us to set the text-shadow of our content to none to ensure that the textual content remains unchanged -->
+  text-shadow:none
+  }
 ```
+[Best Buy](http://www.bestbuy.com/)
+
+### 18. Text-transform
+ * This defines how to capitalize or not capitalize textual content
+
+```css
+ button{<!-- This allows us to set the text-transform of our content to none within any `button` tag -->
+  text-transform:none;
+  }
+
+ .initialism{<!-- This allows us to set the text-transform of our content to uppercase within the class `initialism` -->
+   text-transform:uppercase;
+   }
+
+ .select{<!-- This allows us to set the text-transform of our content to lowercase within the class `select` -->
+   text-transform:lowercase;
+   }
+```
+[Best Buy](http://www.bestbuy.com/)
+
+### 19. Font-stretch
+ * This allows us to manipulate the appearance of text within a font by condensing or expanding each letter
+
+```css
+h1 {<!-- Sets the font-stretch for text in h1 tags to extra expanded -->
+  font-stretch: extra-expanded;
+  }
+
+p  {<!-- Sets the font-stretch for text in the <p> tags to condensed --> 
+  font-stretch: condensed;
+  }
+
+h2 {<!-- Sets the font-stretch for text in the h2 tags to normal -->
+  font-stretch: normal;
+}
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch)
+
+### 20. Font
+ * This gives us a shorthand way to set all of the font values like font-style, variant, weight, stretch, size, height, and family in that order.  
+
+```css
+
+ p {<!-- Sets the font size to 12px and the line height to 14px and then sets the font family to sans-serif -->
+   font: 12px/14px sans-serif;
+   }
+
+
+p {<!-- This sets the font size to 80% of the value of the text from the previous element and sets the font family to sans-serif -->
+  font: 80% sans-serif
+  }
+
+h1 { <!-- Use the same font as the status bar of the window -->
+  font: status-bar
+  }
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch)
