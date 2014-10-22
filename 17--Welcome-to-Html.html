@@ -13,40 +13,246 @@
       border: .2pc dotted #FFF;
       width: 580pt;
     }
+    h4 {
+      color: gold;
+      border: .2pc dotted #FFF;
+      width: 80pt;
+      margin-left: 40px;
+    }
     p {
       color: blueviolet;
     }
+    ul {
+      color: #fff;
+      list-style-type: none;
+    }
+    .slides {
+    padding: 0;
+    width: 809px;
+    height: 520px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 809px;
+    height: 520px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: gold;
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: darkorange;
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: royalblue;
+}
     </style>
   </head>
   <body>
 
-    <h1><center>There's Always MONEY IN THE BANANA STAND!!!</center></h1>
+  <center><h1><center>There's Always MONEY IN THE BANANA STAND!!!</center></h1><center>
 
-    <p>YOU'RE the Chiclet! Not me. Caw ca caw, caw ca caw, caw ca caw! <br>
+    <center><figure>
+      <ul class="slides">
+        <input type="radio" name="radio-btn" id="img-1" checked />
+        <li class="slide-container">
+		      <div class="slide">
+			      <img src="http://www.empowereddollar.com/wp-content/uploads/banana-stand1.jpg" />
+          </div>
+		      <div class="nav">
+			      <label for="img-6" class="prev">&#x2039;</label>
+			      <label for="img-2" class="next">&#x203a;</label>
+		       </div>
+         </li>
+
+        <input type="radio" name="radio-btn" id="img-2" />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="http://unrealitymag.bcmediagroup.netdna-cdn.com/wp-content/uploads/2010/02/charlie-bluth.jpg" />
+          </div>
+		      <div class="nav">
+			      <label for="img-1" class="prev">&#x2039;</label>
+			      <label for="img-3" class="next">&#x203a;</label>
+		      </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img-3" />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="http://s3-ec.buzzfed.com/static/imagebuzz/web05/2011/2/11/10/bluth-family-simpsonized-24694-1297436957-40.jpg" />
+          </div>
+		      <div class="nav">
+			      <label for="img-2" class="prev">&#x2039;</label>
+			      <label for="img-4" class="next">&#x203a;</label>
+		      </div>
+         </li>
+
+         <input type="radio" name="radio-btn" id="img-4" />
+         <li class="slide-container">
+            <div class="slide">
+              <img src="http://www.bluthfamily.com/images/bluthfamily.jpg" />
+            </div>
+    		    <div class="nav">
+    			    <label for="img-3" class="prev">&#x2039;</label>
+    			    <label for="img-5" class="next">&#x203a;</label>
+    		    </div>
+         </li>
+
+         <input type="radio" name="radio-btn" id="img-5" />
+         <li class="slide-container">
+           <div class="slide">
+             <img src="http://oyster.ignimgs.com/wordpress/stg.ign.com/2013/03/tumblr_m06al3iedj1rprfgbo1_500.png" />
+           </div>
+      		 <div class="nav">
+      			 <label for="img-4" class="prev">&#x2039;</label>
+      			 <label for="img-6" class="next">&#x203a;</label>
+      		 </div>
+           </li>
+
+         <input type="radio" name="radio-btn" id="img-6" />
+         <li class="slide-container">
+           <div class="slide">
+             <img src="http://4.bp.blogspot.com/-dmL4x47UtXw/UoDzuL4qs3I/AAAAAAAALxU/KB6WzK10rdU/s1600/LEAN+TRICK.png" />
+           </div>
+      		 <div class="nav">
+      			 <label for="img-5" class="prev">&#x2039;</label>
+      			 <label for="img-1" class="next">&#x203a;</label>
+      		 </div>
+         </li>
+
+        <li class="nav-dots">
+          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+          <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+          <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+        </li>
+      </ul>
+    </figure></center>
+
+    <center><p>YOU'RE the Chiclet! Not me. Caw ca caw, caw ca caw, caw ca caw! <br>
       A group of British builders operating outside the O.C. I may have<br>
       committed some light treason. Did Ted make an appointment? No. Well <br>
       \then Ted can GET THE HELL OUT OF THIS OFFICE! YOU GET THE HELL OUT! <br>
       First I blow him, then I poke him. So maybe you could start jete-ing,<br>
       and stop je-terrorizing me! They frame my junk. Heart attack never stopped<br>
-      old big bear!</p><br>
+      old big bear!</p></center><br>
+    <center><h4><center>It's a LIST!!!</center></h4></center>
+  <center><ul>
+      <li><center>It's OUR nausea.</center></li>
+      <li><center>No, no, it's pronounced a-nal-ra-pist.</center></li>
+      <li><center>It wasn't really the pronunciation that bothered me.</center></li>
+    </ul></center><br>
 
-    <p>It's OUR nausea. No, no, it's pronounced a-nal-ra-pist. It wasn't <br>
-      really the pronunciation that bothered me.</p><br>
+  <center><p>This was a big get for God. I may have committed some light treason.</p></center><br>
 
-    <p>This was a big get for God. I may have committed some light treason.</p><br>
+  <figure>
+    <img src="" alt="">
+  </figure>
 
-    <p>I was set up. By the Brits. A group of British builders operating <br>
+<center><p>I was set up. By the Brits. A group of British builders operating <br>
       outside the O.C. It's so watery. And yet there's a smack of ham to <br>
       it. Mission Accomplished. We have unlimited juice? This party is going <br>
       to be off the hook. It ain't easy being white... No, Pop-pop does <br>
       not get a treat, I just brought you a [bleep]ing pizza. Even though so <br>
-      many people in this office are begging for it.</p><br>
+      many people in this office are begging for it.</p></center><br>
 
-    <p>"Circumvent." It means "to go around." Gob : The old "reach around." <br>
+    <center><p>"Circumvent." It means "to go around." Gob : The old "reach around." <br>
       Suddenly playing with yourself is a scholarly pursuit? What about <br>
       macaroni-let me finish-salad? Whoa whoa whoa whoa. Wait. Are you <br>
       telling me you have a multi-stage trick with hidden identities? See for <br>
-      more good stuff.</p>
+      more good stuff.</p></center>
 
   </body>
 
