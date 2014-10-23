@@ -2,7 +2,7 @@
 
 
 
-### 1. Background-color
+### 1. `Background-color`
  * This style allows you to edit the backgrounds
   color of a specific area of the page or the entire body.
 
@@ -13,7 +13,7 @@ background-color: rgb(255, 255, 255);
 ```
 [Taken from The Iron Yard](http://theironyard.com/academy/)
 
-### 2. Color
+### 2. `Color`
  * This style will edit the coloring of the text within the specified area
 
 ```css
@@ -23,7 +23,7 @@ body {
 ```
 [Taken from The Iron Yard](http://theironyard.com/academy/)
 
-### 3. Border-color
+### 3. `Border-color`
  * This style sets the color for the 4 sides of the elements border
 
 ```css
@@ -33,7 +33,7 @@ body {
 ```
 [Apple](http://images.apple.com/v/home/bg/styles/home.built.css)
 
-### 4. Outline-color
+### 4. `Outline-color`
  * This style establishes the color of the outline of element like text or an image. The outline is a line that is drawn around elements, outside the border edge.
 
 ```css
@@ -43,7 +43,7 @@ p {<!-- This is setting the outline color for any values that fall within a p ta
 ```
 [W3C](http://www.w3schools.com/cssref/tryit.asp?filename=trycss_outline-color)
 
-### 5. Column-rule-color
+### 5. `Column-rule-color`
  * This style sets the color of the rule drawn between columns.
 
 ```css
@@ -53,7 +53,7 @@ p {<!-- This is setting the outline color for any values that fall within a p ta
 ```
 [MDN CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-color)
 
-### 6. Text-decoration-color
+### 6. `Text-decoration-color`
  * This style sets the color for a text decoration like an underline
 
 ```css
@@ -64,7 +64,7 @@ p {<!-- This is setting the text decoration to underline and the color of that u
 ```
 [W3C](http://www.w3schools.com/cssref/css3_pr_text-decoration-color.asp)
 
-### 7. Border-right-color
+### 7. `Border-right-color`
  * This style sets the border color specifically for just the right side of the element
 
 ```css
@@ -73,7 +73,8 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
 ```
 [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
-### 8. Border-left-color
+
+### 8. `Border-left-color`
  * This style sets the border color specifically for just the left side of the element
 
 ```css
@@ -82,7 +83,8 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
 ```
 [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
-### 9. Border-top-color
+
+### 9. `Border-top-color`
  * This style sets the border color specifically for just the top border of the element
 
 ```css
@@ -91,7 +93,8 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
 ```
 [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
-### 10. Border-bottom-color
+
+### 10. `Border-bottom-color`
  * This style sets the border color specifically for just the bottom border of the element
 
  ```css
@@ -100,7 +103,8 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
  ```
  [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
-### 11. Text-decoration
+
+### 11. `Text-decoration`
  * This allows you to add an underline, overline, line-through, blink, or none.
 
 ```css
@@ -117,7 +121,8 @@ h3 {<!-- This allows us to add an overline to any h3 tag -->
 }
 ```
 [Best Buy](http://www.bestbuy.com/)
-### 12. Text-align
+
+### 12. `Text-align`
  * Allows us to align inline content not the actual block element
 
 ```css
@@ -134,7 +139,8 @@ h3 {<!-- This allows us to add an overline to any h3 tag -->
 }
 ```
 [Best Buy](http://www.bestbuy.com/)
-### 13. Font-size
+
+### 13. `Font-size`
  * This allows us to control the size of the font in different areas of the document
 
 ```css
@@ -152,7 +158,7 @@ h2,.h2{<!-- This allows us to redefine the font size for the h2 tags and anythin
 ```
 [Best Buy](http://www.bestbuy.com/)
 
-### 14. Font-weight
+### 14. `Font-weight`
  * This specifies the weight or boldness of the text
 
 ```css
@@ -169,7 +175,8 @@ dt {<!-- This allows us to ensure that the font weight to be BOLD for anything i
   }
 ```
 [Best Buy](http://www.bestbuy.com/)
-### 15. Font-family
+
+### 15. `Font-family`
  *
 
 ```css
@@ -188,7 +195,7 @@ dt {<!-- This allows us to ensure that the font weight to be BOLD for anything i
 ```
 [Best Buy](http://www.bestbuy.com/)
 
-### 16. Font-style
+### 16. `Font-style`
  * This allows us to add italic or oblique styling to the textual content in the target area. It also allows us to give it a normal value to ensure the text is not inheriting another style from somewhere else.
 
 ```css
@@ -206,7 +213,7 @@ dt {<!-- This allows us to ensure that the font weight to be BOLD for anything i
 ```
 [Best Buy](http://www.bestbuy.com/)
 
-### 17. Text-shadow
+### 17. `Text-shadow`
  * This allows us to add a shadow around text and can be maniupulated vertically, horizontally, to add a blur, and color.
 
 ```css
@@ -224,7 +231,7 @@ dt {<!-- This allows us to ensure that the font weight to be BOLD for anything i
 ```
 [Best Buy](http://www.bestbuy.com/)
 
-### 18. Text-transform
+### 18. `Text-transform`
  * This defines how to capitalize or not capitalize textual content
 
 ```css
@@ -242,7 +249,7 @@ dt {<!-- This allows us to ensure that the font weight to be BOLD for anything i
 ```
 [Best Buy](http://www.bestbuy.com/)
 
-### 19. Font-stretch
+### 19. `Font-stretch`
  * This allows us to manipulate the appearance of text within a font by condensing or expanding each letter
 
 ```css
@@ -250,7 +257,7 @@ h1 {<!-- Sets the font-stretch for text in h1 tags to extra expanded -->
   font-stretch: extra-expanded;
   }
 
-p  {<!-- Sets the font-stretch for text in the <p> tags to condensed --> 
+p  {<!-- Sets the font-stretch for text in the <p> tags to condensed -->
   font-stretch: condensed;
   }
 
@@ -260,7 +267,7 @@ h2 {<!-- Sets the font-stretch for text in the h2 tags to normal -->
 ```
 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch)
 
-### 20. Font
+### 20. `Font`
  * This gives us a shorthand way to set all of the font values like font-style, variant, weight, stretch, size, height, and family in that order.  
 
 ```css
@@ -279,3 +286,97 @@ h1 { <!-- Use the same font as the status bar of the window -->
   }
 ```
 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch)
+
+### 21. `Float`
+ * This takes the target element from the normal flow and "floats" it along the left or right side of the container, and text and inline elements will wrap around it.
+
+```css
+header nav {<!-- This will float anything in a nav tag within a header tag to the right -->
+  float: right;
+}
+
+h4  {<!-- This will float anything within an h4 tag to the left -->
+  float: left;  
+  margin: 0;
+  }
+
+#social {<!-- This will ensure that anything with the id of social does not float -->
+  float: none
+}
+```
+
+### 22. `Position`
+ * This allows us to create alternate positioning rules for the target elements. Takes fixed, sticky, absolute, relative, and static
+
+```css
+#social  {<!-- This will fix anything with the id of social to the top right of the screen no matter where you scroll -->
+  position: fixed;
+  right: .5%;
+}
+
+#two {<!-- This will take the element with the id of two and move it by 20 pixels from the top and left of its normal position -->
+  position: relative;
+  top: 20px; left: 20px;
+}
+
+#two {<!-- This will take the element with the id of two and position it by 20 pixels from the top and left of the position of its nearest parent element  -->
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   }
+
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+### 23. `Clear`
+ * Says whether an element can be next to floating elements that precede it or must be moved down (cleared) below them.
+
+```css
+h1 { <!-- Ensures that the h1 tags do not receive the clear property -->
+  clear: none
+  }
+
+h2 {<!-- Allows the element to be moved down to clear right floats -->
+   clear: right
+   }
+
+h3 {<!-- Allows the element to be moved down to clear left floats -->
+   clear: left
+   }
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/clear)
+
+### 24. `Word Spacing`
+   Creates new spacing behavior between tags and text
+
+```css
+   #mozdiv1 {<!-- This adds spacing in between each and every word -->
+  word-spacing: 15px;
+}
+
+  #mozdiv2 {<!-- This adds spacing in between each and every word -->
+  word-spacing: 5em;
+}
+
+#mozdiv3::first-letter {<!-- Allows us to target the first letter of each elemenet -->
+  word-spacing: 5em;
+}
+```
+
+### 25. `White-Space`
+   Allows us to define how white space within the document is suppose to work
+
+```css
+code {<!-- This will treat white space as it appears and preserve its form -->
+  white-space: pre;
+}
+
+p {<!-- This will treat white space as it is normally treated and collapse it -->
+  white-space: normal
+}
+
+p {<!-- This will treat white space as it is normally treated and collapse it and create line breaks at newline characters -->
+  white-space: pre-line;
+}
+
+```

@@ -470,3 +470,107 @@ California Supply Chain<br/>Transparency<!-- Adds a line break in between the tw
 <i>Is this Italic?</i><!-- This will turn all of the text in between the tags to italic -->
 ```
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
+
+### 21. `<input>`
+   Allows us to create different ways to take in information from the user in forms
+
+```html
+<input type="text" name="input" value="Type here"><!-- This will create a basic text box for text input from the user -->
+
+<input type="submit" value="Submit" /><!-- Allows us to create a submit button -->
+
+E-mail: <input type="email" name="user_email" /><br /><!-- Allows us to take in email and provide error messages if it is not a valid email -->
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input)
+
+### 22. `<fieldset>`
+   This is used to group several controls as well as labels (<label>) within a form.
+
+```html
+<fieldset><!-- This creates a fieldset within a form, the the legend of Title and a radio button -->
+    <legend>Title</legend>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Click me</label>
+</fieldset>
+
+<fieldset><!-- This creates a fieldset within a form, the the legend of Personalia and text boxes -->
+    <legend>Personalia:</legend>
+    Name: <input type="text"><br>
+    Email: <input type="text"><br>
+    Date of birth: <input type="text">
+</fieldset>
+
+<fieldset name="userinfo"><!-- This creates a fieldset within a form, the the legend of User Info and text boxes -->
+  <legend>User information</legend>
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" size="40">
+  <label for="address">Address</label>
+  <input type="text" name="address" id="address" size="40">
+  <label for="phone">Phone</label>
+  <input type="text" name="phone" id="phone" size="40">
+</fieldset>
+```
+
+### 23. `<legend>`
+   This allows us to create a caption for a Fieldset tag
+
+```html
+<fieldset><!-- This creates a fieldset within a form, the the legend of Title and a radio button -->
+    <legend>Title</legend>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Click me</label>
+</fieldset>
+
+<fieldset><!-- This creates a fieldset within a form, the the legend of Personalia and text boxes -->
+    <legend>Personalia:</legend>
+    Name: <input type="text"><br>
+    Email: <input type="text"><br>
+    Date of birth: <input type="text">
+</fieldset>
+
+<fieldset name="userinfo"><!-- This creates a fieldset within a form, the the legend of User Info and text boxes -->
+  <legend>User information</legend>
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" size="40">
+  <label for="address">Address</label>
+  <input type="text" name="address" id="address" size="40">
+  <label for="phone">Phone</label>
+  <input type="text" name="phone" id="phone" size="40">
+</fieldset>
+```
+
+### 24. `<button>`
+   Represents a clickable button
+
+```html
+<button name="button">Click me</button><!-- Creates a basic clickable button -->
+
+<form action="/" method="post"><!-- Creates an alternative submit button -->
+  <button>Submit</button>
+</form>
+
+<form action="/" method="post"><!-- Creates a basic clickable reset button -->
+  <button type="reset">Reset</button>
+</form>
+```
+
+### 25. `<select>`
+   Allows us to present a menu of options to the user
+
+```html
+<select name="select"><!-- Creates a drop down menu that will default to the 2 value being selected -->
+  <option value="value1">Value 1</option>
+  <option value="value2" selected>Value 2</option>
+  <option value="value3">Value 3</option>
+</select>
+
+<select><!-- Creates a drop down menu -->
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+<select name="dropdown"><!-- Creates a drop down menu -->
+<option value="Data Structures" selected>Data Structures</option>
+<option value="Data Mining">Data Mining</option>
+</select>
+```
