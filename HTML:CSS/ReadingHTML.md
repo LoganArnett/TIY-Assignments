@@ -1,5 +1,4 @@
-# HTML Block Level Elements
-
+# HTML Block Level
 
 ### `<header>`
    Allows us to create a header on our page which will typically be used for
@@ -339,3 +338,135 @@ specific order -->
 </figure><!-- closing figure tag -->
 <a href="http://webdesign.about.com/od/html5tags/qt/understanding-figure-and-figcaption-html5.htm"></a>
 ```
+
+# Inline
+
+### 11. `<span>`
+   This is an inline element that acts as a container for textual content that does not represent anything in terms of the layout
+
+```html
+<span class="cart-icon">Cart</span><!-- This is a span container with the class cart-icon and the text Cart -->
+
+<span class="spl-links"><!-- This is a span container with the class spl-links some anchor(<a>) tags with links surrounding short snippets of text -->
+<a href="https://www-ssl.bestbuy.com/site/olspage.jsp?id=pcat17000&type=page" class="heavy">Sign In</a><!-- This is the text Sign In wrapped in an <a> tag which turns it into a link -->
+ or <a href="http://www.bestbuy.com/site/olstemplatemapper.jsp?id=pcmcat274800050019&type=page&i=4" class="heavy">Create an Account</a><!-- This is the text Sign In wrapped in an <a> tag which turns it into a link -->
+</span><!-- This is the closing span tag -->
+
+<span>Appliance Services</span><!-- This is a span that was used in between anchor tags(<a>) and after an img as a caption -->
+```
+[Best Buy](http://www.bestbuy.com/)
+
+### 12. `<strong>`
+   This allows you to put STRONG importance and is typically represented as bold text
+
+```html
+<strong>Free Shipping</strong><!-- The text selection between the strong tags will be bolded -->
+
+<strong>Low Price Guarantee</strong>><!-- The text selection between the strong tags will be bolded -->
+
+<strong>HUGE SAVINGS</strong><!-- The text selection between the strong tags will be bolded -->
+```
+[Best Buy](http://www.bestbuy.com/)
+
+### 13. `<br>`
+   This allows you to create a line break in the text to format it in the way that you want
+   with more white space.
+
+```html
+It's free and it takes just a minute.<br>Download the latest version of<!-- Adds a line break in between the two lines of text -->
+
+Introducing My Best Buy &ndash;<br /> Reinventing Reward Zone<!-- Adds a line break in between the two lines of text -->
+
+California Supply Chain<br/>Transparency<!-- Adds a line break in between the two lines of text -->
+```
+[Best Buy](http://www.bestbuy.com/)
+
+### 14. `<strike>`
+   This adds a strike through text as an inline element but has become obsolete as you can accomplish this with text-decoration in css as well
+
+```html
+<strike>Today's Special: Salmon</strike><!-- This would appear in the output of the page with a line through the middle of the text all the way down horizontally -->
+
+<strike>This has a line through it</strike><!-- This would appear in the output of the page with a line through the middle of the text all the way down horizontally -->
+
+
+<strike>Strike THREE!!!</strike><!-- This would appear in the output of the page with a line through the middle of the text all the way down horizontally -->
+
+```
+
+
+### 15. `<code>`
+   This shows that you are about to add a piece of computer code into the page
+
+```html
+<code>This is code.</code><!-- This will allow whatever falls in between the tags to appear in the desired computer programming format -->
+
+<code>HTMLElement</code><!-- This will allow whatever falls in between the tags to appear in the desired computer programming format -->
+
+<code>&lt;command&gt;</code><!-- This will allow whatever falls in between the tags to appear in the desired computer programming format -->
+```
+[MDN](view-source:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code)
+
+### 16. `<a>`
+   This is an anchor tag and allows us to create hyperlinks that are directed to a specific destination
+
+```html
+<a href="#" class="nav-my">My Best Buy</a><!-- This tag has a placeholder # for the link which will not take it anywhere -->
+
+<a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Chrome</a><!-- This tag has a link back to the Google Chrome Browser page -->
+
+<a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Internet Explorer</a><!-- This tag has a link back to the Internet Explorer Browser page(Who Uses IE?! NOTHING WORKS!!!) -->
+```
+[Best Buy](http://www.bestbuy.com/)
+
+### 17. `<abbr>`
+   This abbreviation tag allows you to create a title or definition for an abbreviation that you type out incase you want to be able to provide the full meaning as well when the user hovers over the abbreviation
+
+```html
+
+<abbr title="United Kingdom">UK</abbr><!-- This tag allows you to hover over the text UK and see a window pop up displaying United Kingdom as the meaning -->
+
+<abbr title="Nike">NKE Stock Ticker</abbr><!-- This tag allows you to hover over the text NKE and see a window pop up displaying Nike as the meaning -->
+
+
+<abbr title="'Merica">US</abbr><!-- This tag allows you to hover over the text US and see a window pop up displaying 'Merica as the meaning -->
+
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
+
+### 18. `<em>`
+   This marks the selected text with a stress emphasis. It results by converting the text to italics. The major difference between this and the <i> tag is that a screen reader would read anything in between the <em> tag with an emphasis while <i> simply italicizes a selection in appearance.
+
+```html
+<em>block-level</em><!-- This will change the text into an italic appearance and add emphasis to the word if it were to be read by a screen reader -->
+
+<em>phrasing content</em><!-- This will change the text into an italic appearance and add emphasis to the word if it were to be read by a screen reader -->
+
+<em>flow</em><!-- This will change the text into an italic appearance and add emphasis to the word if it were to be read by a screen reader -->
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
+
+### 19. `<b>`
+   This will change the text stylistically to bold but add no emphasis to the words meaning itself
+
+```html
+<b>text-level</b><!-- This will turn all of the text in between the tags to bold -->
+
+<b>HTML</b><!-- This will turn all of the text in between the tags to bold -->
+
+<b> element, likely in bold.</b><!-- This will turn all of the text in between the tags to bold -->
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
+
+
+### 20. `<i>`
+   This will change the text stylistically to italic but add no emphasis to the words meaning itself
+
+```html
+<i>Veni, vidi, vici</i><!-- This will turn all of the text in between the tags to italic -->
+
+<i>Hello Everyone</i><!-- This will turn all of the text in between the tags to italic -->
+
+<i>Is this Italic?</i><!-- This will turn all of the text in between the tags to italic -->
+```
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
