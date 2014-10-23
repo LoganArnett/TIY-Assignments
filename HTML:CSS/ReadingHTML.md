@@ -7,16 +7,24 @@
 
 ```html
 <!-- Header -->
-  <header id="main-header"><!-- This is the opening header tag with an id of "main-header" assigned -->
+  <header><!-- This is the opening header tag -->
+		<div class="right-panel">
+                	 <a href="/download/" class="cta click_tracking" data-label="Download header">Download</a>
+                        <!-- Clickable Download link for the Evernote App -->
+            			 <a href="#" id="header-menu" class="menu click_tracking" data-label="Menu open header"><span class="text">Menu</span><span class="header-sprite"></span></a>
+	 </div>               <!-- Main menu button for a dropdown -->
   </header><!-- This is the closing header tag -->
+  <a href="https://evernote.com/"></a>
 
 
   <header id="topban" class="ban"><!-- This is the opening header tag with an id of "topban" and the class of "ban" assigned -->
   </header><!-- This is the closing header tag -->
+  <a href="view-source:http://orlando.craigslist.org/"></a>
 
 
   <header class='nav-locale-us nav-lang-en'><!-- This is the opening header tag with a class of "nav-locale-us nav-lang-en" assigned -->
  </header><!-- This is the closing header tag -->
+ <a href="view-source:http://www.amazon.com/"></a>
 ```
 
 ### < footer >
