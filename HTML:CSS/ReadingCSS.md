@@ -73,7 +73,10 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
 ```
 [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
+<<<<<<< HEAD
 
+=======
+>>>>>>> d459afedb7c4ac590e40386a89d00d39686ef062
 ### 8. `Border-left-color`
  * This style sets the border color specifically for just the left side of the element
 
@@ -83,7 +86,10 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
 ```
 [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
+<<<<<<< HEAD
 
+=======
+>>>>>>> d459afedb7c4ac590e40386a89d00d39686ef062
 ### 9. `Border-top-color`
  * This style sets the border color specifically for just the top border of the element
 
@@ -93,7 +99,10 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
 ```
 [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
+<<<<<<< HEAD
 
+=======
+>>>>>>> d459afedb7c4ac590e40386a89d00d39686ef062
 ### 10. `Border-bottom-color`
  * This style sets the border color specifically for just the bottom border of the element
 
@@ -103,7 +112,10 @@ p {<!-- This is setting the text decoration to underline and the color of that u
   }
  ```
  [Twitter](https://abs.twimg.com/a/1413573160/css/t1/twitter_core.bundle.css)
+<<<<<<< HEAD
 
+=======
+>>>>>>> d459afedb7c4ac590e40386a89d00d39686ef062
 ### 11. `Text-decoration`
  * This allows you to add an underline, overline, line-through, blink, or none.
 
@@ -121,7 +133,10 @@ h3 {<!-- This allows us to add an overline to any h3 tag -->
 }
 ```
 [Best Buy](http://www.bestbuy.com/)
+<<<<<<< HEAD
 
+=======
+>>>>>>> d459afedb7c4ac590e40386a89d00d39686ef062
 ### 12. `Text-align`
  * Allows us to align inline content not the actual block element
 
@@ -139,7 +154,10 @@ h3 {<!-- This allows us to add an overline to any h3 tag -->
 }
 ```
 [Best Buy](http://www.bestbuy.com/)
+<<<<<<< HEAD
 
+=======
+>>>>>>> d459afedb7c4ac590e40386a89d00d39686ef062
 ### 13. `Font-size`
  * This allows us to control the size of the font in different areas of the document
 
@@ -175,9 +193,14 @@ dt {<!-- This allows us to ensure that the font weight to be BOLD for anything i
   }
 ```
 [Best Buy](http://www.bestbuy.com/)
+<<<<<<< HEAD
 
 ### 15. `Font-family`
  *
+=======
+### 15. `Font-family`
+ * This establishes which font family/families you would your text to pull from
+>>>>>>> d459afedb7c4ac590e40386a89d00d39686ef062
 
 ```css
  body{<!-- This allows us to set the font-family within a target area -->

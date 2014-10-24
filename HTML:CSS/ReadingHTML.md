@@ -470,6 +470,7 @@ California Supply Chain<br/>Transparency<!-- Adds a line break in between the tw
 <i>Is this Italic?</i><!-- This will turn all of the text in between the tags to italic -->
 ```
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
+<<<<<<< HEAD
 
 ### 21. `<input>`
    Allows us to create different ways to take in information from the user in forms
@@ -574,3 +575,5 @@ E-mail: <input type="email" name="user_email" /><br /><!-- Allows us to take in 
 <option value="Data Mining">Data Mining</option>
 </select>
 ```
+=======
+>>>>>>> d459afedb7c4ac590e40386a89d00d39686ef062
