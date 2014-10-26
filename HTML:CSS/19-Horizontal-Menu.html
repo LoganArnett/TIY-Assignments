@@ -29,7 +29,7 @@
        height: 280pt;
      }
      header h1 {
-       padding: 2% 0 0 20%;
+       padding: 2% 0 0 14%;
        color: forestgreen;
        font-size: 41pt;
        -webkit-text-stroke: 1px white;
@@ -79,6 +79,7 @@
       font-family: sans-serif;
       line-height: 26.5pt;
       width: 100%;
+      display: none;
     }
     #downloads #column1 {
       width: 22%;
@@ -96,6 +97,7 @@
       font-family: sans-serif;
       line-height: 26.5pt;
       width: 100%;
+      display: none;
     }
     #apps #column1 {
       width: 22%;
@@ -113,6 +115,7 @@
       font-family: sans-serif;
       line-height: 26.5pt;
       width: 100%;
+      display: none;
     }
     #projects #column1 {
       width: 22%;
@@ -130,6 +133,7 @@
       font-family: sans-serif;
       line-height: 26.5pt;
       width: 100%;
+      display: none;
     }
     #free #column1 {
       width: 22%;
@@ -147,6 +151,7 @@
       font-family: sans-serif;
       line-height: 26.5pt;
       width: 100%;
+      display: none;
     }
     </style>
   </head>
@@ -162,7 +167,7 @@
         <li><a id="freeMenu" href="#" onclick="drop('free')">Freeware</a></li>
       </ul>
     </nav>
-    <section id="products" style="display: none;">
+    <section id="products">
       <section id="column1">
       <ul>
         <h4><a href="#">Learning & Games</a></h4>
@@ -198,7 +203,7 @@
       </ul>
     </section>
   </section>
-    <section id="downloads" style="display: none;">
+    <section id="downloads">
       <section id="column1">
       <ul>
         <h4><a href="#">Education</a></h4>
@@ -234,7 +239,7 @@
       </ul>
     </section>
     </section>
-    <section id="apps" style="display: none;"  onclick="function drop('products')">
+    <section id="apps">
       <section id="column1">
       <ul>
         <h4><a href="#">Professionals</a></h4>
@@ -264,7 +269,7 @@
     </section>
     </section>
     </section>
-    <section id="projects" style="display: none;"  onclick="function drop('products')">
+    <section id="projects">
       <section id="column1">
       <ul>
         <h4><a href="#">Learning & Games</a></h4>
@@ -294,7 +299,7 @@
       <section id="column3">
     </section>
     </section>
-    <section id="free" style="display: none;"  onclick="function drop('products')">
+    <section id="free">
       <section id="column1">
       <ul>
         <h4><a href="#">Education</a></h4>
