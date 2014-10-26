@@ -2,23 +2,42 @@
   <head>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-
+      function showMe(id) {
+       var show = document.getElementById(id);
+       if(show.style.display == 'block')
+          show.style.display = 'none';
+       else
+          show.style.display = 'block';
+    }
     </script>
     <style>
       body {
         margin: 0;
       }
+      li {
+        list-style-type: none;
+      }
+      h1:before {
+        font-family: 'FontAwesome';
+        content: '\f061';
+        margin:0 2% 0 8%;
+        font-size: 25pt;
+      }
       li:before {
         font-family: 'FontAwesome';
         content: '\f061';
         margin:0 5px 0 -15px;
-}
+        font-size: 20pt;
+      }
+      #first {
+        display: none;
+      }
     </style>
   </head>
   <body>
-    <ul>
-      <h1>Am I right?</h1>
-      <li>I'm not a witch.</li>
+    <h1><a href="#" onclick="toggle_visibility('foo');"><span class="fa fa-arrow-right"></span>Am I right?</a></h1>
+    <ul id="first">
+      <li><a href="#" onclick="toggle_visibility('foo');"><span class="fa fa-arrow-right"></span></a>I'm not a witch.</li>
       <li>We shall say 'Ni' again to you, if you do not appease us.</li>
       <li>Found them? In Mercia?! The coconut's tropical!</li>
       <li>A newt?!</li>
