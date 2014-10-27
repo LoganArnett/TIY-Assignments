@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>This is our rendering of The Iron Yard Orlando... Not quite.</title>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
 header {
     background-image: url(http://static.tumblr.com/3c7cd96cde56779343d2e9a22afec085/w5gxxfv/oCrn8vkw8/tumblr_static_9cxjqqnfamsccsg4ow84sg8kg.jpg);
@@ -33,7 +33,7 @@ p#time1 {
   height: 20px;
 }
     </style>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
     <script>
 /**
  * @param Number? String? I dunno! datePosted
@@ -50,14 +50,21 @@ var printDate = {};//Creates dictionary
 
 printDate.hours = Math.floor(hDiff);
 
-return console.log(printDate.hours + ' hours ago'); // x hours ago
-
+  return (printDate.hours + ' hours ago');
 }
+
+function print(){
+ x = hoursAgo("Oct 26 2014 11:00:00", Date.now());
+ y = hoursAgo("Oct 23 2014 19:30:00", Date.now());
+ document.getElementById("time1").innerHTML = x;
+ document.getElementById("time2").innerHTML = y;
+}
+
 
 
     </script>
   </head>
-  <body>
+  <body onload="print()">
     <header>
       <!-- TODO: Style these links... -->
       <!-- TODO: Add icons... -->
@@ -91,7 +98,7 @@ return console.log(printDate.hours + ' hours ago'); // x hours ago
           </nav>
 
           <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time -->
-          <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard"><p id="time1" ><script type="text/javascript">document.onload.getElementById('time1').innerHTML = hoursAgo("Oct 26 2014 11:00:00",Date.now());</script></p></a></nav>
+          <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard"><time id="time1"></time></a></nav>
         </article>
         <article>
           <h1><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">Successful Orlando Tech Meetup at The Iron Yard!</a></h1>
@@ -110,7 +117,7 @@ return console.log(printDate.hours + ' hours ago'); // x hours ago
           </nav>
 
           <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time -->
-          <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard"><time></time></a></nav>
+          <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard"><time id="time2"></time></a></nav>
         </article>
       </section>
     </div> <!-- #container -->
