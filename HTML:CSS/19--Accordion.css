@@ -144,6 +144,22 @@ hr {
   #open {
     font-size: .8em;
   }
+  #first ul p {
+    font-size: .8em;
+    line-height: 2ex;
+  }
+  #second ul p {
+    font-size: .8em;
+    line-height: 2ex;
+  }
+  #third ul p {
+    font-size: .8em;
+    line-height: 2ex;
+  }
+  #fourth ul p {
+    font-size: .8em;
+    line-height: 2ex;
+  }
 }
 
 @media (max-width: 286px) {
@@ -156,4 +172,20 @@ hr {
   #open {
     font-size: .5em;
   }
+   #first ul p {
+  font-size: .5em;
+  line-height: 2ex;
+}
+#second ul p {
+  font-size: .5em;
+  line-height: 2ex;
+}
+#third ul p {
+  font-size: .5em;
+  line-height: 2ex;
+}
+#fourth ul p {
+  font-size: .5em;
+  line-height: 2ex;
+}
 }
