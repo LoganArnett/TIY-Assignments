@@ -1,0 +1,156 @@
+/* Horizontal.css */
+
+body {
+  list-style-type: none;
+  margin: 0 0;
+  }
+header {
+  background: #fff;
+  width: 100%;
+  height: 180pt;
+}
+header h1 {
+  color: forestgreen;
+  width: 85%;
+  font-size: 41pt;
+  -webkit-text-stroke: 1px white;
+  font-family: sans-serif;
+  padding: 2%;
+  margin: auto;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: forestgreen;
+}
+nav {
+  margin: 1.88% 0 0 0;
+  border-bottom: 4px solid forestgreen;
+}
+nav li {
+    display: inline;
+    background-color: #fff;
+    margin: 0;
+  }
+nav li a {
+   padding: 1em 2em;
+   font-family: sans-serif;
+   font-size: 12pt;
+}
+section {
+ background: lightgray;
+ margin-top: -.15em;
+}
+section ul {
+ list-style-type: none;
+ font size: 15pt;
+}
+section ul li a {
+ font-size: 15pt;
+}
+#products #column1 {
+ width: 22%;
+ margin-left: 8%;
+}
+#products #column3 {
+ width: 22%;
+}
+#products #column2 {
+ width: 22%;
+ margin: 0 4% 0 4%;
+}
+#products {
+ font-size: 20pt;
+ font-family: sans-serif;
+ line-height: 26.5pt;
+ width: 100%;
+ display: none;
+}
+#downloads #column1 {
+ width: 22%;
+ margin-left: 8%;
+}
+#downloads #column3 {
+ width: 22%;
+}
+#downloads #column2 {
+  width: 22%;
+  margin: 0 4% 0 4%;
+}
+#downloads {
+ font-size: 20pt;
+ font-family: sans-serif;
+ line-height: 26.5pt;
+ width: 100%;
+ display: none;
+}
+#apps #column1 {
+ width: 22%;
+ margin-left: 8%;
+}
+#apps #column3 {
+ width: 22%;
+}
+#apps #column2 {
+  width: 22%;
+  margin: 0 4% 0 4%;
+}
+#apps {
+ font-size: 20pt;
+ font-family: sans-serif;
+ line-height: 26.5pt;
+ width: 100%;
+ display: none;
+}
+#projects #column1 {
+ width: 22%;
+ margin-left: 8%;
+}
+#projects #column3 {
+ width: 22%;
+}
+#projects #column2 {
+  width: 22%;
+  margin: 0 4% 0 4%;
+}
+#projects {
+ font-size: 20pt;
+ font-family: sans-serif;
+ line-height: 26.5pt;
+ width: 100%;
+ display: none;
+}
+#free #column1 {
+ width: 22%;
+ margin-left: 8%;
+}
+#free #column3 {
+ width: 22%;
+}
+#free #column2 {
+  width: 22%;
+  margin: 0 4% 0 4%;
+}
+#free {
+ font-size: 20pt;
+ font-family: sans-serif;
+ line-height: 26.5pt;
+ width: 100%;
+ display: none;
+}
+@media (max-width: 1215px) {
+  header h1 {
+    font-size: 32pt;
+  }
+}
+@media (max-width: 937px) {
+  header h1 {
+    font-size: 26pt;
+    padding: 4%;
+  }
+}
+@media (max-width: 761px) {
+  header h1 {
+    font-size: 18pt;
+  }
+}

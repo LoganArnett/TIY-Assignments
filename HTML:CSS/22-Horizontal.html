@@ -1,0 +1,202 @@
+<html>
+  <head>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="22-horizontal.css">
+    <title>Horizontal Menu</title>
+    <script>
+      function drop(id) {
+					 var navID = ['products','downloads','apps','projects','free'];
+		       var dropDown = document.getElementById(id);
+					 navID.forEach(function(value,index){
+             var dropMenu = value + 'Menu';
+							if(value==id){
+									dropDown.style.display = '-webkit-box';
+									document.getElementById(dropMenu).style.backgroundColor = 'lightgray'
+							}else{
+									document.getElementById(value).style.display = 'none';
+									document.getElementById(dropMenu).style.backgroundColor = '#fff'
+							};
+					 });
+		    }
+    </script>
+  </head>
+
+  <body>
+   <header><h1>First shalt thou take out the Holy Pin <span class="fa fa-bomb"></span></h1></header>
+    <nav>
+      <ul>
+        <li><a id="productsMenu" href="#" onclick="drop('products')">Products</a></li>
+        <li><a id="downloadsMenu" href="#" onclick="drop('downloads')">Downloads</a></li>
+        <li><a id="appsMenu" href="#" onclick="drop('apps')">Applications</a></li>
+        <li><a id="projectsMenu" href="#" onclick="drop('projects')">Projects</a></li>
+        <li><a id="freeMenu" href="#" onclick="drop('free')">Freeware</a></li>
+      </ul>
+    </nav>
+    <section id="products">
+      <section id="column1">
+      <ul>
+        <h4><a href="#">Learning & Games</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+        <li><a href="#">OOOOH</a></li>
+        <li><a href="#">MYYY</a></li>
+        <li><a href="#">MYYY</a></li>
+      </ul>
+    </section>
+      <section id="column2">
+      <ul>
+        <h4><a href="#">Utilities</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+        <li><a href="#">OOOOH</a></li>
+        <li><a href="#">MYYY</a></li>
+      </ul>
+      </section>
+      <section id="column3">
+      <ul>
+        <h4><a href="#">Education</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+      </ul>
+      <ul>
+        <h4><a href="#">Professionals</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+      </ul>
+    </section>
+  </section>
+    <section id="downloads">
+      <section id="column1">
+      <ul>
+        <h4><a href="#">Education</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+      </ul>
+      <ul>
+        <h4><a href="#">Professionals</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+      </ul>
+    </section>
+      <section id="column2">
+      <ul>
+        <h4><a href="#">Games</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+        <li><a href="#">OOOOH</a></li>
+        <li><a href="#">MYYY</a></li>
+        <li><a href="#">MYYY</a></li>
+      </ul>
+    </section>
+      <section id="column3">
+      <ul>
+        <h4><a href="#">Utilities</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+        <li><a href="#">OOOOH</a></li>
+        <li><a href="#">MYYY</a></li>
+      </ul>
+    </section>
+    </section>
+    <section id="apps">
+      <section id="column1">
+      <ul>
+        <h4><a href="#">Professionals</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+      </ul>
+      <ul>
+        <h4><a href="#">Learning</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+      </ul>
+    </section>
+      <section id="column2">
+      <ul>
+        <h4><a href="#">Education</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+      </ul>
+      <ul>
+        <h4><a href="#">Professionals</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+      </ul>
+      <section id="column3">
+    </section>
+    </section>
+    </section>
+    <section id="projects">
+      <section id="column1">
+      <ul>
+        <h4><a href="#">Learning & Games</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+        <li><a href="#">OOOOH</a></li>
+        <li><a href="#">MYYY</a></li>
+        <li><a href="#">MYYY</a></li>
+      </ul>
+      <ul>
+        <h4><a href="#">Professionals</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+      </ul>
+    </section>
+      <section id="column2">
+      <ul>
+        <h4><a href="#">Utilities</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+        <li><a href="#">OOOOH</a></li>
+        <li><a href="#">MYYY</a></li>
+      </ul>
+    </section>
+      <section id="column3">
+    </section>
+    </section>
+    <section id="free">
+      <section id="column1">
+      <ul>
+        <h4><a href="#">Education</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+      </ul>
+      <ul>
+        <h4><a href="#">Professionals</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+      </ul>
+    </section>
+      <section id="column2">
+      <ul>
+        <h4><a href="#">Professionals</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+      </ul>
+    </section>
+      <section id="column3">
+      <ul>
+        <h4><a href="#">Learning & Games</a></h4>
+        <li><a href="#">Lions</a></li>
+        <li><a href="#">Tigers</a></li>
+        <li><a href="#">Bears</a></li>
+        <li><a href="#">OOOOH</a></li>
+        <li><a href="#">MYYY</a></li>
+        <li><a href="#">MYYY</a></li>
+      </ul>
+    </section>
+    </section>
+  </body>
+
+</html>
