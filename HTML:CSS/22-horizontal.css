@@ -3,6 +3,7 @@
 body {
   list-style-type: none;
   margin: 0 0;
+  width: 100%;
   }
 header {
   background: #fff;
@@ -24,7 +25,7 @@ a {
   color: forestgreen;
 }
 nav {
-  margin: 1.88% 0 0 0;
+  margin: 1em 0 1em 0;
   border-bottom: 4px solid forestgreen;
 }
 nav li {
@@ -39,7 +40,8 @@ nav li a {
 }
 section {
  background: lightgray;
- margin-top: -.15em;
+ margin-top: 0.85em;
+ width: 100%;
 }
 section ul {
  list-style-type: none;
@@ -48,16 +50,16 @@ section ul {
 section ul li a {
  font-size: 15pt;
 }
-#products #column1 {
- width: 22%;
- margin-left: 8%;
+#column1 {
+ width: 12em;
+ margin-left: 4em;
 }
-#products #column3 {
- width: 22%;
+#column3 {
+ width: 12em;
 }
-#products #column2 {
- width: 22%;
- margin: 0 4% 0 4%;
+#column2 {
+ width: 12em;
+ margin: .85em 2em 0 5em;
 }
 #products {
  font-size: 20pt;
@@ -65,17 +67,7 @@ section ul li a {
  line-height: 26.5pt;
  width: 100%;
  display: none;
-}
-#downloads #column1 {
- width: 22%;
- margin-left: 8%;
-}
-#downloads #column3 {
- width: 22%;
-}
-#downloads #column2 {
-  width: 22%;
-  margin: 0 4% 0 4%;
+ margin-top: -0.76em;
 }
 #downloads {
  font-size: 20pt;
@@ -83,17 +75,7 @@ section ul li a {
  line-height: 26.5pt;
  width: 100%;
  display: none;
-}
-#apps #column1 {
- width: 22%;
- margin-left: 8%;
-}
-#apps #column3 {
- width: 22%;
-}
-#apps #column2 {
-  width: 22%;
-  margin: 0 4% 0 4%;
+ margin-top: -0.76em;
 }
 #apps {
  font-size: 20pt;
@@ -101,17 +83,7 @@ section ul li a {
  line-height: 26.5pt;
  width: 100%;
  display: none;
-}
-#projects #column1 {
- width: 22%;
- margin-left: 8%;
-}
-#projects #column3 {
- width: 22%;
-}
-#projects #column2 {
-  width: 22%;
-  margin: 0 4% 0 4%;
+ margin-top: -0.76em;
 }
 #projects {
  font-size: 20pt;
@@ -119,17 +91,7 @@ section ul li a {
  line-height: 26.5pt;
  width: 100%;
  display: none;
-}
-#free #column1 {
- width: 22%;
- margin-left: 8%;
-}
-#free #column3 {
- width: 22%;
-}
-#free #column2 {
-  width: 22%;
-  margin: 0 4% 0 4%;
+ margin-top: -0.76em;
 }
 #free {
  font-size: 20pt;
@@ -137,10 +99,22 @@ section ul li a {
  line-height: 26.5pt;
  width: 100%;
  display: none;
+ margin-top: -0.76em;
 }
 @media (max-width: 1215px) {
   header h1 {
     font-size: 32pt;
+  }
+   #column1 {
+   width: 9em;
+   margin-left: 4em;
+  }
+  #column3 {
+   width: 9em;
+  }
+  #column2 {
+   width: 9em;
+   margin: .85em 2em 0 2em;
   }
 }
 @media (max-width: 937px) {
@@ -148,9 +122,82 @@ section ul li a {
     font-size: 26pt;
     padding: 4%;
   }
+  #column1 {
+  width: 6em;
+  margin-left: 4em;
+ }
+ #column3 {
+  width: 6em;
+ }
+ #column2 {
+  width: 6em;
+  margin: .85em 2em 0 2em;
+ }
 }
 @media (max-width: 761px) {
   header h1 {
     font-size: 18pt;
+  }
+  #column1 {
+    margin-left: 1em;
+  }
+  nav li a {
+    font-size: 10pt;
+    padding: 1.3em 2em;
+  }
+  ul h4 a {
+    font-size: 15pt;
+  }
+  section ul li a {
+    font-size: 12pt;
+  }
+}
+@media (max-width: 635px) {
+  header h1 {
+    font-size: 18pt;
+  }
+  #column1 {
+  width: 5em;
+  margin-left: 1em;
+ }
+ #column3 {
+  width: 5em;
+ }
+ #column2 {
+  width: 5em;
+  margin: .85em 1em 0 1em;
+ }
+  nav li a {
+    font-size: 8pt;
+    padding: 1.65em 2em;
+  }
+  ul h4 a {
+    font-size: 12pt;
+  }
+  section ul li a {
+    font-size: 9pt;
+  }
+  section {
+    line-height: 14.5pt;
+  }
+}
+@media (max-width: 527px) {
+  nav ul li {
+    display: block;
+    margin: 1em auto;
+    border-bottom: 1px solid forestgreen;
+    padding-bottom: 1em;
+  }
+  nav {
+    border-bottom: none;
+  }
+  nav ul {
+    padding-left: 0;
+  }
+  header {
+    height: 100pt;
+  }
+  section {
+    display: block;
   }
 }
