@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <title>Vertical Timeline</title>
+    <script>
+
+    </script>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+      }
+      body ul {
+        list-style-type: none;
+      }
+      body p {
+        font-size: 20px;
+        font-family: sans-serif;
+        line-height: 1.5;
+        color: white;
+      }
+      li.sky h1 {
+        color: white;
+      }
+      li.sky hr {
+        color: white;
+        border: 1px solid rgba(255,255,255,0.3);
+      }
+      li.dark h1 {
+        color:white;
+      }
+      li.dark hr {
+        color: white;
+        border: 1px solid rgba(255,255,255,0.3);
+      }
+      header {
+        margin: 2% 5% 5% 5%;;
+        color: #3594CB;
+        font-family: sans-serif;
+      }
+      #contain {
+        width: 60%;
+        margin: 0 6% 2% 0;
+        border-left: 11px solid skyblue;
+        padding-left: 5%;
+        float: right;
+      }
+      .dark {
+        background-color: #3594CB;
+        border-radius: 4px;
+        padding: 5%;
+        margin-bottom: 5%;
+      }
+      .sky {
+        background-color: #6CBFEE;
+        border-radius: 4px;
+        padding: 5%;
+        margin-bottom: 5%;
+      }
+      aside.phone  {
+        float: left;
+        margin-top: -1%;
+        margin-left: 16.06%;
+        position: absolute;
+        z-index: 1;
+        width: 15%;
+      }
+      aside.comp  {
+        width: 15%;
+        float: left;
+        margin-top: 33.5%;
+        margin-left: 16.06%;
+        z-index: 2;
+        position: absolute;
+      }
+      aside.hand  {
+        width: 15%;
+        float: left;
+        margin-top: 64%;
+        margin-left: 16.06%;
+        z-index: 2;
+        position: absolute;
+      }
+      body p.icon {
+        margin-top: 0;
+        width: 40pt;
+        height: 40pt;
+        border-radius: 50%;
+        background-color: #3594CB;
+        text-align: center;
+        border: 8px solid skyblue;
+        float: right;
+        font-size: 12pt;
+      }
+      body p.cal {
+        float: left;
+        margin: 1% 0 0 20%;
+        font-size: 15pt;
+        line-height: 1pt;
+      }
+      body p.arrowdark {
+        float: left;
+        margin: -43px 0px 0 -57px;
+        color: #3594CB;
+      }
+      body p.arrowlight {
+        float: left;
+        margin: -43px 0px 0 -57px;
+        color: #6CBFEE;
+      }
+      span.fa.fa-mobile {
+        margin: 7.5% 25%;
+        color: white;
+      }
+      span.fa.fa-desktop {
+        margin: 26% 18%;
+        color: white;
+      }
+      span.fa.fa-hand-o-right {
+        margin: 20% 21%;
+        color: white;
+      }
+      .date {
+        color: gray;
+      }
+      body p.time {
+        float: left;
+        margin: 0 0 0 -23%;
+      }
+      .clock {
+        color: skyblue;
+        font-size: 4pc;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bacon E. Goodness</h1>
+    </header>
+      <ul id="contain">
+        <li class="sky">
+          <p class="arrowlight"><span class="fa fa-caret-left fa-3x"></span></p>
+          <h1>Bacon MMM...</h1>
+          <hr>
+          <p>Bacon ipsum dolor amet boudin swine short ribs sirloin ham chuck
+             pork belly tail meatball andouille hamburger ham hock shank. Venison
+             rump biltong ribeye pork belly andouille. Doner turkey sausage chuck
+             bacon ribeye spare ribs pork loin ball tip, chicken shankle drumstick
+             salami. Bacon ham hock pork belly pork chop, kevin hamburger swine
+             shankle. Swine salami short loin short ribs turkey pork chop meatball
+              boudin, venison sirloin brisket. Swine venison pig kielbasa spare
+              ribs cow capicola jerky pork belly prosciutto porchetta. Corned beef
+              tail capicola brisket, filet mignon kielbasa pastrami ham hock pig
+              flank beef ribs bresaola swine.</p>
+        </li>
+        <li class="dark">
+          <p class="arrowdark"><span class="fa fa-caret-left fa-3x"></span></p>
+          <h1>Deliciousness</h1>
+          <hr>
+          <p>Sirloin kevin tongue turducken. Porchetta meatball swine filet mignon
+             pastrami brisket tenderloin chuck. Jowl ground round ball tip pork
+             loin swine jerky venison chuck, sausage pork turkey. Tongue pig
+             ham hock jowl short loin chicken pork loin pastrami pork chop turducken.
+              Porchetta ball tip swine shankle shoulder. Pastrami andouille jowl
+              beef, jerky shank landjaeger corned beef short ribs meatball turducken
+              flank pork loin. Ball tip venison pig pork chop.</p>
+        </li>
+        <li class="sky">
+          <p class="arrowlight"><span class="fa fa-caret-left fa-3x"></span></p>
+          <h1>But Seriously, Bacon</h1>
+          <hr>
+          <p>Pork loin filet mignon kevin kielbasa, pork belly pork chop corned
+            beef beef. Chicken jerky pork chop prosciutto swine boudin. Bacon
+            turducken meatball shoulder prosciutto pancetta. Short ribs biltong
+            pancetta pork belly ribeye drumstick. Strip steak shank prosciutto
+            swine porchetta. Meatloaf ham hock chicken filet mignon, pork chop
+            bresaola spare ribs.</p>
+        </li>
+      </ul>
+      <aside class="phone">
+        <p class="cal"><date class="date">4/15/13</date></p>
+        <p class="time"><time class="clock">18:30</time></p>
+        <p class="icon"><a href="#"><span class="fa fa-mobile fa-3x"></span></a></p>
+      </aside>
+      <aside class="comp">
+        <p class="cal"><date class="date">4/12/13</date></p>
+        <p class="time"><time class="clock">20:45</time></p>
+        <p class="icon"><a href="#"><span class="fa fa-desktop fa-2x"></span></a></p>
+      </aside>
+      <aside class="hand">
+        <p class="cal"><date class="date">4/10/13</date></p>
+        <p class="time"><time class="clock">19:22</time></p>
+        <p class="icon"><a href="#"><span class="fa fa-hand-o-right fa-2x"></span></a></p>
+      </aside>
+  </body>
+</html>
