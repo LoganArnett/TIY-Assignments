@@ -10,7 +10,8 @@ h3 {
 }
 
 ul {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 li {
@@ -18,7 +19,7 @@ li {
 }
 
 .menu > li {
-  margin: 0;
+  margin: -0.4ex 0 0 0;
   padding: 2ex 0; padding-left: 3em;
   border-bottom: 2pt solid blue;
 }
@@ -34,7 +35,6 @@ li {
   margin: 1ex 0;
 }
 
-
 .menu > li .submenu {
   display: none;
 }
@@ -43,11 +43,34 @@ li {
 }
 
 .open {
-  background: blue;
+  background: #47A3DA;
   color: white;
 }
 
 .open h3 {
   color: white;
   margin-bottom: 3ex;
+}
+
+@media (min-width: 481px){
+  .menu > li {
+    margin: -0.4ex 0 0 0;
+    padding: 4.3ex 2em 3.3ex 2em;
+    padding-left: 3em;
+    border-bottom: none;
+    display: inline;
+    font-size: 65%;
+  }
+  .menu li h3 {
+    display: inline;
+    padding-right: 2em;
+
+  }
+  ul {
+    border-bottom: 2px solid blue;
+    padding: 1em 3em 1em 1em;
+     }
+  .menu > li.open .submenu {
+    display: block;
+    }
 }
