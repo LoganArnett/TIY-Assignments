@@ -33,4 +33,17 @@ TIY-Assignments
   * Learning HTML and CSS
   * Designing basic web pages
   * Researching as many tags and properties as possible to utilize
-  
+
+### Week 6. Responsive Design
+  * Refactoring our Week 5 layouts
+  * Recreated the layouts with more in depth html and css
+    * New tools:
+      * [normalize.css](http://necolas.github.io/normalize.css/)
+      * [typeplate.css](http://typeplate.com/)
+  * Reviewed the DOM and our `javascript` functions
+    * New tools:
+      * [lodash.js](https://lodash.com/)
+      * [gulp.js](http://gulpjs.com/)
+  * Added new functionality to our menus and onclick events
+  * Dove into Media Queries and varying screen sizes
+  * Discussed Mobile First philosophy
