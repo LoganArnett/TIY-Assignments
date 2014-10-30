@@ -1,11 +1,4 @@
 /* JS for Mobile First Horizontal Dropdown */
-var navItems = document.getElementsByTagName('h3');
-
-// for each navItem in navItems...
-_.each(navItems, function(navItem){
-  // attach the event handler...
-  navItem.onclick = clickNavItem;
-});
 /**
  * If "this" `navItem` is "closed", make it "open"; if "this" `navItem` is "open"
  * make it "closed". If other `navItems` are "open" then close them, too.

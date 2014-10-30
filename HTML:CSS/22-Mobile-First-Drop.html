@@ -145,5 +145,14 @@
         </div>
       </li><!-- END Freeware -->
     </ul>
+    <script>
+      var navItems = document.getElementsByTagName('h3');
+
+      // for each navItem in navItems...
+      _.each(navItems, function(navItem){
+        // attach the event handler...
+        navItem.onclick = clickNavItem;
+      });
+    </script>
   </body>
 </html>
