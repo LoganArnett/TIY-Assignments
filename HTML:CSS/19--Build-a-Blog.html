@@ -140,10 +140,10 @@
  }
 </style>
 <script>
-  function hoursAgo(then, now){
+  function hoursAgo(then){
 
   var timeThen = new Date(then).getTime();//Converts string date value
-  var timeNow = new Date(now).getTime();//Converts string date value
+  var timeNow = new Date().getTime();//Converts string date value
   var hourDiff = timeNow - timeThen; //Calculates time in milliseconds
   var hDiff = hourDiff / 3600 / 1000; //Converts it into hours
   var printDate = {};//Creates dictionary
