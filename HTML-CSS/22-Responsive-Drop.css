@@ -22,6 +22,7 @@ li {
   margin: -0.4ex 0 0 0;
   padding: 2ex 0; padding-left: 3em;
   border-bottom: 2pt solid blue;
+  transition: background-color .3s;
 }
 
 .menu h4 {
@@ -52,25 +53,29 @@ li {
   margin-bottom: 3ex;
 }
 
-@media (min-width: 481px){
-  .menu > li {
-    margin: -0.4ex 0 0 0;
-    padding: 4.3ex 2em 3.3ex 2em;
-    padding-left: 3em;
-    border-bottom: none;
-    display: inline;
-    font-size: 65%;
+@media (min-width: 600px){
+/*   menu > li:after {
+  content: "";
+  display: block;
+  clear: both;
+} */
+  .submenu > * {
+    float: left;
   }
-  .menu li h3 {
-    display: inline;
-    padding-right: 2em;
+}
 
+@media (min-width: 800px){
+  ul.menu > li {
+    float: left;
+    padding: 2ex 2em 2ex 2em;
+  }
+  .submenu {
+    background-color: inherit;
+    position: absolute;
+    left: 0; right: 0;
+    top: 6ex;
   }
   ul {
-    border-bottom: 2px solid blue;
-    padding: 1em 3em 1em 1em;
-     }
-  .menu > li.open .submenu {
-    display: block;
-    }
+    position: relative;
+  }
 }

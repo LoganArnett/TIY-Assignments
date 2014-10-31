@@ -9,13 +9,14 @@
  * @return undefined
  */
 function clickNavItem(event){
+  var parents = this.parentElement
   // if "this" navItem is "closed"...
-  if (this.parentElement.className !== 'open' ){
+  if (isClosed(parents)){
     makeEverythingClosed(navItems);
-    makeItOpen(this.parentElement);
+    makeItOpen(parents);
   // otherwise if "this" navItem is "open"
-} else if ( this.parentElement.className === 'open' ){
-    makeItClosed(this.parentElement);
+} else if (isOpen(parents)){
+    makeItClosed(parents);
   }
 }; // END clickNavItem
 /**
@@ -23,37 +24,26 @@ function clickNavItem(event){
  * @return Boolean if `element` is "open"
  */
 function isOpen(element){
-  if(element.className === 'open'){
-    return true;
-  }
-  else {
-    return false;
-  }
+  return (element.className === 'open')
 }
 /**
  * @param HTMLElement element
  * @return Boolean if `element` is "closed"
  */
 function isClosed(element){
-  if(element.className !== 'open'){
-    return true;
-  }
-  else {
-    return false;
-  }
+  return (!isOpen(element))
 }
 
 function makeItOpen(element){
   if(isClosed(element)){
     return element.className = 'open';
-  }
+  };
 }
 
 function makeItClosed(element){
-  if(isOpen(element)) {
-    return element.className = '';
-  }
-
+  if(isOpen(element)){
+    return element.className = ' ';
+  };
 }
 
 function makeEverythingClosed(elements){
