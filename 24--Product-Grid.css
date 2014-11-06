@@ -18,30 +18,40 @@ ul {
   padding: 0;
 }
 
-figure {
-  margin: 0;
+section {
+  margin-bottom: 10ex;
 }
+
+.fa-repeat {
+  float: right;
+}
+
 img {
   height: auto;
   width: auto;
+  border: 2px solid blue;
+  position: relative;
+}
+
+.back {
+  display: none;
 }
 
 nav {
   width: 100%;
 }
 
-nav li {
-  display: inline;
-  border: 1px solid skyblue;
-  margin: 0;
-  padding: .6ex .8em;
+nav ul {
+  position: relative;
+  overflow: hidden;
 }
 
-div.blue {
-  background-color: skyblue;
-  height: 10pt;
-  width: 10pt;
-  margin-left: 0;
+nav ul li {
+  float: left;
+}
+
+li > .title {
+  width: inherit;
 }
 
 .name {
@@ -51,4 +61,10 @@ div.blue {
 .price {
   font-weight: bold;
   float: right;
+}
+
+@media (min-width: 400px) {
+  ul li {
+    float: left;
+  }
 }
