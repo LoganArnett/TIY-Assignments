@@ -1,0 +1,217 @@
+<html>
+ <head>
+   <link href='http://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
+   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+      <title>We Built a Blog Page</title>
+
+<style>
+ body {
+   margin: 0px;
+ }
+ #social  {
+   position: fixed;
+   right: .5%;
+   border-radius: 8%;
+ }
+ header {
+     background-image: url(http://static.tumblr.com/3c7cd96cde56779343d2e9a22afec085/w5gxxfv/oCrn8vkw8/tumblr_static_9cxjqqnfamsccsg4ow84sg8kg.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 100%;
+     height: 427px;
+     margin: 0px;;
+ }
+ header nav {
+   float: right;
+ }
+ #theme {
+   width: 25px;
+   height: 25px;
+   margin-top: 5px;
+ }
+ #wrapper {
+   width: 75%;
+   margin: auto;
+   min-width: 500px;
+   max-width: 1000px;
+ }
+ #logo {
+     margin-top: -5%;
+     border: 5pt solid #FFF;
+     width: 96px;
+     height: 96px;
+     border-radius: 50%;
+     background-image: url(http://static.tumblr.com/37ca133c1a84d5b7856c51a7682df3e9/w5gxxfv/6j4n8vkw8/tumblr_static_20mtuue2w17o0sksogs0c44cw.png);
+     background-size: contain;
+ }
+ #logo a {
+   border-radius: 50%;
+   width: 96px;
+   height: 96px;
+ }
+ section {
+     width: 50%;
+     margin-left: 25%;
+     margin-right: 25%;
+
+ }
+ section h1 a {
+   color: #555;
+   text-decoration: none;
+   font-size: 30pt;
+   font-family: clear-sans, sans-serif;
+
+ }
+ aside {
+     float: left;
+     width: 20%;
+     font-family: sans-serif;
+ }
+ aside nav a {
+   color: gray;
+   text-decoration: none;
+   letter-spacing: 1px;
+ }
+ aside p{
+   font-size: 13pt;
+   font-family: serif;
+   color: #9E9A9A;
+ }
+ p, address {
+   color: #9E9A9A;
+ }
+ #elapsed a {
+   float: right;
+   text-decoration: none;
+   color: #9E9A9A;
+ }
+ #share {
+   float: left;
+   width: 60%;
+   margin-bottom: 10%;
+   color: grey;
+
+ }
+ #share a {
+   text-decoration: none;
+   border: 1px solid lightgray;
+   margin-left: -1px;
+   margin-right: -4px;
+   padding-right: 2%;
+   padding-left: 2%;
+   color: grey;
+ }
+ input {
+   color: #9E9A9A;
+   border: 1px solid lightgray;
+   border-radius: 2%;
+   width: 184.859px;
+   height: 25pt;
+ }
+ h4 {
+   color: #9E9A9A;
+   text-transform: uppercase;
+ }
+ hr {
+     border: 0;
+     height: 0;
+     border-top: 1px solid rgba(0, 0, 0, 0.1);
+     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+ }
+ #twit{
+   height: 25px;
+   width: 100px;
+   margin-left: 2px;
+
+ }
+ #tumble{
+   height: 25px;
+   width: 80px;
+   margin-left: 2px;
+
+ }
+ article img {
+   width: 100%;
+ }
+ article p {
+   font-family: 'Orbitron', sans-serif;
+ }
+</style>
+<script>
+  function hoursAgo(then){
+
+  var timeThen = new Date(then).getTime();//Converts string date value
+  var timeNow = new Date().getTime();//Converts string date value
+  var hourDiff = timeNow - timeThen; //Calculates time in milliseconds
+  var hDiff = hourDiff / 3600 / 1000; //Converts it into hours
+  var printDate = {};//Creates dictionary
+
+  printDate.hours = Math.floor(hDiff);
+
+    return (printDate.hours + ' hours ago');
+  }
+
+  function print(){
+   x = hoursAgo("Oct 26 2014 11:00:00", Date.now());
+   y = hoursAgo("Oct 23 2014 19:30:00", Date.now());
+   document.getElementById("time1").innerHTML = x;
+   document.getElementById("time2").innerHTML = y;
+  }
+</script>
+</head>
+  <body onload="print()">
+
+    <nav id="social"><a href="#"><img id="theme" src="http://static.tumblr.com/37ca133c1a84d5b7856c51a7682df3e9/w5gxxfv/6j4n8vkw8/tumblr_static_20mtuue2w17o0sksogs0c44cw.png"></a><a href="http://twitter.com/TheIronYard"><img id="twit" src="http://twitbuttons.com/buttons2/9/7.png" alt="Twitter Button from twitbuttons.com" /></a><a href="#"><img id="tumble" src="http://tctechcrunch2011.files.wordpress.com/2013/01/tumblr-logo.png?w=400" alt=""></a></nav>
+
+  <header>
+  </header>
+   <div id="wrapper">
+    <a href="http://theironyard.com"><nav id="logo"></nav></a>
+    <aside>
+      <nav><h1><a href="http://orlando.theironyard.com">The Iron Yard &nbsp&nbsp| Orlando</a></h1></nav>
+      <p>Happenings and updates from The Iron Yard in Orlando, FL.</p>
+      <hr>
+      <h4>Search</h4>
+      <input type="text" name="Search" value="Search Here Yo!">
+    </aside>
+    <section>
+      <article>
+        <h1><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">Successful Orlando Tech Meetup at The Iron Yard!</a></h1>
+
+        <address class="author">By Susanna Miller, Campus Director</address>
+
+        <p>You want it, you know you want it, and you know you want me to give it to you. I'll be at my grandma's. Here, let me give you the number. Bye. I don't wanna know your name. I don't wanna know anything anything about you. Well, aren't you going up to the lake tonight, you've been planning it for two weeks. What the hell is a gigawatt?</p>
+
+        <p><img src="http://www.cinecenta.com/images/movies/592/image1.jpg"></p>
+<!-- /*http://media.tumblr.com/e2250665076068f4f6a856187e14a00e/tumblr_inline_nduqyizSQT1t311sy.jpg*/ -->
+        <nav id="share">
+          <a href="#"><span class="fa fa-thumbs-o-up" title="I Like This"></span></a>
+          <a href="#"><span class="fa fa-retweet" title="Reblog This"></span></a>
+          <a href="#"><span class="fa fa-share-square-o" title="Share This"></span></a>
+        </nav>
+
+        <nav id="elapsed"><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard"><time id="time1"></time></a></nav>
+      </article>
+      <article>
+        <h1><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">Successful Orlando Tech Meetup at The Iron Yard!</a></h1>
+
+        <address class="author">By Susanna Miller, Campus Director</address>
+
+        <p>Marty, such a nice name. The future, it's where you're going? C'mon man, let's do something that really cooks. George, there's nothing to be scared of. All it takes is a little self confidence. You know, if you put your mind to it, you could accomplish anything. This is more serious than I thought. Apparently your mother is amorously infatuated with you instead of your father.</p>
+
+        <p><img src="http://www.october212015.com/images/timecircuits.jpg"></p>
+
+        <nav id="share">
+          <a href="#"><span class="fa fa-thumbs-o-up" title="I Like This"></span></a>
+          <a href="#"><span class="fa fa-retweet" title="Reblog This"></span></a>
+          <a href="#"><span class="fa fa-share-square-o" title="Share This"></span></a>
+        </nav>
+
+        <nav id="elapsed"><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard"><time id="time2"></time></a></nav>
+      </article>
+    </section>
+   </div>
+  </body>
+</html>
