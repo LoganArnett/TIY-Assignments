@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <style>
+      .container {
+        margin: 0 0 0 0;
+        padding: 0;
+        width: 100%;
+        position: relative;
+      }
+      .content {
+        width: 70%;
+        margin: 0 auto 5% auto;
+      }
+      .center {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0 2%;
+      }
+      .search {
+        width: 200px;
+      }
+      .navbar-brand {
+        color: black;
+        font-weight: bold;
+        font-size: 20pt;
+      }
+      .navbar-form .form-control {
+        display: inline-block;
+        width: 345px;
+        vertical-align: middle;
+        height: 30px;
+        margin: 1% 0;
+      }
+      .btn {
+        margin: 1% 0;
+        font-weight: bold;
+        font-size: 8pt;
+      }
+      button {
+        width: 60px;
+        align-content: center;
+      }
+      .sign-up {
+        background-color: lawngreen;
+        color: white;
+      }
+      #avatar {
+        width: 100%;
+        border-radius: 8px;
+      }
+      aside {
+        margin:0;
+        padding: 0;
+      }
+      .name {
+        margin: 0;
+      }
+      .user {
+        margin: 0;
+        color: gray;
+      }
+      .glyphicon {
+        color: lightgray;
+      }
+      .orgs {
+        width: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="container center">
+          <a class="navbar-brand" href="#">Github</a>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+          <input type="text" class="form-control search" placeholder="Search Github">
+            </div>
+          </form>
+          <ul class="nav navbar-nav">
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Enterprise</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+          <button type="submit" class="btn btn-default sign-up">Sign Up</button>
+          <button type="submit" class="btn btn-default sign-in">Sign In</button>
+          </div>
+        </nav>
+      </div>
+      <div class="container content">
+        <div class="container-fluid">
+          <aside class="col-sm-3 col-md-3">
+            <a href="https://avatars2.githubusercontent.com/u/8780547?v=2&s=460"><img id="avatar" src="https://avatars2.githubusercontent.com/u/8780547?v=2&s=460" alt=""></a>
+            <h3 class="name">Logan Arnett</h3>
+            <h4 class="user">LoganArnett</h4>
+            <hr>
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;Orlando, FL</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<a href="mailto:loganarn5@gmail.com">loganarn5@gmail.com</a></p>
+            <p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Joined on Sep 15, 2014</p>
+            <hr>
+            <p><a href="#">1 Follower</a> <a href="">1 Starred</a> <a href="">0 Following</a></p>
+            <hr>
+            <h5>Organizations</h5>
+            <a href="https://avatars3.githubusercontent.com/u/8798300?v=2&s=84"><img class="orgs img-rounded" src="https://avatars3.githubusercontent.com/u/8798300?v=2&s=84" alt=""></a>
+          </aside>
+          <section class="col-sm-9 col-md-9" style="outline: 1px solid red;">
+            <h1>Is it for the main content?</h1>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+    ;(function(){
+      var profile;
+
+      jQuery.ajax('octocat.json', {
+      success: function(data){
+        profile = data;
+        console.log(data);
+        var avatar_url = data.avatar_url;
+
+        jQuery('#avatar')
+            .attr('href', avatar_url)
+            .children('img')
+              .attr('src', avatar_url)
+       }
+     });
+     console.log('outside', profile);
+   });
+    </script>
+  </body>
+</html>
