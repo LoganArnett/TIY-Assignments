@@ -123,10 +123,10 @@
       </div>
       <div class="container content">
         <div class="container">
-          <aside class="col-sm-3 col-md-3">
-            <a href="https://avatars2.githubusercontent.com/u/8780547?v=2&s=460" class="thumbnail" id="avatar"><img src="https://avatars2.githubusercontent.com/u/8780547?v=2&s=460" alt=""></a>
+          <aside class="sidebar col-sm-3 col-md-3">
+            <a href="" class="thumbnail" id="avatar"><img src="" alt=""></a>
             <h3 class="name">{{name}}</h3>
-            <h4 class="user">{{login}}</h4>
+            <h4 class="login">{{login}}</h4>
             <hr>
             <ul class="info list-unstyled">
               <li class="company octicon octicon-organization">{{company}}</li>
@@ -213,26 +213,7 @@
         </div>
       </div>
     </div>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js">
-    <script>
-    ;(function(){
-      var profile;
-
-      jQuery.ajax('octocat.json', {
-      success: function(data){
-        profile = data;
-        console.log(data);
-        var avatar_url = data.avatar_url;
-
-        jQuery('#avatar')
-            .attr('href', avatar_url)
-            .children('img')
-              .attr('src', avatar_url)
-       }
-     });
-     console.log('outside', profile);
-   });
-    </script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
       function drop(id) {
            var navID = ['contrib','repos','activity'];
@@ -249,6 +230,49 @@
            });
         }
     </script>
-  </script>
+    <script>
+    ;(function(){
+      var profile;
+
+      jQuery.ajax('package.json', {
+      success: function(data){
+        profile = data;
+        console.log(data);
+        var avatar_url = data.avatar_url;
+
+        $('#avatar')
+            .attr('href', avatar_url)
+            .children('img')
+              .attr('src', avatar_url)
+
+        $('.name')
+          .text(data.name)
+
+        $('.login')
+          .text(data.login)
+
+        $('.company')
+          .text(data.company)
+
+        $('.location')
+          .text(data.location)
+
+        $('.email')
+          .attr('href', 'mailto:logan@loganarnett.com')
+          .text(data.email)
+
+        $('.created')
+          .text(data.created_at)
+
+        $('.blog')
+          .text(data.blog)
+
+        $('.popular')
+          .text(data.repos_url)
+
+      }
+    });
+  })();
+    </script>
   </body>
 </html>
