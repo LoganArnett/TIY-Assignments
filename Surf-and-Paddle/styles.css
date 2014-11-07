@@ -49,13 +49,11 @@ nav::after {
 }
 
 #search {
-	/* float: right; */
 	padding: 2%;
 	display: inline;
 }
 
 #about {
-	/* float: right; */
 	padding: 2%;
 	display: inline;
 }
