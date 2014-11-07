@@ -58,7 +58,7 @@ nav::after {
 	display: inline;
 }
 
-.glyphicon-search {
+.glyphicon-search {/* flips the magnifying glass 180 to face the other direction */
 	transform: scaleX(-1);
 }
 .glyphicon-comment, .glyphicon-cloud,
