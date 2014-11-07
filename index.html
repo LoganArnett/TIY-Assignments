@@ -68,6 +68,38 @@
       .orgs {
         width: 30px;
       }
+      .popular {
+        height: 300px;
+        background-color: lightgray;
+        border: 1px solid;
+        margin-right: 4%;
+      }
+      .col-md-6 {
+        width: 48%;
+      }
+      .contrib2 {
+        height: 200px;
+        background-color: lightgray;
+        border: 1px solid;
+      }
+      .pubCon {
+        height: 250px;
+        border: 1px solid;
+        background-color: lightgray;
+        margin-top: 30px;
+      }
+      .conActivity {
+        height: 450px;
+        border: 1px solid;
+        background-color: lightgray;
+        margin-top: 30px;
+      }
+      #repos, #activity {
+        display: none;
+      }
+      .repoList {
+        list-style-type: none;
+      }
     </style>
   </head>
   <body>
@@ -109,8 +141,73 @@
             <h5>Organizations</h5>
             <a href="https://avatars3.githubusercontent.com/u/8798300?v=2&s=84"><img class="orgs img-rounded" src="https://avatars3.githubusercontent.com/u/8798300?v=2&s=84" alt=""></a>
           </aside>
-          <section class="col-sm-9 col-md-9" style="outline: 1px solid red;">
-            <h1>Is it for the main content?</h1>
+          <section class="col-sm-9 col-md-9">
+            <nav>
+              <ul class="nav nav-tabs">
+                <li><a id="contribmenu" href="#" onclick="drop('contrib')">Contributions</a></li>
+                <li><a id="reposmenu" href="#" onclick="drop('repos')">Repositories</a></li>
+                <li><a id="activitymenu" href="#" onclick="drop('activity')">Public Activity</a></li>
+              </ul>
+            </nav>
+            <section id="contrib">
+              <section class="popular col-sm-6 col-md-6">
+                <h4>Popular Repos Go Here</h4>
+              </section>
+              <section class="contrib2 col-sm-6 col-md-6">
+                <h4>Repos Contributed 2 Go Here</h4>
+              </section>
+              <section class="pubCon col-sm-12 col-md-12">
+                <h4>Public Contributions Go Here</h4>
+              </section>
+              <section class="conActivity col-sm-12 col-md-12">
+                <h4>Contribution Activity Goes Here</h4>
+                <!-- Commits, PR's, and Issues -->
+              </section>
+            </section>
+            <section id="repos">
+              <section class="listOfRepos col-sm-12 col-md-12">
+                <ul class="repoList">
+                  <a href="#"><li><h3>Repo #1</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Repo #2</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Repo #3</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Repo #4</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Repo #5</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Repo #6</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Repo #7</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Repo #8</h3></li></a>
+                  <hr>
+                </ul>
+              </section>
+            </section>
+            <section id="activity">
+              <section class="listOfActive col-sm-12 col-md-12">
+                <ul class="activeList">
+                  <a href="#"><li><h3>PR #1</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Commit #7</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Issue #3</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Push #4</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>PR #22</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Push to Master #17</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Issue #2</h3></li></a>
+                  <hr>
+                  <a href="#"><li><h3>Commit #18</h3></li></a>
+                  <hr>
+                </ul>
+              </section>
+            </section>
           </section>
         </div>
       </div>
@@ -134,6 +231,22 @@
      });
      console.log('outside', profile);
    });
+    </script>
+    <script>
+      function drop(id) {
+           var navID = ['contrib','repos','activity'];
+           var dropDown = document.getElementById(id);
+           navID.forEach(function(value,index){
+             var dropMenu = value + 'menu';
+              if(value==id){
+                  dropDown.style.display = 'block';
+                  document.getElementById(dropMenu).style.backgroundColor = 'lightgray'
+              }else{
+                  document.getElementById(value).style.display = 'none';
+                  document.getElementById(dropMenu).style.backgroundColor = '#fff'
+              };
+           });
+        }
     </script>
   </body>
 </html>
