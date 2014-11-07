@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <style>
       .container {
@@ -11,7 +12,7 @@
         position: relative;
       }
       .content {
-        width: 971px;/*70%*/
+        width: 1020px;/*70%*/
         margin: 0 auto 5% auto;
       }
       .center {
@@ -46,10 +47,6 @@
       .sign-up {
         background-color: lawngreen;
         color: white;
-      }
-      #avatar {
-        width: 220px;/*100%*/
-        border-radius: 8px;
       }
       aside {
         margin:0;
@@ -97,9 +94,9 @@
       #repos, #activity {
         display: none;
       }
-      .repoList {
-        list-style-type: none;
-      }
+       .info > li {
+       display: list-item;
+            }
     </style>
   </head>
   <body>
@@ -127,13 +124,17 @@
       <div class="container content">
         <div class="container">
           <aside class="col-sm-3 col-md-3">
-            <a href="https://avatars2.githubusercontent.com/u/8780547?v=2&s=460"><img id="avatar" src="https://avatars2.githubusercontent.com/u/8780547?v=2&s=460" alt=""></a>
-            <h3 class="name">Logan Arnett</h3>
-            <h4 class="user">LoganArnett</h4>
+            <a href="https://avatars2.githubusercontent.com/u/8780547?v=2&s=460" class="thumbnail" id="avatar"><img src="https://avatars2.githubusercontent.com/u/8780547?v=2&s=460" alt=""></a>
+            <h3 class="name">{{name}}</h3>
+            <h4 class="user">{{login}}</h4>
             <hr>
-            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;Orlando, FL</p>
-            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<a href="mailto:loganarn5@gmail.com">loganarn5@gmail.com</a></p>
-            <p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Joined on Sep 15, 2014</p>
+            <ul class="info list-unstyled">
+              <li class="company octicon octicon-organization">{{company}}</li>
+              <li class="location octicon octicon-location">{{location}}</li>
+              <li class="email octicon octicon-mail"><a href="">{{email}}</a></li>
+              <li class="created octicon octicon-clock">{{created}}</li>
+              <li class="blog octicon octicon-link"><a href="">{{blog}}</a></li>
+            </ul>
             <hr>
             <p><a href="#">1 Follower</a> <a href="">1 Starred</a> <a href="">0 Following</a></p>
             <!-- How to do these #'s -->
@@ -166,7 +167,7 @@
             </section>
             <section id="repos">
               <section class="listOfRepos col-sm-12 col-md-12">
-                <ul class="repoList">
+                <ul class="repoList list-unstyled">
                   <a href="#"><li><h3>Repo #1</h3></li></a>
                   <hr>
                   <a href="#"><li><h3>Repo #2</h3></li></a>
@@ -188,7 +189,7 @@
             </section>
             <section id="activity">
               <section class="listOfActive col-sm-12 col-md-12">
-                <ul class="activeList">
+                <ul class="activeList list-unstyled">
                   <a href="#"><li><h3>PR #1</h3></li></a>
                   <hr>
                   <a href="#"><li><h3>Commit #7</h3></li></a>
@@ -212,7 +213,7 @@
         </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js">
     <script>
     ;(function(){
       var profile;
@@ -248,5 +249,6 @@
            });
         }
     </script>
+  </script>
   </body>
 </html>
