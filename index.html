@@ -60,44 +60,84 @@
         margin: 0;
         color: gray;
       }
-      .glyphicon {
+      .glyphicon, .octicon::before {
         color: lightgray;
+        margin-right: .8em;
+      }
+      .location::before {
+        padding-left: .15em;
+        margin-right: .9em;
       }
       .orgs {
-        width: 30px;
+        width: 40px;
+      }
+      .blockHead {
+        margin-bottom: -6px;
       }
       .popular {
         height: 300px;
-        background-color: lightgray;
-        border: 1px solid;
         margin-right: 4%;
       }
-      .col-md-6 {
+      .popular, .contrib2  {
+        margin-top: 3ex;
         width: 48%;
+        border: 1px solid lightgray;
+        padding: 0;
+        text-indent: 1em;
+      }
+
+      .popular hr, .contrib2 hr, .conActivity hr {
+        margin-bottom: 2ex;
       }
       .contrib2 {
         height: 200px;
-        background-color: lightgray;
-        border: 1px solid;
       }
       .pubCon {
-        height: 250px;
-        border: 1px solid;
-        background-color: lightgray;
+        height: 285px;
+        border: 1px solid lightgray;
         margin-top: 30px;
+        position: relative;
       }
       .conActivity {
         height: 450px;
-        border: 1px solid;
-        background-color: lightgray;
+        border: 1px solid lightgray;
         margin-top: 30px;
+        padding: 0;
+        text-indent: 1em;
       }
       #repos, #activity {
         display: none;
       }
        .info > li {
        display: list-item;
-            }
+      }
+      .popRepos hr {
+        margin-top: 2.3ex;
+      }
+      .popRepos .octicon::before, .reposCon2 .octicon::before {
+        color: dimgray;
+      }
+      .reposCon2 hr {
+        margin-top: 2.5ex;
+      }
+      .conImg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .octicon-logo-github {
+        padding: 1.3ex 0 0 0;
+      }
+      .octicon-logo-github::before {
+        color: black;
+      }
+      .octicon-logo-github:hover::before {
+        color: cornflowerblue;
+      }
+      .fiftyPercent {
+        width: 40%;
+      }
     </style>
   </head>
   <body ng-app="">
@@ -105,7 +145,7 @@
       <div class="container">
         <nav class="navbar navbar-default">
           <div class="container center">
-          <a class="navbar-brand" href="#">Github</a>
+          <a class="navbar-brand octicon octicon-logo-github" href="#"></a>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
           <input type="text" class="form-control search" placeholder="Search Github">
@@ -130,18 +170,18 @@
             <h4 class="login">{{login}}</h4>
             <hr>
             <ul class="info list-unstyled">
-              <li class="company octicon octicon-organization">{{company}}</li>
-              <li class="location octicon octicon-location">{{location}}</li>
-              <li class="email octicon octicon-mail"><a href="">{{email}}</a></li>
-              <li class="created octicon octicon-clock">&nbsp;Joined on <span class="dateOf"></span></li>
-              <li class="blog octicon octicon-link"><a href="">{{blog}}</a></li>
+              <li><span class="company octicon octicon-organization"></span>{{company}}</li>
+              <li><span class="location octicon octicon-location"></span>{{location}}</li>
+              <li><span class="octicon octicon-mail"></span><a href="" class="email">{{email}}</a></li>
+              <li><span class="octicon octicon-link"></span><a href="" class="blog">{{blog}}</a></li>
+              <li><span class="created octicon octicon-clock"></span>Joined on <span class="dateOf"></span></li>
             </ul>
             <hr>
             <p><a href="" class="followers">1 Follower</a> <a href="" class="starred">1 Starred</a> <a href="" class="following">0 Following</a></p>
             <!-- How to do these #'s -->
             <hr>
             <h5>Organizations</h5>
-            <a href="https://avatars3.githubusercontent.com/u/8798300?v=2&s=84"><img class="orgs img-rounded" src="https://avatars3.githubusercontent.com/u/8798300?v=2&s=84" alt=""></a>
+            <a href="/TheIronYard--Orlando"><img class="orgs img-rounded" src="https://avatars3.githubusercontent.com/u/8798300?v=2&s=84" alt=""></a>
           </aside>
           <section class="col-sm-9 col-md-9">
             <nav>
@@ -153,16 +193,41 @@
             </nav>
             <section id="contrib">
               <section class="popular col-sm-6 col-md-6">
-                <h4>Popular Repos Go Here</h4>
+                <h5 class="blockHead">Popular repositories</h5>
+                <hr>
+                <ul class="popRepos list-unstyled">
+                  <li class="octicon octicon-repo-forked" style="text-indent: 0;"><a href="#">asoper29.github.io</a></li>
+                  <hr>
+                  <li class="octicon octicon-repo"><a href="#">etsydemo</a></li>
+                  <hr>
+                  <li class="octicon octicon-repo-forked"><a href="#">FEE--2014--FALL</a></li>
+                  <hr>
+                  <li class="octicon octicon-repo-forked"><a href="#">freelancer-theme</a></li>
+                  <hr>
+                  <li class="octicon octicon-repo-forked"><a href="#">hGraph</a></li>
+                </ul>
               </section>
               <section class="contrib2 col-sm-6 col-md-6">
-                <h4>Repos Contributed 2 Go Here</h4>
+                <h5 class="blockHead">Repositories contributed to</h5>
+                <hr>
+                <ul class="reposCon2 list-unstyled">
+                  <li class="octicon octicon-repo" style="text-indent: 0;"><a href="#">asoper29/24--Weekend-Warriors</a></li>
+                  <hr>
+                  <li class="octicon octicon-repo"><a href="#">mema82/Surf-and-Paddle</a></li>
+                  <hr>
+                  <li class="octicon octicon-repo"><a href="#">TheIronYard--... /FEE--201400F...</a></li>
+                </ul>
               </section>
               <section class="pubCon col-sm-12 col-md-12">
-                <h4>Public Contributions Go Here</h4>
+                <h5 class="blockHead">Contributions</h5>
+                <img class="conImg" src="contributions.png" alt="Some Stuff Goes Here">
               </section>
               <section class="conActivity col-sm-12 col-md-12">
-                <h4>Contribution Activity Goes Here</h4>
+                <h5 class="activeHead">Contribution activity</h5>
+                <h6><span class="octicon octicon-git-commit">10 Commits</span></h6>
+                <h6><span class="octicon octicon-git-pull-request">3 Pull Requests</span></h6>
+                <h6><span class="octicon octicon-issue-opened">1 Issue Reported</span></h6>
+
                 <!-- Commits, PR's, and Issues -->
               </section>
             </section>
@@ -247,30 +312,28 @@
               .attr('src', avatar_url)
 
         $('.name')
-          .text(data.name)
+           .text(data.name)
 
         $('.login')
           .text( data.login)
 
         $('.company')
-          .text(' ' + data.company)
+          .after(data.company)
 
         $('.location')
-          .text(' ' + data.location)
+          .after(data.location)
 
         $('.email')
-          .children('a')
             .attr('href', 'mailto:logan@loganarnett.com')
-             .text(' ' + data.email)
+             .text(data.email)
 
         $('.dateOf')
           .text("{{" + "'" + data.created_at + "'" + " | date: 'mediumDate'}}")
           /*{{1288323623006 | date:'mediumDate'}}*/
 
         $('.blog')
-          .children('a')
             .attr('href', data.blog)
-              .text(' ' + data.blog)
+              .text(data.blog)
 
         $('.followers')
             .attr('href', data.followers_url)
