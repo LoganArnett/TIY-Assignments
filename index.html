@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -99,7 +100,7 @@
             }
     </style>
   </head>
-  <body>
+  <body ng-app="">
     <div class="container">
       <div class="container">
         <nav class="navbar navbar-default">
@@ -132,11 +133,11 @@
               <li class="company octicon octicon-organization">{{company}}</li>
               <li class="location octicon octicon-location">{{location}}</li>
               <li class="email octicon octicon-mail"><a href="">{{email}}</a></li>
-              <li class="created octicon octicon-clock">{{created}}</li>
+              <li class="created octicon octicon-clock">&nbsp;Joined on <span class="dateOf"></span></li>
               <li class="blog octicon octicon-link"><a href="">{{blog}}</a></li>
             </ul>
             <hr>
-            <p><a href="#">1 Follower</a> <a href="">1 Starred</a> <a href="">0 Following</a></p>
+            <p><a href="" class="followers">1 Follower</a> <a href="" class="starred">1 Starred</a> <a href="" class="following">0 Following</a></p>
             <!-- How to do these #'s -->
             <hr>
             <h5>Organizations</h5>
@@ -249,30 +250,49 @@
           .text(data.name)
 
         $('.login')
-          .text(data.login)
+          .text( data.login)
 
         $('.company')
-          .text(data.company)
+          .text(' ' + data.company)
 
         $('.location')
-          .text(data.location)
+          .text(' ' + data.location)
 
         $('.email')
-          .attr('href', 'mailto:logan@loganarnett.com')
-          .text(data.email)
+          .children('a')
+            .attr('href', 'mailto:logan@loganarnett.com')
+             .text(' ' + data.email)
 
-        $('.created')
-          .text(data.created_at)
+        $('.dateOf')
+          .text("{{" + "'" + data.created_at + "'" + " | date: 'mediumDate'}}")
+          /*{{1288323623006 | date:'mediumDate'}}*/
 
         $('.blog')
-          .text(data.blog)
+          .children('a')
+            .attr('href', data.blog)
+              .text(' ' + data.blog)
 
-        $('.popular')
-          .text(data.repos_url)
+        $('.followers')
+            .attr('href', data.followers_url)
+              .text(data.followers + ' Follower')
+
+        $('.starred')
+            .attr('href', data.starred_url)
+              .text(data.starred)
+
+        $('.following')
+            .attr('href', data.following_url)
+              .text(data.following)
+
+
+
+      /*  $('.popular')
+        .text(data.repos_url) */
 
       }
     });
   })();
     </script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
   </body>
 </html>
