@@ -13,11 +13,11 @@
         position: relative;
       }
       .content {
-        width: 1020px;/*70%*/
+        width: 70%; /*1020px*/
         margin: 0 auto 5% auto;
       }
       .center {
-        width: 971px;/*70%;*/
+        width: 70%; /*971px;*/
         margin: 0 auto;
         padding: 0 2%;
       }
@@ -31,18 +31,25 @@
       }
       .navbar-form .form-control {
         display: inline-block;
-        width: 345px;
+        width: 120%;
         vertical-align: middle;
         height: 30px;
-        margin: 1% 0;
+        margin: 1% 5%%;
+      }
+      .navbar-nav {
+        width: 41%;
+        margin-left: 4%;
+      }
+      .navbar-right {
+        width: 16%;
       }
       .btn {
-        margin: 1% 0;
+        margin: 5% 0;
         font-weight: bold;
         font-size: 8pt;
       }
       button {
-        width: 60px;
+        width: 48%;
         align-content: center;
       }
       .sign-up {
@@ -85,7 +92,6 @@
         padding: 0;
         text-indent: 1em;
       }
-
       .popular hr, .contrib2 hr, .conActivity hr {
         margin-bottom: 2ex;
       }
@@ -110,6 +116,7 @@
       }
        .info > li {
        display: list-item;
+       font-size: 94%;
       }
       .popRepos hr {
         margin-top: 2.3ex;
@@ -135,8 +142,17 @@
       .octicon-logo-github:hover::before {
         color: cornflowerblue;
       }
-      .fiftyPercent {
-        width: 40%;
+      .tabMenu.octicon::before {
+        color: dimgray;
+      }
+      #repoMenu a:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
+      @media (max-width: 1200px;){
+        .info > li {
+        font-size: 90%;
+       }
       }
     </style>
   </head>
@@ -157,8 +173,10 @@
             <li><a href="#">Enterprise</a></li>
             <li><a href="#">Blog</a></li>
           </ul>
+          <section class="navbar-right">
           <button type="submit" class="btn btn-default sign-up">Sign Up</button>
           <button type="submit" class="btn btn-default sign-in">Sign In</button>
+        </section>
           </div>
         </nav>
       </div>
@@ -185,10 +203,10 @@
           </aside>
           <section class="col-sm-9 col-md-9">
             <nav>
-              <ul class="nav nav-tabs">
-                <li><a id="contribmenu" href="#" onclick="drop('contrib')">Contributions</a></li>
-                <li><a id="reposmenu" href="#" onclick="drop('repos')">Repositories</a></li>
-                <li><a id="activitymenu" href="#" onclick="drop('activity')">Public Activity</a></li>
+              <ul class="nav nav-tabs" id="repoMenu">
+                <li><a id="contribmenu" class="tabMenu octicon octicon-diff-added" href="#" onclick="drop('contrib')">Contributions</a></li>
+                <li><a id="reposmenu" class="tabMenu octicon octicon-repo" href="#" onclick="drop('repos')">Repositories</a></li>
+                <li><a id="activitymenu" class="tabMenu octicon octicon-rss" href="#" onclick="drop('activity')">Public Activity</a></li>
               </ul>
             </nav>
             <section id="contrib">
@@ -288,10 +306,11 @@
              var dropMenu = value + 'menu';
               if(value==id){
                   dropDown.style.display = 'block';
-                  document.getElementById(dropMenu).style.backgroundColor = 'lightgray'
+                  document.getElementById(dropMenu).style.borderColor = 'lightgray'
+                  document.getElementById(dropMenu).style.borderBottomColor = 'white'
               }else{
                   document.getElementById(value).style.display = 'none';
-                  document.getElementById(dropMenu).style.backgroundColor = '#fff'
+                  document.getElementById(dropMenu).style.borderColor = 'transparent'
               };
            });
         }
