@@ -63,12 +63,10 @@
             <a href="/TheIronYard--Orlando"><img class="orgs img-rounded" src="https://avatars3.githubusercontent.com/u/8798300?v=2&s=84" alt=""></a>
           </aside>
           <section class="col-sm-9 col-md-9">
-            <nav>
-              <ul class="nav nav-tabs" id="repoMenu">
+            <nav  class="nav nav-tabs" id="repoMenu">
                 <li><a id="contribmenu" class="tabMenu octicon octicon-diff-added" href="#" onclick="drop('contrib')">Contributions</a></li>
                 <li><a id="reposmenu" class="tabMenu octicon octicon-repo" href="#" onclick="drop('repos')">Repositories</a></li>
                 <li><a id="activitymenu" class="tabMenu octicon octicon-rss" href="#" onclick="drop('activity')">Public Activity</a></li>
-              </ul>
             </nav>
             <section id="contrib">
               <section class="popular col-sm-6 col-md-6">
@@ -108,10 +106,14 @@
               </section>
               <section class="conActivity col-sm-12 col-md-12">
                 <h5 class="activeHead">Contribution activity</h5>
-                <h6><span class="octicon octicon-git-commit">10 Commits</span></h6>
-                <h6><span class="octicon octicon-git-pull-request">3 Pull Requests</span></h6>
-                <h6><span class="octicon octicon-issue-opened">1 Issue Reported</span></h6>
-
+                <div class="lineBreaks">
+                  <h6><span class="octicon octicon-git-commit">10 Commits</span></h6>
+                  <hr>
+                  <h6><span class="octicon octicon-git-pull-request">3 Pull Requests</span></h6>
+                  <hr>
+                  <h6><span class="octicon octicon-issue-opened">1 Issue Reported</span></h6>
+                  <hr>
+                </div>
                 <!-- Commits, PR's, and Issues -->
               </section>
             </section>

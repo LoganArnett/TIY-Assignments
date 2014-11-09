@@ -21,7 +21,7 @@
 a.navbar-brand {
   text-indent: .9em;
 }
- ul#repoMenu>li>a {
+ #repoMenu>li>a {
   padding: 14px 3px;
 }
 /*.nav>li>a {
@@ -83,7 +83,13 @@ aside {
   width: 40px;
 }
 .blockHead {
-  margin-bottom: -6px;
+  background-color: silver;
+  padding: 3%;
+  margin: 0;
+  margin-bottom: -6%;
+}
+.pubCon .blockHead {
+  margin-top: -1%;
 }
 .popular {
   height: 300px;
@@ -107,6 +113,7 @@ aside {
   border: 1px solid lightgray;
   margin-top: 30px;
   position: relative;
+  padding: 0;
 }
 .conActivity {
   height: 450px;
@@ -164,13 +171,22 @@ button.navbar-toggle {
   margin: 0;
   font-size: 12px;
 }
-/* @media (max-width: 1199px){
+.lineBreaks {
+  text-align: center;
+}
+.lineBreaks h6 {
+  background-color: white;
+}
+.lineBreaks hr {
+  margin-top: -2.5%;
+}
+ @media (max-width: 1199px){
   .info > li {
   font-size: 90%;
- } */
- /*.center {
+ }
+ .center {
    width: 65%;
- }*/
+ }
 }
 @media (max-width: 992px){
   body {
