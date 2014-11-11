@@ -2,18 +2,138 @@
 <html>
 <head>
   <title>Image Slider</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .main {
+      width: 100%;
+      padding: 5% 0 5% 0;
+      position: relative;
+    }
+    #slider {
+      width: 100%;
+      list-style-type: none;
+      clear: both;
+    }
+    #slider li {
+      display: inline;
+    }
+    #left {
+      position: absolute;
+      left: 15%;
+      top: 50%;
+      width: 5%;
+      height: 50px;
+    }
+    #right {
+      position: absolute;
+      right: 15%;
+      top: 50%;
+      width: 5%;
+      height: 50px;
+    }
+  </style>
 </head>
-<body>
-  <ul id="slider">
-    <li id="slide1"><img src="http://www.fillmurray.com/650/400" alt="BILL MURRAY1"></li>
-    <li id="slide2"><img src="http://www.fillmurray.com/650/400" alt="BILL MURRAY2"></li>
-    <li id="slide3"><img src="http://www.fillmurray.com/650/400" alt="BILL MURRAY3"></li>
-    <li id="slide4"><img src="http://www.fillmurray.com/650/400" alt="BILL MURRAY4"></li>
-    <li id="slide5"><img src="http://www.fillmurray.com/650/400" alt="BILL MURRAY5"></li>
-  </ul>
 
+<body>
+  <center>
+  <section class="main container-fluid">
+  <div id="slider">
+    <ul id="slideList">
+      <li id="slide1" class="show slide"><img src="http://www.fillmurray.com/650/500" alt="BILL MURRAY1"></li>
+      <li id="slide2" class="hidden slide"><img src="http://placesheen.com/650/500" alt="Charlie SHEEN"></li>
+      <li id="slide3" class="hidden slide"><img src="http://www.nicenicejpg.com/650/500" alt="VANILLA"></li>
+      <li id="slide4" class="hidden slide"><img src="http://baconmockup.com/650/500" alt="MMMBACON"></li>
+      <li id="slide5" class="hidden slide"><img src="http://www.placebear.com/650/500" alt="BEARS OH MY"></li>
+    </ul>
+  </div>
+  <div id="buttons">
+    <button id="left" class="glyphicon glyphicon-arrow-left hidden"></button>
+    <button id="right" class="glyphicon glyphicon-arrow-right"></button>
+  </div>
+  <div id="radios">
+  <form id="radioButtons">
+    <input type="radio" class="round checked" name="slides" id="img1" value="1" checked >
+    <input type="radio" class="round" name="slides" id="img2" value="2">
+    <input type="radio" class="round" name="slides" id="img3" value="3">
+    <input type="radio" class="round" name="slides" id="img4" value="4">
+    <input type="radio" class="round" name="slides" id="img5" value="5">
+  </form>
+  </div>
+  </center>
+</section>
+
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script>
-    
+    $("#right").click(function() {
+      $('.show').addClass('hidden').removeClass('show').next().removeClass('hidden').addClass('show');
+      if ($('#slide5').hasClass('show')){
+        $('#right').addClass('hidden')
+      };
+      if ($('#left').hasClass('hidden')){
+        $('#left').removeClass('hidden')
+      };
+    });
+
+    $("#left").click(function() {
+      $('.show').addClass('hidden').removeClass('show').prev().removeClass('hidden').addClass('show')
+      if ($('#slide1').hasClass('show')){
+        $('#left').addClass('hidden')
+      };
+      if ($('#right').hasClass('hidden')){
+        $('#right').removeClass('hidden')
+      };
+    });
+
+    $('#img1').click(function(){
+      $('#slideList > li:first').addClass('show').removeClass('hidden');
+      if($('#slideList > li:first').siblings('.show').addClass('hidden').removeClass('show'));
+      if($('#left').hasClass('show').removeClass('show').addClass('hidden'));
+    });
+
+
+  /*  <script>
+    $(".right").click(function() {
+      $(".active").addClass('hidden').next().removeClass('hidden')
+      $(".active").removeClass('active').next().addClass('active')
+      if ($("#slider > li:last").hasClass("active")) {
+        $(".right").addClass('hidden')
+      };
+      if ($(".left").hasClass("hidden")) {
+        $(".left").removeClass("hidden")
+      };
+    });
+
+    $(".left").click(function() {
+      $(".active").addClass('hidden').prev().removeClass('hidden')
+      $(".active").removeClass('active').prev().addClass('active')
+      if ($("#slider > li:first").hasClass("active")) {
+        $(".left").addClass('hidden')
+      };
+      if ($(".right").hasClass("hidden")) {
+        $(".right").removeClass("hidden")
+      };
+    });
+*/
+/*
+  /*  $('#img1').click(function(){
+      \$('#slide1').addClass('show').removeClass('hidden')
+    })
+    \$('#img2').click(function(){
+      \$('#slide2').addClass('show').removeClass('hidden')
+    })
+    \$('#img3').click(function(){
+      \$('#slide3').addClass('show').removeClass('hidden')
+    })
+    \$('#img4').click(function(){
+      \$('#slide4').addClass('show').removeClass('hidden')
+    })
+    \$('#img5').click(function(){
+      \$('#slide5').addClass('show').removeClass('hidden')
+    }) */
   </script>
 </body>
 </html>

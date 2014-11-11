@@ -1,14 +1,20 @@
+/*gulpfile with livereload */
 var gulp = require('gulp'),
-    gutil = require('gulp-util'),
-    mocha = require('gulp-mocha'),
-    _ = require('lodash');
+    connect = require('gulp-connect');
 
-var config = {
-  name: 'David',
-  otherStuff: 'Do Not Care'
-}
-
-gulp.task('default', function() {
-  console.log(config.name);
-
+gulp.task('connect', function() {
+  connect.server({
+    livereload: true
+  });
 });
+
+gulp.task('html', function () {
+  gulp.src('./*.html')
+    .pipe(connect.reload());
+});
+
+gulp.task('watch', function () {
+  gulp.watch(['./*.html'], ['html']);
+});
+
+gulp.task('default', ['connect', 'watch']);
