@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="github.css">
   </head>
   <body ng-app="">
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="container">
         <nav class="navbar navbar-default" role="navigation">
           <div class="container center">
@@ -51,8 +51,8 @@
             <ul class="info list-unstyled">
               <li><span class="company octicon octicon-organization"></span>{{company}}</li>
               <li><span class="location octicon octicon-location"></span>{{location}}</li>
-              <li><span class="octicon octicon-mail"></span><a href="" class="email">{{email}}</a></li>
-              <li><span class="octicon octicon-link"></span><a href="" class="blog">{{blog}}</a></li>
+              <li><span class="octicon octicon-mail"></span><a href="mailto:{{email}}" class="email">{{email}}</a></li>
+              <li><span class="octicon octicon-link"></span><a href="{{blog}}" class="blog">{{blog}}</a></li>
               <li><span class="created octicon octicon-clock"></span>Joined on <span class="dateOf"></span></li>
             </ul>
             <hr>
@@ -172,7 +172,7 @@
       function drop(id) {
            var navID = ['contrib','repos','activity'];
            var dropDown = document.getElementById(id);
-           navID.forEach(function(value,index){
+           $('navID').each(function(value,index){
              var dropMenu = value + 'menu';
               if(value==id){
                   dropDown.style.display = 'block';
@@ -191,53 +191,63 @@
     ;(function(){
       var profile;
 
-      jQuery.ajax('package.json', {
+      $.ajax('package.json', {
       success: function(data){
         profile = data;
         console.log(data);
         var avatar_url = data.avatar_url;
 
         $('#avatar')
-            .attr('href', avatar_url)
+           .attr('href', avatar_url)
             .children('img')
               .attr('src', avatar_url)
 
         $('.name')
-           .text(data.name)
+           .html(data.name)
 
         $('.login')
-          .text( data.login)
+          .html( data.login)
 
         $('.company')
-          .after(data.company)
+          .html(data.company)
 
         $('.location')
-          .after(data.location)
+          .html(data.location)
 
         $('.email')
             .attr('href', 'mailto:logan@loganarnett.com')
-             .text(data.email)
+             .html(data.email)
 
         $('.dateOf')
-          .text("{{" + "'" + data.created_at + "'" + " | date: 'mediumDate'}}")
+          .html("{{" + "'" + data.created_at + "'" + " | date: 'mediumDate'}}")
           /*{{1288323623006 | date:'mediumDate'}}*/
 
         $('.blog')
             .attr('href', data.blog)
-              .text(data.blog)
+              .html(data.blog)
 
         $('.followers')
             .attr('href', data.followers_url)
-              .text(data.followers + ' Follower')
+              .html(data.followers + ' Follower')
 
         $('.starred')
             .attr('href', data.starred_url)
-              .text(data.starred)
+              .html(data.starred)
 
         $('.following')
             .attr('href', data.following_url)
-              .text(data.following)
+              .html(data.following)
 
+         /* TODO: Make tabs change when clicked...
+  $('.main').each(function(){
+    var main = jQuery(this),
+        tabs = main.find('.nav.nav-tabs a')
+    tabs.click(function(event){
+        console.log(this, event); // Now what?
+        // TODO: Add "active" class to parent <li>
+        // TODO: Remove "active" class from other <li>'s
+        // TODO: Reveal corresponding "tab" section
+        // TODO: Hide other "tab" sections */
 
 
       /*  $('.popular')
