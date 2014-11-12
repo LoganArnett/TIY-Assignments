@@ -17,14 +17,13 @@
       width: 100%;
       list-style-type: none;
       clear: both;
-    }
-    #slider li {
-      display: inline-block;
+      position: relative;
     }
     #slideList {
-      width: 500%;
       display: inline;
+      width: 500%;
     }
+    
     #left {
       position: absolute;
       left: 15%;
@@ -111,7 +110,6 @@
       if($('#slide5').hasClass('show')){
         $('#img5').addClass('active').siblings('.active').removeClass('active')
       };
-      $("#slideList").css("transform","translateX("+$(this).index() * -450+"px)");
     });
 
     $("#left").click(function() {
@@ -209,13 +207,13 @@
           $('#left').removeClass('hidden')
         };
     });
-    $(document).ready(function() {
+    /*$(document).ready(function() {
       $('#slide1_controls').on('click', 'span', function(){
         $("#slide1_images").css("transform","translateX("+$(this).index() * -450+"px)");
         $("#slide1_controls span").removeClass("selected");
         $(this).addClass("selected");
       });
-});
+});*/
 
 
 
