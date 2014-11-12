@@ -8,7 +8,7 @@
     body {
       background-color: #abe1fd;
     }
-    form input, select {
+    .signup input, input, select {
       display: block;
       width: 100%;
       height: 6ex;
@@ -38,21 +38,19 @@
   </header>
   <section class="container-fluid">
     <div class="col1 col-xs-12 col-md-6 col-lg-4">
-      <form action="">
+      <form class="signup" action="alert:success">
         <label for="first" >First Name Por Favor</label>
         <input type="text" id="first" placeholder="First Name" name="first_name">
         <label for="last">Last Name Too</label>
         <input type="text" id="last" placeholder="Last Name" name="last_name">
         <label for="email" required>We WILL Spam You!<span>*</span></label>
-        <input type="email" id="email" placeholder="Email" name="user_email">
+        <input type="email" id="email" placeholder="Email" name="user_email" required>
         <label for="phone" required>Moving Fast<span>*</span></label>
-        <input type="tel" id="phone" placeholder="Give Me Them Digits" name="user_phone_number">
+        <input type="tel" id="phone" placeholder="Give Me Them Digits" name="user_phone_number" required>
         <label for="bio">Who Are You?</label>
         <textarea name="about_user" id="bio" placeholder="Don't You Hate These Bio Thingys" rows="8"></textarea>
-      </form>
     </div>
     <div class="col2 col-xs-12 col-md-6 col-lg-4">
-      <form action="">
         <label for="username" >Cool UserName Here</label>
         <input type="text" id="username" placeholder="CoolGuy123" required>
         <label for="password">Password...</label>
@@ -74,10 +72,8 @@
             <option value="Lemonade">
             <option value="Arnold Palmer">
           </datalist>
-      </form>
     </div>
     <div class="col3 col-xs-12 col-md-6 col-lg-4">
-      <form action="">
         <label for="first" >First Name Por Favor</label>
         <input type="text" id="first" placeholder="First Name">
         <label for="cereal" >Favorite Cereal?</label>
@@ -91,9 +87,15 @@
           </datalist>
         <label for="last">Last Name Too</label>
         <input type="text" id="last" placeholder="Last Name">
-        <input type="submit" name="submit" placeholder="Submit">
+        <input id="sub" type="submit" name="submit" placeholder="Submit">
       </form>
     </div>
   </section>
+  <script>
+    $('.signup').submit(function(event){
+      alert('success!!!')
+      event.preventDefault();
+    })
+  </script>
 </body>
 </html>
