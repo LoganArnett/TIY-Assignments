@@ -13,25 +13,21 @@
       padding: 5% 0 5% 0;
       position: relative;
     }
-    #slider {
-      width: 100%;
-      list-style-type: none;
-      clear: both;
-      position: relative;
-    }
     #slideList {
       display: inline;
-      width: 500%;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
     }
 
-    #left {
+    a.left {
       position: absolute;
       left: 15%;
       top: 50%;
       width: 5%;
       height: 50px;
     }
-    #right {
+    a.right {
       position: absolute;
       right: 15%;
       top: 50%;
@@ -63,8 +59,8 @@
       <li id="slide5" class="hidden slide"><a href="http://www.placebear.com/650/500"><img src="http://www.placebear.com/650/500" alt="BEARS OH MY"></a></li>
     </div>
   <nav class="buttons">
-    <a class="left" class="glyphicon glyphicon-arrow-left hidden" href=""></a>
-    <a class="right" class="glyphicon glyphicon-arrow-right" href=""></a>
+    <a href="" class="glyphicon glyphicon-arrow-left hidden left" ></a>
+    <a href="" class="glyphicon glyphicon-arrow-right right"></a>
   </nav>
   <nav id="radios">
     <!-- <ul id="radioList">
@@ -84,13 +80,13 @@
 
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script>
-    $("#right").click(function() {
+    $(".right").click(function() {
       $('.show').addClass('hidden').removeClass('show').next().removeClass('hidden').addClass('show');
       if ($('#slide5').hasClass('show')){
-        $('#right').addClass('hidden')
+        $('.right').addClass('hidden')
       };
-      if ($('#left').hasClass('hidden')){
-        $('#left').removeClass('hidden')
+      if ($('.left').hasClass('hidden')){
+        $('.left').removeClass('hidden')
       };
       if($('#slide1').hasClass('show')){
         $('#img1').addClass('active').siblings('.active').removeClass('active')
@@ -109,13 +105,13 @@
       };
     });
 
-    $("#left").click(function() {
+    $(".left").click(function() {
       $('.show').addClass('hidden').removeClass('show').prev().removeClass('hidden').addClass('show')
       if ($('#slide1').hasClass('show')){
-        $('#left').addClass('hidden')
+        $('.left').addClass('hidden')
       };
-      if ($('#right').hasClass('hidden')){
-        $('#right').removeClass('hidden')
+      if ($('.right').hasClass('hidden')){
+        $('.right').removeClass('hidden')
       };
       if($('#slide1').hasClass('show')){
         $('#img1').addClass('active').siblings('.active').removeClass('active')
@@ -141,11 +137,11 @@
         if($('#slideList > li:first').siblings().hasClass('show')){
           $('#slideList > li:first').siblings('.show').removeClass('show').addClass('hidden');
         }
-        if($('#left')){
-          $('#left').removeClass('show').addClass('hidden');
+        if($('.left')){
+          $('.left').removeClass('show').addClass('hidden');
       }
-        if ($('#right').hasClass('hidden')){
-          $('#right').removeClass('hidden')
+        if ($('.right').hasClass('hidden')){
+          $('.right').removeClass('hidden')
         };
     });
     $('#img2').click(function(){
@@ -155,11 +151,11 @@
         if($('#slideList > li:nth-child(2)').siblings().hasClass('show')){
           $('#slideList > li:nth-child(2)').siblings('.show').removeClass('show').addClass('hidden');
         }
-        if ($('#left').hasClass('hidden')){
-          $('#left').removeClass('hidden')
+        if ($('.left').hasClass('hidden')){
+          $('.left').removeClass('hidden')
         };
-        if ($('#right').hasClass('hidden')){
-          $('#right').removeClass('hidden')
+        if ($('.right').hasClass('hidden')){
+          $('.right').removeClass('hidden')
         };
     });
     $('#img3').click(function(){
@@ -169,11 +165,11 @@
         if($('#slideList > li:nth-child(3)').siblings().hasClass('show')){
           $('#slideList > li:nth-child(3)').siblings('.show').removeClass('show').addClass('hidden');
         }
-        if ($('#left').hasClass('hidden')){
-          $('#left').removeClass('hidden')
+        if ($('.left').hasClass('hidden')){
+          $('.left').removeClass('hidden')
         };
-        if ($('#right').hasClass('hidden')){
-          $('#right').removeClass('hidden')
+        if ($('.right').hasClass('hidden')){
+          $('.right').removeClass('hidden')
         };
     });
     $('#img4').click(function(){
@@ -183,11 +179,11 @@
         if($('#slideList > li:nth-child(4)').siblings().hasClass('show')){
           $('#slideList > li:nth-child(4)').siblings('.show').removeClass('show').addClass('hidden');
         }
-        if ($('#left').hasClass('hidden')){
-          $('#left').removeClass('hidden')
+        if ($('.left').hasClass('hidden')){
+          $('.left').removeClass('hidden')
         };
-        if ($('#right').hasClass('hidden')){
-          $('#right').removeClass('hidden')
+        if ($('.right').hasClass('hidden')){
+          $('.right').removeClass('hidden')
         };
     });
     $('#img5').click(function(){
@@ -197,20 +193,13 @@
         if($('#slideList > li:last').siblings().hasClass('show')){
           $('#slideList > li:last').siblings('.show').removeClass('show').addClass('hidden');
         }
-        if($('#right')){
-          $('#right').removeClass('show').addClass('hidden');
+        if($('.right')){
+          $('.right').removeClass('show').addClass('hidden');
       }
-        if ($('#left').hasClass('hidden')){
-          $('#left').removeClass('hidden')
+        if ($('.left').hasClass('hidden')){
+          $('.left').removeClass('hidden')
         };
     });
-    /*$(document).ready(function() {
-      $('#slide1_controls').on('click', 'span', function(){
-        $("#slide1_images").css("transform","translateX("+$(this).index() * -450+"px)");
-        $("#slide1_controls span").removeClass("selected");
-        $(this).addClass("selected");
-      });
-});*/
 
 
 
