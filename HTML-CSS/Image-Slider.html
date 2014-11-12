@@ -23,7 +23,7 @@
       display: inline;
       width: 500%;
     }
-    
+
     #left {
       position: absolute;
       left: 15%;
@@ -53,22 +53,20 @@
 </head>
 
 <body>
-  <center>
-  <section class="main container-fluid">
-  <div id="slider">
-    <ul id="slideList">
+
+  <div class="main container-fluid">
+    <div id="slideList">
       <li id="slide1" class="show slide"><a href="http://www.fillmurray.com/650/500"><img src="http://www.fillmurray.com/650/500" alt="BILL MURRAY1"></a></li>
       <li id="slide2" class="hidden slide"><a href="http://placesheen.com/650/500"><img src="http://placesheen.com/650/500" alt="Charlie SHEEN"></a></li>
       <li id="slide3" class="hidden slide"><a href="http://www.nicenicejpg.com/650/500"><img src="http://www.nicenicejpg.com/650/500" alt="VANILLA"></a></li>
       <li id="slide4" class="hidden slide"><a href="http://baconmockup.com/650/500"><img src="http://baconmockup.com/650/500" alt="MMMBACON"></a></li>
       <li id="slide5" class="hidden slide"><a href="http://www.placebear.com/650/500"><img src="http://www.placebear.com/650/500" alt="BEARS OH MY"></a></li>
-    </ul>
-  </div>
-  <div id="buttons">
-    <button id="left" class="glyphicon glyphicon-arrow-left hidden"></button>
-    <button id="right" class="glyphicon glyphicon-arrow-right"></button>
-  </div>
-  <div id="radios">
+    </div>
+  <nav class="buttons">
+    <a class="left" class="glyphicon glyphicon-arrow-left hidden" href=""></a>
+    <a class="right" class="glyphicon glyphicon-arrow-right" href=""></a>
+  </nav>
+  <nav id="radios">
     <!-- <ul id="radioList">
       <li id="img1" class="round" name="slides" value="1"></li>
       <li id="img2" class="round" name="slides" value="2"></li>
@@ -76,13 +74,12 @@
       <li id="img4" class="round" name="slides" value="4"></li>
       <li id="img5" class="round" name="slides" value="5"></li>
     </ul> -->
-    <span class="round active" name="slides" id="img1" value="1" ></span>
-    <span class="round" name="slides" id="img2" value="2"></span>
-    <span class="round" name="slides" id="img3" value="3"></span>
-    <span class="round" name="slides" id="img4" value="4"></span>
-    <span class="round" name="slides" id="img5" value="5"></span>
-  </div>
-  </center>
+    <a href="" class="round active" name="slides" id="img1" value="1" ></a>
+    <a href="" class="round" name="slides" id="img2" value="2"></a>
+    <a href="" class="round" name="slides" id="img3" value="3"></a>
+    <a href="" class="round" name="slides" id="img4" value="4"></a>
+    <a href="" class="round" name="slides" id="img5" value="5"></a>
+  </nav>
 </section>
 
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
