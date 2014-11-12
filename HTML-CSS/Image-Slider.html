@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slider</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .main {
+      width: 100%;
+      padding: 5% 0 5% 0;
+      position: relative;
+    }
+    #slider {
+      width: 100%;
+      list-style-type: none;
+      clear: both;
+      position: relative;
+    }
+    #slideList {
+      display: inline;
+      width: 500%;
+    }
+    
+    #left {
+      position: absolute;
+      left: 15%;
+      top: 50%;
+      width: 5%;
+      height: 50px;
+    }
+    #right {
+      position: absolute;
+      right: 15%;
+      top: 50%;
+      width: 5%;
+      height: 50px;
+    }
+    .round {
+      width: 30px;
+      height: 30px;
+      background-color: red;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .round:hover, .active {
+      background-color: skyblue;
+    }
+
+  </style>
+</head>
+
+<body>
+  <center>
+  <section class="main container-fluid">
+  <div id="slider">
+    <ul id="slideList">
+      <li id="slide1" class="show slide"><a href="http://www.fillmurray.com/650/500"><img src="http://www.fillmurray.com/650/500" alt="BILL MURRAY1"></a></li>
+      <li id="slide2" class="hidden slide"><a href="http://placesheen.com/650/500"><img src="http://placesheen.com/650/500" alt="Charlie SHEEN"></a></li>
+      <li id="slide3" class="hidden slide"><a href="http://www.nicenicejpg.com/650/500"><img src="http://www.nicenicejpg.com/650/500" alt="VANILLA"></a></li>
+      <li id="slide4" class="hidden slide"><a href="http://baconmockup.com/650/500"><img src="http://baconmockup.com/650/500" alt="MMMBACON"></a></li>
+      <li id="slide5" class="hidden slide"><a href="http://www.placebear.com/650/500"><img src="http://www.placebear.com/650/500" alt="BEARS OH MY"></a></li>
+    </ul>
+  </div>
+  <div id="buttons">
+    <button id="left" class="glyphicon glyphicon-arrow-left hidden"></button>
+    <button id="right" class="glyphicon glyphicon-arrow-right"></button>
+  </div>
+  <div id="radios">
+    <!-- <ul id="radioList">
+      <li id="img1" class="round" name="slides" value="1"></li>
+      <li id="img2" class="round" name="slides" value="2"></li>
+      <li id="img3" class="round" name="slides" value="3"></li>
+      <li id="img4" class="round" name="slides" value="4"></li>
+      <li id="img5" class="round" name="slides" value="5"></li>
+    </ul> -->
+    <span class="round active" name="slides" id="img1" value="1" ></span>
+    <span class="round" name="slides" id="img2" value="2"></span>
+    <span class="round" name="slides" id="img3" value="3"></span>
+    <span class="round" name="slides" id="img4" value="4"></span>
+    <span class="round" name="slides" id="img5" value="5"></span>
+  </div>
+  </center>
+</section>
+
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script>
+    $("#right").click(function() {
+      $('.show').addClass('hidden').removeClass('show').next().removeClass('hidden').addClass('show');
+      if ($('#slide5').hasClass('show')){
+        $('#right').addClass('hidden')
+      };
+      if ($('#left').hasClass('hidden')){
+        $('#left').removeClass('hidden')
+      };
+      if($('#slide1').hasClass('show')){
+        $('#img1').addClass('active').siblings('.active').removeClass('active')
+      };
+      if($('#slide2').hasClass('show')){
+        $('#img2').addClass('active').siblings('.active').removeClass('active')
+      };
+      if($('#slide3').hasClass('show')){
+        $('#img3').addClass('active').siblings('.active').removeClass('active')
+      };
+      if($('#slide4').hasClass('show')){
+        $('#img4').addClass('active').siblings('.active').removeClass('active')
+      };
+      if($('#slide5').hasClass('show')){
+        $('#img5').addClass('active').siblings('.active').removeClass('active')
+      };
+    });
+
+    $("#left").click(function() {
+      $('.show').addClass('hidden').removeClass('show').prev().removeClass('hidden').addClass('show')
+      if ($('#slide1').hasClass('show')){
+        $('#left').addClass('hidden')
+      };
+      if ($('#right').hasClass('hidden')){
+        $('#right').removeClass('hidden')
+      };
+      if($('#slide1').hasClass('show')){
+        $('#img1').addClass('active').siblings('.active').removeClass('active')
+      };
+      if($('#slide2').hasClass('show')){
+        $('#img2').addClass('active').siblings('.active').removeClass('active')
+      };
+      if($('#slide3').hasClass('show')){
+        $('#img3').addClass('active').siblings('.active').removeClass('active')
+      };
+      if($('#slide4').hasClass('show')){
+        $('#img4').addClass('active').siblings('.active').removeClass('active')
+      };
+      if($('#slide5').hasClass('show')){
+        $('#img5').addClass('active').siblings('.active').removeClass('active')
+      };
+    });
+
+    $('#img1').click(function(){
+      $(this).addClass('active').siblings('.active').removeClass('active')
+      $('#slideList > li:first').addClass('show').removeClass('hidden');
+
+        if($('#slideList > li:first').siblings().hasClass('show')){
+          $('#slideList > li:first').siblings('.show').removeClass('show').addClass('hidden');
+        }
+        if($('#left')){
+          $('#left').removeClass('show').addClass('hidden');
+      }
+        if ($('#right').hasClass('hidden')){
+          $('#right').removeClass('hidden')
+        };
+    });
+    $('#img2').click(function(){
+      $(this).addClass('active').siblings('.active').removeClass('active')
+      $('#slideList > li:nth-child(2)').addClass('show').removeClass('hidden');
+
+        if($('#slideList > li:nth-child(2)').siblings().hasClass('show')){
+          $('#slideList > li:nth-child(2)').siblings('.show').removeClass('show').addClass('hidden');
+        }
+        if ($('#left').hasClass('hidden')){
+          $('#left').removeClass('hidden')
+        };
+        if ($('#right').hasClass('hidden')){
+          $('#right').removeClass('hidden')
+        };
+    });
+    $('#img3').click(function(){
+      $(this).addClass('active').siblings('.active').removeClass('active')
+      $('#slideList > li:nth-child(3)').addClass('show').removeClass('hidden');
+
+        if($('#slideList > li:nth-child(3)').siblings().hasClass('show')){
+          $('#slideList > li:nth-child(3)').siblings('.show').removeClass('show').addClass('hidden');
+        }
+        if ($('#left').hasClass('hidden')){
+          $('#left').removeClass('hidden')
+        };
+        if ($('#right').hasClass('hidden')){
+          $('#right').removeClass('hidden')
+        };
+    });
+    $('#img4').click(function(){
+      $(this).addClass('active').siblings('.active').removeClass('active')
+      $('#slideList > li:nth-child(4)').addClass('show').removeClass('hidden');
+
+        if($('#slideList > li:nth-child(4)').siblings().hasClass('show')){
+          $('#slideList > li:nth-child(4)').siblings('.show').removeClass('show').addClass('hidden');
+        }
+        if ($('#left').hasClass('hidden')){
+          $('#left').removeClass('hidden')
+        };
+        if ($('#right').hasClass('hidden')){
+          $('#right').removeClass('hidden')
+        };
+    });
+    $('#img5').click(function(){
+      $(this).addClass('active').siblings('.active').removeClass('active')
+      $('#slideList > li:last').addClass('show').removeClass('hidden');
+
+        if($('#slideList > li:last').siblings().hasClass('show')){
+          $('#slideList > li:last').siblings('.show').removeClass('show').addClass('hidden');
+        }
+        if($('#right')){
+          $('#right').removeClass('show').addClass('hidden');
+      }
+        if ($('#left').hasClass('hidden')){
+          $('#left').removeClass('hidden')
+        };
+    });
+    /*$(document).ready(function() {
+      $('#slide1_controls').on('click', 'span', function(){
+        $("#slide1_images").css("transform","translateX("+$(this).index() * -450+"px)");
+        $("#slide1_controls span").removeClass("selected");
+        $(this).addClass("selected");
+      });
+});*/
+
+
+
+
+  /*  <script>
+    $(".right").click(function() {
+      $(".active").addClass('hidden').next().removeClass('hidden')
+      $(".active").removeClass('active').next().addClass('active')
+      if ($("#slider > li:last").hasClass("active")) {
+        $(".right").addClass('hidden')
+      };
+      if ($(".left").hasClass("hidden")) {
+        $(".left").removeClass("hidden")
+      };
+    });
+
+    $(".left").click(function() {
+      $(".active").addClass('hidden').prev().removeClass('hidden')
+      $(".active").removeClass('active').prev().addClass('active')
+      if ($("#slider > li:first").hasClass("active")) {
+        $(".left").addClass('hidden')
+      };
+      if ($(".right").hasClass("hidden")) {
+        $(".right").removeClass("hidden")
+      };
+    });
+*/
+/*
+  /*  $('#img1').click(function(){
+      \$('#slide1').addClass('show').removeClass('hidden')
+    })
+    \$('#img2').click(function(){
+      \$('#slide2').addClass('show').removeClass('hidden')
+    })
+    \$('#img3').click(function(){
+      \$('#slide3').addClass('show').removeClass('hidden')
+    })
+    \$('#img4').click(function(){
+      \$('#slide4').addClass('show').removeClass('hidden')
+    })
+    \$('#img5').click(function(){
+      \$('#slide5').addClass('show').removeClass('hidden')
+    }) */
+  </script>
+</body>
+</html>
