@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Responsive Full-Width Slider</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css" />
+    <style>
+/* == GENERAL == */
+.slider {
+  position: relative;
+}
+.slider > .buttons {
+  position: absolute; z-index: 1;
+  width: 100%; top: 25%;
+}
+.slider > .buttons > a:first-child {
+  float: left;
+}
+.slider > .buttons > a:last-child {
+  float: right;
+}
+.slider .slides {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.slider .slides > li {
+  display: inline-block;
+  transition: margin-left 2s ease;
+  width: 100%;
+}
+.slider .bullets {
+  position: absolute;
+  bottom: 10%; top: auto;
+  width: 100%;
+  font-size: 300%; height: 25%;
+  text-align: center;
+  background-color: rgba(66,66,66,0.5);
+}
+.slider .slides > li.exit {
+  margin-left: -100%;
+}
+.slider .bullets {
+  line-height: 150%;
+}
+.slider .bullets .active {
+  font-size: 150%;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="slider">
+        <nav class="buttons">
+          <a href="#" class="prev btn btn-default">Previous</a>
+          <a href="#" class="next btn btn-default">Next</a>
+        </nav>
+        <ol class="list-inline row slides">
+          <template>
+            <li> <a href="{{image.src}}" class="thumbnail"><img src="{{image.src}}"></a>
+          </template>
+        </ol>
+        <nav class="bullets">
+          <template>
+            <a href="#image-{{index}}" >&bull;</a>
+          </template>
+        </nav>
+      </div> <!-- .slider -->
+    </div> <!-- .container-fluid -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+    <!-- endbower -->
+    <script>
+;(function(){ // CLOSURE
+  var images = [
+    { src: 'images/1.jpeg' },
+    { src: 'images/2.jpeg' },
+    { src: 'images/3.jpeg' },
+    { src: 'images/4.jpeg' },
+    { src: 'images/5.jpeg' },
+    { src: 'images/6.jpeg' },
+    { src: 'images/7.jpeg' },
+    { src: 'images/8.jpeg' },
+    { src: 'images/9.jpeg' }
+  ];
+  _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
+  var $slides = $('.slides'),
+      $slide = $($slides.find('template').prop('content').children),
+      slideTpl = _.template($slide.html()),
+      $buttons = $('.buttons'),
+      $bullets = $('.bullets'),
+      $bullet = $($('template', $bullets).prop('content').children);
+  /**
+   * Dynamically create images / bullets...
+   */
+  _.each(images, function(image, index){
+    $slide.clone()
+      .html(slideTpl({ image: image }))
+      .data('slideIndex', index)
+    .appendTo($slides);
+    $bullet.clone()
+      .attr('href', '#image-' + index)
+      .data('slideIndex', index)
+    .appendTo($bullets);
+  }); // END each(images)
+  /**
+   * @event next
+   * @element .slider
+   */
+  $('.slider').on('next', function(event){
+    var $li = $('li:not(.exit):first', $slides).trigger('exit');
+    $bullets.trigger('activate', $li.data('slideIndex') + 1);
+  });
+  /**
+   * @event prev
+   * @element .slider
+   */
+  $('.slider').on('prev', function(event){
+    var $li = $('li.exit:last', $slides).trigger('enter');
+    $bullets.trigger('activate', $li.data('slideIndex'));
+  });
+  /**
+   * @event exit
+   * @element .slider .slides > li
+   */
+  $('.slider').on('exit', '.slides > li', function(event){
+    $(this).addClass('exit');
+    return false;
+  });
+  /**
+   * @event enter
+   * @element .slider .slides > li
+   */
+  $('.slider').on('enter', '.slides > li', function(event){
+    // TODO: What goes here?
+    return false;
+  });
+  /**
+   * @event activate
+   * @element .bullets
+   */
+  $bullets.on('activate', function(event, index){
+      $($(this).children()
+        .removeClass('active')
+        .get(index)
+      ).addClass('active');
+  });
+  /**
+   * @event click
+   * @element .buttons > a.next
+   */
+  $buttons.find('a.next').click(function(event){
+    $(this).trigger('next');
+    return false;
+  }); // END click($buttons a)
+  /**
+   * @event click
+   * @element .buttons > a.prev
+   */
+  $buttons.find('a.prev').click(function(event){
+    $(this).trigger('prev');
+    return false;
+  });
+})(); // END CLOSURE
+    </script>
+  </body>
+</html>
