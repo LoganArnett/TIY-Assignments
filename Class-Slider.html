@@ -30,21 +30,24 @@
 }
 .slider .bullets {
   position: absolute;
-  bottom: 10%; top: auto;
+  bottom: -6%;
+  top: auto;
   width: 100%;
   font-size: 300%; height: 25%;
   text-align: center;
-  background-color: rgba(66,66,66,0.5);
+  line-height: 150%;
+}
+.bullets a {
+  text-decoration: none;
 }
 .slider .slides > li.exit {
   margin-left: -100%;
 }
-.slider .bullets {
-  line-height: 150%;
-}
 .slider .bullets .active {
-  font-size: 150%;
+  font-size: 100%;
+  color: white;
 }
+
     </style>
   </head>
   <body>
@@ -132,7 +135,7 @@
    * @element .slider .slides > li
    */
   $('.slider').on('enter', '.slides > li', function(event){
-    // TODO: What goes here?
+      $(this).removeClass('exit');
     return false;
   });
   /**
