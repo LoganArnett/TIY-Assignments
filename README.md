@@ -47,3 +47,20 @@ TIY-Assignments
   * Added new functionality to our menus and onclick events
   * Dove into Media Queries and varying screen sizes
   * Discussed Mobile First philosophy
+
+### Week 7.
+  * Responsive HTML Layout
+    * Surf and Paddle Co. mockup with Team
+  * [Breaking Development](https://bdconf.com/) Conference 2014 Day 1 and Day 2
+    * Entire conference based around Responsive Design
+    * Really interesting talks about the Internet of Things
+
+### Week 8.
+  * First steps into jQuery
+  * Created image-slider using nothing but jQuery
+  * Began working with Forms
+
+### Week 9.
+  * Worked on refactoring our jQuery using OOP
+  * Intro to MVC: Model View Controller patter
+  * Group Project with the MVC ToDo List Application
