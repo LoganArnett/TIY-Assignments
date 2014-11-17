@@ -1,0 +1,148 @@
+<html>
+<head>
+  <style>
+  #controls, #transparency {
+    text-align:center;
+  }
+  #controls span {
+    padding-right:2em;
+    cursor:pointer;
+  }
+
+  #cubeCarousel {
+    -webkit-perspective: 800;
+    -moz-perspective: 800px;
+    -ms-perspective: 800;
+    perspective: 800;
+
+    -webkit-perspective-origin: 50% 100px;
+    -moz-perspective-origin: 50% 100px;
+    -ms-perspective-origin: 50% 100px;
+    perspective-origin: 50% 100px;
+
+    margin:100px auto 50px auto;
+    width:400px;
+    height:400px;
+  }
+
+  #cubeCarousel #cubeSpinner {
+    position: relative;
+    margin: 0 auto;
+    height: 200px;
+    width: 400px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 50% 100px 0;
+    -moz-transform-origin: 50% 100px 0;
+    -ms-transform-origin: 50% 100px 0;
+    transform-origin: 50% 100px 0;
+
+    -webkit-transition:all 1.0s ease-in-out;
+    -moz-transition:all 1.0s ease-in-out;
+    -ms-transition:all 1.0s ease-in-out;
+    transition:all 1.0s ease-in-out;
+    -webkit-backface-visibility: hidden;
+
+  }
+
+  #cubeCarousel #Ycube,#cubeCarousel #Zcube {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  #cubeCarousel .face {
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    padding: 0px;
+  }
+
+
+  #cubeSpinner .one {
+    -webkit-transform: translateZ(225px);
+    -moz-transform: translateZ(225px);
+    -ms-transform: translateZ(225px);
+    transform: translateZ(225px);
+  }
+
+  #cubeSpinner .two {
+    -webkit-transform: rotateY(90deg) translateZ(225px);
+    -moz-transform: rotateY(90deg) translateZ(225px);
+    -ms-transform: rotateY(90deg) translateZ(225px);
+    transform: rotateY(90deg) translateZ(225px);
+  }
+
+  #cubeSpinner .three {
+    -webkit-transform: rotateY(180deg) translateZ(225px);
+    -moz-transform: rotateY(180deg) translateZ(225px);
+    -ms-transform: rotateY(180deg) translateZ(225px);
+    transform: rotateY(180deg) translateZ(225px);
+  }
+
+  #cubeSpinner .four {
+    -webkit-transform: rotateY(-90deg) translateZ(225px);
+    -moz-transform: rotateY(-90deg) translateZ(225px);
+    -ms-transform: rotateY(-90deg) translateZ(225px);
+    transform: rotateY(-90deg) translateZ(225px);
+  }
+
+  .trans {
+    opacity:0.7;
+  }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      $("#controls").on('click', 'span', function(){
+        $("#cubeSpinner").css("transform","rotateY("+($(this).index() * -90)+"deg)");
+        $("#controls span").removeClass("selected");
+        $(this).addClass("selected");
+      });
+
+      $("#transparency").click(function() {
+        $("#cubeSpinner img").toggleClass("trans");
+        $(this).toggleClass("selected");
+      });
+
+    });
+  </script>
+</head>
+<body>
+<section id="cubecarousel">
+
+  <div id="cubeCarousel">
+    <div id="cubeSpinner">
+
+      <div class="face one">
+        <img src="http://www.fillmurray.com/440/200" />
+      </div>
+      <div class="face two">
+        <img src="http://baconmockup.com/440/200" />
+      </div>
+      <div class="face three">
+        <img src="http://www.nicenicejpg.com/420/200" />
+      </div>
+      <div class="face four">
+        <img src="http://placesheen.com/420/200" />
+      </div>
+    </div>
+  </div>
+
+  <p id="controls">
+    <span class="selected">Image 1</span>
+    <span>Image 2</span>
+    <span>Image 3</span>
+    <span>Image 4</span>
+  </p>
+  <p id="transparency">Click me to toggle transparency</p>
+
+</section>
+</body>
+</html>
