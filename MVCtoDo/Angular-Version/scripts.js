@@ -1,3 +1,31 @@
+(function(window){
+
+  var app = angular.module('mvcToDo', [ ]);
+
+  app.controller('TaskListController', function(){
+    var tasks = this;
+    list = this.list = tasks.list = [ ];
+
+    tasks.addTask = function($event, task){
+      if ($event.keyCode === 13) {
+          console.log('Hello');
+        tasks.list.push({text: task});
+
+      };
+    };
+
+  })
+
+})(window);
+
+/*
+[
+  { "text": "thing in json 1" },
+  { "text": "thing in json 2" },
+  { "text": "thing in json 3" },
+  { "text": "thing in json 4" }
+]
+
 $(function() {
 
 //binding the enter key to the input
@@ -13,7 +41,7 @@ $(function() {
 // display the main section
 // add the input field value to the list item
 // clear the input value
-*/
+
   $input.bind("addTask",function(){
     if ($input.val().trim().length > 0 ){
       $('#main').css({display: 'block'});
@@ -190,3 +218,4 @@ $("#todo-list").on("focusout", ".edit", function(e) {
         $("#footer").css("display" , "none");
       }
     });
+*/
