@@ -22,30 +22,30 @@
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-app="myFirstApp">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container" ng-controller="MainCtrl">
+    <div class="container" ng-controller="CommentController as app">
 
       <div ng-include="'components/navbar/navbar.html'"></div>
 
        <header class='row'>
-          <form>
+          <form ng-submit="app.newComment(text, app.apiKey)">
             <fieldset class='form-group'>
             <label>Whats on your mind?</label>
-            <textarea class='form-control' ng-model="text" ng-maxlength="140"></textarea>
+            <textarea class='form-control' ng-model="text" ng-maxlength="140" required></textarea>
           </fieldset>
           <fieldset class='form-group'>
-            <input class='form-control col-xs-10' type='text' placeholder='who are you'>
+            <input class='form-control col-xs-10' type='text' ng-model="app.apiKey" placeholder='who are you' ng-model="author" required>
             <label></label>
-            <button class='btn btn-primary col-xs-2'>Post</button>
+            <button class='btn btn-primary col-xs-2' type="submit">Post</button>
             <em>{{140 - text.length  }} characters remaining</em>
           </fieldset>
           <section>
             <ul>
-              <blockquote ng-repeat='post in [1]'>&mdash;{{author || 'Your Name'}} Post {{post}}
+              <blockquote >&mdash;{{author}} Post {{post}}
               <p>{{ text | limitTo: 140 }}</p>
             </blockquote>
           </ul>
@@ -53,8 +53,8 @@
       </header>
       <section>
         <ul>
-          <blockquote ng-repeat='post in [1,2,3]'><address>author name</address>&mdash; AuthorName{{author}} Post {{post}}
-          <p></p>
+          <blockquote ng-repeat='post in app.comments'><address></address>&mdash; {{post.user.login}} Posted {{post.updated_at | date}}
+          <p>{{ post.body | limitTo: 140 }}</p>
         </blockquote>
       </ul>
 
@@ -75,6 +75,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
