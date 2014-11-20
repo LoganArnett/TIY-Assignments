@@ -18,7 +18,7 @@
 
     this.newComment = function(text, apiKey){
       var self = this;
-      var url = apiUrl + apiKeyTpl({key: apiKey})
+      var url = apiUrl + apiKeyTpl({key: apiKey});
 
 
 
