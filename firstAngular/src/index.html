@@ -32,13 +32,13 @@
       <div ng-include="'components/navbar/navbar.html'"></div>
 
        <header class='row'>
-          <form ng-submit="app.newComment(comment)">
+          <form ng-submit="app.newComment(text, app.apiKey)">
             <fieldset class='form-group'>
             <label>Whats on your mind?</label>
             <textarea class='form-control' ng-model="text" ng-maxlength="140" required></textarea>
           </fieldset>
           <fieldset class='form-group'>
-            <input class='form-control col-xs-10' type='text' placeholder='who are you' ng-model="author" required>
+            <input class='form-control col-xs-10' type='text' ng-model="app.apiKey" placeholder='who are you' ng-model="author" required>
             <label></label>
             <button class='btn btn-primary col-xs-2' type="submit">Post</button>
             <em>{{140 - text.length  }} characters remaining</em>
@@ -53,8 +53,8 @@
       </header>
       <section>
         <ul>
-          <blockquote ng-repeat='post in app.comments'><address></address>&mdash; {{author}} Posted {{app.createdOn | date}}
-          <p>{{ text.post | limitTo: 140 }}</p>
+          <blockquote ng-repeat='post in app.comments'><address></address>&mdash; {{post.user.login}} Posted {{post.updated_at | date}}
+          <p>{{ post.body | limitTo: 140 }}</p>
         </blockquote>
       </ul>
 
