@@ -43,7 +43,6 @@
 
       TaskList.get().success(function(){
         tasks = self.tasks = TaskList.tasks;
-				console.log(TaskList.tasks.length);
       });
 
       this.completed = TaskList.completed;

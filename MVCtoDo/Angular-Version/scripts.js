@@ -1,20 +1,23 @@
 (function(window){
+ 'use strict';
 
   var app = angular.module('mvcToDo', [ ]);
 
-  app.controller('TaskListController', function(){
-    var tasks = this;
-    list = this.list = tasks.list = [ ];
+  app.controller('TaskListController', [ '$http', function($http){
 
-    tasks.addTask = function($event, task){
+    $http.get("tasks.json");
+    var self = this,
+        tasks = [ ];
+
+    self.addTask = function($event, task){
       if ($event.keyCode === 13) {
           console.log('Hello');
-        tasks.list.push({text: task});
+        tasks.push({text: task});
 
       };
     };
 
-  })
+  }]);
 
 })(window);
 
