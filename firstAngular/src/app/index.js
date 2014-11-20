@@ -9,7 +9,7 @@
 
     var self = this;
 
-    // this.apiKey = '9dbd5217e5eb05668f136a10dee526550e74ba60';
+    // this.apiKey = '';
 
     $http.get(apiUrl)
       .success(function(data){
