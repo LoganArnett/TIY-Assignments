@@ -1,62 +1,34 @@
 <!doctype html>
-<html ng-app="instaComments">
+<html ng-app="fireApp">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
-    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js'></script>
+    <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
+    <script src="scripts/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel='stylesheet' href='styles.css'/>
+    <title>It's on FIRE!!!</title>
   </head>
-  <body ng-controller="SampleCtrl">
-    <ul>
-      <li ng-repeat="message in messages">
-        <!-- exit a message -->
-        <input ng-model="message.text" ng-change="messages.$save(message)" />
-        <!-- delete message -->
-        <button ng-click="messages.$remove(message)">X</button>
-      </li>
-    </ul>
-    <!-- push a new message into the array -->
-    <form ng-submit="addMessage(newMessageText)">
-      <input ng-model="newMessageText" />
-      <button type="submit">add message</button>
-    </form>
+  <body ng-controller="FireController">
+    <!-- CHAT MARKUP -->
+    <div class='container'>
+      <header><h1>Fire App<br><small>It's on FIRE!!!</small></h1></header>
 
+      <div class='chat'>
+        <label for='username'>Who Are You?!</label><br>
+        <input ng-model='name' type='text' id='username' placeholder='Did You Forget Your Name'><br>
+        <label for='username'>And What Do You Want?</label><br>
+        <input ng-model='chats'  type='text' id='messageBody'  placeholder='Words Go Here'><br>
+        <button ng-click="newMessage()">What UP!</button>
+      </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      <ul id='messages' class='chat-messages'>
+        <li ng-repeat='chats in messages' class="userChats">
+          <strong class='chat-username'>{{chats.from}}</strong>
+          {{chats.body}}
+        </li>
+      </ul>
+    </div>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
-    <!-- build:js(.) scripts/oldieshim.js -->
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-    <!-- endbuild -->
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/angularfire/config.js"></script>
-        <script src="scripts/angularfire/firebase.utils.js"></script>
-        <script src="scripts/controllers/chat.js"></script>
-        <script src="scripts/filters/reverse.js"></script>
-        <script src="scripts/angularfire/simpleLogin.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/account.js"></script>
-        <script src="scripts/directives/ngShowAuth.js"></script>
-        <script src="scripts/directives/ngHideAuth.js"></script>
-        
-        <!-- endbuild -->
-</body>
+  </body>
 </html>

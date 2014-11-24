@@ -1,0 +1,54 @@
+/* Fire App Css */
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+.container {
+  width: 40%;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.8);
+}
+header {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+h1 {
+  color: orange;
+}
+h1 small {
+  color: firebrick;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 50%;
+  margin: 0 auto 8% auto;
+}
+.userChats {
+  min-height: 60px;
+  border: 2px dashed firebrick;
+  background-color: white;
+  color: gray;
+
+}
+.chat {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+input {
+  min-width: 175px;
+  color: firebrick;
+}
+::-webkit-input-placeholder {
+   color: firebrick;
+}
+button {
+  background-color: firebrick;
+  color: orange;
+  padding: 2%;
+  margin: 2% 0;
+}
