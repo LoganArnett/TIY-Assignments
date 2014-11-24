@@ -13,3 +13,14 @@ angular.module('firebaseApp', [
     'firebase.utils',
     'simpleLogin'
   ]);
+
+var app = angular.module("instaComments", ["firebase"]);
+
+app.controller("MessageController", function($scope, $firebase) {
+  var ref = new Firebase("https://instacomments.firebaseio.com/messages");
+  var sync = $firebase(ref);
+  $scope.messages = sync.$asArray();
+  $scope.addMessage = function(text) {
+    $scope.messages.$add({text: text});
+  }
+});
