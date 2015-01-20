@@ -1,9 +1,0 @@
-{
-  "name": "Surf & Paddle Demo",
-  "version": "1.0.0",
-  "main": "app/index.html",
-  "dependencies": {
-    "bootstrap": "~3.3.2"
-  },
-  "appPath": "app"
-}
