@@ -17,7 +17,7 @@ TIY-Assignments
 
 ### Week 3: Testing, Testing, 1, 2
   * Previously tested through the Terminal(not visually appealing)
-  * Dived into [Mocha](http://visionmedia.github.io/mocha/) and [Chai](http://chaijs.com/)
+  * Dived into [Mocha](http://mochajs.org/) and [Chai](http://chaijs.com/)
   * Created clean testing environment
   * Refactored all of our original programs using these new test styles
   * Began looking at Object Oriented Programming(OOP)
